@@ -66,6 +66,7 @@ weapon_misc_rules_smoke
 weapon_remove_by_tier_smoke
 ranged_weapon_context_smoke
 upgrade_panel_layout_smoke
+shop_drag_combine_smoke
 shop_inventory_smoke
 "
 
