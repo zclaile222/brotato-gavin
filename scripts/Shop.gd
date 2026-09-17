@@ -796,6 +796,17 @@ func _on_weapon_sell_pressed(slot_index: int):
 	if has_node("/root/AudioManager"):
 		get_node("/root/AudioManager").play_buy()
 
+# 卖出「已购买」列表里的第 index 项。
+#
+# ⚠ index 是 purchased_items 的**位置下标**，不是标识。调用方 _refresh_sell_area 按
+# purchased_items 的顺序逐行建 UI 并 .bind(i)，所以「UI 第 i 行」与「数组第 i 项」
+# 目前严格同序 —— 这也是这条路径唯一成立的前提。
+# **任何对该列表的排序 / 过滤 / 分页 / 去重改动（例如「只显示武器」「按价格排序」），
+# 都必须同步重建 UI 行与下标之间的对应关系**，否则 _on_sell_pressed(i) 卖掉的会是别的物品。
+#
+# 注意这与 _on_weapon_sell_pressed 不同：那条用的是**真实 equipped_weapons 下标**，
+# 是标识而非位置（见该函数上方的说明）。购买记录之所以不能带商店卡槽号，
+# 也是因为卡槽号属于另一个编号空间（见 _on_buy_pressed 里的说明）。
 func _on_sell_pressed(index: int):
 	if index >= purchased_items.size():
 		return
