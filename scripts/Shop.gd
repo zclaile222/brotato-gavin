@@ -1124,7 +1124,13 @@ func _set_drag_preview(source: Control, slot_index: int):
 	# 预览不能被鼠标事件命中，否则会在拖拽途中挡住靶卡片。
 	preview.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	label.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	source.set_drag_preview(preview)
+	# set_drag_preview 只在真实拖拽进行中才合法；测试或其它调用方直接调
+	# _get_drag_data 时视口并不处于拖拽态，此时调用会报
+	# 「Condition "!get_viewport()->gui_is_dragging()" is true」。
+	# 这里加一层守卫，让回调在非拖拽上下文下也能被安全调用（payload 照常返回）。
+	var viewport := source.get_viewport()
+	if viewport != null and viewport.gui_is_dragging():
+		source.set_drag_preview(preview)
 
 # 是否允许把拖拽源放到这个槽上。
 # 判据完全复用 PlayerCombat.can_combine_weapon(slot) —— 它内部走
