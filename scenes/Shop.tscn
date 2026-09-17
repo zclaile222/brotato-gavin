@@ -1,5 +1,13 @@
 [gd_scene load_steps=2 format=3]
 
+; ⚠️ 本场景里的静态几何（Panel / Title / GoldLabel / ItemRow / ButtonRow 的 offset_*）
+; **只是编辑器预览用的初始值**，运行时会被 `Shop.gd::_sync_dynamic_layout()` 全部覆盖。
+; 布局的权威在脚本里，不在这个文件 —— 因为几处高度是运行时才知道的：
+;   · ItemRow 的高度取自卡片**声明的** custom_minimum_size.y（不是它被撑成多少）
+;   · 各区块的垂直位置是「上一块的实际底边 + 间距」累加出来的
+; 2026-09-17 两起布局事故（动态区域塌在 (0,0) 宽 0；改成写死坐标后又与 ItemRow 重叠）
+; 都源于「把运行时的几何写死在文件里」。改布局请改 `Shop.gd` 的 `_LAYOUT_*` 常量。
+
 [ext_resource type="Script" path="res://scripts/Shop.gd" id="1"]
 
 [node name="Shop" type="CanvasLayer"]
@@ -12,42 +20,46 @@ offset_right = 1280.0
 offset_bottom = 720.0
 
 [node name="Panel" type="Panel" parent="."]
-offset_left = 140.0
-offset_top = 100.0
-offset_right = 1140.0
-offset_bottom = 620.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 1260.0
+offset_bottom = 700.0
 
 [node name="Title" type="Label" parent="Panel"]
 offset_left = 20.0
 offset_top = 15.0
-offset_right = 600.0
+offset_right = 860.0
 offset_bottom = 55.0
 theme_override_font_sizes/font_size = 28
 theme_override_colors/font_color = Color(1, 0.85, 0.2, 1)
 text = "商店"
 
 [node name="GoldLabel" type="Label" parent="Panel"]
-offset_left = 620.0
+offset_left = 864.0
 offset_top = 15.0
-offset_right = 980.0
+offset_right = 1220.0
 offset_bottom = 55.0
 theme_override_font_sizes/font_size = 24
 theme_override_colors/font_color = Color(1, 0.85, 0.2, 1)
 text = "💰 金币: 0"
 horizontal_alignment = 2
 
+; 🔴 不设 size_flags_vertical：默认值就是 SIZE_FILL。若设成 EXPAND_FILL，
+; 这个 HBox 会把所有多余高度**分给子卡片**，卡片被撑高 → 行更高 → 面板再变大
+; → 下一轮分到更多 → 自我放大（实测过 408 并继续涨）。
+
 [node name="ItemRow" type="HBoxContainer" parent="Panel"]
 offset_left = 20.0
 offset_top = 65.0
-offset_right = 980.0
-offset_bottom = 430.0
+offset_right = 1220.0
+offset_bottom = 405.0
 theme_override_constants/separation = 16
 
 [node name="ButtonRow" type="HBoxContainer" parent="Panel"]
 offset_left = 20.0
-offset_top = 450.0
-offset_right = 980.0
-offset_bottom = 500.0
+offset_top = 635.0
+offset_right = 1220.0
+offset_bottom = 685.0
 theme_override_constants/separation = 20
 
 [node name="RerollButton" type="Button" parent="Panel/ButtonRow"]

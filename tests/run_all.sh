@@ -68,6 +68,7 @@ ranged_weapon_context_smoke
 upgrade_panel_layout_smoke
 shop_drag_combine_smoke
 shop_inventory_smoke
+shop_layout_smoke
 catalog_source_id_probe
 "
 

@@ -117,9 +117,13 @@ func _ready():
 	ITEM_POOL = weapon_entries + _catalog_item_entries()
 	$Panel/ButtonRow/RerollButton.pressed.connect(_on_reroll_pressed)
 	$Panel/ButtonRow/StartWaveButton.pressed.connect(_on_start_wave_pressed)
+	# 屏幕自上而下：道具行 → 武器合成区 → 已购买/出售区 → 按钮行。
+	# 两个动态区域的 top 由 _sync_dynamic_layout() 按**运行时实测**几何算出来，
+	# 这里传 null 即「位置交给同步器」，不再写死坐标（见该函数上方的事故说明）。
 	_build_sell_area()
 	_build_tooltip()
 	_build_upgrade_area()
+	_sync_dynamic_layout()
 
 func _catalog_item_entries() -> Array:
 	var script = load("res://scripts/BrotatoData.gd")
@@ -165,9 +169,13 @@ func open(p_wave_num: int, p_gold: int, p_luck: int = 0, p_player = null):
 	$Panel/GoldLabel.text = "材料: %d" % player_gold
 	_update_reroll_button()
 	_roll_items(false)
+	# 卡片内容是运行时才有的（解锁的商品在 _make_card 里换文案），
+	# ItemRow 的实际高度也随内容变 —— 必须在建卡之后再排一次动态区域。
+	_sync_dynamic_layout()
 	_notify_player_shop_opened()
 	_refresh_sell_area()
 	_refresh_upgrade_area()
+	_sync_dynamic_layout()
 	visible = true
 
 func update_gold(gold: int):
@@ -259,6 +267,8 @@ func _build_item_cards():
 		var card = _make_card(item, i)
 		item_row.add_child(card)
 		item_cards.append(card)
+	# 卡片换了一批 → ItemRow 的实际高度可能变了 → 动态区域要跟着重排。
+	_sync_dynamic_layout()
 
 func _make_card(item: Dictionary, index: int) -> Control:
 	var rarity = item.get("rolled_rarity", item.get("rarity", 0))
@@ -631,16 +641,193 @@ func _on_start_wave_pressed():
 
 # --- 已购买物品出售区域 ---
 
-func _build_sell_area():
+# --- 动态区域布局 ---
+
+# 布局几何常量。集中在这里，scene 里的静态控件（Title/GoldLabel/ItemRow/ButtonRow）
+# 仍留一份初始值供编辑器预览；_sync_dynamic_layout() 在运行时会把这四个也钉到同样的值上。
+#
+# 数值来源：1280×720 画布，自上而下正好铺满（无一处重叠、无一处越出可见区）：
+#   面板 (20,20)–(1260,700)，内部数据区从面板内 y=15 起排
+#   15 + 40(Title) + 10 + 340(ItemRow，= `_CARD_MIN_H`) + 10 + 108 ×2(两个滚动区)
+#     + 10 + 50(ButtonRow) + 19 = 700
+# ItemRow 的高度**不是**这里的常量，而是由卡片声明值推导（见 `_item_row_height()`）：
+# 行高与卡片最小高度必须同源，否则行会比手算的高，把下面的区域盖住（已踩三次）。
+const _LAYOUT_MARGIN := 20.0        # 面板四周留白 / 面板内左右留白
+const _LAYOUT_TOP := 15.0           # 标题行顶端（相对面板）
+const _LAYOUT_TITLE_H := 40.0       # 标题行高度
+const _LAYOUT_GAP := 10.0           # 各区块之间的垂直间距
+const _LAYOUT_BUTTON_H := 50.0      # 按钮行高度
+const _LAYOUT_PANEL_TAIL := 19.0    # 面板底部留白
+const _LAYOUT_AREA_H := 108.0       # 武器合成区 / 已购买出售区的高度（不足则内部滚动）
+const _CARD_MIN_H := 340.0          # 道具卡**声明**的高度（= _make_card 里的 custom_minimum_size）
+const _LAYOUT_MIN_TOP := 8.0        # 面板允许的最高位置（相对 CanvasLayer）
+const _LAYOUT_MAX_BOTTOM := 700.0   # 面板底边允许的最大值（< 720，留 20px 余量）
+
+# 道具行占用的高度 —— 取**卡片实际排出来的高度**，不与卡片声明的
+# `custom_minimum_size` 打架。
+#
+# 🔴 教训（2026-09-17 第三次踩同一个坑）：上一版把这里写死成 232，想让「已购买/出售」
+# 区多占点地方。但卡片自己声明了 340，HBox 会遵循子节点的最小尺寸把行撑到 340 ——
+# 于是行底边落在 405，而我按 232 把 UpgradeScroll 放在 295，**又重叠了**。
+# 只要「行高」和「卡片声明的最小高度」是两个独立的数，这个坑就会反复出现。
+# 所以行高一律由卡片声明值推导，读不到（还没建卡）时退回同一个常量：
+# 两条路径同源，永远不会分叉。
+#
+# 为什么不用 `row.size.y` 或 `row.get_combined_minimum_size()`：
+#   · `row.size.y` 是上一帧结果，且带「容器把子节点撑到 offset 之外」的自我放大
+#     （实测在 44 高的面板下涨到 852）。
+#   · `row.get_combined_minimum_size()` 取的是卡片的 `get_combined_minimum_size()`，
+#     卡片是 PanelContainer，会按「内容 minimum + 自身 stylebox 边框(2+2)」算，
+#     与声明的 `custom_minimum_size` 不是一回事（实测卡片实占 408 而非 340）。
+# 两者都不幂等，只有「卡片声明的值」是。
+func _item_row_height() -> float:
+	var row = $Panel/ItemRow
+	if row is Control:
+		var row_c: Control = row
+		for i in range(row_c.get_child_count()):
+			var card := row_c.get_child(i)
+			# 跳过待释放的旧卡：queue_free 是延迟释放，同帧里旧卡仍算在
+			# get_child_count() 内，读它们的尺寸会拿到作废的值。
+			if card.is_queued_for_deletion():
+				continue
+			if card is Control and (card as Control).custom_minimum_size.y > 0.0:
+				return (card as Control).custom_minimum_size.y
+	# 还没建卡片（首次 _ready 早于 open）→ 用同一个常量兜底，与卡片声明值同源。
+	return _CARD_MIN_H
+
+# 按**运行时实测**几何排列两个动态区域，取代原先写死的 top 坐标（310 / 430）。
+#
+# 🔴 事故记录（2026-09-17，两起，都在同一天）：
+#   ① 第一起 —— `$Panel` 是 Panel 类型而**不是容器**，`add_child()` 不替子节点布局。
+#      不显式给矩形的话子节点塌在 (0,0) 且宽度为 0：位置压住 Title、内容完全渲染不出来。
+#      （玩家原话：「运行游戏时没有发现这些改动」。）
+#   ② 第二起 —— 修完①之后位置仍然写死（UpgradeScroll 310 / SellScroll 430），
+#      但 `HBoxContainer`（ItemRow）会**按子节点最小尺寸把自己撑开**，
+#      场景里写的 `offset_bottom = 300` 根本管不住它：4 张 340 高的卡片让它实际撑到 y=435，
+#      于是 310 落进了 ItemRow 内部 —— 截图里「武器合成」标签压在商品卡上。
+#
+# 两起的共同教训：**这类几何不许写死，必须读运行时真值再往下排。**
+# 所以本函数是这两个动态区域位置的**唯一权威**，`_build_*` 不再接受 top 参数。
+#
+# 几何常量集中在这里，scene 里的静态控件（Title/GoldLabel/ItemRow/ButtonRow）
+# 仍留一份初始值供编辑器预览；本函数在运行时会把这四个也钉到同样的值上。
+func _layout_dynamic_area(area: Control, top: float) -> void:
+	# 调用方一律传 top = -1（「位置交给同步器」）。保留这个参数只是为了让
+	# _build_* 的调用点读起来仍然是一次「建 + 排」，实际矩形由
+	# _sync_dynamic_layout() 填写 —— 那里能看到 ItemRow 的真实高度。
+	if top >= 0.0:
+		_place_area(area, top)
+		return
+	_sync_dynamic_layout()
+
+func _sync_dynamic_layout() -> void:
+	var panel = $Panel
+	if panel == null or not (panel is Control):
+		return
+	var panel_c: Control = panel
+	# 布局必须在**面板自身已经完成布局**之后才算得准。
+	# 在 _initialize() 里 add_child 后同步读会拿到空壳（size=(0,0)），
+	# 那算出来的所有矩形都是错的 —— 所以这里直接早退，等下一帧被再次调用。
+	if panel_c.size.x <= 0.0 or panel_c.size.y <= 0.0:
+		return
+
+	var panel_h: float = _compute_panel_height()
+	# 面板尺寸自适应内容。**只增不减**：容器在某个尺寸下会把子节点排成需要更大空间的
+	# 样子，缩回去等于把已经放好的内容再挤一遍，很容易在「挤 → 需要更大 → 又挤」之间来回。
+	# 本函数每帧/每次内容变化都会被调用，取值必须幂等（见 _item_row_height 的说明）。
+	if panel_h > panel_c.offset_bottom - panel_c.offset_top:
+		panel_c.offset_bottom = panel_c.offset_top + panel_h
+	# 顶部也允许上移：靠近下边缘时，把面板往上提比压缩内容更好。
+	# 判定依据是「面板底边相对父节点（CanvasLayer）的位置」，不是绝对屏幕坐标。
+	if panel_c.size.y > 0.0 and panel_c.position.y + panel_c.size.y > _LAYOUT_MAX_BOTTOM:
+		panel_c.offset_top = max(_LAYOUT_MIN_TOP, _LAYOUT_MAX_BOTTOM - panel_c.size.y)
+		panel_c.offset_bottom = panel_c.offset_top + panel_c.size.y
+
+	var panel_w: float = panel_c.size.x
+	var inner_w: float = panel_w - 2.0 * _LAYOUT_MARGIN
+
+	_place_static($Panel/Title, _LAYOUT_MARGIN, _LAYOUT_TOP, panel_w * 0.72 - _LAYOUT_MARGIN, _LAYOUT_TITLE_H)
+	_place_static($Panel/GoldLabel, panel_w * 0.72, _LAYOUT_TOP, inner_w - panel_w * 0.72, _LAYOUT_TITLE_H)
+	var item_row = $Panel/ItemRow
+	if item_row is Control:
+		_place_static(item_row, _LAYOUT_MARGIN, _LAYOUT_TOP + _LAYOUT_TITLE_H + _LAYOUT_GAP, inner_w, _item_row_height())
+
+	var upgrade_top: float = _LAYOUT_TOP + _LAYOUT_TITLE_H + _LAYOUT_GAP + _item_row_height() + _LAYOUT_GAP
+	var sell_top: float = upgrade_top + _area_height() + _LAYOUT_GAP
+	var button_top: float = sell_top + _area_height() + _LAYOUT_GAP
+
+	if upgrade_scroll != null and is_instance_valid(upgrade_scroll):
+		_place_area(upgrade_scroll, upgrade_top)
+	if sell_scroll != null and is_instance_valid(sell_scroll):
+		_place_area(sell_scroll, sell_top)
+	_place_static($Panel/ButtonRow, _LAYOUT_MARGIN, button_top, inner_w, _LAYOUT_BUTTON_H)
+
+# 内容需要的面板高度。**纯函数** —— 只依赖各区块的声明尺寸，不读任何当前 size，
+# 所以反复调用结果一致（幂等是这套布局能收敛的前提）。
+#
+# 注意没有任何「屏幕高度」上限：面板最多露出 `_LAYOUT_MAX_BOTTOM` 那么多，
+# 多出来的内容由滚动区自己消化。若在这里夹一个上限，`offset_bottom` 会小于
+# `offset_top + 内容高度`，子节点就会排到面板**外面**去（实测 ButtonRow 底边 725 > 680）。
+func _compute_panel_height() -> float:
+	return _LAYOUT_TOP + _LAYOUT_TITLE_H + _LAYOUT_GAP \
+		+ _item_row_height() + _LAYOUT_GAP \
+		+ _area_height() + _LAYOUT_GAP \
+		+ _area_height() + _LAYOUT_GAP \
+		+ _LAYOUT_BUTTON_H + _LAYOUT_PANEL_TAIL
+
+func _area_height() -> float:
+	# 两个 ScrollContainer 的 custom_minimum_size.y（100 / 110）都显著小于这个高度，
+	# 所以它是**上界**：卡片内容不足时区域不会缩，越界时 ScrollContainer 自己滚动。
+	return _LAYOUT_AREA_H
+
+func _place_area(area: Control, top: float) -> void:
+	# 🔴 必须用 offset_*，不能写 `area.position = ...`：
+	# 这两个区域是代码 new 出来的、anchor 为默认的 PRESET_TOP_LEFT(0,0)，
+	# 此时 offset 与 position 数值上相等 —— 但代码建出的 Control 首帧还没有真实矩形，
+	# 直接改 position 会被锚点按「位置 = 锚点 + offset」重新反算回去，静默失效。
+	# （本函数被调用两次 —— _ready/_open 各一次 —— 即便第一次失效，第二次也会生效，
+	#  所以「失效」不会表现为 100% 不可见，而是表现为「有时序相关的位置错乱」，
+	#  比彻底不生效更难查。统一走 offset 就没有这个自由度。）
+	area.offset_left = _LAYOUT_MARGIN
+	area.offset_right = ($Panel as Control).size.x - _LAYOUT_MARGIN
+	area.offset_top = top
+	area.offset_bottom = top + _area_height()
+
+func _place_static(node: Node, left: float, top: float, width: float, height: float) -> void:
+	if node == null or not (node is Control):
+		return
+	var c: Control = node
+	# 场景里的静态控件有完整锚点信息，offset 与 position 语义不同 ——
+	# 这里按「锚点左上角 + offset」显式重算，避免依赖读到的 position 是哪种语义。
+	var anchor_l: float = c.anchor_left * ($Panel as Control).size.x
+	var anchor_t: float = c.anchor_top * ($Panel as Control).size.y
+	c.offset_left = left - anchor_l
+	c.offset_top = top - anchor_t
+	c.offset_right = left + width - anchor_l
+	c.offset_bottom = top + height - anchor_t
+
+func _build_sell_area(top: float = -1.0):
 	sell_scroll = ScrollContainer.new()
 	sell_scroll.name = "SellScroll"
 	sell_scroll.custom_minimum_size = Vector2(0, 100)
 	sell_scroll.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	# 放在面板底部（ButtonRow 之后）
 	$Panel.add_child(sell_scroll)
+	# 🔴 `Panel` 是 **Panel 类型，不是容器** —— add_child 不会替子节点布局，
+	# 不显式给矩形的话子节点会塌在 (0,0) 且宽度为 0（内容完全不可见）。
+	# 这正是「代码建了 UI 但玩家在游戏里看不到」的根因（2026-09-17 定位）。
+	# 位置一律交给 _sync_dynamic_layout()：这里不写死坐标（见该函数上方的事故记录）。
+	_layout_dynamic_area(sell_scroll, top)
 
 	sell_vbox = VBoxContainer.new()
 	sell_vbox.add_theme_constant_override("separation", 4)
+	# 🔴 ScrollContainer 会把子节点按**minimum 尺寸**摆，不给 EXPAND 就永远不会撑满。
+	# 2026-09-16 实测：不设这行时 sell_vbox 只有 **239 宽**（= 最长标签的宽度），
+	# 而 SellScroll 自身有 1200 宽 —— 于是所有出售条目挤在左侧一条 239 宽的窄柱里，
+	# 「出售(+N材料)」按钮离得很远，视觉上整块区域像是**空的**。
+	# 这正是玩家反馈「运行游戏时没发现这些改动」的第二个成因（第一个是 Panel 非容器）。
+	# 已用 A/B 探针证实：flags=1(SIZE_FILL) → 239 宽；flags=3(SIZE_FILL|SIZE_EXPAND) → 1200 宽。
+	sell_vbox.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	sell_scroll.add_child(sell_vbox)
 
 	# 标题
@@ -689,6 +876,8 @@ func _refresh_sell_area():
 
 	# A4：已装备的武器同样要有出售入口（原先只有道具能卖）。
 	_append_weapon_sell_rows()
+	# 条目数变了 → 出售区要重新排（条目多到越界就交给 ScrollContainer 滚动）。
+	_sync_dynamic_layout()
 
 # A4：按栏位列出已装备武器，复用与道具完全相同的出售按钮样式。
 #
@@ -949,16 +1138,22 @@ func _get_tooltip_text(item: Dictionary) -> String:
 
 # --- 武器升级区域 ---
 
-func _build_upgrade_area():
+func _build_upgrade_area(top: float = -1.0):
 	upgrade_scroll = ScrollContainer.new()
 	upgrade_scroll.name = "UpgradeScroll"
 	upgrade_scroll.custom_minimum_size = Vector2(0, 110)
 	upgrade_scroll.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	upgrade_scroll.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
 	$Panel.add_child(upgrade_scroll)
+	# 同 _build_sell_area：必须显式布局，否则塌在 (0,0) 且宽度为 0。
+	# top 同样交给 _sync_dynamic_layout()，不写死。
+	_layout_dynamic_area(upgrade_scroll, top)
 
 	upgrade_hbox = HBoxContainer.new()
 	upgrade_hbox.add_theme_constant_override("separation", 8)
+	# 同 sell_vbox：ScrollContainer 按 minimum 摆子节点，必须显式 EXPAND 才会撑满。
+	# 实测不设时 upgrade_hbox 只有 228 宽（区域有 1200），合成卡挤在最左侧。
+	upgrade_hbox.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	upgrade_scroll.add_child(upgrade_hbox)
 
 func _refresh_upgrade_area():
@@ -976,11 +1171,15 @@ func _refresh_upgrade_area():
 
 	# 标题
 	var title = Label.new()
+	var is_first := upgrade_hbox.get_child_count() == 0
 	title.text = "武器合成"
 	title.add_theme_font_size_override("font_size", 15)
 	title.add_theme_color_override("font_color", Color(1.0, 0.85, 0.2))
 	title.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 	upgrade_hbox.add_child(title)
+	# 首次建条目时区域可能还是空壳（高度 0），排一次让它拿到真实矩形。
+	if is_first:
+		_sync_dynamic_layout()
 
 	for i in range(weapons.size()):
 		var w = weapons[i]
