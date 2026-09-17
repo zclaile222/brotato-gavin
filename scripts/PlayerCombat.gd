@@ -566,8 +566,31 @@ func _cooldown_for_weapon(weapon: Dictionary) -> float:
 		return max(raw_cooldown, float(p.weapon_minimum_cooldown))
 	return raw_cooldown
 
+# 敌人缓存每 0.1s 才重建一次（见 _refresh_enemy_cache 开头的节流），而敌人在这一窗口内
+# **可能已经被真正释放**。构建期的 is_instance_valid 过滤只能保证「构建那一刻有效」，
+# 挡不住「构建之后才被释放」，所以消费端必须再判一次 —— 否则读 .position 会抛
+#   Invalid access to property or key 'position' on a base object of type 'previously freed'
+#
+# ── 为什么只有 Boss 战会崩（2026-09-17 玩家实测闪退，godot.log 栈指向本函数）──
+# 关键在 Enemy.die() 的分叉（scripts/Enemy.gd:776-785）：
+#     Boss/miniboss → queue_free()   ← 帧末**真释放**，引用随之失效
+#     普通敌人      → recycle()      ← 回收到池，引用永远有效（只是被移出 enemies 组）
+# 于是：玩家打死 Boss → 缓存里那份引用在下一帧变成 "previously freed" →
+# 下一次开火读 .position 即崩。普通战斗永远复现不了，因为池实例不会被释放。
+# 这也解释了为什么是「打 Boss 时闪退」而不是「随机闪退」。
+#
+# 顺手把失效引用从缓存里摘掉：同一帧的后续武器 / 近战分支不必重复踩同一颗雷。
+# 用倒序遍历 + remove_at，边删边走不会漏项。
+func _live_enemies() -> Array:
+	var i: int = _cached_enemies.size() - 1
+	while i >= 0:
+		if not is_instance_valid(_cached_enemies[i]):
+			_cached_enemies.remove_at(i)
+		i -= 1
+	return _cached_enemies
+
 func fire_weapon(weapon):
-	var nearby = _cached_enemies
+	var nearby = _live_enemies()
 	if nearby.is_empty():
 		return
 	var nearest = null
@@ -633,6 +656,12 @@ func _fire_melee(weapon: Dictionary, nearby: Array):
 		p.show_melee_swing(melee_r, weapon.data.color, aim, sweep and is_sweep)
 
 	for enemy in nearby:
+		# ⚠ 不能只靠 fire_weapon 的剪枝：这个循环体**自己会打死敌人**
+		# （take_damage 之后还会走命中附带效果，爆炸 / 连锁可能连带清掉列表里后面的敌人）。
+		# 若清场走的是立即 free()，下一次迭代就在已释放实例上读 .position 了。
+		# Boss 战爆炸密集，正是这条路径最先炸（2026-09-17 玩家实测闪退）。
+		if not is_instance_valid(enemy):
+			continue
 		if p.position.distance_to(enemy.position) > melee_r:
 			continue
 		var hit_dmg = _damage_for_weapon(weapon, enemy)

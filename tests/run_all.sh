@@ -43,6 +43,7 @@ boss_mechanics_smoke
 brotato_data_catalog_smoke
 camera_arena_smoke
 character_stat_unit_smoke
+combat_stale_enemy_reference_smoke
 combat_target_validity_smoke
 danger_model_smoke
 effects_pool_scene_change_smoke
