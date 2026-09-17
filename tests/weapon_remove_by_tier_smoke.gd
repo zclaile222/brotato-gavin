@@ -307,9 +307,13 @@ func _check_tier4_removal():
 # ─── F. T4 颜色不得污染其他武器（独立于形状的「按引用/按值」探针）───
 #
 # 实测结论（本机跑出，非推测）：目录武器（含 smg）走 _make_weapon 的 catalog_tiers 分支，
-# data 来自 catalog_tiers[str(tier)].duplicate(true)，每把武器从一开始就是独立深拷贝；
-# 且 _apply_tier_stats() 在整个目录上都不会被调用（88 个武器的 catalog_tiers 覆盖 1..4 全部
-# 存在，无一落空）。因此这条只是防回归的探针，不是为了复现一个现存故障。
+# data 来自 catalog_tiers[str(tier)].duplicate(true)，每把武器从一开始就是独立深拷贝。
+#
+# 更正（2026-09-17）：一度认为 _apply_tier_stats() 的 else 分支是死代码（依据是 weapons.json
+# 的 78 个武器 catalog_tiers 全覆盖），删除后 phase2_loot_weapon_smoke 立刻 5/5 失败。
+# 真实原因是**有两条数据来源**：catalog 路径（weapons.json）覆盖完整，但 legacy 路径
+# （weapons.tres）不生成 catalog_tiers —— boomerang 只存在于 weapons.tres，其档位为空，
+# 必须走 _apply_tier_stats()。该分支已回滚保留。
 #
 # 写这个断言还有一个更普遍的用处：它验证「改一把武器的 data 不会影响同类型另一把」这一
 # 底层契约。原先 _apply_tier_stats 里的 `data.color = ...` 若真作用在共享字典上，会失败。

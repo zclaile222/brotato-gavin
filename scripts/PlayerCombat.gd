@@ -97,6 +97,13 @@ func _make_weapon(type: String, tier: int = 1) -> Dictionary:
 	var minimum_tier = int(source.get("minimum_tier", 1))
 	var weapon_tier = clamp(tier, minimum_tier, 4)
 	var catalog_tiers: Dictionary = source.get("catalog_tiers", {})
+	# 两条数据来源，行为不同：
+	#   - catalog 路径（weapons.json 经 BrotatoData.get_combat_dict）必定带 catalog_tiers，
+	#     且必定覆盖 minimum_tier..4。
+	#   - legacy 路径（weapons.tres 经 _db.to_combat_dict）**不生成** catalog_tiers，
+	#     例如 boomerang 只存在于 weapons.tres，其 catalog_tiers 恒为空。
+	# 因此下面这个 else 分支不是死代码 —— 删它会让 legacy 武器拿不到任何 tier 数值。
+	# （曾误判为死代码并删除，phase2_loot_weapon_smoke 立刻炸出，已回滚。）
 	var weapon: Dictionary
 	if catalog_tiers.has(str(weapon_tier)):
 		var tier_data: Dictionary = catalog_tiers[str(weapon_tier)].duplicate(true)
@@ -125,10 +132,6 @@ func _apply_tier_stats(data: Dictionary, tier: int):
 			# 覆写，会把 T3/T4 的穿透字典整个冲掉。
 			data["pierce"] = true
 	if level >= 4:
-		# 金色必须只属于这一把武器。data 从 weapon["data"] 传入，正常情况下是
-		# 每把武器独立的深拷贝；但防御性地再复制一次，避免任何调用方直接传入共享字典时，
-		# 一次 T4 升级就把同类型的其它武器（乃至 WEAPON_DATA 模板）全部染金。
-		data = data.duplicate(true)
 		data.color = Color(1.0, 0.85, 0.0)
 
 func _find_combine_partner(type: String, tier: int, ignore_index: int = -1) -> int:
