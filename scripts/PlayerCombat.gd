@@ -266,6 +266,18 @@ func combine_weapon(slot_index: int) -> bool:
 		p.get_node("/root/AudioManager").play_level_up()
 	return true
 
+# 武器信息快照。**这是 UI（商店武器卡 / tooltip / HUD 武器栏）唯一的数据源。**
+#
+# 契约：
+#   * 数组下标 `i` 必须与 `p.equipped_weapons` 下标严格一致 —— `slot_index` 就是 `i`。
+#     商店的武器卡按下标操作、拖拽合成靠它定位、出售靠它精确命中格子。
+#     **任何过滤/排序都不许在这里做**：一旦跳过某项，下标就和真实槽位错位，
+#     下游会把「第 2 张卡」当成「第 2 个槽位」。要过滤请在消费端过滤。
+#   * 既有字段一个都不删、不改语义（`name`/`type`/`level`/`tier`/`damage`/
+#     `fire_rate`/`can_combine`/`max_level`），Shop.gd 与测试都在读它们。
+#   * 新增字段都是**从 weapon.data 原样透出**，不做二次换算 ——
+#     单位语义由 data 决定（如 `crit_chance` 是分数、`spread` 是角度）。
+#     渲染方要百分比就自己 ×100，别在这里偷偷转。
 func get_weapon_info() -> Array:
 	var info = []
 	for i in range(p.equipped_weapons.size()):
@@ -279,9 +291,79 @@ func get_weapon_info() -> Array:
 			"damage": w.data.damage,
 			"fire_rate": w.data.fire_rate,
 			"can_combine": can_combine_weapon(i),
-			"max_level": tier >= 4
+			"max_level": tier >= 4,
+			# ─── A4' 生产端：槽位下标 ───
+			# 与 `i` 恒等。`remove_upgrade` 的第一优先级判据就是它，
+			# 有了它才能在同类型同分阶的多把武器里精确命中要卖的那把。
+			"slot_index": i,
+			# ─── B3：完整 tooltip 所需字段 ───
+			# 近战/远程用 `melee` 区分渲染分支（近战没有射程/弹道，看的是挥击半径）。
+			"melee": bool(w.data.get("melee", false)),
+			"range": float(w.data.get("range", 0.0)),
+			"melee_radius": float(w.data.get("melee_radius", 0.0)),
+			"crit_chance": p.crit_chance,
+			"crit_damage": p.crit_damage,
+			# 当前实际冷却（秒）。含攻速加成、武器特殊规则、最小冷却下限 ——
+			# 是玩家真正感受得到的那个数，比裸 fire_rate 更有信息量。
+			"cooldown": _cooldown_for_weapon(w),
+			"projectile_count": int(w.data.get("count", 1)),
+			"spread": float(w.data.get("spread", 0.0)),
+			"pierce": _weapon_pierce_summary(w),
+			"bounces": _weapon_bounce_summary(w),
+			"special_rules": _weapon_rule_names(w),
+			# 渲染用颜色。零美术资产约定下，这就是「图标」的底色。
+			"color": w.data.get("color", Color(0.8, 0.8, 0.8)),
+			# 稀有度风格的分阶色，与 BrotatoData._tier_color 同源语义。
+			"tier_color": _tier_color(tier),
 		})
 	return info
+
+# 分阶配色。与 BrotatoData 的 tier 色系保持一致的观感（白/绿/蓝/紫/金），
+# 但这里是**独立实现**：PlayerCombat 不该在运行时反查 BrotatoData（那是数据加载层）。
+func _tier_color(tier: int) -> Color:
+	match clamp(tier, 1, 4):
+		1: return Color(0.85, 0.85, 0.85)
+		2: return Color(0.40, 0.90, 0.45)
+		3: return Color(0.40, 0.70, 1.00)
+		_: return Color(1.00, 0.75, 0.20)
+
+
+# 穿透摘要：统一成 {count:int, full:bool}。
+# 目录里 pierce 有三种形态（Dictionary / true / 缺失），消费端不该各自解析一遍。
+func _weapon_pierce_summary(weapon: Dictionary) -> Dictionary:
+	if _has_rule(weapon, "full_pierce"):
+		return {"count": 999, "full": true}
+	var pierce_data = weapon.data.get("pierce", null)
+	var extra := 0
+	if pierce_data is Dictionary:
+		extra = max(0, int(pierce_data.get("count", 0)))
+	elif pierce_data == true:
+		extra = 2  # 旧布尔写法：历史上按 3 次命中处理
+	return {"count": extra, "full": false}
+
+
+# 弹跳摘要：与 _fire_ranged 的算法同源，但**不含**每发暴击才触发的部分
+# （那依赖单发结果，tooltip 表达不了）。读的是「常态可得」的弹跳数。
+func _weapon_bounce_summary(weapon: Dictionary) -> int:
+	if _has_rule(weapon, "cannot_bounce"):
+		return 0
+	var bounces := 0
+	if _has_rule(weapon, "bounce_by_tier"):
+		bounces = max(0, int(weapon.data.get("bounces", 0)))
+	elif _has_rule(weapon, "bounce_once"):
+		bounces = 1
+	return bounces + max(0, int(p.projectile_bounce_bonus))
+
+
+# 特殊规则名列表。tooltip 用它显示「特性」段，也让测试能断言规则确实挂上了。
+func _weapon_rule_names(weapon: Dictionary) -> Array:
+	var out: Array = []
+	for rule in weapon.data.get("special_rules", []):
+		if rule is Dictionary:
+			var rule_id = str(rule.get("rule", ""))
+			if rule_id != "":
+				out.append(rule_id)
+	return out
 
 func _damage_for_weapon(weapon: Dictionary, target = null) -> int:
 	var dmg = float(weapon.data.damage + p.damage_bonus + p.passive_bonus_damage)

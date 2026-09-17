@@ -64,6 +64,10 @@ func init(player: CharacterBody2D):
 
 func apply_upgrade(upgrade):
 	var changed_stats: Array = []
+	# ─── 旁路记账（A6）───
+	# 在施加效果之前先决定「要不要记账」并记录施加前快照，但**先不落库** ——
+	# 只有真正施加成功（本函数走到底）才会写入。这样中途 return / 抛错都不会留脏记录。
+	var ledger_entry := _begin_inventory_ledger(upgrade)
 	match upgrade.type:
 		"speed":
 			p.speed += upgrade.value
@@ -111,6 +115,7 @@ func apply_upgrade(upgrade):
 			changed_stats = _apply_catalog_item_effects(upgrade, 1.0)
 		"ammo":
 			p.ammo_type = upgrade.get("ammo", "")
+	_commit_inventory_ledger(ledger_entry)
 	check_synergies(changed_stats)
 
 func apply_catalog_rule_effects(effects: Array, direction: float = 1.0, normalize_character_stats: bool = false) -> Array:
@@ -1079,6 +1084,247 @@ func _resolve_catalog_speed_percent_delta(delta: float, direction: float, source
 		var actual_positive = max(0.0, float(p.catalog_stat_actual_modifiers.get("speed_percent", 0.0)))
 		return -min(remaining_abs, actual_positive)
 	return delta
+
+# ═══════════════════════════════════════════════════════════════════
+# A6 — 玩家侧权威「已获得道具」清单（旁路记账）
+# ═══════════════════════════════════════════════════════════════════
+#
+# 为什么需要这份清单：商店（Shop.gd）自己也维护了一份 `purchased_items`，
+# 但那是一份**商店私有的副本** —— 它存的是商品条目（`item.duplicate()`），
+# 里面的 type/value/effect 是「标价签」，未必等于 apply_upgrade 时**实际施加的量**。
+#
+# 三处具体差异（都不是理论问题，是当前代码的真实形态）：
+#   1. catalog_item 走 `_apply_catalog_item_effects`，效果是**多规则数组**；
+#      而旧 `remove_upgrade` 的 catalog_item 分支只是把同一份 effects 用 -1.0 反着跑一遍 ——
+#      看着对称，但 `_apply_catalog_stat_delta` 里到处是 clamp / max(0,…) / min(…, cap)，
+#      「减回去」和「加回来」在触到边界时**不是逆运算**。
+#   2. 商品条目带的是 `price`（标价），而实际付款额受稀有度、波次、item_price_percent 影响，
+#      两者常常不等 —— 出售返还按哪个算会直接差出钱。
+#   3. 角色初始道具（`Player._apply_character_starting_items`）走 apply_upgrade 发放，
+#      但**根本不经过商店**，所以商店那份清单里没有它们。
+#
+# 本清单的职责就是当那份「权威账本」：每实际施加一次升级就记一条，
+# 记的是「实际发生了什么」，而不是「标价签上写了什么」。
+#
+# ── 设计约束（刻意为之，别改）──
+#   * 纯旁路：只在现有属性施加路径**之外**追加记录，不改变任何既有数值行为。
+#     `apply_upgrade` 的 match 分支、`apply_catalog_rule_effects` 全部原样保留。
+#   * 撤回方式：**通用反向重放**。按记录的 effects、带 `direction = -1.0` 再跑一遍
+#     `apply_catalog_rule_effects`。这是**有意复用**项目里已有的、唯一经过测试的
+#     「减属性」通道（武器持有期贡献 `_refresh_weapon_contributions` 也是靠它做减法），
+#     而不是我另写一套 clamp 逻辑 —— 那只会和既有 clamp 规则打架。
+#   * `paid_price` 单独存：不从 upgrade 里现推，因为标价 ≠ 实付。
+#   * `direction` 承载增减语义、`value` 传绝对值 —— 与项目既有约定一致。
+
+# 已获得道具清单。每条为 Dictionary，字段见 `_build_inventory_entry`。
+var inventory: Array = []
+
+# 自增 id 的计数器。用整数而非 uuid：可预测、方便测试断言、无外部依赖。
+var _inventory_next_id: int = 1
+
+# source 常量。用字符串是为了和项目其它地方的 string-tag 风格一致
+# （见 Player.gd 的 catalog_*_sources 系列）。
+const INVENTORY_SOURCE_SHOP := "shop"
+const INVENTORY_SOURCE_CRATE := "crate"
+const INVENTORY_SOURCE_MIRROR := "mirror"
+const INVENTORY_SOURCE_CHARACTER := "character"
+const INVENTORY_SOURCE_LEVEL_UP := "level_up"
+const INVENTORY_SOURCE_UNKNOWN := "unknown"
+
+# 不该进「已获得道具栏」的条目：
+#   heal —— 一次性消耗品，原版也不把它列为持有道具（Shop.gd:397 同样排除它）；
+#   ammo —— 只是切换弹药类型，没有属性可撤，记了反而让撤回逻辑要特判。
+const INVENTORY_EXCLUDED_TYPES := ["heal", "ammo"]
+
+
+func _begin_inventory_ledger(upgrade) -> Dictionary:
+	# 返回一条「待提交」的账目；不该记账时返回空字典。
+	if p == null or not is_instance_valid(p):
+		return {}
+	if not (upgrade is Dictionary):
+		# 历史上有调用方传过非 Dictionary（例如纯字符串武器名走 apply_upgrade）。
+		# 这种情况没有 type 可判，直接不记账，绝不让记账把主流程弄挂。
+		return {}
+	var up_type = str(upgrade.get("type", ""))
+	if up_type == "" or up_type in INVENTORY_EXCLUDED_TYPES:
+		return {}
+	var entry := _build_inventory_entry(upgrade)
+	if entry.is_empty():
+		return {}
+	return entry
+
+
+func _build_inventory_entry(upgrade: Dictionary) -> Dictionary:
+	var up_type = str(upgrade.get("type", ""))
+	var weapon_slot := -1
+	var weapon_type := ""
+	var effects: Array = []
+	if up_type == "weapon":
+		weapon_type = str(upgrade.get("weapon_type", ""))
+		# 槽位在**施加之后**才知道（新装 = 追加到末尾；合成 = 占用 partner 的格子）。
+		# 这里先占位，由 _resolve_inventory_weapon_slot() 在提交时回填。
+		weapon_slot = -1
+	elif up_type == "catalog_item":
+		# catalog_item 的效果就是它自己那份 effects 数组 —— 撤回时原样反向重放。
+		# 深拷贝：调用方（商店）持有的是活字典，后面 reroll 会就地改它，
+		# 不拷贝的话我们的「历史账」会跟着被改写。
+		effects = _duplicate_effects(upgrade.get("effects", []))
+	return {
+		"id": _inventory_next_id,
+		"type": up_type,
+		"name": str(upgrade.get("name", up_type)),
+		"desc": str(upgrade.get("desc", upgrade.get("effect_text", ""))),
+		"effects": effects,
+		"paid_price": int(upgrade.get("paid_price", upgrade.get("price", 0))),
+		"source": str(upgrade.get("source", INVENTORY_SOURCE_UNKNOWN)),
+		"weapon_slot": weapon_slot,
+		"weapon_type": weapon_type,
+		"tier": int(upgrade.get("tier", upgrade.get("rolled_rarity", upgrade.get("rarity", 0)) + 1)),
+		# 原始条目快照。撤回非 catalog_item 的道具时，项目既有的 remove_upgrade
+		# 分支是靠 type/value/effect 走的 —— 我们需要把原始字段原样留着才能复用那条路径。
+		"raw": upgrade.duplicate(true),
+	}
+
+
+func _duplicate_effects(effects) -> Array:
+	if not (effects is Array):
+		return []
+	var out: Array = []
+	for effect in effects:
+		if effect is Dictionary:
+			out.append(effect.duplicate(true))
+		else:
+			out.append(effect)
+	return out
+
+
+func _commit_inventory_ledger(entry: Dictionary):
+	if entry.is_empty():
+		return
+	if entry.get("type", "") == "weapon":
+		entry["weapon_slot"] = _resolve_inventory_weapon_slot(entry)
+	inventory.append(entry)
+	# id 只在提交时消耗，未提交的账目不占号 —— 否则测试里会看到跳号，难以排查。
+	_inventory_next_id += 1
+
+
+func _resolve_inventory_weapon_slot(entry: Dictionary) -> int:
+	# 施加后的定位：
+	#   合成 —— 存活的武器是 min(slot, partner)，tier = 原 tier + 1，且数组长度**不变**；
+	#   新装 —— 追加在末尾，tier 与请求一致，数组长度 +1。
+	# 用「从后往前找 type + tier 相符的」覆盖两种情况：
+	#   * 新装时末尾那把正是它；
+	#   * 合成时被升级的那把是两者的较小下标 —— 用 max() 会选到别的同型武器，
+	#     所以下面额外用「tier 相符」把候选卡死；仍不唯一时取最小下标，与
+	#     `combine_weapon` 的 `keep_index = min(slot_index, partner_index)` 语义一致。
+	var wanted_type = str(entry.get("weapon_type", ""))
+	if wanted_type == "":
+		return -1
+	var wanted_tier = int(entry.get("tier", 1))
+	var found := -1
+	for i in range(p.equipped_weapons.size()):
+		var weapon = p.equipped_weapons[i]
+		if str(weapon.type) != wanted_type:
+			continue
+		if int(weapon.get("tier", weapon.get("level", 1))) != wanted_tier:
+			continue
+		found = i
+		break
+	return found
+
+
+# ─── 公开接口（shop-drag / HUD 调用）───
+
+# 取全部已获得道具。返回**深拷贝**：调用方（UI）不该能就地改写权威账本。
+func get_owned_items() -> Array:
+	var out: Array = []
+	for entry in inventory:
+		out.append(entry.duplicate(true))
+	return out
+
+
+func get_owned_item_count() -> int:
+	return inventory.size()
+
+
+func get_owned_item_by_id(item_id: int) -> Dictionary:
+	for entry in inventory:
+		if int(entry.get("id", -1)) == item_id:
+			return entry.duplicate(true)
+	return {}
+
+
+# 按 id 移除，并**精确撤回**它带来的属性。
+# 返回 true 表示找到并处理了；false 表示 id 不存在（幂等，调用方可以放心重复调用）。
+func remove_owned_item(item_id: int) -> bool:
+	var index := -1
+	for i in range(inventory.size()):
+		if int(inventory[i].get("id", -1)) == item_id:
+			index = i
+			break
+	if index == -1:
+		return false
+	var entry: Dictionary = inventory[index]
+	_revert_inventory_entry(entry)
+	inventory.remove_at(index)
+	return true
+
+
+# 按 id 出售：撤回属性 + 从清单移除。
+# 材料返还**不在这里做** —— 那是商店的职责（它有自己的 recycling 加成规则）。
+# 本函数只保证「属性回到买入前」，这是 A6 的验收核心。
+func sell_owned_item(item_id: int) -> bool:
+	return remove_owned_item(item_id)
+
+
+func clear_inventory():
+	inventory.clear()
+	_inventory_next_id = 1
+
+
+func _revert_inventory_entry(entry: Dictionary):
+	var up_type = str(entry.get("type", ""))
+	if up_type == "catalog_item":
+		# 通用反向重放：与施加时**同一套 effects、同一个函数**，只把 direction 翻成 -1。
+		# 这样两边的 clamp/max/min 规则必然一致 —— 这正是「真的回到买入前」的机理。
+		var effects = entry.get("effects", [])
+		if effects is Array and not effects.is_empty():
+			check_synergies(apply_catalog_rule_effects(effects, -1.0))
+		# ownership 计数单独回调：apply_catalog_rule_effects 不管它
+		# （它只在 apply_upgrade 的 catalog_item 分支里被调用）。
+		var raw = entry.get("raw", {})
+		if raw is Dictionary and p.has_method("record_catalog_item_ownership"):
+			p.record_catalog_item_ownership(raw, -1.0)
+		return
+	# 非 catalog_item：复用既有 remove_upgrade 路径。
+	# 这是一条**新的代码路径**（此前只有 Shop.gd:554 会调它），但复用既有实现，
+	# 不复制一遍 match 分支 —— 复制出来的迟早会和原版漂移。
+	var raw = entry.get("raw", {})
+	if raw is Dictionary and not raw.is_empty():
+		remove_upgrade(raw)
+
+
+# ─── 供商店/箱子登记「实付价」与来源 ───
+#
+# 商店在购买时是唯一知道**实付价**的地方（受稀有度、波次、item_price_percent 影响），
+# 所以由它把价格告诉玩家侧账本。调用时机：`apply_upgrade(item)` **之后**，
+# 用 `get_owned_item_count() - 1` 拿到的 id 就是刚记的那条。
+func set_owned_item_purchase_info(item_id: int, paid_price: int, source: String = INVENTORY_SOURCE_SHOP) -> bool:
+	for entry in inventory:
+		if int(entry.get("id", -1)) == item_id:
+			entry["paid_price"] = max(0, int(paid_price))
+			entry["source"] = source
+			return true
+	return false
+
+
+# 取「最近一条已获得道具」的 id。商店买完立刻调用它取 id 最方便 ——
+# 不用自己去数下标（数下标在并发/嵌套调用下会错位）。
+func get_last_owned_item_id() -> int:
+	if inventory.is_empty():
+		return -1
+	return int(inventory[inventory.size() - 1].get("id", -1))
+
 
 func _apply_passive_effect(upgrade) -> Array:
 	var effect = upgrade.get("effect", "")

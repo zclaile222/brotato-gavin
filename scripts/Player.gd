@@ -913,6 +913,26 @@ func remove_upgrade(upgrade):
 func get_active_synergies() -> Array:
 	return upgrades.get_active_synergies()
 
+# ─── A6：玩家侧权威「已获得道具」清单（纯转发，逻辑全在 PlayerUpgrades）───
+# 这几个函数是**必须**的转发层：PlayerUpgrades 是 RefCounted 组件，
+# 商店只持有 player 引用（`player_ref.remove_upgrade(...)`），
+# 没有这层转发，商店调不到账本 —— 与 get_weapon_info/apply_upgrade 的既有约定一致。
+
+func get_owned_items() -> Array:
+	return upgrades.get_owned_items()
+
+func get_owned_item_count() -> int:
+	return upgrades.get_owned_item_count()
+
+func remove_owned_item(item_id: int) -> bool:
+	return upgrades.remove_owned_item(item_id)
+
+func get_last_owned_item_id() -> int:
+	return upgrades.get_last_owned_item_id()
+
+func set_owned_item_purchase_info(item_id: int, paid_price: int, source: String = "shop") -> bool:
+	return upgrades.set_owned_item_purchase_info(item_id, paid_price, source)
+
 func apply_temp_buff(buff_type: String, duration: float):
 	buffs.apply_temp_buff(buff_type, duration)
 
