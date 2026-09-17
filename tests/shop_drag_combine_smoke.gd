@@ -68,6 +68,7 @@ func _run():
 
 	_check_drag_combine_forward()
 	_check_drag_no_combine_on_different_weapons()
+	_check_bought_weapon_entry_does_not_carry_card_slot()
 	_check_weapon_sell_targets_exact_slot()
 	_check_lock_survives_wave_cycle_with_frozen_price()
 
@@ -368,6 +369,87 @@ func _check_drag_no_combine_on_different_weapons():
 		"%s：武器类型顺序应保持 %s，实际 %s" % [context, str(before_types), str(_types())])
 	_ok(_tiers() == [1, 1],
 		"%s：分阶不应被改动，期望 [1, 1]，实际 %s" % [context, str(_tiers())])
+
+
+# ─── 3.5 购买记录不得把「商店卡槽号」当成「装备位号」───
+#
+# 这是 weapon-remove 交叉评审时发现的真缺陷（我已复现并修）：
+# _on_buy_pressed 的 index 是 **current_items（商店卡槽）** 的下标，
+# 而 PlayerUpgrades._find_weapon_slot_to_remove 把 slot_index 解释为
+# **equipped_weapons（装备位）** 的下标。两个编号空间无关。
+#
+# 后果：装备位 2 是 smg T2，玩家从商店卡槽 2 买一把 smg T1，
+# 之后卖这把 T1 -> slot_index=2 命中装备位 2 的类型校验（都是 smg）
+# -> 直接删掉装备位 2 的 T2，不降级、不比 tier。
+#
+# 修法：购买记录**不写** slot_index，只留 weapon_type + tier，
+# 让 _find_weapon_slot_to_remove 走第 2 优先级（type + tier）匹配。
+# 这样「买来的 T1」和「装备里的 T2」靠 tier 就能分开，不会误删。
+func _check_bought_weapon_entry_does_not_carry_card_slot():
+	var context := "3.5 购买记录不带商店卡槽号"
+	var tiers := _equip_many([[SAMPLE_WEAPON, 2], [SAMPLE_WEAPON, 2], [SAMPLE_WEAPON, 2]], context)
+	if tiers.is_empty():
+		return
+	_ok(tiers == [2, 2, 2], "%s：前置分阶期望 [2, 2, 2]，实际 %s" % [context, str(tiers)])
+	if tiers != [2, 2, 2]:
+		return
+
+	if not _open_shop(500, context):
+		return
+
+	# 把商店卡槽 2 摆成一把同类型的 T1，然后走真实的购买路径。
+	# 这样 _on_buy_pressed 里的 index 就是 2 —— 与装备位 2 撞号。
+	var bought_item := {
+		"name": str(player.combat.WEAPON_DATA[SAMPLE_WEAPON].get("name", SAMPLE_WEAPON)),
+		"type": "weapon",
+		"weapon_type": SAMPLE_WEAPON,
+		"tier": 1,
+		"price": 10,
+		"rarity": 0,
+	}
+	shop.current_items[2] = bought_item
+	shop.current_items[1] = bought_item.duplicate()
+	shop.current_items[0] = bought_item.duplicate()
+	shop.current_items[3] = bought_item.duplicate()
+	shop._build_item_cards()
+	shop.player_gold = 500
+	player.earn_gold(500)
+
+	var before_count: int = player.equipped_weapons.size()
+	shop._on_buy_pressed(2, Button.new(), Label.new())
+
+	# 前置自检：这次购买真的被记录下来了吗？没记下来说明买的不是武器/被 heal 过滤，
+	# 后续断言会读不到条目而空转。
+	var bought_entry: Dictionary = {}
+	for entry in shop.purchased_items:
+		if str(entry.get("type", "")) == "weapon":
+			bought_entry = entry
+			break
+	if bought_entry.is_empty():
+		failures.append("%s：前置自检失败，购买记录里没有武器条目，后续断言不可信" % context)
+		return
+
+	# 核心断言：购买记录里**不得**出现 slot_index。
+	# 一旦出现，就是「卡槽号冒充装备位号」，指向的装备位完全可能是另一把武器。
+	_ok(not bought_entry.has("slot_index"),
+		"%s：购买记录不得带 slot_index（那是商店卡槽号，会被 PlayerUpgrades 当成装备位号），实际 %s" % [
+			context, str(bought_entry)])
+	_ok(str(bought_entry.get("weapon_type", "")) == SAMPLE_WEAPON,
+		"%s：购买记录应带 weapon_type=%s，实际 %s" % [context, SAMPLE_WEAPON, str(bought_entry.get("weapon_type", ""))])
+	_ok(int(bought_entry.get("tier", -1)) == 1,
+		"%s：购买记录应带 tier=1，实际 %s" % [context, str(bought_entry.get("tier", -1))])
+
+	# 行为断言：卖掉这把买来的 T1，装备里的三把 T2 必须一把不少。
+	# 若购买记录带了 slot_index=2，这里会误删装备位 2。
+	var entry_index: int = shop.purchased_items.find(bought_entry)
+	shop._on_sell_pressed(entry_index)
+
+	var after_tiers := _tiers()
+	_ok(player.equipped_weapons.size() == before_count,
+		"%s：卖掉买来的 T1 后装备位数量应保持 %d，实际 %d（分阶 %s）——少了就是误删了同类型的装备武器" % [
+			context, before_count, player.equipped_weapons.size(), str(after_tiers)])
+	_ok(after_tiers == [2, 2, 2],
+		"%s：装备里的三把 T2 必须一把不少，实际 %s" % [context, str(after_tiers)])
 
 
 # ─── 3. 出售武器必须精确命中指定那一把（压 R2）───

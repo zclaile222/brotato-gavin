@@ -515,13 +515,18 @@ func _on_buy_pressed(index: int, btn: Button, price_label: Label):
 	if item.type != "heal":
 		var bought = item.duplicate()
 		bought["paid_price"] = actual_price
-		# A4：记录购买来源，供精确出售。
-		#   1. slot_index —— 购买时所在商店卡槽。注意**只在当前这一波商店内有效**：
-		#      跨波次后开新商店会重掷，槽位含义完全不同，所以要配合 tier/weapon_type 兜底；
-		#   2. tier —— 武器分阶，配合 weapon_type 唯一确定「同类型不同阶」中的哪一把。
-		# PlayerUpgrades._find_weapon_slot_to_remove 的判据优先级是
-		# slot_index → type(+tier) → 第一个同类型，并且会在 slot_index 指向别的武器时安全降级。
-		bought["slot_index"] = index
+		# 出售定位信息（压 R2）。
+		#
+		# **这里刻意不写 slot_index。** 本函数的 index 是 current_items（商店卡槽）的
+		# 下标，而 PlayerUpgrades._find_weapon_slot_to_remove 把 slot_index 解释为
+		# equipped_weapons（装备位）的下标 —— 两个编号空间无关，撞号就会误删。
+		# 实例：装备位 2 是 smg T2，从商店卡槽 2 买 smg T1，卖这把 T1 时
+		# slot_index=2 会通过「下标界内 + 类型相符」的校验，直接删掉装备位 2 的 T2。
+		#
+		# 所以购买记录只留 weapon_type + tier，让底层走第 2 优先级（type + tier）匹配：
+		# 买来的 T1 与装备里的 T2 靠 tier 就能分开，不会误删同类型的其它武器。
+		# 需要 slot_index 精确定位的场景（同名同阶多把）由商店「已装备武器」行覆盖，
+		# 那里的 slot_index 是真实的 equipped_weapons 下标（见 _on_weapon_sell_pressed）。
 		if item.type == "weapon":
 			bought["weapon_type"] = item.get("weapon_type", "")
 			bought["tier"] = int(item.get("tier", rarity + 1))
