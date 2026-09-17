@@ -1375,8 +1375,15 @@ func _apply_passive_effect(upgrade) -> Array:
 # 为什么不能只按 type 匹配：玩家可能同时持有同类型的多把不同分阶武器（SMG T1 + SMG T2）。
 # 旧实现只比 type，会移除先遍历到的那把 —— 卖 T2 结果把 T1 卖掉了。
 #
+# 契约：`slot_index` 是 **equipped_weapons 的下标（装备位号）**，
+# 不是商店卡槽号（`Shop.current_items` 的下标）。两者是不同的空间，同号不代表同一把武器。
+# 历史上 `Shop.gd` 的购买路径曾把卡槽号写进这个键（已由生产端修复）。
+# 下面那句 type 校验（`p.equipped_weapons[int(slot_index)].type == wanted`）是唯一护栏 ——
+# 但它挡不住「同号且同类型」：那种情况会静默删掉另一个装备位，且不触发 tier 兜底。
+# 新增写入方前请先确认：你写的是装备位号。
+#
 # 判据优先级（越靠前越精确）：
-#   1. slot_index —— 购买时记录的具体格子，天然处理 tier 无法唯一确定的情况；
+#   1. slot_index —— 装备位号，天然处理 tier 无法唯一确定的情况；
 #   2. type 相等且（若给了 tier）tier 相等；
 #   3. 都不足以定位时（仅给 type），退回「第一个同类型」的旧行为，保持向后兼容。
 #
