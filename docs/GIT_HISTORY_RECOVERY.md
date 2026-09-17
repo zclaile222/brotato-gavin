@@ -99,6 +99,39 @@ OS 临时目录 / npm cache 临时目录 / npm cache 日志 / WorkBuddy 托管�
 - 测试：`tests/run_all.sh` → **PASS=27 FAIL=0**（2026-09-17 实测）
 - 远端：`https://github.com/zclaile222/brotato-gavin`（**Public**）
 
+---
+
+## 第三次风险事件（2026-09-17，未成灾，已消解）
+
+**形态**：本地对象库 `git count-objects -v` 报 **`count: 288, in-pack: 0, packs: 0`** ——
+288 个对象全部松散、**没有任何 pack**。这正是 9-15 那次事故的前置形态
+（「松散对象已删、pack 从未写成」）。当时远端尚停在 `a083d17`，
+而本地 6 个新提交（含本轮商店全部工作）**只存在于这一份对象库里**。
+
+**处置**（已执行）：
+
+1. `git config --local gc.auto 0` + `maintenance.auto false` —— 关掉可能触发对象回收的后台任务
+2. `git push origin master:main` —— 快进推送（`a083d17..9331b98`，无分叉）
+3. **独立验证**：`git clone` 到 `C:\Users\260311\_verify_clone_v2`，在克隆副本上跑
+   `tests/run_all.sh` → **PASS=30 FAIL=0**。这才算证明第二副本完整（只看 push 返回成功不算）。
+
+**同时发现的远端引用异常**（**尚未查明，留档**）：
+
+`git fetch origin` 报 `* [new branch] main -> origin/main`，但
+`refs/remotes/origin/` 目录**仍为空** —— `origin/` 子目录根本没被创建：
+
+```
+.git/refs/remotes:   (目录存在，内容为空)
+```
+
+后果：`git branch -vv` 恒显示 `[origin/main: gone]`，`git log origin/main..master`
+报 `unknown revision`。**本地数据未受影响**（`refs/heads/master` 正常写入），
+但**远端跟踪引用写不进盘**，需怀疑与 safe-delete 层拦截目录创建有关。
+
+> ⚠️ **本项目 `.git` 已三次出现异常，且每次形态不同。**
+> 任何涉及 `.git` 的操作前，先跑 `git count-objects -v` 看 `in-pack` 是否为 0，
+> 以及 `git fsck --no-progress` 是否干净。
+
 ## 教训
 
 1. **本机对象库不能是唯一副本。** 两次事故都证明了这一点 —— 有远端就是有安全网。
