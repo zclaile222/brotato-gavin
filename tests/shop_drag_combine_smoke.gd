@@ -2,11 +2,12 @@ extends SceneTree
 
 # 商店武器卡「拖拽合成 / 出售 / 锁定跨波次」冒烟测试
 #
-# 覆盖 4 项（对应任务书 A1-A5）：
+# 覆盖 5 项（对应任务书 A1-A5 与约定 R1）：
 #   1. 拖拽合成正向：两把同名同阶 → 走 _get_drag_data / _drop_data → 数量 -1 且剩者 tier +1；
 #   2. 拖拽合成反向：两把不同名 → 不合成、数量不变（防止「拖了就合」的过度实现）；
 #   3. 出售武器：卖出后武器从 equipped_weapons 消失，且删的是**指定那一把**（压 R2）；
-#   4. 锁定跨波次：open() → 锁槽 0 → _on_start_wave_pressed() → 再 open() → 槽 0 仍是原商品、价格未变。
+#   4. 锁定跨波次：open() → 锁槽 0 → _on_start_wave_pressed() → 再 open() → 槽 0 仍是原商品、价格未变；
+#   5. 约定 R1：商店 UI 的状态不得用 modulate 表达（A6 断言，详见第 5 节注释）。
 #
 # 写法约定（本项目测试硬约定）：
 #   - --headless 下直接调回调，不需要真实鼠标事件；拖放用
@@ -71,6 +72,7 @@ func _run():
 	_check_bought_weapon_entry_does_not_carry_card_slot()
 	_check_weapon_sell_targets_exact_slot()
 	_check_lock_survives_wave_cycle_with_frozen_price()
+	_check_shop_ui_does_not_use_modulate_for_state()
 
 	_cleanup()
 	_report()
@@ -669,6 +671,227 @@ func _check_lock_survives_wave_cycle_with_frozen_price():
 		"%s：开始下一波后 locked_indices 应清空，实际 %s" % [context, str(shop.locked_indices)])
 	_ok(shop.locked_prices.is_empty(),
 		"%s：开始下一波后 locked_prices 应清空，实际 %s" % [context, str(shop.locked_prices)])
+
+
+# ─── 5. 约定 R1：商店 UI 不得用 modulate 表达状态 ───
+#
+# 守的是什么：本项目硬约定 —— **状态只能表达在 border_color / bg_color / font_color 上，
+# 不许用 modulate**。原因是 modulate 是乘算且作用于整棵子树，会把子节点的文字一起压暗
+# （例如把「购买」按钮压暗的同时，按钮上的字也跟着糊掉），而 font_color 只影响文字本身。
+#
+# 断言模式直接沿用既有先例 tests/danger_model_smoke.gd:659：
+#     if tile.modulate != Color.WHITE:
+#         _fail("难度卡 Danger %d 用了 modulate 表达状态（会把文字一起压暗）")
+#
+# 为什么这条断言可靠：modulate 的默认值恒为 Color.WHITE。只要有任何一处 UI 用 modulate
+# 表达状态，那个控件的 modulate 就必然留下非白痕迹 —— 所以「必须等于 Color.WHITE」是
+# 一个不会误报的检查。（注意：硬约定禁的是**用 modulate 表达状态**，不是禁用这个属性；
+# 测试自身在别处用 modulate 表达透明度是合规的，见 phase1_main_scene_smoke.gd:121。）
+#
+# 覆盖范围：A6 改过的**每一类**商店控件，不能只挑一两个 ——
+#   锁定按钮 / 购买按钮 / reroll 按钮 / 升级（合成）按钮 / 商品卡本身（传说道具曾用
+#   modulate 循环补间做金色呼吸）。
+#
+# 防空转：每类控件都先做「确实找到了控件」的前置自检，避免因为控件没渲染出来
+# （数量为 0）而让循环体一次都不执行、断言静默通过。
+func _check_shop_ui_does_not_use_modulate_for_state():
+	var context := "5 约定 R1 禁 modulate 表达状态"
+	if shop == null:
+		failures.append("%s：shop 为空" % context)
+		return
+
+	# 装一把可合成的武器，保证升级区真的会渲染出「合成」按钮（而不是空列表）。
+	_clear_weapons()
+	_open_shop(500, context)
+	if not _open_shop(500, context):
+		return
+
+	# ── 5a 商品卡本身 + 卡内的锁定按钮、购买按钮 ──
+	# 商品卡即 item_cards 里的每个 PanelContainer。
+	_ok(shop.item_cards.size() > 0,
+		"%s：前置自检，item_cards 不应为空（否则下面的循环一次都不跑，断言会静默空转）" % context)
+	var checked_lock := 0
+	var checked_buy := 0
+	for card in shop.item_cards:
+		_ok_modulate_white(card, "%s 商品卡" % context)
+		var lock_btn: Button = shop._find_lock_button(card)
+		if lock_btn != null:
+			checked_lock += 1
+			_ok_modulate_white(lock_btn, "%s 锁定按钮" % context)
+		var buy_btn: Button = shop._find_buy_button(card)
+		if buy_btn != null:
+			checked_buy += 1
+			_ok_modulate_white(buy_btn, "%s 购买按钮" % context)
+
+	# 防空转自检：四张卡理应各有锁定/购买按钮，一个都没查到说明查找路径失效了。
+	_ok(checked_lock > 0,
+		"%s：前置自检，一张锁定按钮都没找到（_find_lock_button 路径失效），上面的断言不可信" % context)
+	_ok(checked_buy > 0,
+		"%s：前置自检，一张购买按钮都没找到（_find_buy_button 路径失效），上面的断言不可信" % context)
+
+	# ── 5b 升级区的「合成」按钮与卡片 ──
+	# 装备两把同名武器 → can_combine 为真 → 该卡的合成按钮 enabled，
+	# 这正是「曾用 modulate 变红」的那条分支（现在应走 font_color）。
+	_equip_many([[SAMPLE_WEAPON, 1], [SAMPLE_WEAPON, 1]], context)
+	shop._refresh_upgrade_area()
+
+	var up_cards := _collect_upgrade_cards()
+	_ok(up_cards.size() > 0,
+		"%s：前置自检，升级区应渲染出武器卡，实际 %d 张（否则升级按钮断言会空转）" % [
+			context, up_cards.size()])
+	var checked_up_btn := 0
+	for up_card in up_cards:
+		_ok_modulate_white(up_card, "%s 升级区卡片" % context)
+		var up_btn: Button = _find_combine_button(up_card)
+		if up_btn != null:
+			checked_up_btn += 1
+			_ok_modulate_white(up_btn, "%s 升级（合成）按钮" % context)
+	_ok(checked_up_btn > 0,
+		"%s：前置自检，升级区一个「合成」按钮都没找到，断言不可信" % context)
+
+	# ── 5c reroll 按钮 ──
+	var reroll_btn: Button = shop.get_node_or_null("Panel/ButtonRow/RerollButton")
+	_ok(reroll_btn != null,
+		"%s：前置自检，找不到 reroll 按钮（路径 Panel/ButtonRow/RerollButton）" % context)
+	if reroll_btn != null:
+		_ok_modulate_white(reroll_btn, "%s reroll 按钮" % context)
+
+	# ── 5e 购买按钮的**金币不足**分支 ──
+	# 这一条是变异验证补出来的：5a 只覆盖了「金币充足」路径，而 _set_buy_button_state
+	# 有两条分支各自改过 modulate（金币不足 / 无法合成）。只测充足那条，注入
+	# 「金币不足分支改回 modulate」的变异时断言不会变红 —— 等于没守住。
+	# 所以这里显式造出「金币不够」的状态，把另一条分支也钉住。
+	shop.player_gold = 0
+	shop._refresh_buy_buttons()
+	var checked_poor := 0
+	for card in shop.item_cards:
+		var poor_btn: Button = shop._find_buy_button(card)
+		if poor_btn != null:
+			checked_poor += 1
+			_ok_modulate_white(poor_btn, "%s 购买按钮（金币不足态）" % context)
+	_ok(checked_poor > 0,
+		"%s：前置自检，金币不足态下一张购买按钮都没找到，断言不可信" % context)
+	# 前置自检：确认这次真的落到了「金币不足」分支（按钮被禁用），
+	# 否则上面的断言查的还是充足态，等于白查。
+	var any_disabled := false
+	for card in shop.item_cards:
+		var b: Button = shop._find_buy_button(card)
+		if b != null and b.disabled:
+			any_disabled = true
+			break
+	_ok(any_disabled,
+		"%s：前置自检，金币置 0 后应有购买按钮进入 disabled 态（证明走到了金币不足/无法购买分支）" % context)
+
+	# ── 5f 购买按钮的**无法合成**分支 ──
+	# _set_buy_button_state 的第三条改过 modulate 的分支：武器槽已满且无法合成。
+	# 把商店全摆成武器、装备位塞满且互不可合成，逼出 btn.text == "无法合成" 这条路径。
+	# 不测它的话，「无法合成分支改回 modulate」的变异同样不会变红。
+	_clear_weapons()
+	for _slot in range(player.get_max_weapon_slots()):
+		var filler = player.combat._make_weapon(OTHER_WEAPON, 4)
+		if filler == null:
+			failures.append("%s：前置自检失败，无法构造占位武器 %s T4" % [context, OTHER_WEAPON])
+			return
+		player.equipped_weapons.append(filler)
+	player.combat.emit_weapons_changed()
+	if player.equipped_weapons.size() != player.get_max_weapon_slots():
+		failures.append("%s：前置自检失败，装备位应塞满 %d 个，实际 %d 个" % [
+			context, player.get_max_weapon_slots(), player.equipped_weapons.size()])
+		return
+
+	# 商店全摆不可合成的武器（OTHER_WEAPON T4 与占位武器同类型同阶 —— 但装备位已满，
+	# 且槽内武器与占位武器同阶会导致 can_combine 为真，所以改用另一种武器）。
+	var blocked_item := {
+		"name": str(player.combat.WEAPON_DATA[SAMPLE_WEAPON].get("name", SAMPLE_WEAPON)),
+		"type": "weapon",
+		"weapon_type": SAMPLE_WEAPON,
+		"tier": 1,
+		"price": 10,
+		"rarity": 0,
+	}
+	for i in range(shop.current_items.size()):
+		shop.current_items[i] = blocked_item.duplicate()
+	shop._build_item_cards()
+	shop.player_gold = 500
+	shop._refresh_buy_buttons()
+
+	var blocked_found := 0
+	for card in shop.item_cards:
+		var bb: Button = shop._find_buy_button(card)
+		if bb == null:
+			continue
+		if bb.text == "无法合成":
+			blocked_found += 1
+		_ok_modulate_white(bb, "%s 购买按钮（无法合成态）" % context)
+	_ok(blocked_found > 0,
+		"%s：前置自检，应有购买按钮进入「无法合成」态（否则这条分支没被覆盖，断言等于白查）" % context)
+
+	# ── 5d 传说道具卡：曾用 modulate 循环补间做金色呼吸，现改为 border_color 脉冲 ──
+	# 直接构造一张 rarity=3 的卡来验证 —— 不依赖随机掷出传说，避免用例偶发空转。
+	# 断言两件事：① modulate 必须为白；② 金色效果确实落在 StyleBoxFlat.border_color 上。
+	var legendary := {
+		"name": "传说测试道具",
+		"desc": "仅用于断言",
+		"price": 100,
+		"rarity": 3,
+		"type": "item",
+	}
+	var legend_card: Control = shop._make_card(legendary, 0)
+	if legend_card == null:
+		failures.append("%s：前置自检失败，_make_card(rarity=3) 返回 null" % context)
+		return
+	shop.add_child(legend_card)
+	_ok_modulate_white(legend_card, "%s 传说道具卡" % context)
+
+	# 金色呼吸必须打在 border_color 上（这是「改用 border_color 表达」的正面证据，
+	# 与上面的 modulate==WHITE 互补：一个查旧写法没留痕，一个查新写法确实生效）。
+	if legend_card is PanelContainer:
+		var style = legend_card.get_theme_stylebox("panel")
+		_ok(style is StyleBoxFlat,
+			"%s：传说道具卡的 panel stylebox 应是 StyleBoxFlat（否则 border_color 补间无从谈起），实际 %s" % [
+				context, str(style)])
+		if style is StyleBoxFlat:
+			_ok(style.border_width_left > 0,
+				"%s：传说道具卡应有边框宽度（金色脉冲的载体），实际 border_width_left=%d" % [
+					context, style.border_width_left])
+	legend_card.free()
+
+
+# 断言某控件的 modulate 必须恒为 Color.WHITE（即没有用它表达状态）。
+# 用 is_equal_approx 逐通道比较：Color 的 == 在浮点下对 nearly-white 数值比较严格，
+# 但默认值就是精确的 Color.WHITE，所以严格相等也成立；这里用近似比较避免误报。
+func _ok_modulate_white(control: Control, label: String):
+	if control == null:
+		failures.append("%s：控件为空，无法检查 modulate" % label)
+		return
+	checks += 1
+	var m: Color = control.modulate
+	if not (is_equal_approx(m.r, 1.0) and is_equal_approx(m.g, 1.0) \
+			and is_equal_approx(m.b, 1.0) and is_equal_approx(m.a, 1.0)):
+		failures.append("%s 用了 modulate 表达状态（会把子节点文字一起压暗，违反约定 R1）：%s" % [
+			label, str(m)])
+
+
+# 升级区里除标题外的 PanelContainer 即武器卡（第 0 个是「武器合成」标题 Label）。
+func _collect_upgrade_cards() -> Array:
+	var out: Array = []
+	if shop == null or shop.upgrade_hbox == null:
+		return out
+	for child in shop.upgrade_hbox.get_children():
+		if child is PanelContainer:
+			out.append(child)
+	return out
+
+
+# 合成按钮没有 meta 标记（A6 没给它加），按文字识别。
+func _find_combine_button(node: Node) -> Button:
+	if node is Button and node.text == "合成":
+		return node
+	for child in node.get_children():
+		var found := _find_combine_button(child)
+		if found != null:
+			return found
+	return null
 
 
 # ─── 收尾与报告 ───
