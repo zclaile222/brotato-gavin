@@ -7,15 +7,21 @@
 //    所以本驱动器在跑套件**之前**先确认变异代码能被 Godot 解析，
 //    解析不过就立刻 restore、把本次验证标记为「无效」而不是「通过」。
 //
-// 用法：node tools/run_mutation.cjs <kind> [res://tests/xxx.gd]
+// 用法：node tools/run_mutation.cjs <kind> [res://tests/xxx.gd] [变异器.cjs] [被变异脚本.gd]
+//   后两个参数可选，默认走商店那一路（保持既有调用方式不变）。
+//   战斗侧示例：node tools/run_mutation.cjs no-prune \
+//                 res://tests/combat_stale_enemy_reference_smoke.gd \
+//                 tools/mutate_combat.cjs scripts/PlayerCombat.gd
 const { spawnSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
 const ROOT = 'G:/ClaudeCode/Godot/brotato-gavin';
 const GODOT = 'G:/AICoder/Brotato/godot-4.6.1-clean/Godot_v4.6.1-stable_win64_console.exe';
-const SHOP = path.join(ROOT, 'scripts/Shop.gd');
-const MUTATOR = path.join(ROOT, 'tools/mutate_shop.cjs');
+// 变异器模块与其**被变异的目标脚本**（目标只用于最后的残留校验）。
+// 默认是商店那一路；换一路时由命令行第 4/5 个参数指定。
+const MUTATOR = path.join(ROOT, process.argv[4] || 'tools/mutate_shop.cjs');
+const TARGET = path.join(ROOT, process.argv[5] || 'scripts/Shop.gd');
 
 const kind = process.argv[2];
 const suite = process.argv[3] || 'res://tests/shop_layout_smoke.gd';
@@ -63,7 +69,7 @@ say('套件判定：' + verdict.trim());
 // ── 4. 恢复 + 残留校验
 const rst = mutator('restore');
 say((rst.stdout || rst.stderr).trim());
-const residual = (fs.readFileSync(SHOP, 'utf8').match(/TEMP-MUTATION/g) || []).length;
+const residual = (fs.readFileSync(TARGET, 'utf8').match(/TEMP-MUTATION/g) || []).length;
 say('残留 marker=' + residual);
 
 if (residual !== 0) {

@@ -33,6 +33,21 @@ extends SceneTree
 # 但它的后果是可观测的：属性访问失败会**中断 fire_weapon**，于是剪枝根本不会发生。
 # 因此核心断言落在「调用后缓存里的失效引用数量」上 ——
 # 修复前该断言必然失败，且失败报文会指向输出里那条 SCRIPT ERROR。
+#
+# ── 变异验证记录（2026-09-17，tools/run_mutation.cjs + tools/mutate_combat.cjs 实跑）──
+#   | 变异                 | 编译自检 | 退出码 | 结论        |
+#   |----------------------|---------|--------|-------------|
+#   | no-prune             |  通过   |   1    | 捕获（3 项）|
+#   | fire-use-raw-cache   |  通过   |   1    | 捕获（3 项）|
+#   两条都会复现出与玩家相同的 SCRIPT ERROR（previously freed at fire_weapon）。
+#   恢复后 `git diff` 为空 —— 证明恢复是逐字节的，不是「看起来好了」。
+#
+# ── ⚠️ 已知覆盖缺口（如实登记，别当成已覆盖）──
+# `_fire_melee()` 里的 `is_instance_valid` 守卫**没有专属断言**。
+# 它防的是「循环中途清场」（打死 A 时连带释放了列表里后面的 B），
+# 而这依赖命中附带效果的具体组合，难以稳定构造 —— 硬造出来的夹具会变成 flaky 的赌注。
+# 它目前只由**代码注释 + 变异器注释**间接保护。
+# **改动那段循环时请手工确认：仍然只对有效实例读 `.position`。**
 
 const PASS_TAG := "COMBAT_STALE_ENEMY_REFERENCE_SMOKE_PASS"
 const FAIL_TAG := "COMBAT_STALE_ENEMY_REFERENCE_SMOKE_FAIL"
