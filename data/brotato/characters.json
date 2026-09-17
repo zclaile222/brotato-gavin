@@ -1,0 +1,4497 @@
+[
+  {
+    "id": "well_rounded",
+    "source_name": "Well Rounded",
+    "display_name": "八面玲珑",
+    "runtime_aliases": [
+      "normal"
+    ],
+    "is_dlc": false,
+    "unlock": {
+      "type": "default"
+    },
+    "unlocks": [
+      {
+        "type": "item",
+        "id": "potato"
+      }
+    ],
+    "wanted_tags": [
+      "max_hp"
+    ],
+    "starting_weapons": [
+      "pistol"
+    ],
+    "starting_weapon_options": [
+      "knife",
+      "stick",
+      "fist",
+      "cacti_club",
+      "wrench",
+      "pistol",
+      "smg",
+      "double_barrel_shotgun",
+      "taser",
+      "wand"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "max_hp": 5,
+      "speed_percent": 0.05,
+      "harvesting": 8
+    },
+    "rules": [
+      {
+        "effect": "stat_delta",
+        "stat": "max_hp",
+        "value": 5
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "speed_percent",
+        "value": 0.05
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "harvesting",
+        "value": 8
+      }
+    ],
+    "implementation_notes": "Default seed character; runtime alias keeps current normal path compatible."
+  },
+  {
+    "id": "brawler",
+    "source_name": "Brawler",
+    "display_name": "拳手",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "default"
+    },
+    "unlocks": [
+      {
+        "type": "weapon",
+        "id": "power_fist"
+      }
+    ],
+    "wanted_tags": [
+      "melee_damage"
+    ],
+    "starting_weapons": [
+      "fist"
+    ],
+    "starting_weapon_options": [
+      "fist",
+      "hand"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "dodge": 0.15,
+      "range": -50,
+      "ranged_damage": -50
+    },
+    "rules": [
+      {
+        "effect": "stat_delta",
+        "stat": "dodge",
+        "value": 0.15
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "range",
+        "value": -50
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "ranged_damage",
+        "value": -50
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "unarmed_attack_speed_plus_50"
+      }
+    ],
+    "implementation_notes": "Catalog row present; unarmed-specific attack speed rule is not fully wired."
+  },
+  {
+    "id": "crazy",
+    "source_name": "Crazy",
+    "display_name": "狂人",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "default"
+    },
+    "unlocks": [
+      {
+        "type": "item",
+        "id": "hunting_trophy"
+      }
+    ],
+    "wanted_tags": [
+      "crit_chance",
+      "melee_damage"
+    ],
+    "starting_weapons": [
+      "knife"
+    ],
+    "starting_weapon_options": [
+      "knife"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "attack_speed_percent": 25,
+      "dodge": -0.3,
+      "engineering": -10,
+      "ranged_damage": -10
+    },
+    "rules": [
+      {
+        "effect": "stat_delta",
+        "stat": "attack_speed_percent",
+        "value": 25
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "dodge",
+        "value": -0.3
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "engineering",
+        "value": -10
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "ranged_damage",
+        "value": -10
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "precise_range_plus_100"
+      }
+    ],
+    "implementation_notes": "Catalog row present; precise weapon conditional range is pending."
+  },
+  {
+    "id": "ranger",
+    "source_name": "Ranger",
+    "display_name": "游侠",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "default"
+    },
+    "unlocks": [
+      {
+        "type": "item",
+        "id": "night_goggles"
+      }
+    ],
+    "wanted_tags": [
+      "ranged_damage",
+      "range"
+    ],
+    "starting_weapons": [
+      "pistol"
+    ],
+    "starting_weapon_options": [
+      "pistol",
+      "smg",
+      "revolver",
+      "laser_gun",
+      "double_barrel_shotgun",
+      "shredder"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "range": 50
+    },
+    "rules": [
+      {
+        "effect": "stat_delta",
+        "stat": "range",
+        "value": 50
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "ranged_damage",
+        "multiplier": 1.5
+      },
+      {
+        "effect": "forbid_weapon_group",
+        "group": "melee"
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "max_hp",
+        "multiplier": 0.75
+      }
+    ],
+    "implementation_notes": "Catalog row present; weapon restriction can be queried through BrotatoData."
+  },
+  {
+    "id": "mage",
+    "source_name": "Mage",
+    "display_name": "法师",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "default"
+    },
+    "unlocks": [
+      {
+        "type": "weapon",
+        "id": "thunder_sword"
+      }
+    ],
+    "wanted_tags": [
+      "elemental_damage"
+    ],
+    "starting_weapons": [
+      "wand"
+    ],
+    "starting_weapon_options": [
+      "wand",
+      "taser"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [
+      "snake",
+      "scared_sausage"
+    ],
+    "base_stats": {},
+    "rules": [
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "elemental_damage",
+        "multiplier": 1.25
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "melee_damage",
+        "multiplier": 0
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "ranged_damage",
+        "multiplier": 0
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "engineering",
+        "multiplier": 0.5
+      },
+      {
+        "effect": "starting_item",
+        "item_id": "snake",
+        "count": 1
+      },
+      {
+        "effect": "starting_item",
+        "item_id": "scared_sausage",
+        "count": 1
+      }
+    ],
+    "implementation_notes": "Catalog row present; fixed starting items are modeled but not runtime-applied."
+  },
+  {
+    "id": "chunky",
+    "source_name": "Chunky",
+    "display_name": "壮汉",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "die_once"
+    },
+    "unlocks": [
+      {
+        "type": "weapon",
+        "id": "potato_thrower"
+      }
+    ],
+    "wanted_tags": [
+      "max_hp",
+      "luck",
+      "consumable"
+    ],
+    "starting_weapons": [
+      "fist"
+    ],
+    "starting_weapon_options": [
+      "fist",
+      "cacti_club",
+      "rock",
+      "stick",
+      "torch",
+      "plank",
+      "chopper",
+      "pruner",
+      "spiky_shield",
+      "double_barrel_shotgun",
+      "taser",
+      "ghost_scepter",
+      "shredder",
+      "revolver",
+      "spoon"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {},
+    "rules": [
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "max_hp",
+        "multiplier": 1.25
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "damage_percent_plus_1_per_3_max_hp"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "consumable_heal",
+        "value": 3
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "lifesteal",
+        "value": -1.0
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "hp_regeneration",
+        "multiplier": 0.5
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "dodge",
+        "multiplier": 0.5
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "speed_percent",
+        "multiplier": 0.0
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. Max-HP damage scaling and consumable heal bonus are pending runtime behavior."
+  },
+  {
+    "id": "old",
+    "source_name": "Old",
+    "display_name": "老头",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "kill_300_enemies"
+    },
+    "unlocks": [
+      {
+        "type": "item",
+        "id": "snail"
+      }
+    ],
+    "wanted_tags": [
+      "less_enemies",
+      "less_enemy_speed"
+    ],
+    "starting_weapons": [
+      "scissors"
+    ],
+    "starting_weapon_options": [
+      "scissors",
+      "screwdriver",
+      "wrench",
+      "rock",
+      "plank",
+      "chopper",
+      "pruner",
+      "double_barrel_shotgun",
+      "revolver",
+      "taser",
+      "wand",
+      "icicle",
+      "lute",
+      "sickle"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "harvesting": 10,
+      "speed_percent": -0.1,
+      "enemy_speed_percent": -0.25,
+      "map_size_percent": -0.33,
+      "enemies_percent": -0.1
+    },
+    "rules": [
+      {
+        "effect": "stat_delta",
+        "stat": "enemy_speed_percent",
+        "value": -0.25
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "harvesting",
+        "value": 10
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "map_size_percent",
+        "value": -0.33
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "enemies_percent",
+        "value": -0.1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "speed_percent",
+        "value": -0.1
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. Map-size and enemy-count modifiers are pending runtime behavior."
+  },
+  {
+    "id": "mutant",
+    "source_name": "Mutant",
+    "display_name": "变异体",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "kill_2000_enemies"
+    },
+    "unlocks": [
+      {
+        "type": "item",
+        "id": "octopus"
+      }
+    ],
+    "wanted_tags": [
+      "xp_gain"
+    ],
+    "starting_weapons": [
+      "cacti_club"
+    ],
+    "starting_weapon_options": [
+      "cacti_club",
+      "ghost_axe",
+      "stick",
+      "quarterstaff",
+      "rock",
+      "plank",
+      "lightning_shiv",
+      "double_barrel_shotgun",
+      "smg",
+      "revolver",
+      "shredder",
+      "crossbow",
+      "taser",
+      "wand",
+      "icicle",
+      "brick"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "xp_required_multiplier": 0.34,
+      "item_price_percent": 0.5
+    },
+    "rules": [
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "xp_required",
+        "multiplier": 0.34
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "item_price_percent",
+        "value": 0.5
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. XP requirement and shop price modifiers are pending runtime behavior."
+  },
+  {
+    "id": "generalist",
+    "source_name": "Generalist",
+    "display_name": "通才",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "collect_2000_materials"
+    },
+    "unlocks": [
+      {
+        "type": "item",
+        "id": "big_arms"
+      }
+    ],
+    "wanted_tags": [
+      "melee_damage",
+      "ranged_damage"
+    ],
+    "starting_weapons": [
+      "fist"
+    ],
+    "starting_weapon_options": [
+      "fist",
+      "cacti_club",
+      "ghost_axe",
+      "ghost_flint",
+      "lightning_shiv",
+      "knife",
+      "scissors",
+      "spear",
+      "shuriken",
+      "double_barrel_shotgun",
+      "smg",
+      "shredder",
+      "revolver",
+      "laser_gun",
+      "slingshot",
+      "ghost_scepter",
+      "javelin"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {},
+    "rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "melee_damage_to_ranged_damage_conversion"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "ranged_damage_to_melee_damage_conversion"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "max_3_melee_and_3_ranged_weapons"
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. Cross-stat conversions and weapon-slot restrictions are pending runtime behavior."
+  },
+  {
+    "id": "loud",
+    "source_name": "Loud",
+    "display_name": "大嗓门",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "kill_5000_enemies"
+    },
+    "unlocks": [
+      {
+        "type": "item",
+        "id": "rip_and_tear"
+      }
+    ],
+    "wanted_tags": [
+      "more_enemies"
+    ],
+    "starting_weapons": [
+      "cacti_club"
+    ],
+    "starting_weapon_options": [
+      "cacti_club",
+      "ghost_axe",
+      "ghost_flint",
+      "lightning_shiv",
+      "thief_dagger",
+      "claw",
+      "spear",
+      "torch",
+      "rock",
+      "hatchet",
+      "plank",
+      "wrench",
+      "jousting_lance",
+      "quarterstaff",
+      "pruner",
+      "screwdriver",
+      "double_barrel_shotgun",
+      "pistol",
+      "smg",
+      "shredder",
+      "icicle",
+      "shuriken",
+      "slingshot",
+      "crossbow",
+      "javelin"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "damage_percent": 0.3,
+      "enemies_percent": 0.5
+    },
+    "rules": [
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": 0.3
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "enemies_percent",
+        "value": 0.5
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "harvesting_end_of_wave",
+        "value": -3
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. Enemy-count and wave-end harvesting modifiers are pending runtime behavior."
+  },
+  {
+    "id": "multitasker",
+    "source_name": "Multitasker",
+    "display_name": "多面手",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "collect_5000_materials"
+    },
+    "unlocks": [
+      {
+        "type": "weapon",
+        "id": "chopper"
+      }
+    ],
+    "wanted_tags": [],
+    "starting_weapons": [
+      "cacti_club"
+    ],
+    "starting_weapon_options": [
+      "cacti_club",
+      "fist",
+      "claw",
+      "knife",
+      "spear",
+      "stick",
+      "quarterstaff",
+      "lightning_shiv",
+      "screwdriver",
+      "wrench",
+      "ghost_flint",
+      "ghost_axe",
+      "plank",
+      "chopper",
+      "hatchet",
+      "jousting_lance",
+      "pruner",
+      "rock",
+      "spiky_shield",
+      "sharp_tooth",
+      "double_barrel_shotgun",
+      "smg",
+      "revolver",
+      "laser_gun",
+      "wand",
+      "icicle",
+      "slingshot",
+      "taser",
+      "shuriken",
+      "crossbow",
+      "hiking_pole",
+      "lute"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "damage_percent": 0.2
+    },
+    "rules": [
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": 0.2
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "max_12_weapons_damage_penalty_per_weapon"
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. Expanded weapon capacity and per-weapon damage penalty are pending runtime behavior."
+  },
+  {
+    "id": "wildling",
+    "source_name": "Wildling",
+    "display_name": "野人",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "kill_10000_enemies"
+    },
+    "unlocks": [
+      {
+        "type": "weapon",
+        "id": "hatchet"
+      }
+    ],
+    "wanted_tags": [],
+    "starting_weapons": [
+      "stick"
+    ],
+    "starting_weapon_options": [
+      "stick",
+      "spear",
+      "torch",
+      "rock",
+      "cacti_club",
+      "hatchet",
+      "quarterstaff",
+      "sharp_tooth"
+    ],
+    "fixed_starting_weapons": [
+      "stick"
+    ],
+    "fixed_starting_items": [],
+    "base_stats": {},
+    "rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "primitive_weapons_lifesteal_plus_30"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "fixed_starting_stick"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "cannot_equip_weapons_above_tier_2"
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. Primitive-only lifesteal and tier cap are pending runtime behavior."
+  },
+  {
+    "id": "gladiator",
+    "source_name": "Gladiator",
+    "display_name": "角斗士",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "kill_20000_enemies"
+    },
+    "unlocks": [
+      {
+        "type": "item",
+        "id": "spider"
+      }
+    ],
+    "wanted_tags": [
+      "melee_damage"
+    ],
+    "starting_weapons": [
+      "spear"
+    ],
+    "starting_weapon_options": [
+      "spear",
+      "jousting_lance",
+      "cacti_club",
+      "torch",
+      "thief_dagger",
+      "knife",
+      "plank",
+      "ghost_axe",
+      "ghost_flint",
+      "sharp_tooth",
+      "fist",
+      "claw",
+      "quarterstaff",
+      "hatchet",
+      "lightning_shiv"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "melee_damage": 5,
+      "attack_speed_percent": -40,
+      "luck": -30
+    },
+    "rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "attack_speed_plus_20_per_distinct_weapon"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "melee_damage",
+        "value": 5
+      },
+      {
+        "effect": "forbid_weapon_group",
+        "group": "gun"
+      },
+      {
+        "effect": "forbid_weapon_group",
+        "group": "ranged"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "attack_speed_percent",
+        "value": -40
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "luck",
+        "value": -30
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. Distinct-weapon attack speed and ranged weapon restriction are pending full runtime behavior."
+  },
+  {
+    "id": "sick",
+    "source_name": "Sick",
+    "display_name": "病人",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "reach_minus_5_hp_regeneration"
+    },
+    "unlocks": [
+      {
+        "type": "item",
+        "id": "whetstone"
+      }
+    ],
+    "wanted_tags": [
+      "lifesteal"
+    ],
+    "starting_weapons": [
+      "fist"
+    ],
+    "starting_weapon_options": [
+      "fist",
+      "scissors",
+      "hatchet",
+      "ghost_flint",
+      "cacti_club",
+      "lightning_shiv",
+      "sharp_tooth",
+      "pruner",
+      "ghost_scepter",
+      "slingshot",
+      "smg",
+      "medical_gun",
+      "sickle"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "max_hp": 12,
+      "lifesteal": 0.25,
+      "hp_regeneration": -100
+    },
+    "rules": [
+      {
+        "effect": "stat_delta",
+        "stat": "max_hp",
+        "value": 12
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "lifesteal",
+        "value": 0.25
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "take_1_damage_per_second_no_iframes"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "hp_regeneration",
+        "value": -100
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. Self-damage without invulnerability frames is pending runtime behavior."
+  },
+  {
+    "id": "farmer",
+    "source_name": "Farmer",
+    "display_name": "农夫",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "reach_plus_200_harvesting"
+    },
+    "unlocks": [
+      {
+        "type": "item",
+        "id": "wheat"
+      }
+    ],
+    "wanted_tags": [
+      "harvesting",
+      "consumable"
+    ],
+    "starting_weapons": [
+      "hand"
+    ],
+    "starting_weapon_options": [
+      "hand",
+      "spear",
+      "stick",
+      "torch",
+      "quarterstaff",
+      "screwdriver",
+      "pruner",
+      "thief_dagger",
+      "wrench",
+      "taser",
+      "wand",
+      "double_barrel_shotgun",
+      "slingshot",
+      "potato_thrower",
+      "lute",
+      "sickle"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "harvesting": 20,
+      "materials_dropped_percent": -0.5
+    },
+    "rules": [
+      {
+        "effect": "stat_delta",
+        "stat": "harvesting",
+        "value": 20
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "harvesting_growth_plus_3_percent_end_wave"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "harvesting_on_full_health_consumable",
+        "value": 1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "materials_dropped_percent",
+        "value": -0.5
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. Harvesting growth and material-drop modifier are pending runtime behavior."
+  },
+  {
+    "id": "ghost",
+    "source_name": "Ghost",
+    "display_name": "幽灵",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "reach_plus_60_dodge"
+    },
+    "unlocks": [
+      {
+        "type": "item",
+        "id": "ritual"
+      }
+    ],
+    "wanted_tags": [
+      "dodge"
+    ],
+    "starting_weapons": [
+      "ghost_flint"
+    ],
+    "starting_weapon_options": [
+      "ghost_flint",
+      "ghost_axe",
+      "ghost_scepter"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "dodge": 0.3,
+      "armor": -100
+    },
+    "rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "ethereal_weapons_damage_plus_10"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "dodge",
+        "value": 0.3
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "dodge_cap_90_percent"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "armor",
+        "value": -100
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. Ethereal damage bonus and dodge cap are pending runtime behavior."
+  },
+  {
+    "id": "speedy",
+    "source_name": "Speedy",
+    "display_name": "飞毛腿",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "reach_plus_50_speed"
+    },
+    "unlocks": [
+      {
+        "type": "item",
+        "id": "fin"
+      }
+    ],
+    "wanted_tags": [
+      "speed"
+    ],
+    "starting_weapons": [
+      "fist"
+    ],
+    "starting_weapon_options": [
+      "fist",
+      "claw",
+      "knife",
+      "thief_dagger",
+      "stick",
+      "spear",
+      "quarterstaff",
+      "jousting_lance",
+      "screwdriver",
+      "ghost_flint",
+      "pruner",
+      "shuriken",
+      "hiking_pole",
+      "javelin"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "speed_percent": 0.3,
+      "armor": -3
+    },
+    "rules": [
+      {
+        "effect": "stat_delta",
+        "stat": "speed_percent",
+        "value": 0.3
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "melee_damage_plus_1_per_2_speed_percent"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "armor_minus_100_while_standing_still"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "armor",
+        "value": -3
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. Speed-to-melee scaling and standing-still armor penalty are pending runtime behavior."
+  },
+  {
+    "id": "lucky",
+    "source_name": "Lucky",
+    "display_name": "幸运儿",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "collect_300_materials"
+    },
+    "unlocks": [
+      {
+        "type": "item",
+        "id": "lucky_charm"
+      }
+    ],
+    "wanted_tags": [
+      "luck",
+      "pickup",
+      "exploration"
+    ],
+    "starting_weapons": [
+      "stick"
+    ],
+    "starting_weapon_options": [
+      "stick",
+      "rock",
+      "fist",
+      "chopper",
+      "plank",
+      "screwdriver",
+      "jousting_lance",
+      "torch",
+      "pruner",
+      "slingshot",
+      "wand",
+      "icicle",
+      "lute",
+      "flute"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "luck": 100,
+      "attack_speed_percent": -60,
+      "xp_gain_percent": -0.5
+    },
+    "rules": [
+      {
+        "effect": "stat_delta",
+        "stat": "luck",
+        "value": 100
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "luck",
+        "multiplier": 1.25
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "material_pickup_luck_damage",
+        "chance": 0.75,
+        "base_damage": 1,
+        "luck_coefficient": 0.15
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "attack_speed_percent",
+        "value": -60
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "xp_gain_percent",
+        "value": -0.5
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. Material-pickup luck damage and luck modification scaling are pending runtime behavior."
+  },
+  {
+    "id": "pacifist",
+    "source_name": "Pacifist",
+    "display_name": "和平主义者",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "collect_10000_materials"
+    },
+    "unlocks": [
+      {
+        "type": "item",
+        "id": "panda"
+      }
+    ],
+    "wanted_tags": [
+      "max_hp",
+      "hp_regeneration",
+      "armor"
+    ],
+    "starting_weapons": [
+      "hand"
+    ],
+    "starting_weapon_options": [
+      "hand",
+      "taser",
+      "pruner"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [
+      "lumberjack_shirt"
+    ],
+    "base_stats": {
+      "damage_percent": -1.0,
+      "engineering": -100
+    },
+    "rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "gain_0_65_material_and_xp_per_living_enemy_end_wave",
+        "reward_per_living_enemy": 0.65
+      },
+      {
+        "effect": "starting_item",
+        "item_id": "lumberjack_shirt",
+        "count": 1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": -1.0
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "engineering",
+        "value": -100
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. Living-enemy wave-end reward and fixed starting item application are pending runtime behavior."
+  },
+  {
+    "id": "saver",
+    "source_name": "Saver",
+    "display_name": "节俭者",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "collect_20000_materials"
+    },
+    "unlocks": [
+      {
+        "type": "item",
+        "id": "padding"
+      }
+    ],
+    "wanted_tags": [],
+    "starting_weapons": [
+      "fist"
+    ],
+    "starting_weapon_options": [
+      "fist",
+      "chopper",
+      "thief_dagger",
+      "ghost_flint",
+      "pruner",
+      "lightning_shiv",
+      "cacti_club",
+      "spear",
+      "pistol",
+      "revolver",
+      "laser_gun",
+      "taser",
+      "wand",
+      "icicle",
+      "lute",
+      "sickle"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [
+      "piggy_bank"
+    ],
+    "base_stats": {
+      "harvesting": 15,
+      "item_price_percent": 0.5,
+      "weapon_price_percent": 0.5
+    },
+    "rules": [
+      {
+        "effect": "stat_delta",
+        "stat": "harvesting",
+        "value": 15
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "damage_percent_plus_1_per_25_materials"
+      },
+      {
+        "effect": "starting_item",
+        "item_id": "piggy_bank",
+        "count": 1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "item_price_percent",
+        "value": 0.5
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "weapon_price_percent",
+        "value": 0.5
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. Materials-to-damage scaling, weapon price modifier, and Piggy Bank runtime effect are pending."
+  },
+  {
+    "id": "entrepreneur",
+    "source_name": "Entrepreneur",
+    "display_name": "企业家",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "hold_3000_materials"
+    },
+    "unlocks": [
+      {
+        "type": "item",
+        "id": "bowler_hat"
+      }
+    ],
+    "wanted_tags": [
+      "harvesting",
+      "economy"
+    ],
+    "starting_weapons": [
+      "hand"
+    ],
+    "starting_weapon_options": [
+      "fist",
+      "claw",
+      "hand",
+      "knife",
+      "thief_dagger",
+      "pruner",
+      "quarterstaff",
+      "hatchet",
+      "ghost_flint",
+      "wrench",
+      "plank",
+      "pistol",
+      "double_barrel_shotgun",
+      "taser",
+      "shuriken",
+      "crossbow",
+      "icicle",
+      "hiking_pole",
+      "lute",
+      "sickle"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "item_price_percent": -0.25,
+      "recycle_materials_percent": 0.25,
+      "start_wave_materials_percent": -1.0
+    },
+    "rules": [
+      {
+        "effect": "stat_delta",
+        "stat": "item_price_percent",
+        "value": -0.25
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "harvesting",
+        "multiplier": 1.5
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "recycle_materials_percent",
+        "value": 0.25
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "start_wave_materials_percent",
+        "value": -1.0
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "damage_percent",
+        "multiplier": 0.5
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. Harvesting modification scaling, recycling bonus, and start-wave material drain are pending runtime behavior."
+  },
+  {
+    "id": "engineer",
+    "source_name": "Engineer",
+    "display_name": "工程师",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "get_5_turrets_simultaneously"
+    },
+    "unlocks": [
+      {
+        "type": "item",
+        "id": "robot_arm"
+      }
+    ],
+    "wanted_tags": [
+      "engineering",
+      "structure"
+    ],
+    "starting_weapons": [
+      "wrench"
+    ],
+    "starting_weapon_options": [
+      "wrench",
+      "screwdriver",
+      "plank",
+      "hammer"
+    ],
+    "fixed_starting_weapons": [
+      "wrench"
+    ],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "engineering": 10
+    },
+    "rules": [
+      {
+        "effect": "stat_delta",
+        "stat": "engineering",
+        "value": 10
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "engineering",
+        "multiplier": 1.25
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "fixed_starting_wrench"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "structures_spawn_close_to_each_other"
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "damage_percent",
+        "multiplier": 0.5
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. Fixed extra Wrench, structure clustering, and engineering scaling are pending runtime behavior."
+  },
+  {
+    "id": "explorer",
+    "source_name": "Explorer",
+    "display_name": "探险家",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "kill_50_trees"
+    },
+    "unlocks": [
+      {
+        "type": "item",
+        "id": "compass"
+      }
+    ],
+    "wanted_tags": [
+      "speed",
+      "exploration",
+      "consumable"
+    ],
+    "starting_weapons": [
+      "hand"
+    ],
+    "starting_weapon_options": [
+      "hand",
+      "cacti_club",
+      "screwdriver",
+      "thief_dagger",
+      "wrench",
+      "stick",
+      "torch",
+      "chopper",
+      "plank",
+      "hatchet",
+      "jousting_lance",
+      "ghost_axe",
+      "crossbow",
+      "shredder",
+      "taser",
+      "wand",
+      "hiking_pole",
+      "spoon"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [
+      "lumberjack_shirt"
+    ],
+    "base_stats": {
+      "speed_percent": 0.1,
+      "pickup_range_percent": 0.5,
+      "map_size_percent": 0.33,
+      "enemies_percent": 0.25,
+      "materials_dropped_percent": -0.5,
+      "enemy_speed_percent": 0.1,
+      "damage_percent": -0.4
+    },
+    "rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "more_trees_spawn"
+      },
+      {
+        "effect": "starting_item",
+        "item_id": "lumberjack_shirt",
+        "count": 1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "speed_percent",
+        "value": 0.1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "pickup_range_percent",
+        "value": 0.5
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "map_size_percent",
+        "value": 0.33
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "enemies_percent",
+        "value": 0.25
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "materials_dropped_percent",
+        "value": -0.5
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "enemy_speed_percent",
+        "value": 0.1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": -0.4
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. Tree spawn, map size, pickup range, and fixed starting item behavior are pending runtime behavior."
+  },
+  {
+    "id": "doctor",
+    "source_name": "Doctor",
+    "display_name": "医生",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "heal_200_hp_in_one_wave"
+    },
+    "unlocks": [
+      {
+        "type": "item",
+        "id": "medikit"
+      }
+    ],
+    "wanted_tags": [
+      "hp_regeneration"
+    ],
+    "starting_weapons": [
+      "scissors"
+    ],
+    "starting_weapon_options": [
+      "scissors",
+      "medical_gun"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "hp_regeneration": 5,
+      "harvesting": 5,
+      "attack_speed_percent": -100
+    },
+    "rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "medical_weapons_attack_speed_plus_200"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "hp_regeneration",
+        "value": 5
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "hp_regeneration",
+        "multiplier": 2.0
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "harvesting",
+        "value": 5
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "attack_speed_percent",
+        "value": -100
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "armor",
+        "multiplier": 0.5
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. Medical-weapon attack speed and doubled HP regeneration scaling are pending runtime behavior."
+  },
+  {
+    "id": "hunter",
+    "source_name": "Hunter",
+    "display_name": "猎人",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "reach_plus_300_range"
+    },
+    "unlocks": [
+      {
+        "type": "weapon",
+        "id": "sniper_gun"
+      }
+    ],
+    "wanted_tags": [
+      "range",
+      "crit_chance"
+    ],
+    "starting_weapons": [
+      "crossbow"
+    ],
+    "starting_weapon_options": [
+      "cacti_club",
+      "thief_dagger",
+      "spear",
+      "claw",
+      "scissors",
+      "shuriken",
+      "double_barrel_shotgun",
+      "crossbow",
+      "icicle",
+      "hiking_pole",
+      "javelin"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "range": 100
+    },
+    "rules": [
+      {
+        "effect": "stat_delta",
+        "stat": "range",
+        "value": 100
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "damage_percent_plus_1_per_10_range"
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "crit_chance",
+        "multiplier": 1.25
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "harvesting",
+        "multiplier": 0.0
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "max_hp",
+        "multiplier": 0.67
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. Range-to-damage scaling and stat modification multipliers are pending runtime behavior."
+  },
+  {
+    "id": "artificer",
+    "source_name": "Artificer",
+    "display_name": "工匠",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "kill_15_enemies_with_single_explosion"
+    },
+    "unlocks": [
+      {
+        "type": "item",
+        "id": "explosive_shells"
+      }
+    ],
+    "wanted_tags": [
+      "explosive"
+    ],
+    "starting_weapons": [
+      "shredder"
+    ],
+    "starting_weapon_options": [
+      "plank",
+      "screwdriver",
+      "wrench",
+      "shredder"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "explosion_damage_percent": 1.75,
+      "damage_percent": -1.0
+    },
+    "rules": [
+      {
+        "effect": "stat_delta",
+        "stat": "explosion_damage_percent",
+        "value": 1.75
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "explosion_size_plus_4_percent_per_elemental_damage"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "tool_weapons_damage_plus_100"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": -1.0
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "armor",
+        "multiplier": 0.5
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. Explosion damage, elemental-to-explosion-size scaling, and tool-specific damage are pending runtime behavior."
+  },
+  {
+    "id": "arms_dealer",
+    "source_name": "Arms Dealer",
+    "display_name": "军火商",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "recycle_12_weapons_during_run"
+    },
+    "unlocks": [
+      {
+        "type": "item",
+        "id": "anvil"
+      }
+    ],
+    "wanted_tags": [],
+    "starting_weapons": [
+      "pistol"
+    ],
+    "starting_weapon_options": [
+      "pistol"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [
+      "dangerous_bunny"
+    ],
+    "base_stats": {
+      "weapon_price_percent": -0.95,
+      "harvesting": 30
+    },
+    "rules": [
+      {
+        "effect": "stat_delta",
+        "stat": "weapon_price_percent",
+        "value": -0.95
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "harvesting",
+        "value": 30
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "damage_percent",
+        "multiplier": 1.33
+      },
+      {
+        "effect": "starting_item",
+        "item_id": "dangerous_bunny",
+        "count": 1
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "shops_always_sell_at_least_1_weapon"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "destroy_weapons_entering_shop"
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. Weapon destruction on shop entry and guaranteed weapon shop slot are pending runtime behavior."
+  },
+  {
+    "id": "streamer",
+    "source_name": "Streamer",
+    "display_name": "主播",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "reach_minus_20_speed"
+    },
+    "unlocks": [
+      {
+        "type": "item",
+        "id": "community_support"
+      }
+    ],
+    "wanted_tags": [
+      "structure"
+    ],
+    "starting_weapons": [
+      "smg"
+    ],
+    "starting_weapon_options": [
+      "fist",
+      "stick",
+      "cacti_club",
+      "ghost_flint",
+      "ghost_axe",
+      "scissors",
+      "screwdriver",
+      "wrench",
+      "spear",
+      "plank",
+      "pruner",
+      "spiky_shield",
+      "crossbow",
+      "double_barrel_shotgun",
+      "laser_gun",
+      "medical_gun",
+      "pistol",
+      "shredder",
+      "smg",
+      "revolver",
+      "slingshot",
+      "ghost_scepter",
+      "taser",
+      "wand",
+      "icicle",
+      "javelin"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "materials_dropped_percent": -0.5
+    },
+    "rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "materials_per_second_while_standing_still",
+        "materials_per_second_percent": 0.03,
+        "max_materials_per_second": 25
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "damage_plus_40_percent_while_moving"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "attack_speed_plus_40_percent_while_moving"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "armor_plus_2_per_structure"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "materials_dropped_percent",
+        "value": -0.5
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "damage_percent_minus_1_per_15_materials"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "speed_percent_minus_1_per_30_materials"
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. Standing-still income, moving bonuses, material penalties, and per-structure armor are pending runtime behavior."
+  },
+  {
+    "id": "cyborg",
+    "source_name": "Cyborg",
+    "display_name": "赛博格",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "reach_10_ranged_damage_and_3_structures"
+    },
+    "unlocks": [
+      {
+        "type": "item",
+        "id": "improved_tools"
+      }
+    ],
+    "wanted_tags": [
+      "structure",
+      "ranged_damage"
+    ],
+    "starting_weapons": [
+      "wrench"
+    ],
+    "starting_weapon_options": [
+      "wrench",
+      "screwdriver",
+      "plank",
+      "pistol",
+      "smg",
+      "revolver",
+      "double_barrel_shotgun",
+      "crossbow",
+      "brick"
+    ],
+    "fixed_starting_weapons": [
+      "minigun"
+    ],
+    "fixed_starting_items": [],
+    "base_stats": {},
+    "rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "fixed_starting_minigun"
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "ranged_damage",
+        "multiplier": 3.0
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "convert_ranged_damage_to_engineering_halfway_wave",
+        "engineering_per_ranged_damage": 2
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "engineering",
+        "multiplier": 0.25
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "melee_damage",
+        "multiplier": 0.0
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "elemental_damage",
+        "multiplier": 0.0
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. Fixed Minigun and halfway ranged-damage conversion are pending runtime behavior."
+  },
+  {
+    "id": "glutton",
+    "source_name": "Glutton",
+    "display_name": "贪吃鬼",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "pick_up_20_consumables_during_run"
+    },
+    "unlocks": [
+      {
+        "type": "item",
+        "id": "spicy_sauce"
+      }
+    ],
+    "wanted_tags": [
+      "consumable",
+      "explosive",
+      "melee_damage"
+    ],
+    "starting_weapons": [
+      "pruner"
+    ],
+    "starting_weapon_options": [
+      "pruner",
+      "chopper",
+      "thief_dagger",
+      "fist",
+      "jousting_lance",
+      "screwdriver",
+      "plank",
+      "shredder",
+      "lute",
+      "spoon",
+      "flute"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "luck": 50,
+      "item_price_percent": 0.25,
+      "xp_gain_percent": -0.25
+    },
+    "rules": [
+      {
+        "effect": "stat_delta",
+        "stat": "luck",
+        "value": 50
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "explosion_damage_plus_1_percent_on_full_health_consumable"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "consumables_explode_on_pickup_full_health",
+        "chance": 1.0,
+        "base_damage": 10,
+        "melee_damage_coefficient": 5.0
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "item_price_percent",
+        "value": 0.25
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "xp_gain_percent",
+        "value": -0.25
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. Full-health consumable explosions and per-consumable explosion damage growth are pending runtime behavior."
+  },
+  {
+    "id": "jack",
+    "source_name": "Jack",
+    "display_name": "杰克",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "kill_boss_or_elite_under_15_seconds"
+    },
+    "unlocks": [
+      {
+        "type": "item",
+        "id": "giant_belt"
+      }
+    ],
+    "wanted_tags": [],
+    "starting_weapons": [
+      "knife"
+    ],
+    "starting_weapon_options": [
+      "knife",
+      "jousting_lance",
+      "wrench",
+      "torch",
+      "hatchet",
+      "stick",
+      "spear",
+      "spiky_shield",
+      "shuriken",
+      "laser_gun",
+      "revolver",
+      "crossbow",
+      "taser",
+      "wand",
+      "icicle",
+      "brick",
+      "lute",
+      "spoon",
+      "flute"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "boss_elite_damage_percent": 1.25,
+      "tree_materials_percent": 2.0,
+      "enemies_percent": -0.7,
+      "enemy_health_percent": 1.75,
+      "enemy_damage_percent": 0.35
+    },
+    "rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "damage_plus_125_percent_against_bosses_and_elites"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "tree_materials_percent",
+        "value": 2.0
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "enemies_percent",
+        "value": -0.7
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "enemy_health_percent",
+        "value": 1.75
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "enemy_damage_percent",
+        "value": 0.35
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "danger_levels_spawn_elites_not_hordes"
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. Boss/elite bonus, tree material scaling, and elite-over-horde danger behavior are pending runtime behavior."
+  },
+  {
+    "id": "lich",
+    "source_name": "Lich",
+    "display_name": "巫妖",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "reach_plus_100_max_hp"
+    },
+    "unlocks": [
+      {
+        "type": "item",
+        "id": "tentacle"
+      }
+    ],
+    "wanted_tags": [
+      "max_hp",
+      "hp_regeneration",
+      "lifesteal"
+    ],
+    "starting_weapons": [
+      "scissors"
+    ],
+    "starting_weapon_options": [
+      "scissors",
+      "chopper",
+      "thief_dagger",
+      "stick",
+      "knife",
+      "ghost_flint",
+      "sharp_tooth",
+      "pruner",
+      "hatchet",
+      "rock",
+      "spiky_shield",
+      "lightning_shiv",
+      "ghost_scepter",
+      "medical_gun",
+      "smg",
+      "wand",
+      "icicle",
+      "slingshot",
+      "crossbow",
+      "spoon"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "hp_regeneration": 10,
+      "lifesteal": 0.1
+    },
+    "rules": [
+      {
+        "effect": "stat_delta",
+        "stat": "hp_regeneration",
+        "value": 10
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "lifesteal",
+        "value": 0.1
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "deal_max_hp_damage_when_healing",
+        "chance": 1.0,
+        "max_hp_coefficient": 0.1
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "damage_percent",
+        "multiplier": 0.5
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. Healing-triggered random enemy damage and damage modification reduction are pending runtime behavior."
+  },
+  {
+    "id": "apprentice",
+    "source_name": "Apprentice",
+    "display_name": "学徒",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "reach_level_20"
+    },
+    "unlocks": [
+      {
+        "type": "weapon",
+        "id": "quarterstaff"
+      }
+    ],
+    "wanted_tags": [
+      "xp_gain"
+    ],
+    "starting_weapons": [
+      "fist"
+    ],
+    "starting_weapon_options": [
+      "fist",
+      "knife",
+      "lightning_shiv",
+      "cacti_club",
+      "quarterstaff",
+      "ghost_flint",
+      "ghost_axe",
+      "hatchet",
+      "torch",
+      "plank",
+      "pruner",
+      "screwdriver",
+      "wrench",
+      "medical_gun",
+      "smg",
+      "double_barrel_shotgun",
+      "shredder",
+      "slingshot",
+      "taser",
+      "icicle",
+      "shuriken",
+      "ghost_scepter",
+      "brick"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "xp_gain_percent": -0.25
+    },
+    "rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "gain_stats_on_level_up",
+        "melee_damage": 2,
+        "ranged_damage": 1,
+        "elemental_damage": 1,
+        "engineering": 1,
+        "max_hp": -2
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "xp_gain_percent",
+        "value": -0.25
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. Per-level stat gains and max-HP loss are pending runtime behavior."
+  },
+  {
+    "id": "cryptid",
+    "source_name": "Cryptid",
+    "display_name": "神秘生物",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "finish_wave_with_10_living_trees"
+    },
+    "unlocks": [
+      {
+        "type": "weapon",
+        "id": "claw"
+      }
+    ],
+    "wanted_tags": [
+      "exploration",
+      "dodge"
+    ],
+    "starting_weapons": [
+      "fist"
+    ],
+    "starting_weapon_options": [
+      "fist",
+      "hand",
+      "claw",
+      "knife",
+      "cacti_club",
+      "pruner",
+      "chopper",
+      "ghost_axe",
+      "thief_dagger",
+      "lightning_shiv",
+      "ghost_flint",
+      "rock",
+      "stick",
+      "hatchet",
+      "jousting_lance",
+      "screwdriver",
+      "plank",
+      "ghost_scepter",
+      "shredder",
+      "pistol",
+      "smg",
+      "lute",
+      "sickle"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "extra_trees": 6,
+      "dodge_cap": 0.7,
+      "lifesteal": -1.0,
+      "range": -100,
+      "materials_dropped_percent": -0.5
+    },
+    "rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "more_trees_spawn",
+        "extra_trees": 6
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "gain_12_material_and_xp_per_living_tree_end_wave"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "hp_regeneration_plus_3_per_living_tree"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "dodge_cap_70_percent"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "attack_speed_plus_3_until_wave_end_on_dodge"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "lifesteal",
+        "value": -1.0
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "range",
+        "value": -100
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "materials_dropped_percent",
+        "value": -0.5
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. Living-tree reward, tree-count regen, and dodge-triggered attack speed are pending runtime behavior."
+  },
+  {
+    "id": "fisherman",
+    "source_name": "Fisherman",
+    "display_name": "渔夫",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "get_2_bait_during_run"
+    },
+    "unlocks": [
+      {
+        "type": "item",
+        "id": "lure"
+      }
+    ],
+    "wanted_tags": [],
+    "starting_weapons": [
+      "knife"
+    ],
+    "starting_weapon_options": [
+      "knife",
+      "rock",
+      "spear",
+      "quarterstaff",
+      "spiky_shield",
+      "torch",
+      "stick",
+      "sharp_tooth",
+      "plank",
+      "pruner",
+      "scissors",
+      "pistol",
+      "smg",
+      "crossbow",
+      "double_barrel_shotgun",
+      "laser_gun",
+      "revolver",
+      "shredder",
+      "slingshot",
+      "icicle",
+      "javelin"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "max_hp": 5,
+      "harvesting": 20,
+      "bait_price_percent": -1.0,
+      "materials_dropped_percent": -0.5
+    },
+    "rules": [
+      {
+        "effect": "stat_delta",
+        "stat": "max_hp",
+        "value": 5
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "harvesting",
+        "value": 20
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "shops_always_sell_bait"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "bait_price_percent",
+        "value": -1.0
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "harvesting_plus_2_per_bait"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "bait_spawn_special_enemies_all_future_waves"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "materials_dropped_percent",
+        "value": -0.5
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. Guaranteed Bait offers, Bait enemy spawning, and harvesting per Bait are pending runtime behavior."
+  },
+  {
+    "id": "golem",
+    "source_name": "Golem",
+    "display_name": "魔像",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "finish_wave_with_1_hp"
+    },
+    "unlocks": [
+      {
+        "type": "item",
+        "id": "stone_skin"
+      }
+    ],
+    "wanted_tags": [
+      "max_hp",
+      "armor"
+    ],
+    "starting_weapons": [
+      "rock"
+    ],
+    "starting_weapon_options": [
+      "rock",
+      "spiky_shield",
+      "cacti_club",
+      "hammer",
+      "fist",
+      "stick",
+      "wrench",
+      "plank",
+      "double_barrel_shotgun",
+      "pistol",
+      "laser_gun",
+      "smg",
+      "taser",
+      "slingshot",
+      "wand",
+      "icicle",
+      "brick",
+      "spoon"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "max_hp": 20
+    },
+    "rules": [
+      {
+        "effect": "stat_delta",
+        "stat": "max_hp",
+        "value": 20
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "max_hp",
+        "multiplier": 1.33
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "armor",
+        "multiplier": 1.33
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "attack_speed_plus_40_percent_below_half_health"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "speed_plus_20_percent_below_half_health"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "cannot_heal_in_any_way"
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. Below-half-health bonuses and total healing lockout are pending runtime behavior."
+  },
+  {
+    "id": "king",
+    "source_name": "King",
+    "display_name": "国王",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "own_3_tier_4_weapons"
+    },
+    "unlocks": [
+      {
+        "type": "weapon",
+        "id": "excalibur"
+      }
+    ],
+    "wanted_tags": [
+      "luck",
+      "damage"
+    ],
+    "starting_weapons": [
+      "sword"
+    ],
+    "starting_weapon_options": [
+      "sword",
+      "circular_saw",
+      "thief_dagger",
+      "knife",
+      "excalibur",
+      "jousting_lance",
+      "trident",
+      "spiky_shield",
+      "laser_gun",
+      "revolver",
+      "obliterator",
+      "sniper_gun",
+      "fireball",
+      "wand",
+      "grenade_launcher",
+      "flute"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "luck": 50
+    },
+    "rules": [
+      {
+        "effect": "stat_delta",
+        "stat": "luck",
+        "value": 50
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "starting_weapon_tier_2"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "damage_percent_plus_25_per_tier_4_weapon"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "attack_speed_percent_plus_25_per_tier_4_weapon"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "max_hp_minus_2_per_tier_1_weapon"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "damage_percent_minus_2_per_tier_1_weapon"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "attack_speed_percent_minus_2_per_tier_1_weapon"
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. Tier-based weapon modifiers and tier-2 starting weapon are pending runtime behavior."
+  },
+  {
+    "id": "renegade",
+    "source_name": "Renegade",
+    "display_name": "叛徒",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "win_with_danger_5"
+    },
+    "unlocks": [
+      {
+        "type": "item",
+        "id": "fairy"
+      }
+    ],
+    "wanted_tags": [
+      "ranged_damage",
+      "damage"
+    ],
+    "starting_weapons": [
+      "pistol"
+    ],
+    "starting_weapon_options": [
+      "pistol",
+      "smg",
+      "double_barrel_shotgun",
+      "revolver",
+      "laser_gun",
+      "crossbow",
+      "shredder",
+      "slingshot",
+      "taser",
+      "wand",
+      "icicle",
+      "flute"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "projectiles": 2,
+      "piercing": 1,
+      "piercing_damage_percent": -0.5,
+      "damage_percent": -0.8
+    },
+    "rules": [
+      {
+        "effect": "stat_delta",
+        "stat": "projectiles",
+        "value": 2
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "piercing",
+        "value": 1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "piercing_damage_percent",
+        "value": -0.5
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "damage_percent",
+        "multiplier": 0.1
+      },
+      {
+        "effect": "forbid_weapon_group",
+        "group": "melee"
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. Extra projectiles, pierce penalty, and damage-modification scaling are pending runtime behavior."
+  },
+  {
+    "id": "one_armed",
+    "source_name": "One Armed",
+    "display_name": "独臂",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "win_with_danger_0"
+    },
+    "unlocks": [
+      {
+        "type": "item",
+        "id": "focus"
+      }
+    ],
+    "wanted_tags": [],
+    "starting_weapons": [
+      "fist"
+    ],
+    "starting_weapon_options": [
+      "fist",
+      "knife",
+      "lightning_shiv",
+      "claw",
+      "cacti_club",
+      "thief_dagger",
+      "stick",
+      "ghost_flint",
+      "spear",
+      "ghost_axe",
+      "hatchet",
+      "torch",
+      "pruner",
+      "wrench",
+      "plank",
+      "pistol",
+      "double_barrel_shotgun",
+      "smg",
+      "revolver",
+      "shredder",
+      "taser",
+      "wand",
+      "icicle",
+      "slingshot",
+      "crossbow",
+      "shuriken",
+      "javelin",
+      "spoon",
+      "flute"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "attack_speed_percent": 200
+    },
+    "rules": [
+      {
+        "effect": "stat_delta",
+        "stat": "attack_speed_percent",
+        "value": 200
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "damage_percent",
+        "multiplier": 2.0
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "max_1_weapon"
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. One-weapon cap and doubled damage modification scaling are pending runtime behavior."
+  },
+  {
+    "id": "bull",
+    "source_name": "Bull",
+    "display_name": "公牛",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "win_with_danger_1"
+    },
+    "unlocks": [
+      {
+        "type": "item",
+        "id": "gnome"
+      }
+    ],
+    "wanted_tags": [
+      "max_hp",
+      "hp_regeneration",
+      "armor"
+    ],
+    "starting_weapons": [],
+    "starting_weapon_options": [],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "max_hp": 20,
+      "hp_regeneration": 15,
+      "armor": 10
+    },
+    "rules": [
+      {
+        "effect": "stat_delta",
+        "stat": "max_hp",
+        "value": 20
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "hp_regeneration",
+        "value": 15
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "armor",
+        "value": 10
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "explode_when_taking_damage",
+        "chance": 1.0,
+        "base_damage": 30,
+        "melee_damage_coefficient": 3.0,
+        "ranged_damage_coefficient": 3.0,
+        "elemental_damage_coefficient": 3.0
+      },
+      {
+        "effect": "forbid_weapon_group",
+        "group": "melee"
+      },
+      {
+        "effect": "forbid_weapon_group",
+        "group": "ranged"
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. Damage-triggered explosion and weaponless restriction are pending runtime behavior."
+  },
+  {
+    "id": "soldier",
+    "source_name": "Soldier",
+    "display_name": "士兵",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "win_with_danger_2"
+    },
+    "unlocks": [
+      {
+        "type": "weapon",
+        "id": "nuclear_launcher"
+      }
+    ],
+    "wanted_tags": [
+      "ranged_damage",
+      "attack_speed",
+      "stand_still"
+    ],
+    "starting_weapons": [
+      "smg"
+    ],
+    "starting_weapon_options": [
+      "smg",
+      "double_barrel_shotgun",
+      "pistol",
+      "revolver",
+      "laser_gun",
+      "shredder",
+      "crossbow",
+      "slingshot",
+      "taser",
+      "wand",
+      "icicle"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "damage_percent": 0.5,
+      "attack_speed_percent": 50,
+      "projectiles": 3,
+      "pickup_range_percent": 2.0
+    },
+    "rules": [
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": 0.5
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "attack_speed_percent",
+        "value": 50
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "projectiles",
+        "value": 3
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "pickup_range_percent",
+        "value": 2.0
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "cannot_attack_while_moving"
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. Stationary-only attacking and projectile stat behavior are pending runtime behavior."
+  },
+  {
+    "id": "masochist",
+    "source_name": "Masochist",
+    "display_name": "受虐狂",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "win_with_danger_3"
+    },
+    "unlocks": [
+      {
+        "type": "weapon",
+        "id": "spiky_shield"
+      }
+    ],
+    "wanted_tags": [
+      "max_hp",
+      "armor",
+      "hp_regeneration",
+      "lifesteal"
+    ],
+    "starting_weapons": [
+      "rock"
+    ],
+    "starting_weapon_options": [
+      "rock",
+      "scissors",
+      "cacti_club",
+      "ghost_axe",
+      "spiky_shield",
+      "sharp_tooth",
+      "torch",
+      "double_barrel_shotgun",
+      "medical_gun",
+      "wand",
+      "icicle",
+      "brick",
+      "lute",
+      "sickle"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "max_hp": 10,
+      "hp_regeneration": 20,
+      "armor": 8,
+      "damage_percent": -1.0
+    },
+    "rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "damage_percent_plus_5_until_wave_end_when_taking_damage",
+        "damage_percent_per_hit": 0.05
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "max_hp",
+        "value": 10
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "hp_regeneration",
+        "value": 20
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "armor",
+        "value": 8
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": -1.0
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. Damage stacking when taking damage until wave end is pending runtime behavior."
+  },
+  {
+    "id": "knight",
+    "source_name": "Knight",
+    "display_name": "骑士",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "win_with_danger_4"
+    },
+    "unlocks": [
+      {
+        "type": "weapon",
+        "id": "plasma_sledge"
+      }
+    ],
+    "wanted_tags": [],
+    "starting_weapons": [
+      "sword"
+    ],
+    "starting_weapon_options": [
+      "sword",
+      "hammer",
+      "spear",
+      "torch",
+      "jousting_lance",
+      "quarterstaff",
+      "plank",
+      "rock",
+      "fist",
+      "knife"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "armor": 3
+    },
+    "rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "melee_damage_plus_2_per_1_armor"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "armor",
+        "value": 3
+      },
+      {
+        "effect": "forbid_weapon_group",
+        "group": "gun"
+      },
+      {
+        "effect": "forbid_weapon_group",
+        "group": "ranged"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "can_only_equip_tier_2_weapons_or_above"
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "attack_speed_percent",
+        "multiplier": 0.5
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "harvesting",
+        "multiplier": 0.2
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. Armor-to-melee scaling, tier-2 weapon floor, and reduced stat modification scaling are pending runtime behavior."
+  },
+  {
+    "id": "demon",
+    "source_name": "Demon",
+    "display_name": "恶魔",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "win_with_danger_5"
+    },
+    "unlocks": [
+      {
+        "type": "weapon",
+        "id": "obliterator"
+      }
+    ],
+    "wanted_tags": [],
+    "starting_weapons": [
+      "thief_dagger"
+    ],
+    "starting_weapon_options": [
+      "thief_dagger",
+      "lightning_shiv",
+      "ghost_axe",
+      "ghost_flint",
+      "torch",
+      "chopper",
+      "sharp_tooth",
+      "wrench",
+      "ghost_scepter",
+      "wand",
+      "taser",
+      "icicle",
+      "spoon",
+      "flute"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {},
+    "rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "convert_half_materials_to_max_hp_end_wave",
+        "materials_per_max_hp": 13
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "buy_items_with_max_hp",
+        "materials_per_max_hp_cost": 20
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. End-wave material conversion and max-HP shop currency are pending runtime behavior."
+  },
+  {
+    "id": "baby",
+    "source_name": "Baby",
+    "display_name": "婴儿",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "reach_level_10_before_wave_6"
+    },
+    "unlocks": [
+      {
+        "type": "item",
+        "id": "celery_tea"
+      }
+    ],
+    "wanted_tags": [
+      "xp_gain"
+    ],
+    "starting_weapons": [
+      "fist"
+    ],
+    "starting_weapon_options": [
+      "fist",
+      "scissors",
+      "screwdriver",
+      "pruner",
+      "sharp_tooth",
+      "quarterstaff",
+      "knife",
+      "stick",
+      "plank",
+      "rock",
+      "wrench",
+      "shuriken",
+      "taser",
+      "wand",
+      "icicle",
+      "slingshot",
+      "pistol",
+      "hiking_pole",
+      "spoon",
+      "flute"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "harvesting": 12,
+      "item_price_percent": -0.2,
+      "xp_required_multiplier": 2.3,
+      "starting_weapon_slots": 1,
+      "max_weapon_slots": 24
+    },
+    "rules": [
+      {
+        "effect": "stat_delta",
+        "stat": "harvesting",
+        "value": 12
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "item_price_percent",
+        "value": -0.2
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "xp_required",
+        "multiplier": 2.3
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "start_with_1_weapon_slot",
+        "max_weapon_slots": 24
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "gain_weapon_slot_on_level_up_instead_of_stat_upgrade",
+        "max_weapon_slots": 24
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "shops_always_sell_at_least_1_weapon"
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. Weapon-slot growth on level-up and guaranteed weapon shop offers are pending runtime behavior."
+  },
+  {
+    "id": "vagabond",
+    "source_name": "Vagabond",
+    "display_name": "流浪汉",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "have_6_different_weapons_at_once"
+    },
+    "unlocks": [
+      {
+        "type": "item",
+        "id": "jelly"
+      }
+    ],
+    "wanted_tags": [],
+    "starting_weapons": [
+      "cacti_club"
+    ],
+    "starting_weapon_options": [
+      "cacti_club",
+      "chopper",
+      "thief_dagger",
+      "spear",
+      "sharp_tooth",
+      "hand",
+      "claw",
+      "quarterstaff",
+      "hatchet",
+      "plank",
+      "ghost_flint",
+      "spiky_shield",
+      "lightning_shiv",
+      "torch",
+      "shuriken",
+      "crossbow",
+      "revolver",
+      "laser_gun",
+      "lute"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "armor": -5,
+      "dodge": -0.05
+    },
+    "rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "weapons_contribute_to_other_weapon_class_bonuses"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "cannot_equip_duplicate_weapons"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "armor",
+        "value": -5
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "dodge",
+        "value": -0.05
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "luck",
+        "multiplier": 0.5
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "harvesting",
+        "multiplier": 0.5
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "hide_lower_tier_owned_weapons_in_shop"
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. Cross-class weapon bonus contribution, duplicate weapon lockout, and hidden lower-tier shop filtering are pending runtime behavior."
+  },
+  {
+    "id": "technomage",
+    "source_name": "Technomage",
+    "display_name": "科技法师",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "reach_10_elemental_damage_and_3_structures"
+    },
+    "unlocks": [
+      {
+        "type": "weapon",
+        "id": "particle_accelerator"
+      }
+    ],
+    "wanted_tags": [
+      "elemental_damage",
+      "engineering",
+      "structure"
+    ],
+    "starting_weapons": [
+      "wrench"
+    ],
+    "starting_weapon_options": [
+      "wrench",
+      "screwdriver",
+      "plank",
+      "torch",
+      "lightning_shiv",
+      "pruner",
+      "taser",
+      "wand",
+      "icicle"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [
+      "turret",
+      "turret"
+    ],
+    "base_stats": {
+      "xp_required_multiplier": 1.75
+    },
+    "rules": [
+      {
+        "effect": "starting_item",
+        "item_id": "turret",
+        "count": 2
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "structure_attack_speed_plus_5_percent_per_permanent_elemental_damage"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "elemental_damage_plus_2_per_structure"
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "xp_required",
+        "multiplier": 1.75
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "melee_damage",
+        "multiplier": 0.0
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "ranged_damage",
+        "multiplier": 0.0
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. Starting Turret placement, structure-to-elemental scaling, and elemental-to-structure attack speed scaling are pending runtime behavior."
+  },
+  {
+    "id": "vampire",
+    "source_name": "Vampire",
+    "display_name": "吸血鬼",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "unlock": {
+      "type": "progress",
+      "condition": "reach_plus_40_lifesteal"
+    },
+    "unlocks": [
+      {
+        "type": "item",
+        "id": "decomposing_flesh"
+      }
+    ],
+    "wanted_tags": [
+      "lifesteal"
+    ],
+    "starting_weapons": [
+      "fist"
+    ],
+    "starting_weapon_options": [
+      "fist",
+      "claw",
+      "sharp_tooth",
+      "ghost_flint",
+      "hatchet",
+      "knife",
+      "thief_dagger",
+      "lightning_shiv",
+      "scissors",
+      "spiky_shield",
+      "stick",
+      "torch",
+      "screwdriver",
+      "wrench",
+      "shuriken",
+      "pistol",
+      "smg",
+      "double_barrel_shotgun",
+      "medical_gun",
+      "revolver",
+      "shredder",
+      "crossbow",
+      "sickle"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "damage_percent": -0.6,
+      "hp_regeneration": -100,
+      "consumable_heal": -100
+    },
+    "rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "damage_percent_plus_2_per_missing_health_percent"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "lifesteal_percent_plus_1_per_3_missing_health_percent"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "armor_plus_1_per_5_missing_health_percent"
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "max_hp",
+        "multiplier": 0.75
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": -0.6
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "hp_regeneration",
+        "value": -100
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "consumable_heal",
+        "value": -100
+      }
+    ],
+    "implementation_notes": "Reference character row modeled from wiki. Missing-health damage/lifesteal/armor scaling is pending runtime behavior."
+  },
+  {
+    "id": "sailor",
+    "source_name": "Sailor",
+    "display_name": "水手",
+    "runtime_aliases": [],
+    "is_dlc": true,
+    "unlock": {
+      "type": "default"
+    },
+    "unlocks": [
+      {
+        "type": "item",
+        "id": "treasure_map"
+      }
+    ],
+    "wanted_tags": [
+      "curse"
+    ],
+    "starting_weapons": [
+      "anchor"
+    ],
+    "starting_weapon_options": [
+      "anchor",
+      "trident",
+      "blunderbuss"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "curse": 25,
+      "damage_percent": -0.25,
+      "dodge_cap": 0.2
+    },
+    "rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "naval_weapons_damage_plus_200_percent_against_cursed_enemies"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "curse",
+        "value": 25
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": -0.25
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "can_only_equip_tier_2_weapons_or_above"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "dodge_cap_20_percent"
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "harvesting",
+        "multiplier": 0.0
+      }
+    ],
+    "implementation_notes": "Abyssal Terrors row modeled from wiki. Cursed-enemy naval damage and tier-2 weapon floor are pending runtime behavior."
+  },
+  {
+    "id": "curious",
+    "source_name": "Curious",
+    "display_name": "好奇者",
+    "runtime_aliases": [],
+    "is_dlc": true,
+    "unlock": {
+      "type": "default"
+    },
+    "unlocks": [
+      {
+        "type": "item",
+        "id": "pearl"
+      }
+    ],
+    "wanted_tags": [
+      "luck"
+    ],
+    "starting_weapons": [
+      "brick"
+    ],
+    "starting_weapon_options": [
+      "brick",
+      "cacti_club",
+      "ghost_axe",
+      "hatchet",
+      "knife",
+      "plank",
+      "rock",
+      "torch",
+      "lightning_shiv",
+      "pistol",
+      "double_barrel_shotgun",
+      "icicle",
+      "lute",
+      "javelin",
+      "slingshot"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [
+      "spyglass"
+    ],
+    "base_stats": {
+      "enemy_health_percent": 0.25
+    },
+    "rules": [
+      {
+        "effect": "starting_item",
+        "item_id": "spyglass",
+        "count": 1
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "two_additional_loot_aliens_every_wave"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "loot_aliens_become_stronger_when_killed"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "xp_gain_percent_plus_2_per_distinct_item"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "damage_percent_minus_10_per_duplicate_item_or_weapon"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "enemy_health_percent",
+        "value": 0.25
+      }
+    ],
+    "implementation_notes": "Abyssal Terrors row modeled from wiki. Spyglass start, loot alien progression, and distinct-item XP scaling are pending runtime behavior."
+  },
+  {
+    "id": "builder",
+    "source_name": "Builder",
+    "display_name": "建筑师",
+    "runtime_aliases": [],
+    "is_dlc": true,
+    "unlock": {
+      "type": "default"
+    },
+    "unlocks": [
+      {
+        "type": "item",
+        "id": "lighthouse"
+      }
+    ],
+    "wanted_tags": [
+      "engineering"
+    ],
+    "starting_weapons": [
+      "brick"
+    ],
+    "starting_weapon_options": [
+      "brick",
+      "plank",
+      "javelin",
+      "double_barrel_shotgun",
+      "laser_gun",
+      "medical_gun",
+      "revolver",
+      "shredder",
+      "smg",
+      "slingshot",
+      "ghost_scepter",
+      "flute",
+      "taser",
+      "wand"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [
+      "builders_turret"
+    ],
+    "base_stats": {
+      "harvesting": 20,
+      "pickup_range_percent": -0.3
+    },
+    "rules": [
+      {
+        "effect": "starting_item",
+        "item_id": "builders_turret",
+        "count": 1
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "uncollected_materials_convert_to_structure_stats_end_wave",
+        "materials_per_percent": 5
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "engineering",
+        "multiplier": 1.5
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "harvesting",
+        "value": 20
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "cannot_have_structures_except_builders_turret"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "pickup_range_percent",
+        "value": -0.3
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "damage_percent",
+        "multiplier": 0.25
+      }
+    ],
+    "implementation_notes": "Abyssal Terrors row modeled from wiki. Unique Builder's Turret, structure stat conversion, and structure restriction are pending runtime behavior."
+  },
+  {
+    "id": "captain",
+    "source_name": "Captain",
+    "display_name": "船长",
+    "runtime_aliases": [],
+    "is_dlc": true,
+    "unlock": {
+      "type": "default"
+    },
+    "unlocks": [
+      {
+        "type": "weapon",
+        "id": "captains_sword"
+      }
+    ],
+    "wanted_tags": [
+      "xp_gain"
+    ],
+    "starting_weapons": [
+      "fist"
+    ],
+    "starting_weapon_options": [
+      "fist",
+      "knife",
+      "hatchet",
+      "spear",
+      "ghost_axe",
+      "ghost_flint",
+      "chopper",
+      "quarterstaff",
+      "torch",
+      "plank",
+      "lightning_shiv",
+      "double_barrel_shotgun",
+      "smg",
+      "revolver",
+      "slingshot",
+      "shredder",
+      "javelin"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "xp_required_multiplier": 3.0,
+      "enemy_health_end_wave_percent": 0.02,
+      "enemy_damage_end_wave_percent": 0.02
+    },
+    "rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "xp_gain_plus_60_percent_per_free_weapon_slot"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "level_upgrade_stats_plus_100_percent"
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "xp_required",
+        "multiplier": 3.0
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "enemy_health_plus_2_percent_end_wave"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "enemy_damage_plus_2_percent_end_wave"
+      }
+    ],
+    "implementation_notes": "Abyssal Terrors row modeled from wiki. Free-slot XP scaling, boosted level upgrades, and end-wave enemy scaling are pending runtime behavior."
+  },
+  {
+    "id": "creature",
+    "source_name": "Creature",
+    "display_name": "生物",
+    "runtime_aliases": [],
+    "is_dlc": true,
+    "unlock": {
+      "type": "default"
+    },
+    "unlocks": [
+      {
+        "type": "item",
+        "id": "barnacle"
+      }
+    ],
+    "wanted_tags": [
+      "curse",
+      "xp_gain"
+    ],
+    "starting_weapons": [
+      "fist"
+    ],
+    "starting_weapon_options": [
+      "fist",
+      "claw",
+      "cacti_club",
+      "sharp_tooth",
+      "sickle",
+      "hatchet",
+      "rock",
+      "stick",
+      "spiky_shield",
+      "chopper",
+      "torch",
+      "plank",
+      "smg",
+      "shredder",
+      "icicle",
+      "ghost_scepter",
+      "javelin"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [
+      "fish_hook"
+    ],
+    "base_stats": {
+      "range_end_wave_delta": -10,
+      "xp_gain_end_wave_percent": -0.05
+    },
+    "rules": [
+      {
+        "effect": "starting_item",
+        "item_id": "fish_hook",
+        "count": 1,
+        "cursed": true
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "weapon_damage_additionally_scales_with_35_percent_curse"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "curse_plus_1_on_level_up"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "range_minus_10_end_wave"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "xp_gain_minus_5_percent_end_wave"
+      }
+    ],
+    "implementation_notes": "Abyssal Terrors row modeled from wiki. Cursed Fish Hook start, curse weapon scaling, and end-wave stat decay are pending runtime behavior."
+  },
+  {
+    "id": "chef",
+    "source_name": "Chef",
+    "display_name": "厨师",
+    "runtime_aliases": [],
+    "is_dlc": true,
+    "unlock": {
+      "type": "progress",
+      "condition": "have_25_burning_enemies_at_once"
+    },
+    "unlocks": [
+      {
+        "type": "weapon",
+        "id": "spoon"
+      }
+    ],
+    "wanted_tags": [],
+    "starting_weapons": [
+      "spoon"
+    ],
+    "starting_weapon_options": [
+      "spoon",
+      "chopper",
+      "fist",
+      "knife",
+      "hatchet",
+      "stick",
+      "torch",
+      "screwdriver",
+      "wrench",
+      "plank",
+      "pruner",
+      "cacti_club",
+      "wand"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [
+      "scared_sausage"
+    ],
+    "base_stats": {
+      "luck": 35,
+      "enemy_health_percent": 1.0
+    },
+    "rules": [
+      {
+        "effect": "stat_delta",
+        "stat": "luck",
+        "value": 35
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "non_elemental_damage_plus_200_percent_against_burning_targets"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "consumables_explode_for_burning_damage_on_pickup",
+        "base_damage": 1,
+        "hit_count": 5,
+        "elemental_damage_coefficient": 1.0
+      },
+      {
+        "effect": "starting_item",
+        "item_id": "scared_sausage",
+        "count": 1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "enemy_health_percent",
+        "value": 1.0
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "elemental_damage",
+        "multiplier": 0.25
+      }
+    ],
+    "implementation_notes": "Abyssal Terrors row modeled from wiki. Burning target bonus and consumable burn explosions are pending runtime behavior."
+  },
+  {
+    "id": "druid",
+    "source_name": "Druid",
+    "display_name": "德鲁伊",
+    "runtime_aliases": [],
+    "is_dlc": true,
+    "unlock": {
+      "type": "progress",
+      "condition": "collect_250_consumables_by_wave_20"
+    },
+    "unlocks": [
+      {
+        "type": "item",
+        "id": "cauldron"
+      }
+    ],
+    "wanted_tags": [
+      "consumable",
+      "luck"
+    ],
+    "starting_weapons": [
+      "fist"
+    ],
+    "starting_weapon_options": [
+      "fist",
+      "claw",
+      "ghost_flint",
+      "cacti_club",
+      "rock",
+      "chopper",
+      "quarterstaff",
+      "pruner",
+      "sickle",
+      "lute",
+      "stick",
+      "spear",
+      "torch",
+      "flute",
+      "slingshot",
+      "ghost_scepter",
+      "icicle",
+      "wand",
+      "javelin"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "max_hp": 5,
+      "luck": 15,
+      "hp_regeneration": -100,
+      "lifesteal": -1.0
+    },
+    "rules": [
+      {
+        "effect": "stat_delta",
+        "stat": "max_hp",
+        "value": 5
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "luck",
+        "value": 15
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "fruit_drop_extra_chance_3_percent"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "luck_plus_1_chance_33_percent_on_fruit_pickup"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "poisoned_fruit_chance_33_percent"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "hp_regeneration",
+        "value": -100
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "lifesteal",
+        "value": -1.0
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "engineering",
+        "multiplier": 0.5
+      }
+    ],
+    "implementation_notes": "Abyssal Terrors row modeled from wiki. Extra fruit drops, luck-on-fruit, and poisoned fruit are pending runtime behavior."
+  },
+  {
+    "id": "dwarf",
+    "source_name": "Dwarf",
+    "display_name": "矮人",
+    "runtime_aliases": [],
+    "is_dlc": true,
+    "unlock": {
+      "type": "progress",
+      "condition": "hit_25_enemies_with_single_melee_attack"
+    },
+    "unlocks": [
+      {
+        "type": "weapon",
+        "id": "war_hammer"
+      }
+    ],
+    "wanted_tags": [
+      "engineering",
+      "structure"
+    ],
+    "starting_weapons": [
+      "hammer"
+    ],
+    "starting_weapon_options": [
+      "hammer",
+      "wrench",
+      "brick",
+      "mace"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "dodge": -0.2,
+      "attack_speed_percent": -100
+    },
+    "rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "engineering_plus_1_on_6_direct_melee_kills"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "melee_damage_plus_1_per_2_permanent_engineering"
+      },
+      {
+        "effect": "forbid_weapon_group",
+        "group": "ranged"
+      },
+      {
+        "effect": "forbid_weapon_group",
+        "group": "gun"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "dodge",
+        "value": -0.2
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "attack_speed_percent",
+        "value": -100
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "attack_speed_percent",
+        "multiplier": 0.5
+      }
+    ],
+    "implementation_notes": "Abyssal Terrors row modeled from wiki. Direct melee multi-kill engineering gain and engineering-to-melee scaling are pending runtime behavior."
+  },
+  {
+    "id": "gangster",
+    "source_name": "Gangster",
+    "display_name": "黑帮",
+    "runtime_aliases": [],
+    "is_dlc": true,
+    "unlock": {
+      "type": "progress",
+      "condition": "reroll_10_times_in_single_shop"
+    },
+    "unlocks": [
+      {
+        "type": "weapon",
+        "id": "grenade_launcher"
+      }
+    ],
+    "wanted_tags": [],
+    "starting_weapons": [
+      "knife"
+    ],
+    "starting_weapon_options": [
+      "knife",
+      "thief_dagger",
+      "lightning_shiv",
+      "pistol",
+      "revolver",
+      "smg",
+      "double_barrel_shotgun"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "item_price_percent": 0.2
+    },
+    "rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "can_steal_1_item_per_shop"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "stealing_from_shop_can_spawn_elite"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "future_elites_and_bosses_stronger_on_elite_or_boss_kill"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "item_price_percent",
+        "value": 0.2
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "cannot_lock_items"
+      }
+    ],
+    "implementation_notes": "Abyssal Terrors row modeled from wiki. Shop stealing, elite spawn risk, and lock restriction are pending runtime behavior."
+  },
+  {
+    "id": "diver",
+    "source_name": "Diver",
+    "display_name": "潜水员",
+    "runtime_aliases": [],
+    "is_dlc": true,
+    "unlock": {
+      "type": "progress",
+      "condition": "kill_1000_enemies_more_than_700_range_away"
+    },
+    "unlocks": [
+      {
+        "type": "item",
+        "id": "starfish"
+      }
+    ],
+    "wanted_tags": [
+      "crit_chance",
+      "melee_damage"
+    ],
+    "starting_weapons": [
+      "claw"
+    ],
+    "starting_weapon_options": [
+      "claw",
+      "thief_dagger",
+      "knife",
+      "scissors",
+      "sharp_tooth",
+      "shuriken"
+    ],
+    "fixed_starting_weapons": [
+      "harpoon_gun"
+    ],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "harpoon_gun_price_percent": -1.0,
+      "ranged_damage": -100,
+      "enemy_health_percent": 2.5
+    },
+    "rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "fixed_starting_harpoon_gun"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "harpoon_gun_price_percent",
+        "value": -1.0
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "precise_weapons_crit_damage_plus_200_percent"
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "crit_chance",
+        "multiplier": 1.25
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "hp_regeneration_plus_1_per_2_melee_damage"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "ranged_damage_hit_marks_enemy_take_300_percent_more_damage"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "ranged_damage",
+        "value": -100
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "enemy_health_percent",
+        "value": 2.5
+      }
+    ],
+    "implementation_notes": "Abyssal Terrors row modeled from wiki. Fixed Harpoon Gun, precise crit damage, melee-to-regen, and ranged-hit vulnerability are pending runtime behavior."
+  },
+  {
+    "id": "hiker",
+    "source_name": "Hiker",
+    "display_name": "徒步者",
+    "runtime_aliases": [],
+    "is_dlc": true,
+    "unlock": {
+      "type": "progress",
+      "condition": "walk_20000_steps"
+    },
+    "unlocks": [
+      {
+        "type": "item",
+        "id": "scarf"
+      }
+    ],
+    "wanted_tags": [
+      "speed"
+    ],
+    "starting_weapons": [
+      "hiking_pole"
+    ],
+    "starting_weapon_options": [
+      "hiking_pole",
+      "fist",
+      "hand",
+      "lute",
+      "flute",
+      "thief_dagger",
+      "jousting_lance",
+      "stick",
+      "pistol",
+      "taser"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "speed_percent": -0.05,
+      "materials_dropped_percent": -0.5
+    },
+    "rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "gain_5_materials_per_10_steps_during_wave"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "max_hp_plus_1_per_80_steps_during_wave"
+      },
+      {
+        "effect": "stat_modifications_multiplier",
+        "stat": "speed_percent",
+        "multiplier": 1.1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "speed_percent",
+        "value": -0.05
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "materials_dropped_percent",
+        "value": -0.5
+      }
+    ],
+    "implementation_notes": "Abyssal Terrors row modeled from wiki. Step-count material and max-HP gains are pending runtime behavior."
+  },
+  {
+    "id": "buccaneer",
+    "source_name": "Buccaneer",
+    "display_name": "海盗",
+    "runtime_aliases": [],
+    "is_dlc": true,
+    "unlock": {
+      "type": "progress",
+      "condition": "reach_plus_100_pickup_range"
+    },
+    "unlocks": [
+      {
+        "type": "item",
+        "id": "eyepatch"
+      }
+    ],
+    "wanted_tags": [
+      "pickup"
+    ],
+    "starting_weapons": [
+      "brick"
+    ],
+    "starting_weapon_options": [
+      "brick",
+      "cacti_club",
+      "rock",
+      "spear",
+      "torch",
+      "double_barrel_shotgun",
+      "laser_gun",
+      "shredder",
+      "icicle",
+      "flute",
+      "slingshot",
+      "crossbow"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "attack_speed_percent": -100,
+      "materials_dropped_percent": -0.5
+    },
+    "rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "picked_up_materials_have_double_value"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "material_pickup_resets_all_weapon_cooldowns"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "attack_speed_percent",
+        "value": -100
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "materials_dropped_percent",
+        "value": -0.5
+      }
+    ],
+    "implementation_notes": "Abyssal Terrors row modeled from wiki. Double material value and material-triggered weapon cooldown reset are pending runtime behavior."
+  },
+  {
+    "id": "ogre",
+    "source_name": "Ogre",
+    "display_name": "食人魔",
+    "runtime_aliases": [],
+    "is_dlc": true,
+    "unlock": {
+      "type": "progress",
+      "condition": "deal_1000_damage_to_enemy_single_hit"
+    },
+    "unlocks": [
+      {
+        "type": "weapon",
+        "id": "mace"
+      }
+    ],
+    "wanted_tags": [
+      "max_hp",
+      "melee_damage",
+      "explosive"
+    ],
+    "starting_weapons": [
+      "fist"
+    ],
+    "starting_weapon_options": [
+      "fist",
+      "brick",
+      "rock",
+      "plank",
+      "cacti_club",
+      "chopper",
+      "spoon"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "melee_damage": 10,
+      "attack_speed_percent": -50,
+      "speed_percent": -0.1
+    },
+    "rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "overkill_damage_explodes_enemy",
+        "base_damage": 10,
+        "max_hp_coefficient": 0.5,
+        "attack_speed_coefficient": -0.5
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "melee_damage",
+        "value": 10
+      },
+      {
+        "effect": "forbid_weapon_group",
+        "group": "ranged"
+      },
+      {
+        "effect": "forbid_weapon_group",
+        "group": "gun"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "attack_speed_percent",
+        "value": -50
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "speed_percent",
+        "value": -0.1
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "first_two_special_waves_are_hordes"
+      }
+    ],
+    "implementation_notes": "Abyssal Terrors row modeled from wiki. Overkill explosions and forced early horde waves are pending runtime behavior."
+  },
+  {
+    "id": "romantic",
+    "source_name": "Romantic",
+    "display_name": "浪漫主义者",
+    "runtime_aliases": [],
+    "is_dlc": true,
+    "unlock": {
+      "type": "progress",
+      "condition": "finish_run_with_0_curse"
+    },
+    "unlocks": [
+      {
+        "type": "weapon",
+        "id": "flute"
+      }
+    ],
+    "wanted_tags": [],
+    "starting_weapons": [
+      "lute"
+    ],
+    "starting_weapon_options": [
+      "lute",
+      "chopper",
+      "fist",
+      "spoon",
+      "scissors",
+      "sharp_tooth",
+      "hatchet",
+      "flute",
+      "double_barrel_shotgun",
+      "shuriken",
+      "slingshot",
+      "medical_gun",
+      "smg",
+      "taser",
+      "cacti_club",
+      "claw"
+    ],
+    "fixed_starting_weapons": [],
+    "fixed_starting_items": [],
+    "base_stats": {
+      "melee_weapon_range": 50,
+      "curse_end_wave_delta": 1
+    },
+    "rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "low_health_hit_charm_chance",
+        "health_threshold_percent": 0.25,
+        "base_chance": 0.05,
+        "max_hp_coefficient": 0.5,
+        "duration": 8.0
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "melee_weapon_range",
+        "value": 50
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "damage_percent_minus_3_per_5_curse"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "armor_minus_1_per_5_curse"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "curse_plus_1_end_wave"
+      }
+    ],
+    "implementation_notes": "Abyssal Terrors row modeled from wiki. Low-health charm, curse penalties, and end-wave curse gain are pending runtime behavior."
+  }
+]

@@ -1,0 +1,31 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Godot script/resource UID sidecar files are tracked.
+# Do not add *.uid here; they keep resource references stable across machines.
+
+# Local feature worktrees
+.worktrees/
+
+# Import cache
+*.import
+# Godot 导入过程会留下这种临时文件，别让它进版本库
+*.import*.tmp
+
+# Export config
+export_presets.cfg
+
+# Shader cache
+*.cache
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Shortcuts
+*.lnk
+
+# 视觉迭代用的截图产物（tools/capture_scene.gd 的输出）。
+# 是渲染结果不是源码，且每次调参都会重新生成 —— 不入库。
+shots/

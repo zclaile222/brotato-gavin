@@ -1,0 +1,23 @@
+{
+  "stat_delta": {
+    "required": ["stat", "value"]
+  },
+  "stat_modifications_multiplier": {
+    "required": ["stat", "multiplier"]
+  },
+  "forbid_weapon_group": {
+    "required": ["group"]
+  },
+  "weapon_class_bonus": {
+    "required": ["class_id", "thresholds"]
+  },
+  "weapon_special": {
+    "required": ["rule"]
+  },
+  "pickup_range_percent": {
+    "required": ["value"]
+  },
+  "starting_item": {
+    "required": ["item_id", "count"]
+  }
+}

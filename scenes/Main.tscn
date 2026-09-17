@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bf8p7pq0nf8j0"]
+
+[ext_resource type="PackedScene" path="res://scenes/Player.tscn" id="1"]
+[ext_resource type="Script" uid="uid://birhttr7hlk1u" path="res://scripts/Main.gd" id="2"]
+[ext_resource type="Script" uid="uid://dcviakiids01f" path="res://scripts/ArenaBackground.gd" id="3"]
+
+[node name="Main" type="Node2D" unique_id=1446710091]
+script = ExtResource("2")
+
+[node name="ArenaBackground" type="Node2D" parent="." unique_id=1072130441]
+z_index = -100
+script = ExtResource("3")
+
+[node name="Player" parent="." unique_id=1892958028 instance=ExtResource("1")]
+position = Vector2(427, 325)

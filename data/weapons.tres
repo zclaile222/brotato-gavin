@@ -1,0 +1,228 @@
+[gd_resource type="Resource" script_class="WeaponDatabase" format=3 uid="uid://doskshe7vubdu"]
+
+[ext_resource type="Script" uid="uid://c60n884ndo8ky" path="res://scripts/WeaponDatabase.gd" id="1_0vcb5"]
+[ext_resource type="Script" uid="uid://dlkcmsdab0boy" path="res://scripts/WeaponData.gd" id="2_vumx1"]
+
+[sub_resource type="Resource" id="Resource_l7j6h"]
+script = ExtResource("2_vumx1")
+weapon_type = "pistol"
+display_name = "手枪"
+desc = "均衡武器"
+price = 15
+
+[sub_resource type="Resource" id="Resource_tawin"]
+script = ExtResource("2_vumx1")
+weapon_type = "shotgun"
+display_name = "散弹枪"
+desc = "5发扇形散射"
+price = 30
+rarity = 1
+fire_rate = 1.0
+count = 5
+spread = 25.0
+speed = 420.0
+color = Color(1, 0.5, 0.1, 1)
+
+[sub_resource type="Resource" id="Resource_er6uv"]
+script = ExtResource("2_vumx1")
+weapon_type = "sniper"
+display_name = "狙击枪"
+desc = "4倍伤害超远射程"
+price = 35
+rarity = 1
+damage = 4
+fire_rate = 0.7
+speed = 900.0
+color = Color(0.3, 0.8, 1, 1)
+
+[sub_resource type="Resource" id="Resource_3vpx1"]
+script = ExtResource("2_vumx1")
+weapon_type = "machinegun"
+display_name = "机关枪"
+desc = "超高射速"
+price = 40
+rarity = 2
+fire_rate = 8.0
+spread = 8.0
+color = Color(1, 0.3, 0.3, 1)
+
+[sub_resource type="Resource" id="Resource_olho7"]
+script = ExtResource("2_vumx1")
+weapon_type = "boomerang"
+display_name = "回旋镖"
+desc = "飞出后自动返回"
+price = 50
+rarity = 1
+damage = 25
+fire_rate = 0.83
+spread = 5.7
+speed = 300.0
+color = Color(0.8, 0.6, 0.1, 1)
+returns = true
+
+[sub_resource type="Resource" id="Resource_077tg"]
+script = ExtResource("2_vumx1")
+weapon_type = "knife"
+display_name = "飞刀"
+desc = "高速三连投掷"
+price = 45
+rarity = 1
+damage = 5
+fire_rate = 2.0
+count = 3
+spread = 17.2
+speed = 550.0
+color = Color(0.8, 0.8, 0.8, 1)
+
+[sub_resource type="Resource" id="Resource_woyv2"]
+script = ExtResource("2_vumx1")
+weapon_type = "sword"
+display_name = "剑"
+desc = "近战范围攻击"
+price = 70
+rarity = 2
+damage = 40
+fire_rate = 1.25
+count = 8
+spread = 45.0
+speed = 0.0
+color = Color(0.9, 0.9, 0.9, 1)
+melee = true
+
+[sub_resource type="Resource" id="Resource_vmojh"]
+script = ExtResource("2_vumx1")
+weapon_type = "spear"
+display_name = "长矛"
+desc = "穿透型远程投掷"
+price = 75
+rarity = 2
+damage = 35
+fire_rate = 1.0
+color = Color(0.7, 0.4, 0.2, 1)
+pierce = true
+bullet_scale = Vector2(3, 0.5)
+
+[sub_resource type="Resource" id="Resource_usc0c"]
+script = ExtResource("2_vumx1")
+weapon_type = "flamethrower"
+display_name = "火焰喷射器"
+desc = "短距高速灼烧"
+price = 80
+rarity = 2
+damage = 5
+fire_rate = 10.0
+spread = 28.6
+speed = 200.0
+color = Color(1, 0.5, 0, 1)
+range_limit = 150.0
+
+[sub_resource type="Resource" id="Resource_8cocr"]
+script = ExtResource("2_vumx1")
+weapon_type = "crossbow"
+display_name = "弩"
+desc = "高伤害精准射击"
+price = 85
+rarity = 2
+damage = 60
+fire_rate = 0.56
+speed = 700.0
+color = Color(0.6, 0.3, 0.1, 1)
+
+[sub_resource type="Resource" id="Resource_1l8vu"]
+script = ExtResource("2_vumx1")
+weapon_type = "laser"
+display_name = "激光枪"
+desc = "穿透型激光束"
+price = 90
+rarity = 2
+damage = 15
+fire_rate = 3.3
+speed = 800.0
+color = Color(1, 0, 1, 1)
+pierce = true
+
+[sub_resource type="Resource" id="Resource_3f51h"]
+script = ExtResource("2_vumx1")
+weapon_type = "grenade"
+display_name = "手雷"
+desc = "溅射爆炸伤害"
+price = 95
+rarity = 2
+damage = 50
+fire_rate = 0.67
+spread = 11.5
+speed = 300.0
+color = Color(0.4, 0.7, 0.2, 1)
+splash = true
+splash_radius = 60.0
+gravity = true
+
+[sub_resource type="Resource" id="Resource_ejebj"]
+script = ExtResource("2_vumx1")
+weapon_type = "minigun"
+display_name = "速射枪"
+desc = "极限射速弹幕"
+price = 110
+rarity = 3
+damage = 5
+fire_rate = 20.0
+spread = 22.9
+speed = 600.0
+color = Color(0.5, 0.5, 0.5, 1)
+
+[sub_resource type="Resource" id="Resource_vej5l"]
+script = ExtResource("2_vumx1")
+weapon_type = "rocket_launcher"
+display_name = "火箭筒"
+desc = "大范围溅射爆炸"
+price = 120
+rarity = 3
+damage = 80
+fire_rate = 0.4
+spread = 2.9
+speed = 250.0
+color = Color(0.8, 0.4, 0.1, 1)
+splash = true
+splash_radius = 80.0
+
+[sub_resource type="Resource" id="Resource_wfx5x"]
+script = ExtResource("2_vumx1")
+weapon_type = "plasma"
+display_name = "等离子炮"
+desc = "超高伤害蓄力炮"
+price = 130
+rarity = 3
+damage = 100
+fire_rate = 0.25
+speed = 200.0
+color = Color(0, 1, 1, 1)
+charge_time = 2.0
+
+[sub_resource type="Resource" id="Resource_qu0am"]
+script = ExtResource("2_vumx1")
+weapon_type = "smg"
+display_name = "冲锋枪"
+desc = "极高射速连射"
+price = 35
+rarity = 1
+fire_rate = 12.0
+spread = 12.0
+speed = 480.0
+color = Color(0.9, 0.7, 0.2, 1)
+
+[sub_resource type="Resource" id="Resource_0vcb5"]
+script = ExtResource("2_vumx1")
+weapon_type = "Unknown"
+display_name = "未知"
+desc = "未知的神秘武器"
+price = 1
+fire_rate = 35.0
+count = 2
+spread = 5.0
+color = Color(0.41151738, 0.40926245, 0.34683925, 1)
+splash = true
+splash_radius = 5.0
+
+[resource]
+script = ExtResource("1_0vcb5")
+weapons = Array[ExtResource("2_vumx1")]([SubResource("Resource_l7j6h"), SubResource("Resource_tawin"), SubResource("Resource_er6uv"), SubResource("Resource_3vpx1"), SubResource("Resource_olho7"), SubResource("Resource_077tg"), SubResource("Resource_woyv2"), SubResource("Resource_vmojh"), SubResource("Resource_usc0c"), SubResource("Resource_8cocr"), SubResource("Resource_1l8vu"), SubResource("Resource_3f51h"), SubResource("Resource_ejebj"), SubResource("Resource_vej5l"), SubResource("Resource_wfx5x"), SubResource("Resource_qu0am"), SubResource("Resource_0vcb5")])

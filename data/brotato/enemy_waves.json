@@ -1,0 +1,409 @@
+{
+  "schema_version": 1,
+  "data_version": "brotato-waves-2026-09-15",
+  "total_waves": 20,
+  "notes": [
+    "每波显式定义主题、时长、基础刷怪间隔与敌人池权重。设计原则：",
+    "1) 每波有一个可命名的主题，玩家能据此形成针对性决策（补护甲 / 补射程 / 清场），而不是面对连续的概率混合；",
+    "2) 新敌种在固定波次登场，登场后不回退，存在感靠 weight 调节而不是开关；",
+    "3) 威胁曲线是「阶梯 + 平台」——新类型登场那波压力突增，随后几波平台期让玩家成长追上；",
+    "4) 数量与质量替代——早期靠数量（normal/fast 权重高），后期由 armored/charger/shooter_spread/elite 接管；",
+    "5) 本文件只描述「刷什么、多久刷一只、刷多久」，所有缩放（难度倍率、动态难度、无尽倍率、玩家 enemies_percent）仍由 WaveManager 代码计算。",
+    "spawn_interval 是基础间隔，实际间隔 = 本值 / 难度倍率 / 动态难度 / (1 + enemies_percent)，并受 WaveManager.MIN_SPAWN_INTERVAL 下界约束。",
+    "波次 1-15 的 duration 与 spawn_interval 与改造前的实现保持一致（不引入隐性平衡改动）；13-20 波补上了此前被冻结的池子演进。",
+    "boss 字段为空表示非 Boss 波；boss_count 是同时在场的 Boss 数量（第 20 波为 2）。",
+    "Boss 轮换按设计文档（docs/boss-variants-design.md）的难度序：第 5 波冰霜（控制型，最慢最厚）→ 第 10 波火焰（进攻型）→ 第 15 波雷电（机动型，最快最脆、接触伤害最高）→ 第 20 波基础 Boss ×2（均衡型双 Boss）。每波的主题名与对应 Boss 保持一致。"
+  ],
+  "fallback": {
+    "duration": 60.0,
+    "spawn_interval": 0.2
+  },
+  "waves": [
+    {
+      "id": "1",
+      "theme": "初见",
+      "duration": 20.0,
+      "spawn_interval": 1.9,
+      "boss": "",
+      "boss_count": 0,
+      "pool": [
+        {"type": "normal", "weight": 1.0}
+      ]
+    },
+    {
+      "id": "2",
+      "theme": "初见",
+      "duration": 25.0,
+      "spawn_interval": 1.8,
+      "boss": "",
+      "boss_count": 0,
+      "pool": [
+        {"type": "normal", "weight": 1.0}
+      ]
+    },
+    {
+      "id": "3",
+      "theme": "疾风",
+      "duration": 30.0,
+      "spawn_interval": 1.7,
+      "boss": "",
+      "boss_count": 0,
+      "pool": [
+        {"type": "normal", "weight": 0.65},
+        {"type": "fast", "weight": 0.35}
+      ]
+    },
+    {
+      "id": "4",
+      "theme": "爆裂",
+      "duration": 35.0,
+      "spawn_interval": 1.6,
+      "boss": "",
+      "boss_count": 0,
+      "pool": [
+        {"type": "normal", "weight": 0.5},
+        {"type": "fast", "weight": 0.3},
+        {"type": "exploder", "weight": 0.2}
+      ]
+    },
+    {
+      "id": "5",
+      "theme": "铁壁",
+      "duration": 40.0,
+      "spawn_interval": 1.5,
+      "boss": "boss_frost",
+      "boss_count": 1,
+      "pool": [
+        {"type": "normal", "weight": 0.4},
+        {"type": "fast", "weight": 0.25},
+        {"type": "exploder", "weight": 0.15},
+        {"type": "tank", "weight": 0.2}
+      ]
+    },
+    {
+      "id": "6",
+      "theme": "群起",
+      "duration": 45.0,
+      "spawn_interval": 1.4,
+      "boss": "",
+      "boss_count": 0,
+      "pool": [
+        {"type": "normal", "weight": 0.28},
+        {"type": "fast", "weight": 0.18},
+        {"type": "exploder", "weight": 0.12},
+        {"type": "tank", "weight": 0.14},
+        {"type": "swarm", "weight": 0.18},
+        {"type": "healer", "weight": 0.1}
+      ]
+    },
+    {
+      "id": "7",
+      "theme": "远火",
+      "duration": 50.0,
+      "spawn_interval": 1.3,
+      "boss": "",
+      "boss_count": 0,
+      "pool": [
+        {"type": "normal", "weight": 0.2},
+        {"type": "fast", "weight": 0.14},
+        {"type": "exploder", "weight": 0.1},
+        {"type": "tank", "weight": 0.12},
+        {"type": "swarm", "weight": 0.14},
+        {"type": "healer", "weight": 0.08},
+        {"type": "ranged", "weight": 0.16},
+        {"type": "armored", "weight": 0.06}
+      ]
+    },
+    {
+      "id": "8",
+      "theme": "幽影",
+      "duration": 55.0,
+      "spawn_interval": 1.2,
+      "boss": "",
+      "boss_count": 0,
+      "pool": [
+        {"type": "normal", "weight": 0.16},
+        {"type": "fast", "weight": 0.12},
+        {"type": "exploder", "weight": 0.09},
+        {"type": "tank", "weight": 0.11},
+        {"type": "swarm", "weight": 0.12},
+        {"type": "healer", "weight": 0.07},
+        {"type": "ranged", "weight": 0.14},
+        {"type": "armored", "weight": 0.09},
+        {"type": "ghost", "weight": 0.1}
+      ]
+    },
+    {
+      "id": "9",
+      "theme": "散射",
+      "duration": 60.0,
+      "spawn_interval": 1.1,
+      "boss": "",
+      "boss_count": 0,
+      "pool": [
+        {"type": "normal", "weight": 0.13},
+        {"type": "fast", "weight": 0.11},
+        {"type": "exploder", "weight": 0.08},
+        {"type": "tank", "weight": 0.1},
+        {"type": "swarm", "weight": 0.11},
+        {"type": "healer", "weight": 0.06},
+        {"type": "ranged", "weight": 0.13},
+        {"type": "armored", "weight": 0.09},
+        {"type": "ghost", "weight": 0.08},
+        {"type": "shooter_spread", "weight": 0.06},
+        {"type": "charger", "weight": 0.05}
+      ]
+    },
+    {
+      "id": "10",
+      "theme": "烈焰",
+      "duration": 60.0,
+      "spawn_interval": 1.0,
+      "boss": "boss_fire",
+      "boss_count": 1,
+      "pool": [
+        {"type": "normal", "weight": 0.12},
+        {"type": "fast", "weight": 0.1},
+        {"type": "exploder", "weight": 0.07},
+        {"type": "tank", "weight": 0.1},
+        {"type": "swarm", "weight": 0.1},
+        {"type": "healer", "weight": 0.06},
+        {"type": "ranged", "weight": 0.12},
+        {"type": "armored", "weight": 0.09},
+        {"type": "ghost", "weight": 0.07},
+        {"type": "shooter_spread", "weight": 0.06},
+        {"type": "charger", "weight": 0.06},
+        {"type": "summoner", "weight": 0.05}
+      ]
+    },
+    {
+      "id": "11",
+      "theme": "压迫",
+      "duration": 60.0,
+      "spawn_interval": 0.9,
+      "boss": "",
+      "boss_count": 0,
+      "pool": [
+        {"type": "normal", "weight": 0.1},
+        {"type": "fast", "weight": 0.09},
+        {"type": "exploder", "weight": 0.07},
+        {"type": "tank", "weight": 0.1},
+        {"type": "swarm", "weight": 0.09},
+        {"type": "healer", "weight": 0.06},
+        {"type": "ranged", "weight": 0.12},
+        {"type": "armored", "weight": 0.1},
+        {"type": "ghost", "weight": 0.07},
+        {"type": "shooter_spread", "weight": 0.07},
+        {"type": "charger", "weight": 0.07},
+        {"type": "summoner", "weight": 0.06}
+      ]
+    },
+    {
+      "id": "12",
+      "theme": "精英涌动",
+      "duration": 60.0,
+      "spawn_interval": 0.8,
+      "boss": "",
+      "boss_count": 0,
+      "pool": [
+        {"type": "normal", "weight": 0.09},
+        {"type": "fast", "weight": 0.08},
+        {"type": "exploder", "weight": 0.06},
+        {"type": "tank", "weight": 0.1},
+        {"type": "swarm", "weight": 0.08},
+        {"type": "healer", "weight": 0.05},
+        {"type": "ranged", "weight": 0.11},
+        {"type": "armored", "weight": 0.1},
+        {"type": "ghost", "weight": 0.06},
+        {"type": "shooter_spread", "weight": 0.07},
+        {"type": "charger", "weight": 0.07},
+        {"type": "summoner", "weight": 0.06},
+        {"type": "elite", "weight": 0.07}
+      ]
+    },
+    {
+      "id": "13",
+      "theme": "深水区",
+      "duration": 60.0,
+      "spawn_interval": 0.7,
+      "boss": "",
+      "boss_count": 0,
+      "pool": [
+        {"type": "normal", "weight": 0.08},
+        {"type": "fast", "weight": 0.07},
+        {"type": "exploder", "weight": 0.06},
+        {"type": "tank", "weight": 0.1},
+        {"type": "swarm", "weight": 0.07},
+        {"type": "healer", "weight": 0.05},
+        {"type": "ranged", "weight": 0.11},
+        {"type": "armored", "weight": 0.11},
+        {"type": "ghost", "weight": 0.06},
+        {"type": "shooter_spread", "weight": 0.08},
+        {"type": "charger", "weight": 0.08},
+        {"type": "summoner", "weight": 0.06},
+        {"type": "elite", "weight": 0.07}
+      ]
+    },
+    {
+      "id": "14",
+      "theme": "绞杀",
+      "duration": 60.0,
+      "spawn_interval": 0.6,
+      "boss": "",
+      "boss_count": 0,
+      "pool": [
+        {"type": "normal", "weight": 0.07},
+        {"type": "fast", "weight": 0.06},
+        {"type": "exploder", "weight": 0.05},
+        {"type": "tank", "weight": 0.1},
+        {"type": "swarm", "weight": 0.06},
+        {"type": "healer", "weight": 0.05},
+        {"type": "ranged", "weight": 0.11},
+        {"type": "armored", "weight": 0.12},
+        {"type": "ghost", "weight": 0.05},
+        {"type": "shooter_spread", "weight": 0.08},
+        {"type": "charger", "weight": 0.08},
+        {"type": "summoner", "weight": 0.07},
+        {"type": "elite", "weight": 0.1}
+      ]
+    },
+    {
+      "id": "15",
+      "theme": "雷狱",
+      "duration": 60.0,
+      "spawn_interval": 0.5,
+      "boss": "boss_lightning",
+      "boss_count": 1,
+      "pool": [
+        {"type": "normal", "weight": 0.06},
+        {"type": "fast", "weight": 0.06},
+        {"type": "exploder", "weight": 0.05},
+        {"type": "tank", "weight": 0.1},
+        {"type": "swarm", "weight": 0.06},
+        {"type": "healer", "weight": 0.05},
+        {"type": "ranged", "weight": 0.1},
+        {"type": "armored", "weight": 0.12},
+        {"type": "ghost", "weight": 0.05},
+        {"type": "shooter_spread", "weight": 0.08},
+        {"type": "charger", "weight": 0.09},
+        {"type": "summoner", "weight": 0.07},
+        {"type": "elite", "weight": 0.11}
+      ]
+    },
+    {
+      "id": "16",
+      "theme": "围城",
+      "duration": 60.0,
+      "spawn_interval": 0.4,
+      "boss": "",
+      "boss_count": 0,
+      "pool": [
+        {"type": "normal", "weight": 0.05},
+        {"type": "fast", "weight": 0.05},
+        {"type": "exploder", "weight": 0.04},
+        {"type": "tank", "weight": 0.1},
+        {"type": "swarm", "weight": 0.05},
+        {"type": "healer", "weight": 0.04},
+        {"type": "ranged", "weight": 0.1},
+        {"type": "armored", "weight": 0.13},
+        {"type": "ghost", "weight": 0.05},
+        {"type": "shooter_spread", "weight": 0.09},
+        {"type": "charger", "weight": 0.09},
+        {"type": "summoner", "weight": 0.08},
+        {"type": "elite", "weight": 0.13}
+      ]
+    },
+    {
+      "id": "17",
+      "theme": "肃清",
+      "duration": 60.0,
+      "spawn_interval": 0.32,
+      "boss": "",
+      "boss_count": 0,
+      "pool": [
+        {"type": "normal", "weight": 0.04},
+        {"type": "fast", "weight": 0.04},
+        {"type": "exploder", "weight": 0.04},
+        {"type": "tank", "weight": 0.1},
+        {"type": "swarm", "weight": 0.04},
+        {"type": "healer", "weight": 0.04},
+        {"type": "ranged", "weight": 0.09},
+        {"type": "armored", "weight": 0.14},
+        {"type": "ghost", "weight": 0.05},
+        {"type": "shooter_spread", "weight": 0.09},
+        {"type": "charger", "weight": 0.1},
+        {"type": "summoner", "weight": 0.09},
+        {"type": "elite", "weight": 0.11}
+      ]
+    },
+    {
+      "id": "18",
+      "theme": "逆流",
+      "duration": 60.0,
+      "spawn_interval": 0.26,
+      "boss": "",
+      "boss_count": 0,
+      "pool": [
+        {"type": "normal", "weight": 0.04},
+        {"type": "fast", "weight": 0.03},
+        {"type": "exploder", "weight": 0.03},
+        {"type": "tank", "weight": 0.1},
+        {"type": "swarm", "weight": 0.04},
+        {"type": "healer", "weight": 0.03},
+        {"type": "ranged", "weight": 0.09},
+        {"type": "armored", "weight": 0.14},
+        {"type": "ghost", "weight": 0.05},
+        {"type": "shooter_spread", "weight": 0.09},
+        {"type": "charger", "weight": 0.1},
+        {"type": "summoner", "weight": 0.09},
+        {"type": "elite", "weight": 0.13}
+      ]
+    },
+    {
+      "id": "19",
+      "theme": "绝境",
+      "duration": 60.0,
+      "spawn_interval": 0.23,
+      "boss": "",
+      "boss_count": 0,
+      "pool": [
+        {"type": "normal", "weight": 0.03},
+        {"type": "fast", "weight": 0.03},
+        {"type": "exploder", "weight": 0.03},
+        {"type": "tank", "weight": 0.1},
+        {"type": "swarm", "weight": 0.03},
+        {"type": "healer", "weight": 0.03},
+        {"type": "ranged", "weight": 0.08},
+        {"type": "armored", "weight": 0.14},
+        {"type": "ghost", "weight": 0.04},
+        {"type": "shooter_spread", "weight": 0.09},
+        {"type": "charger", "weight": 0.1},
+        {"type": "summoner", "weight": 0.1},
+        {"type": "elite", "weight": 0.14}
+      ]
+    },
+    {
+      "id": "20",
+      "theme": "终局",
+      "duration": 90.0,
+      "spawn_interval": 0.2,
+      "boss": "boss",
+      "boss_count": 2,
+      "pool": [
+        {"type": "normal", "weight": 0.03},
+        {"type": "fast", "weight": 0.02},
+        {"type": "exploder", "weight": 0.03},
+        {"type": "tank", "weight": 0.1},
+        {"type": "swarm", "weight": 0.03},
+        {"type": "healer", "weight": 0.03},
+        {"type": "ranged", "weight": 0.07},
+        {"type": "armored", "weight": 0.14},
+        {"type": "ghost", "weight": 0.04},
+        {"type": "shooter_spread", "weight": 0.09},
+        {"type": "charger", "weight": 0.1},
+        {"type": "summoner", "weight": 0.1},
+        {"type": "elite", "weight": 0.16}
+      ]
+    }
+  ]
+}

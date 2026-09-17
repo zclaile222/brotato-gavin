@@ -1,0 +1,1002 @@
+[
+  {
+    "id": "damage_percent_t1",
+    "display_name": "伤害 I",
+    "tier": 1,
+    "stat": "damage_percent",
+    "value": 0.05,
+    "weight": 1,
+    "min_wave": 1,
+    "max_wave": 6
+  },
+  {
+    "id": "damage_percent_t2",
+    "display_name": "伤害 II",
+    "tier": 2,
+    "stat": "damage_percent",
+    "value": 0.08,
+    "weight": 0.8,
+    "min_wave": 1,
+    "max_wave": 12
+  },
+  {
+    "id": "damage_percent_t3",
+    "display_name": "伤害 III",
+    "tier": 3,
+    "stat": "damage_percent",
+    "value": 0.12,
+    "weight": 0.6,
+    "min_wave": 4,
+    "max_wave": 999
+  },
+  {
+    "id": "damage_percent_t4",
+    "display_name": "伤害 IV",
+    "tier": 4,
+    "stat": "damage_percent",
+    "value": 0.15,
+    "weight": 0.45,
+    "min_wave": 8,
+    "max_wave": 999
+  },
+  {
+    "id": "melee_damage_t1",
+    "display_name": "近战伤害 I",
+    "tier": 1,
+    "stat": "melee_damage",
+    "value": 2,
+    "weight": 1,
+    "min_wave": 1,
+    "max_wave": 6
+  },
+  {
+    "id": "melee_damage_t2",
+    "display_name": "近战伤害 II",
+    "tier": 2,
+    "stat": "melee_damage",
+    "value": 3,
+    "weight": 0.8,
+    "min_wave": 1,
+    "max_wave": 12
+  },
+  {
+    "id": "melee_damage_t3",
+    "display_name": "近战伤害 III",
+    "tier": 3,
+    "stat": "melee_damage",
+    "value": 4,
+    "weight": 0.6,
+    "min_wave": 4,
+    "max_wave": 999
+  },
+  {
+    "id": "melee_damage_t4",
+    "display_name": "近战伤害 IV",
+    "tier": 4,
+    "stat": "melee_damage",
+    "value": 5,
+    "weight": 0.45,
+    "min_wave": 8,
+    "max_wave": 999
+  },
+  {
+    "id": "ranged_damage_t1",
+    "display_name": "远程伤害 I",
+    "tier": 1,
+    "stat": "ranged_damage",
+    "value": 2,
+    "weight": 1,
+    "min_wave": 1,
+    "max_wave": 6
+  },
+  {
+    "id": "ranged_damage_t2",
+    "display_name": "远程伤害 II",
+    "tier": 2,
+    "stat": "ranged_damage",
+    "value": 3,
+    "weight": 0.8,
+    "min_wave": 1,
+    "max_wave": 12
+  },
+  {
+    "id": "ranged_damage_t3",
+    "display_name": "远程伤害 III",
+    "tier": 3,
+    "stat": "ranged_damage",
+    "value": 4,
+    "weight": 0.6,
+    "min_wave": 4,
+    "max_wave": 999
+  },
+  {
+    "id": "ranged_damage_t4",
+    "display_name": "远程伤害 IV",
+    "tier": 4,
+    "stat": "ranged_damage",
+    "value": 5,
+    "weight": 0.45,
+    "min_wave": 8,
+    "max_wave": 999
+  },
+  {
+    "id": "elemental_damage_t1",
+    "display_name": "元素伤害 I",
+    "tier": 1,
+    "stat": "elemental_damage",
+    "value": 1,
+    "weight": 1,
+    "min_wave": 1,
+    "max_wave": 6
+  },
+  {
+    "id": "elemental_damage_t2",
+    "display_name": "元素伤害 II",
+    "tier": 2,
+    "stat": "elemental_damage",
+    "value": 2,
+    "weight": 0.8,
+    "min_wave": 1,
+    "max_wave": 12
+  },
+  {
+    "id": "elemental_damage_t3",
+    "display_name": "元素伤害 III",
+    "tier": 3,
+    "stat": "elemental_damage",
+    "value": 3,
+    "weight": 0.6,
+    "min_wave": 4,
+    "max_wave": 999
+  },
+  {
+    "id": "elemental_damage_t4",
+    "display_name": "元素伤害 IV",
+    "tier": 4,
+    "stat": "elemental_damage",
+    "value": 4,
+    "weight": 0.45,
+    "min_wave": 8,
+    "max_wave": 999
+  },
+  {
+    "id": "attack_speed_percent_t1",
+    "display_name": "攻击速度 I",
+    "tier": 1,
+    "stat": "attack_speed_percent",
+    "value": 0.05,
+    "weight": 1,
+    "min_wave": 1,
+    "max_wave": 6
+  },
+  {
+    "id": "attack_speed_percent_t2",
+    "display_name": "攻击速度 II",
+    "tier": 2,
+    "stat": "attack_speed_percent",
+    "value": 0.08,
+    "weight": 0.8,
+    "min_wave": 1,
+    "max_wave": 12
+  },
+  {
+    "id": "attack_speed_percent_t3",
+    "display_name": "攻击速度 III",
+    "tier": 3,
+    "stat": "attack_speed_percent",
+    "value": 0.1,
+    "weight": 0.6,
+    "min_wave": 4,
+    "max_wave": 999
+  },
+  {
+    "id": "attack_speed_percent_t4",
+    "display_name": "攻击速度 IV",
+    "tier": 4,
+    "stat": "attack_speed_percent",
+    "value": 0.13,
+    "weight": 0.45,
+    "min_wave": 8,
+    "max_wave": 999
+  },
+  {
+    "id": "crit_chance_t1",
+    "display_name": "暴击率 I",
+    "tier": 1,
+    "stat": "crit_chance",
+    "value": 0.03,
+    "weight": 1,
+    "min_wave": 1,
+    "max_wave": 6
+  },
+  {
+    "id": "crit_chance_t2",
+    "display_name": "暴击率 II",
+    "tier": 2,
+    "stat": "crit_chance",
+    "value": 0.05,
+    "weight": 0.8,
+    "min_wave": 1,
+    "max_wave": 12
+  },
+  {
+    "id": "crit_chance_t3",
+    "display_name": "暴击率 III",
+    "tier": 3,
+    "stat": "crit_chance",
+    "value": 0.07,
+    "weight": 0.6,
+    "min_wave": 4,
+    "max_wave": 999
+  },
+  {
+    "id": "crit_chance_t4",
+    "display_name": "暴击率 IV",
+    "tier": 4,
+    "stat": "crit_chance",
+    "value": 0.09,
+    "weight": 0.45,
+    "min_wave": 8,
+    "max_wave": 999
+  },
+  {
+    "id": "engineering_t1",
+    "display_name": "工程 I",
+    "tier": 1,
+    "stat": "engineering",
+    "value": 2,
+    "weight": 1,
+    "min_wave": 1,
+    "max_wave": 6
+  },
+  {
+    "id": "engineering_t2",
+    "display_name": "工程 II",
+    "tier": 2,
+    "stat": "engineering",
+    "value": 3,
+    "weight": 0.8,
+    "min_wave": 1,
+    "max_wave": 12
+  },
+  {
+    "id": "engineering_t3",
+    "display_name": "工程 III",
+    "tier": 3,
+    "stat": "engineering",
+    "value": 4,
+    "weight": 0.6,
+    "min_wave": 4,
+    "max_wave": 999
+  },
+  {
+    "id": "engineering_t4",
+    "display_name": "工程 IV",
+    "tier": 4,
+    "stat": "engineering",
+    "value": 5,
+    "weight": 0.45,
+    "min_wave": 8,
+    "max_wave": 999
+  },
+  {
+    "id": "range_t1",
+    "display_name": "射程 I",
+    "tier": 1,
+    "stat": "range",
+    "value": 20,
+    "weight": 1,
+    "min_wave": 1,
+    "max_wave": 6
+  },
+  {
+    "id": "range_t2",
+    "display_name": "射程 II",
+    "tier": 2,
+    "stat": "range",
+    "value": 30,
+    "weight": 0.8,
+    "min_wave": 1,
+    "max_wave": 12
+  },
+  {
+    "id": "range_t3",
+    "display_name": "射程 III",
+    "tier": 3,
+    "stat": "range",
+    "value": 40,
+    "weight": 0.6,
+    "min_wave": 4,
+    "max_wave": 999
+  },
+  {
+    "id": "range_t4",
+    "display_name": "射程 IV",
+    "tier": 4,
+    "stat": "range",
+    "value": 50,
+    "weight": 0.45,
+    "min_wave": 8,
+    "max_wave": 999
+  },
+  {
+    "id": "knockback_t1",
+    "display_name": "击退 I",
+    "tier": 1,
+    "stat": "knockback",
+    "value": 5,
+    "weight": 1,
+    "min_wave": 1,
+    "max_wave": 6
+  },
+  {
+    "id": "knockback_t2",
+    "display_name": "击退 II",
+    "tier": 2,
+    "stat": "knockback",
+    "value": 8,
+    "weight": 0.8,
+    "min_wave": 1,
+    "max_wave": 12
+  },
+  {
+    "id": "knockback_t3",
+    "display_name": "击退 III",
+    "tier": 3,
+    "stat": "knockback",
+    "value": 10,
+    "weight": 0.6,
+    "min_wave": 4,
+    "max_wave": 999
+  },
+  {
+    "id": "knockback_t4",
+    "display_name": "击退 IV",
+    "tier": 4,
+    "stat": "knockback",
+    "value": 15,
+    "weight": 0.45,
+    "min_wave": 8,
+    "max_wave": 999
+  },
+  {
+    "id": "boss_elite_damage_percent_t1",
+    "display_name": "Boss/精英伤害 I",
+    "tier": 1,
+    "stat": "boss_elite_damage_percent",
+    "value": 0.05,
+    "weight": 1,
+    "min_wave": 1,
+    "max_wave": 6
+  },
+  {
+    "id": "boss_elite_damage_percent_t2",
+    "display_name": "Boss/精英伤害 II",
+    "tier": 2,
+    "stat": "boss_elite_damage_percent",
+    "value": 0.08,
+    "weight": 0.8,
+    "min_wave": 1,
+    "max_wave": 12
+  },
+  {
+    "id": "boss_elite_damage_percent_t3",
+    "display_name": "Boss/精英伤害 III",
+    "tier": 3,
+    "stat": "boss_elite_damage_percent",
+    "value": 0.12,
+    "weight": 0.6,
+    "min_wave": 4,
+    "max_wave": 999
+  },
+  {
+    "id": "boss_elite_damage_percent_t4",
+    "display_name": "Boss/精英伤害 IV",
+    "tier": 4,
+    "stat": "boss_elite_damage_percent",
+    "value": 0.15,
+    "weight": 0.45,
+    "min_wave": 8,
+    "max_wave": 999
+  },
+  {
+    "id": "max_hp_t1",
+    "display_name": "最大生命值 I",
+    "tier": 1,
+    "stat": "max_hp",
+    "value": 3,
+    "weight": 1,
+    "min_wave": 1,
+    "max_wave": 6
+  },
+  {
+    "id": "max_hp_t2",
+    "display_name": "最大生命值 II",
+    "tier": 2,
+    "stat": "max_hp",
+    "value": 6,
+    "weight": 0.8,
+    "min_wave": 1,
+    "max_wave": 12
+  },
+  {
+    "id": "max_hp_t3",
+    "display_name": "最大生命值 III",
+    "tier": 3,
+    "stat": "max_hp",
+    "value": 9,
+    "weight": 0.6,
+    "min_wave": 4,
+    "max_wave": 999
+  },
+  {
+    "id": "max_hp_t4",
+    "display_name": "最大生命值 IV",
+    "tier": 4,
+    "stat": "max_hp",
+    "value": 12,
+    "weight": 0.45,
+    "min_wave": 8,
+    "max_wave": 999
+  },
+  {
+    "id": "hp_regeneration_t1",
+    "display_name": "生命回复 I",
+    "tier": 1,
+    "stat": "hp_regeneration",
+    "value": 1,
+    "weight": 1,
+    "min_wave": 1,
+    "max_wave": 6
+  },
+  {
+    "id": "hp_regeneration_t2",
+    "display_name": "生命回复 II",
+    "tier": 2,
+    "stat": "hp_regeneration",
+    "value": 2,
+    "weight": 0.8,
+    "min_wave": 1,
+    "max_wave": 12
+  },
+  {
+    "id": "hp_regeneration_t3",
+    "display_name": "生命回复 III",
+    "tier": 3,
+    "stat": "hp_regeneration",
+    "value": 3,
+    "weight": 0.6,
+    "min_wave": 4,
+    "max_wave": 999
+  },
+  {
+    "id": "hp_regeneration_t4",
+    "display_name": "生命回复 IV",
+    "tier": 4,
+    "stat": "hp_regeneration",
+    "value": 4,
+    "weight": 0.45,
+    "min_wave": 8,
+    "max_wave": 999
+  },
+  {
+    "id": "lifesteal_t1",
+    "display_name": "生命偷取 I",
+    "tier": 1,
+    "stat": "lifesteal",
+    "value": 0.01,
+    "weight": 1,
+    "min_wave": 1,
+    "max_wave": 6
+  },
+  {
+    "id": "lifesteal_t2",
+    "display_name": "生命偷取 II",
+    "tier": 2,
+    "stat": "lifesteal",
+    "value": 0.02,
+    "weight": 0.8,
+    "min_wave": 1,
+    "max_wave": 12
+  },
+  {
+    "id": "lifesteal_t3",
+    "display_name": "生命偷取 III",
+    "tier": 3,
+    "stat": "lifesteal",
+    "value": 0.03,
+    "weight": 0.6,
+    "min_wave": 4,
+    "max_wave": 999
+  },
+  {
+    "id": "lifesteal_t4",
+    "display_name": "生命偷取 IV",
+    "tier": 4,
+    "stat": "lifesteal",
+    "value": 0.04,
+    "weight": 0.45,
+    "min_wave": 8,
+    "max_wave": 999
+  },
+  {
+    "id": "armor_t1",
+    "display_name": "护甲 I",
+    "tier": 1,
+    "stat": "armor",
+    "value": 1,
+    "weight": 1,
+    "min_wave": 1,
+    "max_wave": 6
+  },
+  {
+    "id": "armor_t2",
+    "display_name": "护甲 II",
+    "tier": 2,
+    "stat": "armor",
+    "value": 2,
+    "weight": 0.8,
+    "min_wave": 1,
+    "max_wave": 12
+  },
+  {
+    "id": "armor_t3",
+    "display_name": "护甲 III",
+    "tier": 3,
+    "stat": "armor",
+    "value": 3,
+    "weight": 0.6,
+    "min_wave": 4,
+    "max_wave": 999
+  },
+  {
+    "id": "armor_t4",
+    "display_name": "护甲 IV",
+    "tier": 4,
+    "stat": "armor",
+    "value": 4,
+    "weight": 0.45,
+    "min_wave": 8,
+    "max_wave": 999
+  },
+  {
+    "id": "dodge_t1",
+    "display_name": "闪避 I",
+    "tier": 1,
+    "stat": "dodge",
+    "value": 0.03,
+    "weight": 1,
+    "min_wave": 1,
+    "max_wave": 6
+  },
+  {
+    "id": "dodge_t2",
+    "display_name": "闪避 II",
+    "tier": 2,
+    "stat": "dodge",
+    "value": 0.05,
+    "weight": 0.8,
+    "min_wave": 1,
+    "max_wave": 12
+  },
+  {
+    "id": "dodge_t3",
+    "display_name": "闪避 III",
+    "tier": 3,
+    "stat": "dodge",
+    "value": 0.07,
+    "weight": 0.6,
+    "min_wave": 4,
+    "max_wave": 999
+  },
+  {
+    "id": "dodge_t4",
+    "display_name": "闪避 IV",
+    "tier": 4,
+    "stat": "dodge",
+    "value": 0.09,
+    "weight": 0.45,
+    "min_wave": 8,
+    "max_wave": 999
+  },
+  {
+    "id": "consumable_heal_t1",
+    "display_name": "消耗品治疗 I",
+    "tier": 1,
+    "stat": "consumable_heal",
+    "value": 1,
+    "weight": 1,
+    "min_wave": 1,
+    "max_wave": 6
+  },
+  {
+    "id": "consumable_heal_t2",
+    "display_name": "消耗品治疗 II",
+    "tier": 2,
+    "stat": "consumable_heal",
+    "value": 1,
+    "weight": 0.8,
+    "min_wave": 1,
+    "max_wave": 12
+  },
+  {
+    "id": "consumable_heal_t3",
+    "display_name": "消耗品治疗 III",
+    "tier": 3,
+    "stat": "consumable_heal",
+    "value": 2,
+    "weight": 0.6,
+    "min_wave": 4,
+    "max_wave": 999
+  },
+  {
+    "id": "consumable_heal_t4",
+    "display_name": "消耗品治疗 IV",
+    "tier": 4,
+    "stat": "consumable_heal",
+    "value": 3,
+    "weight": 0.45,
+    "min_wave": 8,
+    "max_wave": 999
+  },
+  {
+    "id": "speed_percent_t1",
+    "display_name": "速度 I",
+    "tier": 1,
+    "stat": "speed_percent",
+    "value": 0.04,
+    "weight": 1,
+    "min_wave": 1,
+    "max_wave": 6
+  },
+  {
+    "id": "speed_percent_t2",
+    "display_name": "速度 II",
+    "tier": 2,
+    "stat": "speed_percent",
+    "value": 0.07,
+    "weight": 0.8,
+    "min_wave": 1,
+    "max_wave": 12
+  },
+  {
+    "id": "speed_percent_t3",
+    "display_name": "速度 III",
+    "tier": 3,
+    "stat": "speed_percent",
+    "value": 0.1,
+    "weight": 0.6,
+    "min_wave": 4,
+    "max_wave": 999
+  },
+  {
+    "id": "speed_percent_t4",
+    "display_name": "速度 IV",
+    "tier": 4,
+    "stat": "speed_percent",
+    "value": 0.13,
+    "weight": 0.45,
+    "min_wave": 8,
+    "max_wave": 999
+  },
+  {
+    "id": "luck_t1",
+    "display_name": "幸运 I",
+    "tier": 1,
+    "stat": "luck",
+    "value": 5,
+    "weight": 1,
+    "min_wave": 1,
+    "max_wave": 6
+  },
+  {
+    "id": "luck_t2",
+    "display_name": "幸运 II",
+    "tier": 2,
+    "stat": "luck",
+    "value": 10,
+    "weight": 0.8,
+    "min_wave": 1,
+    "max_wave": 12
+  },
+  {
+    "id": "luck_t3",
+    "display_name": "幸运 III",
+    "tier": 3,
+    "stat": "luck",
+    "value": 15,
+    "weight": 0.6,
+    "min_wave": 4,
+    "max_wave": 999
+  },
+  {
+    "id": "luck_t4",
+    "display_name": "幸运 IV",
+    "tier": 4,
+    "stat": "luck",
+    "value": 20,
+    "weight": 0.45,
+    "min_wave": 8,
+    "max_wave": 999
+  },
+  {
+    "id": "harvesting_t1",
+    "display_name": "收获 I",
+    "tier": 1,
+    "stat": "harvesting",
+    "value": 2,
+    "weight": 1,
+    "min_wave": 1,
+    "max_wave": 6
+  },
+  {
+    "id": "harvesting_t2",
+    "display_name": "收获 II",
+    "tier": 2,
+    "stat": "harvesting",
+    "value": 3,
+    "weight": 0.8,
+    "min_wave": 1,
+    "max_wave": 12
+  },
+  {
+    "id": "harvesting_t3",
+    "display_name": "收获 III",
+    "tier": 3,
+    "stat": "harvesting",
+    "value": 4,
+    "weight": 0.6,
+    "min_wave": 4,
+    "max_wave": 999
+  },
+  {
+    "id": "harvesting_t4",
+    "display_name": "收获 IV",
+    "tier": 4,
+    "stat": "harvesting",
+    "value": 5,
+    "weight": 0.45,
+    "min_wave": 8,
+    "max_wave": 999
+  },
+  {
+    "id": "pickup_range_percent_t1",
+    "display_name": "拾取范围 I",
+    "tier": 1,
+    "stat": "pickup_range_percent",
+    "value": 0.1,
+    "weight": 1,
+    "min_wave": 1,
+    "max_wave": 6
+  },
+  {
+    "id": "pickup_range_percent_t2",
+    "display_name": "拾取范围 II",
+    "tier": 2,
+    "stat": "pickup_range_percent",
+    "value": 0.15,
+    "weight": 0.8,
+    "min_wave": 1,
+    "max_wave": 12
+  },
+  {
+    "id": "pickup_range_percent_t3",
+    "display_name": "拾取范围 III",
+    "tier": 3,
+    "stat": "pickup_range_percent",
+    "value": 0.2,
+    "weight": 0.6,
+    "min_wave": 4,
+    "max_wave": 999
+  },
+  {
+    "id": "pickup_range_percent_t4",
+    "display_name": "拾取范围 IV",
+    "tier": 4,
+    "stat": "pickup_range_percent",
+    "value": 0.3,
+    "weight": 0.45,
+    "min_wave": 8,
+    "max_wave": 999
+  },
+  {
+    "id": "xp_gain_percent_t1",
+    "display_name": "经验获取 I",
+    "tier": 1,
+    "stat": "xp_gain_percent",
+    "value": 0.05,
+    "weight": 1,
+    "min_wave": 1,
+    "max_wave": 6
+  },
+  {
+    "id": "xp_gain_percent_t2",
+    "display_name": "经验获取 II",
+    "tier": 2,
+    "stat": "xp_gain_percent",
+    "value": 0.08,
+    "weight": 0.8,
+    "min_wave": 1,
+    "max_wave": 12
+  },
+  {
+    "id": "xp_gain_percent_t3",
+    "display_name": "经验获取 III",
+    "tier": 3,
+    "stat": "xp_gain_percent",
+    "value": 0.1,
+    "weight": 0.6,
+    "min_wave": 4,
+    "max_wave": 999
+  },
+  {
+    "id": "xp_gain_percent_t4",
+    "display_name": "经验获取 IV",
+    "tier": 4,
+    "stat": "xp_gain_percent",
+    "value": 0.15,
+    "weight": 0.45,
+    "min_wave": 8,
+    "max_wave": 999
+  },
+  {
+    "id": "recycling_materials_percent_t1",
+    "display_name": "回收材料 I",
+    "tier": 1,
+    "stat": "recycling_materials_percent",
+    "value": 0.05,
+    "weight": 1,
+    "min_wave": 1,
+    "max_wave": 6
+  },
+  {
+    "id": "recycling_materials_percent_t2",
+    "display_name": "回收材料 II",
+    "tier": 2,
+    "stat": "recycling_materials_percent",
+    "value": 0.1,
+    "weight": 0.8,
+    "min_wave": 1,
+    "max_wave": 12
+  },
+  {
+    "id": "recycling_materials_percent_t3",
+    "display_name": "回收材料 III",
+    "tier": 3,
+    "stat": "recycling_materials_percent",
+    "value": 0.15,
+    "weight": 0.6,
+    "min_wave": 4,
+    "max_wave": 999
+  },
+  {
+    "id": "recycling_materials_percent_t4",
+    "display_name": "回收材料 IV",
+    "tier": 4,
+    "stat": "recycling_materials_percent",
+    "value": 0.2,
+    "weight": 0.45,
+    "min_wave": 8,
+    "max_wave": 999
+  },
+  {
+    "id": "materials_dropped_percent_t1",
+    "display_name": "材料掉落 I",
+    "tier": 1,
+    "stat": "materials_dropped_percent",
+    "value": 0.05,
+    "weight": 1,
+    "min_wave": 1,
+    "max_wave": 6
+  },
+  {
+    "id": "materials_dropped_percent_t2",
+    "display_name": "材料掉落 II",
+    "tier": 2,
+    "stat": "materials_dropped_percent",
+    "value": 0.08,
+    "weight": 0.8,
+    "min_wave": 1,
+    "max_wave": 12
+  },
+  {
+    "id": "materials_dropped_percent_t3",
+    "display_name": "材料掉落 III",
+    "tier": 3,
+    "stat": "materials_dropped_percent",
+    "value": 0.1,
+    "weight": 0.6,
+    "min_wave": 4,
+    "max_wave": 999
+  },
+  {
+    "id": "materials_dropped_percent_t4",
+    "display_name": "材料掉落 IV",
+    "tier": 4,
+    "stat": "materials_dropped_percent",
+    "value": 0.12,
+    "weight": 0.45,
+    "min_wave": 8,
+    "max_wave": 999
+  },
+  {
+    "id": "item_price_percent_t1",
+    "display_name": "物品价格 I",
+    "tier": 1,
+    "stat": "item_price_percent",
+    "value": -0.03,
+    "weight": 1,
+    "min_wave": 1,
+    "max_wave": 6
+  },
+  {
+    "id": "item_price_percent_t2",
+    "display_name": "物品价格 II",
+    "tier": 2,
+    "stat": "item_price_percent",
+    "value": -0.05,
+    "weight": 0.8,
+    "min_wave": 1,
+    "max_wave": 12
+  },
+  {
+    "id": "item_price_percent_t3",
+    "display_name": "物品价格 III",
+    "tier": 3,
+    "stat": "item_price_percent",
+    "value": -0.08,
+    "weight": 0.6,
+    "min_wave": 4,
+    "max_wave": 999
+  },
+  {
+    "id": "item_price_percent_t4",
+    "display_name": "物品价格 IV",
+    "tier": 4,
+    "stat": "item_price_percent",
+    "value": -0.1,
+    "weight": 0.45,
+    "min_wave": 8,
+    "max_wave": 999
+  },
+  {
+    "id": "reroll_price_percent_t1",
+    "display_name": "重掷价格 I",
+    "tier": 1,
+    "stat": "reroll_price_percent",
+    "value": -0.05,
+    "weight": 1,
+    "min_wave": 1,
+    "max_wave": 6
+  },
+  {
+    "id": "reroll_price_percent_t2",
+    "display_name": "重掷价格 II",
+    "tier": 2,
+    "stat": "reroll_price_percent",
+    "value": -0.08,
+    "weight": 0.8,
+    "min_wave": 1,
+    "max_wave": 12
+  },
+  {
+    "id": "reroll_price_percent_t3",
+    "display_name": "重掷价格 III",
+    "tier": 3,
+    "stat": "reroll_price_percent",
+    "value": -0.1,
+    "weight": 0.6,
+    "min_wave": 4,
+    "max_wave": 999
+  },
+  {
+    "id": "reroll_price_percent_t4",
+    "display_name": "重掷价格 IV",
+    "tier": 4,
+    "stat": "reroll_price_percent",
+    "value": -0.15,
+    "weight": 0.45,
+    "min_wave": 8,
+    "max_wave": 999
+  }
+]

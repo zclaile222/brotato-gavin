@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "data_version": "brotato-wiki-2026-05-25-phase-1",
+  "reference_game": "Brotato",
+  "reference_version": "1.1.10.9",
+  "include_base_game": true,
+  "include_abyssal_terrors": true,
+  "expected_counts": {
+    "characters": 62,
+    "weapons_total": 78,
+    "items_total": 235
+  },
+  "source_urls": [
+    "https://brotato.wiki.spellsandguns.com/Characters",
+    "https://brotato.wiki.spellsandguns.com/Template%3ACharacter_Data",
+    "https://brotato.wiki.spellsandguns.com/Weapons",
+    "https://brotato.wiki.spellsandguns.com/Template%3AWeapon_Data",
+    "https://brotato.wiki.spellsandguns.com/Gun",
+    "https://brotato.wiki.spellsandguns.com/Items",
+    "https://brotato.wiki.spellsandguns.com/api.php?action=query&list=embeddedin&eititle=Template:Infobox%20Item&einamespace=0&eilimit=500"
+  ],
+  "notes": [
+    "Character and weapon catalogs cover the current reference rows.",
+    "Items: 2026-09-15 verified complete against the wiki via the MediaWiki API (list=embeddedin on Template:Infobox Item, which yields exactly the real item pages). 235 wiki item pages vs 235 catalog rows, name-by-name 1:1 match. The only wiki page using that infobox without being an item is 'Ban System', which states of itself that it is not a real item. 'Builder's Turret' is a real item that simply has no standalone wiki page (referenced from Characters / Abyssal Terrors DLC / Seashell).",
+    "The previous items_total of 237 was simply wrong; it is not a target that was missed.",
+    "Rows store structured mechanics and compact local notes, not copied source prose.",
+    "Full reference counts are long-term validation targets."
+  ]
+}

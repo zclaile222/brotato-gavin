@@ -1,0 +1,7172 @@
+[
+  {
+    "id": "acid",
+    "source_name": "Acid",
+    "display_name": "酸液",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 65,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "max_hp",
+      "knockback"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "max_hp",
+        "value": 8
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "dodge",
+        "value": -0.02
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "knockback",
+        "value": -2
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "alien_baby",
+    "source_name": "Alien Baby",
+    "display_name": "外星宝宝",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 80,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "max_hp"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "max_hp",
+        "value": 15
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "enemy_health_percent",
+        "value": 0.1
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "alien_magic",
+    "source_name": "Alien Magic",
+    "display_name": "外星魔法",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 85,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "max_hp",
+      "hp_regeneration"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "max_hp",
+        "value": 8
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "hp_regeneration",
+        "value": 3
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "luck",
+        "value": -8
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "alien_worm",
+    "source_name": "Alien Worm",
+    "display_name": "外星蠕虫",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 15,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "max_hp",
+      "hp_regeneration"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "max_hp",
+        "value": 3
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "hp_regeneration",
+        "value": 2
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "consumable_heal",
+        "value": -1
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "bag",
+    "source_name": "Bag",
+    "display_name": "背包",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 15,
+    "limit": 3,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "luck",
+      "exploration",
+      "economy"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "materials_plus_15_when_crate_pickup"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "speed_percent",
+        "value": -0.01
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Crate material bonus is pending runtime support."
+  },
+  {
+    "id": "bat",
+    "source_name": "Bat",
+    "display_name": "蝙蝠",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 20,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "lifesteal"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "lifesteal",
+        "value": 0.02
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "harvesting",
+        "value": -2
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "beanie",
+    "source_name": "Beanie",
+    "display_name": "毛线帽",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 20,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "speed"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "speed_percent",
+        "value": 0.04
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "range",
+        "value": -6
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "big_arms",
+    "source_name": "Big Arms",
+    "display_name": "巨臂",
+    "is_dlc": false,
+    "tier": 4,
+    "base_price": 105,
+    "limit": null,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_generalist"
+    },
+    "tags": [
+      "melee_damage",
+      "ranged_damage",
+      "knockback"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "melee_damage",
+        "value": 12
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "ranged_damage",
+        "value": 6
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "knockback",
+        "value": 3
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "attack_speed_percent",
+        "value": -0.03
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "speed_percent",
+        "value": -0.03
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "broken_mouth",
+    "source_name": "Broken Mouth",
+    "display_name": "碎嘴",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 25,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "max_hp"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "max_hp",
+        "value": 5
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "hp_regeneration",
+        "value": -1
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "cake",
+    "source_name": "Cake",
+    "display_name": "蛋糕",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 15,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "max_hp"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "max_hp",
+        "value": 3
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": -0.01
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "coffee",
+    "source_name": "Coffee",
+    "display_name": "咖啡",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 20,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "attack_speed"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "attack_speed_percent",
+        "value": 0.1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": -0.02
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "coupon",
+    "source_name": "Coupon",
+    "display_name": "优惠券",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 15,
+    "limit": 5,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "economy"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "item_price_percent",
+        "value": -0.05
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "fertilizer",
+    "source_name": "Fertilizer",
+    "display_name": "肥料",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 15,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "harvesting"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "harvesting",
+        "value": 8
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "melee_damage",
+        "value": -1
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "fin",
+    "source_name": "Fin",
+    "display_name": "鱼鳍",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 65,
+    "limit": null,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_speedy"
+    },
+    "tags": [
+      "speed",
+      "lifesteal"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "speed_percent",
+        "value": 0.1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "lifesteal",
+        "value": 0.03
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "luck",
+        "value": -8
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "butterfly",
+    "source_name": "Butterfly",
+    "display_name": "蝴蝶",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 30,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "lifesteal"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "lifesteal",
+        "value": 0.02
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "elemental_damage",
+        "value": -1
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "charcoal",
+    "source_name": "Charcoal",
+    "display_name": "木炭",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 20,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "elemental_damage",
+      "melee_damage"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "elemental_damage",
+        "value": 1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "melee_damage",
+        "value": 2
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "harvesting",
+        "value": -2
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "clover",
+    "source_name": "Clover",
+    "display_name": "四叶草",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 65,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "luck",
+      "dodge"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "luck",
+        "value": 20
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "dodge",
+        "value": 0.06
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "lifesteal",
+        "value": -0.02
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "compass",
+    "source_name": "Compass",
+    "display_name": "指南针",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 40,
+    "limit": null,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_explorer"
+    },
+    "tags": [
+      "speed",
+      "engineering"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "speed_percent",
+        "value": 0.05
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "engineering",
+        "value": 3
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "crit_chance",
+        "value": -0.03
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "cyclops_worm",
+    "source_name": "Cyclops Worm",
+    "display_name": "独眼蠕虫",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 45,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "damage"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": 0.12
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "range",
+        "value": -12
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "defective_steroids",
+    "source_name": "Defective Steroids",
+    "display_name": "劣质类固醇",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 20,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "max_hp",
+      "melee_damage"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "max_hp",
+        "value": 2
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "melee_damage",
+        "value": 2
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "attack_speed_percent",
+        "value": -0.03
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "diploma",
+    "source_name": "Diploma",
+    "display_name": "文凭",
+    "is_dlc": false,
+    "tier": 4,
+    "base_price": 90,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "engineering",
+      "xp_gain"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "engineering",
+        "value": 10
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "xp_gain_percent",
+        "value": 0.5
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "max_hp",
+        "value": -3
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "duct_tape",
+    "source_name": "Duct Tape",
+    "display_name": "胶带",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 20,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "armor",
+      "engineering"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "armor",
+        "value": 1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "engineering",
+        "value": 1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "max_hp",
+        "value": -2
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "dynamite",
+    "source_name": "Dynamite",
+    "display_name": "炸药",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 20,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "explosive"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "explosion_damage_percent",
+        "value": 0.15
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "energy_bracelet",
+    "source_name": "Energy Bracelet",
+    "display_name": "能量手镯",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 55,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "crit_chance",
+      "elemental_damage"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "crit_chance",
+        "value": 0.04
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "elemental_damage",
+        "value": 2
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "ranged_damage",
+        "value": -2
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "exoskeleton",
+    "source_name": "Exoskeleton",
+    "display_name": "外骨骼",
+    "is_dlc": false,
+    "tier": 4,
+    "base_price": 90,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "armor",
+      "crit_chance",
+      "engineering",
+      "speed"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "armor",
+        "value": 3
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "crit_chance",
+        "value": 0.05
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "engineering",
+        "value": 5
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "speed_percent",
+        "value": 0.05
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "hp_regeneration",
+        "value": -2
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "lifesteal",
+        "value": -0.02
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "explosive_shells",
+    "source_name": "Explosive Shells",
+    "display_name": "爆炸弹壳",
+    "is_dlc": false,
+    "tier": 4,
+    "base_price": 100,
+    "limit": null,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_artificer"
+    },
+    "tags": [
+      "explosive"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "explosion_damage_percent",
+        "value": 0.6
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "explosion_size_percent",
+        "value": 0.15
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": -0.15
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "glasses",
+    "source_name": "Glasses",
+    "display_name": "眼镜",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 20,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "range"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "range",
+        "value": 20
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "goat_skull",
+    "source_name": "Goat Skull",
+    "display_name": "山羊头骨",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 25,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "melee_damage"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "melee_damage",
+        "value": 3
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "crit_chance",
+        "value": -0.02
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "hedgehog",
+    "source_name": "Hedgehog",
+    "display_name": "刺猬",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 30,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "melee_damage",
+      "ranged_damage"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "melee_damage",
+        "value": 2
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "ranged_damage",
+        "value": 1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "hp_regeneration",
+        "value": -1
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "helmet",
+    "source_name": "Helmet",
+    "display_name": "头盔",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 15,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "armor"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "armor",
+        "value": 1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "speed_percent",
+        "value": -0.02
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "injection",
+    "source_name": "Injection",
+    "display_name": "注射器",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 20,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "damage"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": 0.07
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "max_hp",
+        "value": -2
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "leather_vest",
+    "source_name": "Leather Vest",
+    "display_name": "皮背心",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 45,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "armor",
+      "dodge"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "armor",
+        "value": 2
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "dodge",
+        "value": 0.06
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "max_hp",
+        "value": -3
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "lens",
+    "source_name": "Lens",
+    "display_name": "透镜",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 20,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "ranged_damage"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "ranged_damage",
+        "value": 1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "range",
+        "value": -5
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "little_muscley_dude",
+    "source_name": "Little Muscley Dude",
+    "display_name": "小肌肉男",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 50,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "melee_damage",
+      "max_hp"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "melee_damage",
+        "value": 3
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "max_hp",
+        "value": 5
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "range",
+        "value": -15
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "lost_duck",
+    "source_name": "Lost Duck",
+    "display_name": "走失的鸭子",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 25,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "luck"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "luck",
+        "value": 8
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "elemental_damage",
+        "value": -1
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "medal",
+    "source_name": "Medal",
+    "display_name": "奖章",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 55,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "max_hp",
+      "damage",
+      "armor",
+      "speed"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "max_hp",
+        "value": 3
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": 0.03
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "armor",
+        "value": 1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "speed_percent",
+        "value": 0.03
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "crit_chance",
+        "value": -0.04
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "mushroom",
+    "source_name": "Mushroom",
+    "display_name": "蘑菇",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 25,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "hp_regeneration"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "hp_regeneration",
+        "value": 3
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "luck",
+        "value": -2
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "plant",
+    "source_name": "Plant",
+    "display_name": "植物",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 15,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "hp_regeneration"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "hp_regeneration",
+        "value": 3
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "lifesteal",
+        "value": -0.01
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "pencil",
+    "source_name": "Pencil",
+    "display_name": "铅笔",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 8,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "engineering"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "engineering",
+        "value": 1
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "propeller_hat",
+    "source_name": "Propeller Hat",
+    "display_name": "螺旋桨帽",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 28,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "luck"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "luck",
+        "value": 10
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": -0.02
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "scar",
+    "source_name": "Scar",
+    "display_name": "伤疤",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 25,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "xp_gain"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "xp_gain_percent",
+        "value": 0.2
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "range",
+        "value": -8
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "scope",
+    "source_name": "Scope",
+    "display_name": "瞄准镜",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 48,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "ranged_damage",
+      "range"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "ranged_damage",
+        "value": 2
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "range",
+        "value": 25
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "attack_speed_percent",
+        "value": -0.07
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "shady_potion",
+    "source_name": "Shady Potion",
+    "display_name": "可疑药水",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 48,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "luck"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "luck",
+        "value": 20
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "hp_regeneration",
+        "value": -2
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "snail",
+    "source_name": "Snail",
+    "display_name": "蜗牛",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 40,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_old"
+    },
+    "tags": [
+      "less_enemy_speed"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "enemy_speed_percent",
+        "value": -0.08
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "speed_percent",
+        "value": -0.03
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "sunglasses",
+    "source_name": "Sunglasses",
+    "display_name": "太阳镜",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 50,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "crit_chance"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "crit_chance",
+        "value": 0.1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "armor",
+        "value": -1
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "toxic_sludge",
+    "source_name": "Toxic Sludge",
+    "display_name": "有毒污泥",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 20,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "elemental_damage"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "elemental_damage",
+        "value": 2
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "dodge",
+        "value": -0.02
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "weird_food",
+    "source_name": "Weird Food",
+    "display_name": "怪异食物",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 20,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "consumable"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "consumable_heal",
+        "value": 2
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "dodge",
+        "value": -0.02
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "wheelbarrow",
+    "source_name": "Wheelbarrow",
+    "display_name": "独轮车",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 40,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "harvesting"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "harvesting",
+        "value": 16
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "armor",
+        "value": -1
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "white_flag",
+    "source_name": "White Flag",
+    "display_name": "白旗",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 40,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "harvesting",
+      "less_enemies"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "harvesting",
+        "value": 5
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "enemies_percent",
+        "value": -0.05
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Enemy count modifier runtime migration is pending."
+  },
+  {
+    "id": "wings",
+    "source_name": "Wings",
+    "display_name": "翅膀",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 85,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "speed",
+      "range"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "speed_percent",
+        "value": 0.1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "range",
+        "value": 30
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "elemental_damage",
+        "value": -2
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "whetstone",
+    "source_name": "Whetstone",
+    "display_name": "磨刀石",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 40,
+    "limit": null,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_sick"
+    },
+    "tags": [
+      "lifesteal"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "lifesteal",
+        "value": 0.04
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "knockback",
+        "value": -3
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "ritual",
+    "source_name": "Ritual",
+    "display_name": "仪式",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 60,
+    "limit": null,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_ghost"
+    },
+    "tags": [
+      "damage",
+      "lifesteal"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": 0.06
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "lifesteal",
+        "value": 0.02
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "engineering",
+        "value": -2
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "sharp_bullet",
+    "source_name": "Sharp Bullet",
+    "display_name": "锋利子弹",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 25,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "ranged_damage"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "projectiles_pierce_plus_1"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "piercing_damage_percent",
+        "value": -0.2
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": -0.05
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "knockback",
+        "value": -3
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Projectile pierce modifier is pending runtime support."
+  },
+  {
+    "id": "small_magazine",
+    "source_name": "Small Magazine",
+    "display_name": "小弹匣",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 60,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "ranged_damage",
+      "attack_speed"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "ranged_damage",
+        "value": 2
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "attack_speed_percent",
+        "value": 0.1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": -0.06
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "tentacle",
+    "source_name": "Tentacle",
+    "display_name": "触手",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 35,
+    "limit": 5,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_lich"
+    },
+    "tags": [
+      "crit_chance"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "crit_chance",
+        "value": 0.03
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "crit_kill_chance_to_heal_1_hp",
+        "chance": 0.2
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Critical-kill heal chance is pending runtime support."
+  },
+  {
+    "id": "toolbox",
+    "source_name": "Toolbox",
+    "display_name": "工具箱",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 55,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "engineering"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "engineering",
+        "value": 6
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "attack_speed_percent",
+        "value": -0.08
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "triangle_of_power",
+    "source_name": "Triangle of Power",
+    "display_name": "力量三角",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 65,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "damage"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": 0.2
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "armor",
+        "value": 1
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "damage_percent_minus_2_when_hit_until_wave_end"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Damage-loss-on-hit behavior is pending runtime support."
+  },
+  {
+    "id": "ugly_tooth",
+    "source_name": "Ugly Tooth",
+    "display_name": "丑牙",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 25,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "less_enemy_speed"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "hit_enemy_speed_reduction",
+        "value": 0.05,
+        "max": 0.2
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "speed_percent",
+        "value": -0.03
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Per-hit enemy slow is pending runtime support."
+  },
+  {
+    "id": "alloy",
+    "source_name": "Alloy",
+    "display_name": "合金",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 80,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "melee_damage",
+      "ranged_damage",
+      "engineering",
+      "crit_chance",
+      "elemental_damage"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "melee_damage",
+        "value": 3
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "ranged_damage",
+        "value": 3
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "elemental_damage",
+        "value": 3
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "engineering",
+        "value": 3
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "crit_chance",
+        "value": 0.05
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "dodge",
+        "value": -0.06
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "bean_teacher",
+    "source_name": "Bean Teacher",
+    "display_name": "豆老师",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 70,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "xp_gain"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "xp_gain_percent",
+        "value": 0.5
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "lifesteal",
+        "value": -0.02
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "black_belt",
+    "source_name": "Black Belt",
+    "display_name": "黑带",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 50,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "melee_damage",
+      "xp_gain",
+      "knockback"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "xp_gain_percent",
+        "value": 0.25
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "melee_damage",
+        "value": 3
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "knockback",
+        "value": 3
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "luck",
+        "value": -8
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "blindfold",
+    "source_name": "Blindfold",
+    "display_name": "眼罩",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 45,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "crit_chance",
+      "dodge"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "crit_chance",
+        "value": 0.05
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "dodge",
+        "value": 0.05
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "range",
+        "value": -15
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "blood_leech",
+    "source_name": "Blood Leech",
+    "display_name": "血蛭",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 45,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "lifesteal",
+      "hp_regeneration"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "lifesteal",
+        "value": 0.02
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "hp_regeneration",
+        "value": 2
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "harvesting",
+        "value": -3
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "book",
+    "source_name": "Book",
+    "display_name": "书",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 15,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "engineering",
+      "elemental_damage"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "engineering",
+        "value": 2
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "elemental_damage",
+        "value": 1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "luck",
+        "value": -1
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "bowler_hat",
+    "source_name": "Bowler Hat",
+    "display_name": "圆顶礼帽",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 75,
+    "limit": null,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_entrepreneur"
+    },
+    "tags": [
+      "luck",
+      "harvesting"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "luck",
+        "value": 15
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "harvesting",
+        "value": 18
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "attack_speed_percent",
+        "value": -0.05
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "crit_chance",
+        "value": -0.03
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "boxing_glove",
+    "source_name": "Boxing Glove",
+    "display_name": "拳击手套",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 18,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "melee_damage",
+      "knockback"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "melee_damage",
+        "value": 1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "knockback",
+        "value": 3
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "cape",
+    "source_name": "Cape",
+    "display_name": "披风",
+    "is_dlc": false,
+    "tier": 4,
+    "base_price": 110,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "lifesteal",
+      "dodge"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "lifesteal",
+        "value": 0.05
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "dodge",
+        "value": 0.2
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "melee_damage",
+        "value": -2
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "ranged_damage",
+        "value": -2
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "elemental_damage",
+        "value": -2
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "claw_tree",
+    "source_name": "Claw Tree",
+    "display_name": "爪树",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 20,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "melee_damage",
+      "crit_chance"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "melee_damage",
+        "value": 1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "crit_chance",
+        "value": 0.03
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "max_hp",
+        "value": -1
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "cog",
+    "source_name": "Cog",
+    "display_name": "齿轮",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 35,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "engineering",
+      "knockback"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "engineering",
+        "value": 4
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "knockback",
+        "value": 1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": -0.04
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "gentle_alien",
+    "source_name": "Gentle Alien",
+    "display_name": "温和外星人",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 30,
+    "limit": 10,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "max_hp",
+      "damage",
+      "more_enemies"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "max_hp",
+        "value": 2
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": 0.05
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "enemies_percent",
+        "value": 0.05
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Enemy-count runtime migration is pending."
+  },
+  {
+    "id": "gnome",
+    "source_name": "Gnome",
+    "display_name": "侏儒",
+    "is_dlc": false,
+    "tier": 4,
+    "base_price": 100,
+    "limit": null,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_bull"
+    },
+    "tags": [
+      "melee_damage",
+      "elemental_damage"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "melee_damage",
+        "value": 10
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "elemental_damage",
+        "value": 10
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "range",
+        "value": -20
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "pickup_range_percent",
+        "value": -0.2
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "lemonade",
+    "source_name": "Lemonade",
+    "display_name": "柠檬水",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 15,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "consumable"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "consumable_heal",
+        "value": 1
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "lucky_charm",
+    "source_name": "Lucky Charm",
+    "display_name": "幸运符",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 75,
+    "limit": null,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_lucky"
+    },
+    "tags": [
+      "luck"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "luck",
+        "value": 30
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "melee_damage",
+        "value": -2
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "ranged_damage",
+        "value": -1
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "mastery",
+    "source_name": "Mastery",
+    "display_name": "精通",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 55,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "melee_damage"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "melee_damage",
+        "value": 6
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "ranged_damage",
+        "value": -3
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "missile",
+    "source_name": "Missile",
+    "display_name": "导弹",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 45,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "damage"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": 0.1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "attack_speed_percent",
+        "value": -0.04
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "night_goggles",
+    "source_name": "Night Goggles",
+    "display_name": "夜视镜",
+    "is_dlc": false,
+    "tier": 4,
+    "base_price": 95,
+    "limit": null,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_ranger"
+    },
+    "tags": [
+      "crit_chance",
+      "range"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "crit_chance",
+        "value": 0.15
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "range",
+        "value": 50
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "max_hp",
+        "value": -3
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "armor",
+        "value": -1
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "octopus",
+    "source_name": "Octopus",
+    "display_name": "章鱼",
+    "is_dlc": false,
+    "tier": 4,
+    "base_price": 105,
+    "limit": null,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_mutant"
+    },
+    "tags": [
+      "max_hp",
+      "lifesteal",
+      "hp_regeneration"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "max_hp",
+        "value": 12
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "hp_regeneration",
+        "value": 5
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "lifesteal",
+        "value": 0.03
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "crit_chance",
+        "value": -0.08
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "peaceful_bee",
+    "source_name": "Peaceful Bee",
+    "display_name": "和平蜜蜂",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 18,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "dodge",
+      "harvesting"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "dodge",
+        "value": 0.04
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "harvesting",
+        "value": 4
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "melee_damage",
+        "value": -1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "ranged_damage",
+        "value": -1
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "plastic_explosive",
+    "source_name": "Plastic Explosive",
+    "display_name": "塑胶炸药",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 60,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "explosive"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "explosion_size_percent",
+        "value": 0.25
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "warrior_helmet",
+    "source_name": "Warrior Helmet",
+    "display_name": "战士头盔",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 80,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "armor",
+      "max_hp"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "armor",
+        "value": 3
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "max_hp",
+        "value": 5
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "speed_percent",
+        "value": -0.05
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "banner",
+    "source_name": "Banner",
+    "display_name": "旗帜",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 55,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "range",
+      "attack_speed"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "range",
+        "value": 20
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "attack_speed_percent",
+        "value": 0.1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "knockback",
+        "value": -5
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "boiling_water",
+    "source_name": "Boiling Water",
+    "display_name": "沸水",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 30,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "elemental_damage"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "elemental_damage",
+        "value": 2
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "max_hp",
+        "value": -1
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "campfire",
+    "source_name": "Campfire",
+    "display_name": "篝火",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 40,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "elemental_damage",
+      "hp_regeneration"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "elemental_damage",
+        "value": 2
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "hp_regeneration",
+        "value": 2
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "speed_percent",
+        "value": -0.02
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "nightmare_fog_visibility_percent_plus_50"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Nightmare fog visibility support is pending runtime migration."
+  },
+  {
+    "id": "candle",
+    "source_name": "Candle",
+    "display_name": "蜡烛",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 65,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "elemental_damage",
+      "hp_regeneration",
+      "less_enemies"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "elemental_damage",
+        "value": 4
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "hp_regeneration",
+        "value": 1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "enemies_percent",
+        "value": -0.1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": -0.05
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "nightmare_fog_visibility_percent_plus_25"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Nightmare fog visibility support is pending runtime migration."
+  },
+  {
+    "id": "clockwork_wasp",
+    "source_name": "Clockwork Wasp",
+    "display_name": "发条黄蜂",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 45,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "structure",
+      "speed"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "structure_attack_speed_percent",
+        "value": 0.1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "speed_percent",
+        "value": 0.05
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Structure attack speed runtime migration is pending."
+  },
+  {
+    "id": "fresh_meat",
+    "source_name": "Fresh Meat",
+    "display_name": "新鲜肉",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 25,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "lifesteal"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "lifesteal",
+        "value": 0.02
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "hp_regeneration",
+        "value": -1
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "fuel_tank",
+    "source_name": "Fuel Tank",
+    "display_name": "燃料罐",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 45,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "elemental_damage"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "elemental_damage",
+        "value": 4
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "melee_damage",
+        "value": -1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "ranged_damage",
+        "value": -1
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "gambling_token",
+    "source_name": "Gambling Token",
+    "display_name": "赌博代币",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 50,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "dodge"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "dodge",
+        "value": 0.08
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "armor",
+        "value": -1
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "glass_cannon",
+    "source_name": "Glass Cannon",
+    "display_name": "玻璃大炮",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 75,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "damage"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": 0.25
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "armor",
+        "value": -3
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "gummy_berserker",
+    "source_name": "Gummy Berserker",
+    "display_name": "软糖狂战士",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 25,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "attack_speed",
+      "range"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "attack_speed_percent",
+        "value": 0.05
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "range",
+        "value": 25
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "armor",
+        "value": -1
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "head_injury",
+    "source_name": "Head Injury",
+    "display_name": "头部受伤",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 25,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "damage"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": 0.06
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "range",
+        "value": -8
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "heavy_bullets",
+    "source_name": "Heavy Bullets",
+    "display_name": "重型子弹",
+    "is_dlc": false,
+    "tier": 4,
+    "base_price": 100,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "ranged_damage",
+      "damage",
+      "range"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "ranged_damage",
+        "value": 5
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": 0.1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "range",
+        "value": 10
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "attack_speed_percent",
+        "value": -0.05
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "crit_chance",
+        "value": -0.05
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "insanity",
+    "source_name": "Insanity",
+    "display_name": "疯狂",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 20,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "crit_chance"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "crit_chance",
+        "value": 0.06
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": -0.03
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "jet_pack",
+    "source_name": "Jet Pack",
+    "display_name": "喷气背包",
+    "is_dlc": false,
+    "tier": 4,
+    "base_price": 100,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "speed",
+      "dodge"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "speed_percent",
+        "value": 0.15
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "dodge",
+        "value": 0.1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "max_hp",
+        "value": -5
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "armor",
+        "value": -1
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "little_frog",
+    "source_name": "Little Frog",
+    "display_name": "小青蛙",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 45,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "harvesting",
+      "pickup"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "pickup_range_percent",
+        "value": 0.2
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "harvesting",
+        "value": 10
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "dodge",
+        "value": -0.03
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "mammoth",
+    "source_name": "Mammoth",
+    "display_name": "猛犸象",
+    "is_dlc": false,
+    "tier": 4,
+    "base_price": 110,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "melee_damage",
+      "hp_regeneration",
+      "knockback"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "melee_damage",
+        "value": 20
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "hp_regeneration",
+        "value": 5
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "knockback",
+        "value": 5
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": -0.08
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "speed_percent",
+        "value": -0.03
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "metal_plate",
+    "source_name": "Metal Plate",
+    "display_name": "金属板",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 40,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "armor"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "armor",
+        "value": 2
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": -0.03
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "mouse",
+    "source_name": "Mouse",
+    "display_name": "老鼠",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 55,
+    "limit": 5,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "lifesteal",
+      "more_enemies"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "lifesteal",
+        "value": 0.05
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "enemies_percent",
+        "value": 0.1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "harvesting",
+        "value": -5
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Enemy-count runtime migration is pending."
+  },
+  {
+    "id": "mutation",
+    "source_name": "Mutation",
+    "display_name": "变异",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 25,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "ranged_damage",
+      "elemental_damage"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "ranged_damage",
+        "value": 1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "elemental_damage",
+        "value": 1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "knockback",
+        "value": -3
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "panda",
+    "source_name": "Panda",
+    "display_name": "熊猫",
+    "is_dlc": false,
+    "tier": 4,
+    "base_price": 100,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "max_hp",
+      "luck"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "max_hp",
+        "value": 12
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "luck",
+        "value": 25
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": -0.05
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "poisonous_tonic",
+    "source_name": "Poisonous Tonic",
+    "display_name": "有毒补药",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 80,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "attack_speed",
+      "crit_chance",
+      "range"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "attack_speed_percent",
+        "value": 0.1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "crit_chance",
+        "value": 0.05
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "range",
+        "value": 15
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "hp_regeneration",
+        "value": -2
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "reinforced_steel",
+    "source_name": "Reinforced Steel",
+    "display_name": "强化钢",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 50,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "ranged_damage",
+      "engineering"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "ranged_damage",
+        "value": 2
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "engineering",
+        "value": 3
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "speed_percent",
+        "value": -0.03
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "adrenaline",
+    "source_name": "Adrenaline",
+    "display_name": "肾上腺素",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 60,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "dodge"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "dodge",
+        "value": 0.05
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "heal_5_hp_on_dodge_chance_50_percent"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Dodge-triggered healing is pending runtime migration."
+  },
+  {
+    "id": "alien_eyes",
+    "source_name": "Alien Eyes",
+    "display_name": "外星之眼",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 50,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "max_hp"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "shoot_6_alien_eyes_every_3_seconds",
+        "damage": 6,
+        "max_hp_damage_coefficient": 0.5
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Alien Eye projectile spawning is pending runtime migration."
+  },
+  {
+    "id": "baby_elephant",
+    "source_name": "Baby Elephant",
+    "display_name": "小象",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 22,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "luck",
+      "pickup"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "material_pickup_luck_damage_chance",
+        "chance": 0.25,
+        "damage": 1,
+        "luck_damage_coefficient": 0.25
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Luck-scaling pickup damage is pending runtime migration."
+  },
+  {
+    "id": "baby_gecko",
+    "source_name": "Baby Gecko",
+    "display_name": "小壁虎",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 18,
+    "limit": 4,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "pickup",
+      "range"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "range",
+        "value": 10
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "material_drop_instant_attract_chance",
+        "chance": 0.25
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Instant material attraction is pending runtime migration."
+  },
+  {
+    "id": "baby_with_a_beard",
+    "source_name": "Baby with a Beard",
+    "display_name": "长胡子的婴儿",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 100,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "ranged_damage"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "enemy_corpse_fires_ranged_damage_bullet",
+        "damage": 1,
+        "ranged_damage_coefficient": 1.0
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "range",
+        "value": -50
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Corpse-fired bullet behavior is pending runtime migration."
+  },
+  {
+    "id": "bandana",
+    "source_name": "Bandana",
+    "display_name": "头巾",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 75,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "ranged_damage"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "projectiles_pierce_plus_1"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": -0.1
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Projectile pierce modifier is pending runtime migration."
+  },
+  {
+    "id": "barricade",
+    "source_name": "Barricade",
+    "display_name": "路障",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 75,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "armor",
+      "stand_still",
+      "knockback"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "knockback",
+        "value": 3
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "armor_plus_8_while_standing_still"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "speed_percent",
+        "value": -0.05
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Stand-still armor bonus is pending runtime migration."
+  },
+  {
+    "id": "blood_donation",
+    "source_name": "Blood Donation",
+    "display_name": "献血",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 50,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "harvesting"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "harvesting",
+        "value": 40
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "take_1_damage_per_second_without_invulnerability"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Self-damage over time is pending runtime migration."
+  },
+  {
+    "id": "crown",
+    "source_name": "Crown",
+    "display_name": "王冠",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 70,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "harvesting"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "harvesting_growth_percent_plus_8_end_wave"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Harvesting growth bonus is pending runtime migration."
+  },
+  {
+    "id": "cute_monkey",
+    "source_name": "Cute Monkey",
+    "display_name": "可爱猴子",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 25,
+    "limit": 13,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "pickup"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "heal_1_hp_on_material_pickup_chance",
+        "chance": 0.08
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "ranged_damage",
+        "value": -1
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Material-pickup healing is pending runtime migration."
+  },
+  {
+    "id": "hunting_trophy",
+    "source_name": "Hunting Trophy",
+    "display_name": "狩猎奖杯",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 55,
+    "limit": 3,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_crazy"
+    },
+    "tags": [
+      "crit_chance"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "gain_1_material_on_critical_kill_chance",
+        "chance": 0.33
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Critical-kill material bonus is pending runtime migration."
+  },
+  {
+    "id": "landmines",
+    "source_name": "Landmines",
+    "display_name": "地雷",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 15,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "engineering",
+      "explosive",
+      "structure"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "spawn_landmine_every_12_seconds",
+        "damage": 10,
+        "engineering_damage_coefficient": 1.0
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Landmine spawning is pending runtime migration."
+  },
+  {
+    "id": "metal_detector",
+    "source_name": "Metal Detector",
+    "display_name": "金属探测器",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 40,
+    "limit": 20,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "luck",
+      "engineering",
+      "pickup",
+      "economy"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "double_picked_material_value_chance",
+        "chance": 0.05
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "luck",
+        "value": 6
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "engineering",
+        "value": 2
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": -0.05
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Material value doubling is pending runtime migration."
+  },
+  {
+    "id": "pumpkin",
+    "source_name": "Pumpkin",
+    "display_name": "南瓜",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 40,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "ranged_damage"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "piercing_damage_percent",
+        "value": 0.15
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "piercing_damage_cannot_exceed_base_damage"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": -0.02
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Piercing cap rule is pending runtime migration."
+  },
+  {
+    "id": "recycling_machine",
+    "source_name": "Recycling Machine",
+    "display_name": "回收机",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 35,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "economy"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "recycling_materials_percent",
+        "value": 0.35
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Recycling payout migration is pending runtime support."
+  },
+  {
+    "id": "sad_tomato",
+    "source_name": "Sad Tomato",
+    "display_name": "悲伤番茄",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 50,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "hp_regeneration"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "hp_regeneration",
+        "value": 8
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "start_wave_with_hp_percent_delta",
+        "value": -0.5
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Start-wave HP modifier is pending runtime migration."
+  },
+  {
+    "id": "shmoop",
+    "source_name": "Shmoop",
+    "display_name": "史努普",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 60,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "max_hp",
+      "hp_regeneration"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "max_hp",
+        "value": 6
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "hp_regeneration",
+        "value": 2
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "melee_damage",
+        "value": -2
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "ranged_damage",
+        "value": -1
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "statue",
+    "source_name": "Statue",
+    "display_name": "雕像",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 60,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "attack_speed",
+      "stand_still"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "attack_speed_percent_plus_40_while_standing_still"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "speed_percent",
+        "value": -0.1
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Stand-still attack speed bonus is pending runtime migration."
+  },
+  {
+    "id": "tardigrade",
+    "source_name": "Tardigrade",
+    "display_name": "水熊虫",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 50,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "nullify_one_hit_taken_per_wave"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Per-wave hit nullification is pending runtime migration."
+  },
+  {
+    "id": "terrified_onion",
+    "source_name": "Terrified Onion",
+    "display_name": "受惊洋葱",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 15,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "speed"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "speed_percent",
+        "value": 0.04
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "luck",
+        "value": -5
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "tractor",
+    "source_name": "Tractor",
+    "display_name": "拖拉机",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 70,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "harvesting"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "harvesting",
+        "value": 40
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": -0.08
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "wheat",
+    "source_name": "Wheat",
+    "display_name": "小麦",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 85,
+    "limit": null,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_farmer"
+    },
+    "tags": [
+      "melee_damage",
+      "ranged_damage",
+      "harvesting"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "melee_damage",
+        "value": 4
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "ranged_damage",
+        "value": 2
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "harvesting",
+        "value": 10
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "elemental_damage",
+        "value": -2
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "chameleon",
+    "source_name": "Chameleon",
+    "display_name": "变色龙",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 70,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "dodge",
+      "stand_still"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "dodge",
+        "value": 0.03
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "dodge_percent_plus_20_while_standing_still"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": -0.04
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Stand-still dodge bonus is pending runtime migration."
+  },
+  {
+    "id": "coil",
+    "source_name": "Coil",
+    "display_name": "线圈",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 70,
+    "limit": 3,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "damage",
+      "knockback"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "knockback",
+        "value": 5
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "damage_percent_plus_1_per_1_knockback"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Knockback-scaling damage is pending runtime migration."
+  },
+  {
+    "id": "cyberball",
+    "source_name": "Cyberball",
+    "display_name": "网络球",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 30,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "luck"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "enemy_death_luck_damage_chance",
+        "chance": 0.25,
+        "damage": 1,
+        "luck_damage_coefficient": 0.25
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Luck-scaling enemy-death damage is pending runtime migration."
+  },
+  {
+    "id": "fruit_basket",
+    "source_name": "Fruit Basket",
+    "display_name": "水果篮",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 45,
+    "limit": 4,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "collect_100_fruits_at_max_health"
+    },
+    "tags": [
+      "consumable"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "enemies_have_higher_fruit_drop_chance"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "hp_regeneration",
+        "value": -3
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Fruit drop chance is pending runtime migration."
+  },
+  {
+    "id": "garden",
+    "source_name": "Garden",
+    "display_name": "花园",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 50,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "consumable",
+      "structure"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "spawn_garden_creates_fruit_every_15_seconds"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Garden structure runtime behavior is pending migration."
+  },
+  {
+    "id": "ghost_outfit",
+    "source_name": "Ghost Outfit",
+    "display_name": "幽灵装",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 80,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "reach_70_percent_dodge"
+    },
+    "tags": [
+      "dodge"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "dodge_cap_70_percent"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "dodge",
+        "value": 0.1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "speed_percent",
+        "value": -0.05
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "armor",
+        "value": -3
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Dodge cap support is pending runtime migration."
+  },
+  {
+    "id": "medikit",
+    "source_name": "Medikit",
+    "display_name": "医疗包",
+    "is_dlc": false,
+    "tier": 4,
+    "base_price": 95,
+    "limit": null,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_doctor"
+    },
+    "tags": [
+      "hp_regeneration"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "hp_regeneration",
+        "value": 10
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "hp_regeneration_plus_2_every_5_seconds_until_wave_end"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "luck",
+        "value": -10
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. In-wave regeneration scaling is pending runtime migration."
+  },
+  {
+    "id": "peacock",
+    "source_name": "Peacock",
+    "display_name": "孔雀",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 50,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "xp_gain"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "xp_gain_percent",
+        "value": 0.25
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "next_wave_xp_gain_percent_plus_100"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "next_wave_enemy_damage_percent_plus_50"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Next-wave temporary modifiers are pending runtime migration."
+  },
+  {
+    "id": "padding",
+    "source_name": "Padding",
+    "display_name": "垫料",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 45,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_saver"
+    },
+    "tags": [
+      "max_hp"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "max_hp",
+        "value": 3
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "max_hp_plus_1_per_80_materials"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Material-scaling max HP is pending runtime migration."
+  },
+  {
+    "id": "power_generator",
+    "source_name": "Power Generator",
+    "display_name": "发电机",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 65,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "speed",
+      "damage"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "damage_percent_plus_1_per_1_permanent_speed_percent"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": -0.05
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Speed-scaling damage is pending runtime migration."
+  },
+  {
+    "id": "regeneration_potion",
+    "source_name": "Regeneration Potion",
+    "display_name": "再生药水",
+    "is_dlc": false,
+    "tier": 4,
+    "base_price": 90,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "hp_regeneration"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "hp_regeneration_doubled_below_50_percent_health"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "hp_regeneration",
+        "value": 3
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Conditional regeneration multiplier is pending runtime migration."
+  },
+  {
+    "id": "rip_and_tear",
+    "source_name": "Rip and Tear",
+    "display_name": "撕裂",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 65,
+    "limit": 5,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_loud"
+    },
+    "tags": [
+      "melee_damage",
+      "explosive"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "enemy_death_explosion_chance",
+        "chance": 0.2,
+        "damage": 10,
+        "melee_damage_coefficient": 0.5
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "crit_chance",
+        "value": -0.05
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Enemy-death explosion is pending runtime migration."
+  },
+  {
+    "id": "riposte",
+    "source_name": "Riposte",
+    "display_name": "还击",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 40,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "dodge",
+      "melee_damage"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "melee_damage",
+        "value": 2
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "deal_melee_damage_on_dodge",
+        "chance": 1.0,
+        "damage": 1,
+        "melee_damage_coefficient": 3.0
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Dodge-triggered melee damage is pending runtime migration."
+  },
+  {
+    "id": "silver_bullet",
+    "source_name": "Silver Bullet",
+    "display_name": "银子弹",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 70,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "damage"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "boss_elite_damage_percent",
+        "value": 0.25
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Boss and elite damage bonus is pending runtime migration."
+  },
+  {
+    "id": "snowball",
+    "source_name": "Snowball",
+    "display_name": "雪球",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 50,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "elemental_damage"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "elemental_damage_plus_1_when_getting_elemental_damage_item"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Item-triggered elemental scaling is pending runtime migration."
+  },
+  {
+    "id": "spider",
+    "source_name": "Spider",
+    "display_name": "蜘蛛",
+    "is_dlc": false,
+    "tier": 4,
+    "base_price": 110,
+    "limit": null,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_gladiator"
+    },
+    "tags": [
+      "damage",
+      "attack_speed"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": 0.12
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "attack_speed_percent_plus_6_per_different_weapon"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "dodge",
+        "value": -0.03
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "harvesting",
+        "value": -5
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Different-weapon attack speed scaling is pending runtime migration."
+  },
+  {
+    "id": "tree",
+    "source_name": "Tree",
+    "display_name": "树",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 15,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "exploration"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "more_trees_spawn"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Tree spawn-rate support is pending runtime migration."
+  },
+  {
+    "id": "vigilante_ring",
+    "source_name": "Vigilante Ring",
+    "display_name": "义警戒指",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 92,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "damage"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "damage_percent_plus_3_end_wave"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. End-wave damage scaling is pending runtime migration."
+  },
+  {
+    "id": "wandering_bot",
+    "source_name": "Wandering Bot",
+    "display_name": "流浪机器人",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 60,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "less_enemy_speed",
+      "structure"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "spawn_wandering_bot_that_slows_nearby_enemies"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Wandering bot structure behavior is pending runtime migration."
+  },
+  {
+    "id": "weird_ghost",
+    "source_name": "Weird Ghost",
+    "display_name": "怪异幽灵",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 12,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "max_hp"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "max_hp",
+        "value": 3
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "start_next_wave_with_1_hp"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Start-wave HP override is pending runtime migration."
+  },
+  {
+    "id": "wisdom",
+    "source_name": "Wisdom",
+    "display_name": "智慧",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 85,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "damage"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "damage_percent_plus_5_every_5_seconds_until_wave_end"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": -0.15
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Timed in-wave damage ramp is pending runtime migration."
+  },
+  {
+    "id": "wolf_helmet",
+    "source_name": "Wolf Helmet",
+    "display_name": "狼头盔",
+    "is_dlc": false,
+    "tier": 4,
+    "base_price": 90,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "elemental_damage",
+      "luck"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "elemental_damage",
+        "value": 10
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "luck",
+        "value": 20
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "engineering",
+        "value": -5
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "anvil",
+    "source_name": "Anvil",
+    "display_name": "铁砧",
+    "is_dlc": false,
+    "tier": 4,
+    "base_price": 120,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_arms_dealer"
+    },
+    "tags": [],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "upgrade_random_weapon_entering_shop_or_gain_2_armor"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Shop-entry weapon upgrade behavior is pending runtime migration."
+  },
+  {
+    "id": "ball_and_chain",
+    "source_name": "Ball and Chain",
+    "display_name": "球与链",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 75,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "damage",
+      "armor",
+      "knockback"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": 0.15
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "armor",
+        "value": 3
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "knockback",
+        "value": 5
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "speed_percent",
+        "value": -0.03
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "weapon_minimum_cooldown_0_75_seconds"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Weapon cooldown floor is pending runtime migration."
+  },
+  {
+    "id": "bloody_hand",
+    "source_name": "Bloody Hand",
+    "display_name": "血手",
+    "is_dlc": false,
+    "tier": 4,
+    "base_price": 110,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "lifesteal"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "lifesteal",
+        "value": 0.1
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "damage_percent_plus_2_per_1_lifesteal_percent"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "take_1_damage_per_second_without_invulnerability"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Life-steal scaling and self-damage are pending runtime migration."
+  },
+  {
+    "id": "broken_hourglass",
+    "source_name": "Broken Hourglass",
+    "display_name": "破损沙漏",
+    "is_dlc": false,
+    "tier": 4,
+    "base_price": 1,
+    "limit": 0,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "broken_hourglass_start_next_wave_with_1_hp"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime supports Broken Mirror post-use state tracking."
+  },
+  {
+    "id": "broken_mirror",
+    "source_name": "Broken Mirror",
+    "display_name": "破碎镜子",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 1,
+    "limit": 0,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "broken_mirror_duplicated_item_state"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime supports Broken Mirror post-use state tracking."
+  },
+  {
+    "id": "candy_bag",
+    "source_name": "Candy Bag",
+    "display_name": "糖果袋",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 70,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_without_locking_shop_items"
+    },
+    "tags": [],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "each_wave_random_primary_stats_plus_8",
+        "value": 8
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "each_wave_additional_elite_chance_10_percent",
+        "chance": 0.1
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime supports wave-start random primary stat and additional elite chance."
+  },
+  {
+    "id": "community_support",
+    "source_name": "Community Support",
+    "display_name": "社区支持",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 75,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_streamer"
+    },
+    "tags": [
+      "attack_speed"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "attack_speed_percent_plus_1_per_living_enemy"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "armor",
+        "value": -2
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Living-enemy attack speed scaling is pending runtime migration."
+  },
+  {
+    "id": "esty_s_couch",
+    "source_name": "Esty's Couch",
+    "display_name": "Esty's Couch",
+    "is_dlc": false,
+    "tier": 4,
+    "base_price": 100,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "hp_regeneration",
+      "max_hp"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "max_hp",
+        "value": 5
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "hp_regeneration_plus_2_per_negative_1_permanent_speed_percent"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "speed_percent",
+        "value": -0.2
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Negative-speed regeneration scaling is pending runtime migration."
+  },
+  {
+    "id": "explosive_turret",
+    "source_name": "Explosive Turret",
+    "display_name": "爆炸炮塔",
+    "is_dlc": false,
+    "tier": 4,
+    "base_price": 80,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "engineering",
+      "structure"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "spawn_explosive_turret",
+        "damage": 25,
+        "engineering_damage_coefficient": 1.5
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Explosive turret structure behavior is pending runtime migration."
+  },
+  {
+    "id": "extra_stomach",
+    "source_name": "Extra Stomach",
+    "display_name": "额外胃",
+    "is_dlc": false,
+    "tier": 4,
+    "base_price": 100,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "max_hp",
+      "luck"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "max_hp_plus_1_on_consumable_pickup_at_full_health_max_8_per_wave"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Full-health consumable scaling is pending runtime migration."
+  },
+  {
+    "id": "eyes_surgery",
+    "source_name": "Eyes Surgery",
+    "display_name": "眼部手术",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 60,
+    "limit": 2,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "elemental_damage"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "burning_activates_20_percent_faster"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "elemental_damage",
+        "value": 1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "range",
+        "value": -10
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Burning tick acceleration is pending runtime migration."
+  },
+  {
+    "id": "fairy",
+    "source_name": "Fairy",
+    "display_name": "仙女",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 85,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_renegade"
+    },
+    "tags": [
+      "hp_regeneration"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "hp_regeneration_plus_1_per_different_tier_1_item"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "hp_regeneration_minus_3_per_different_tier_4_item"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Tier-diversity regeneration scaling is pending runtime migration."
+  },
+  {
+    "id": "focus",
+    "source_name": "Focus",
+    "display_name": "专注",
+    "is_dlc": false,
+    "tier": 4,
+    "base_price": 110,
+    "limit": null,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_one_armed"
+    },
+    "tags": [
+      "damage"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": 0.3
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "attack_speed_percent_minus_3_per_different_weapon"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Different-weapon attack speed penalty is pending runtime migration."
+  },
+  {
+    "id": "fried_rice",
+    "source_name": "Fried Rice",
+    "display_name": "炒饭",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 60,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "hp_regeneration"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "hp_regeneration_plus_1_per_currently_burning_enemy"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Burning-enemy regeneration scaling is pending runtime migration."
+  },
+  {
+    "id": "frozen_heart",
+    "source_name": "Frozen Heart",
+    "display_name": "冰冻之心",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 90,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "elemental_damage",
+      "crit_chance"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "elemental_damage",
+        "value": 8
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "crit_chance",
+        "value": 0.05
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "weapon_damage_scales_with_10_percent_elemental_damage"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "burning_activates_100_percent_slower"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Elemental weapon scaling and burn slowdown are pending runtime migration."
+  },
+  {
+    "id": "giant_belt",
+    "source_name": "Giant Belt",
+    "display_name": "巨腰带",
+    "is_dlc": false,
+    "tier": 4,
+    "base_price": 110,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_jack"
+    },
+    "tags": [
+      "crit_chance"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "critical_hits_deal_current_hp_bonus_damage",
+        "enemy_current_hp_percent": 0.1,
+        "boss_elite_current_hp_percent": 0.01
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Current-HP critical damage is pending runtime migration."
+  },
+  {
+    "id": "gobbler_s_hat",
+    "source_name": "Gobbler's Hat",
+    "display_name": "Gobbler's Hat",
+    "is_dlc": false,
+    "tier": 4,
+    "base_price": 130,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "kill_gobbler_5_times"
+    },
+    "tags": [],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "materials_dropped_percent",
+        "value": 0.7
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "speed_percent",
+        "value": -0.15
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "dodge",
+        "value": -0.1
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "greek_fire",
+    "source_name": "Greek Fire",
+    "display_name": "希腊火",
+    "is_dlc": false,
+    "tier": 4,
+    "base_price": 100,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "elemental_damage"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "burning_deals_current_enemy_hp_bonus_damage",
+        "enemy_current_hp_percent": 0.1,
+        "boss_elite_current_hp_percent": 0.01
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "nightmare_fog_visibility_percent_plus_75"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Burning current-HP bonus is pending runtime migration."
+  },
+  {
+    "id": "grind_s_magical_leaf",
+    "source_name": "Grind's Magical Leaf",
+    "display_name": "Grind's Magical Leaf",
+    "is_dlc": false,
+    "tier": 4,
+    "base_price": 110,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "max_hp",
+      "hp_regeneration",
+      "lifesteal"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "max_hp_plus_3_end_wave"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "hp_regeneration_plus_1_end_wave"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "lifesteal_plus_1_percent_end_wave"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. End-wave stat growth is pending runtime migration."
+  },
+  {
+    "id": "handcuffs",
+    "source_name": "Handcuffs",
+    "display_name": "手铐",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 80,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "melee_damage",
+      "ranged_damage",
+      "elemental_damage"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "melee_damage",
+        "value": 8
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "ranged_damage",
+        "value": 8
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "elemental_damage",
+        "value": 8
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "max_hp_capped_at_current_value"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Max-HP cap behavior is pending runtime migration."
+  },
+  {
+    "id": "honey",
+    "source_name": "Honey",
+    "display_name": "蜂蜜",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 70,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "ranged_damage",
+      "explosive"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "ranged_damage",
+        "value": 3
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "explosion_damage_percent",
+        "value": 0.1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "explosion_size_percent",
+        "value": 0.05
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "speed_percent",
+        "value": -0.03
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "dodge",
+        "value": -0.03
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "hourglass",
+    "source_name": "Hourglass",
+    "display_name": "沙漏",
+    "is_dlc": false,
+    "tier": 4,
+    "base_price": 100,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "return_to_main_menu_last_5_seconds_after_wave_2_then_resume"
+    },
+    "tags": [],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "decrease_current_wave_count_by_1"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "start_next_wave_with_1_hp"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Wave rewind behavior is pending runtime migration."
+  },
+  {
+    "id": "ice_cube",
+    "source_name": "Ice Cube",
+    "display_name": "冰块",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 50,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "elemental_damage"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "enemies_take_10_percent_more_damage_for_3_seconds_on_first_elemental_hit"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Elemental-hit vulnerability is pending runtime migration."
+  },
+  {
+    "id": "improved_tools",
+    "source_name": "Improved Tools",
+    "display_name": "改进工具",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 70,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_cyborg"
+    },
+    "tags": [
+      "structure",
+      "attack_speed"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "attack_speed_percent",
+        "value": 0.1
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "structures_attack_speed_scales_with_player_attack_speed"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Structure attack speed scaling is pending runtime migration."
+  },
+  {
+    "id": "incendiary_turret",
+    "source_name": "Incendiary Turret",
+    "display_name": "燃烧炮塔",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 40,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "engineering",
+      "structure"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "spawn_incendiary_turret",
+        "damage": 5,
+        "hit_count": 8,
+        "engineering_damage_coefficient": 0.33
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Incendiary turret structure behavior is pending runtime migration."
+  },
+  {
+    "id": "laser_turret",
+    "source_name": "Laser Turret",
+    "display_name": "激光炮塔",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 65,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "engineering",
+      "structure"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "spawn_laser_turret",
+        "damage": 20,
+        "engineering_damage_coefficient": 1.25
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Laser turret structure behavior is pending runtime migration."
+  },
+  {
+    "id": "lucky_coin",
+    "source_name": "Lucky Coin",
+    "display_name": "幸运硬币",
+    "is_dlc": false,
+    "tier": 4,
+    "base_price": 105,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "crit_chance",
+      "luck"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "luck_plus_2_per_1_crit_chance_percent"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "armor",
+        "value": -2
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Crit-scaling luck is pending runtime migration."
+  },
+  {
+    "id": "lure",
+    "source_name": "Lure",
+    "display_name": "诱饵",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 34,
+    "limit": null,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_fisherman"
+    },
+    "tags": [
+      "hp_regeneration"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "hp_regeneration",
+        "value": 2
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "next_wave_additional_loot_aliens",
+        "count": 2
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Extra loot alien spawning is pending runtime migration."
+  },
+  {
+    "id": "medical_turret",
+    "source_name": "Medical Turret",
+    "display_name": "医疗炮塔",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 40,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "engineering",
+      "structure"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "spawn_medical_turret",
+        "healing": 3,
+        "engineering_heal_coefficient": 0.05
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Medical turret structure behavior is pending runtime migration."
+  },
+  {
+    "id": "nail",
+    "source_name": "Nail",
+    "display_name": "钉子",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 65,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "engineering"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "engineering",
+        "value": 5
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "weapon_damage_scales_with_20_percent_engineering"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "ranged_damage",
+        "value": -2
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Engineering weapon scaling is pending runtime migration."
+  },
+  {
+    "id": "pile_of_books",
+    "source_name": "Pile of Books",
+    "display_name": "书堆",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 60,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "crit_chance",
+      "engineering"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "structures_can_crit"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "crit_chance",
+        "value": 0.05
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "engineering",
+        "value": 3
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Structure critical hits are pending runtime migration."
+  },
+  {
+    "id": "pocket_factory",
+    "source_name": "Pocket Factory",
+    "display_name": "口袋工厂",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 75,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "engineering",
+      "exploration",
+      "structure"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "engineering",
+        "value": 2
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "killing_tree_spawns_turret"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Tree-kill turret spawning is pending runtime migration."
+  },
+  {
+    "id": "potato",
+    "source_name": "Potato",
+    "display_name": "土豆",
+    "is_dlc": false,
+    "tier": 4,
+    "base_price": 95,
+    "limit": null,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_well_rounded"
+    },
+    "tags": [
+      "max_hp",
+      "hp_regeneration",
+      "damage",
+      "speed",
+      "luck"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "max_hp",
+        "value": 3
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "hp_regeneration",
+        "value": 2
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "lifesteal",
+        "value": 0.01
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": 0.05
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "attack_speed_percent",
+        "value": 0.05
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "speed_percent",
+        "value": 0.03
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "dodge",
+        "value": 0.03
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "armor",
+        "value": 1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "luck",
+        "value": 5
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "resting_goldfish",
+    "source_name": "Resting Goldfish",
+    "display_name": "休息的金鱼",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 30,
+    "limit": 0,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "resting_goldfish_post_use_state"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime supports Resting Goldfish post-use state tracking."
+  },
+  {
+    "id": "retromation_s_hoodie",
+    "source_name": "Retromation's Hoodie",
+    "display_name": "Retromation's Hoodie",
+    "is_dlc": false,
+    "tier": 4,
+    "base_price": 110,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "dodge"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "attack_speed_percent_plus_2_per_1_dodge_percent"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "range",
+        "value": -80
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Dodge-scaling attack speed is pending runtime migration."
+  },
+  {
+    "id": "ricochet",
+    "source_name": "Ricochet",
+    "display_name": "跳弹",
+    "is_dlc": false,
+    "tier": 4,
+    "base_price": 110,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "ranged_damage"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "projectiles_bounce_plus_1"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": -0.25
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Projectile bounce support is pending runtime migration."
+  },
+  {
+    "id": "robot_arm",
+    "source_name": "Robot Arm",
+    "display_name": "机械臂",
+    "is_dlc": false,
+    "tier": 4,
+    "base_price": 100,
+    "limit": null,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_engineer"
+    },
+    "tags": [
+      "melee_damage",
+      "engineering"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "melee_damage_plus_3_end_wave"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "engineering_plus_3_end_wave"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "max_hp_minus_1_end_wave"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. End-wave stat growth is pending runtime migration."
+  },
+  {
+    "id": "shackles",
+    "source_name": "Shackles",
+    "display_name": "镣铐",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 80,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "range",
+      "hp_regeneration",
+      "engineering"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "hp_regeneration",
+        "value": 8
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "engineering",
+        "value": 8
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "range",
+        "value": 80
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "speed_capped_at_current_value"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Speed cap behavior is pending runtime migration."
+  },
+  {
+    "id": "sifd_s_relic",
+    "source_name": "Sifd's Relic",
+    "display_name": "Sifd's Relic",
+    "is_dlc": false,
+    "tier": 4,
+    "base_price": 100,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "pickup",
+      "armor"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "armor",
+        "value": 3
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "material_drop_instant_attract_chance",
+        "chance": 1.0
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Instant material attraction is pending runtime migration."
+  },
+  {
+    "id": "stone_skin",
+    "source_name": "Stone Skin",
+    "display_name": "石肤",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 85,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_golem"
+    },
+    "tags": [
+      "armor",
+      "max_hp"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "max_hp_plus_1_per_1_permanent_armor"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "attack_speed_percent",
+        "value": -0.06
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Armor-scaling max HP is pending runtime migration."
+  },
+  {
+    "id": "strange_book",
+    "source_name": "Strange Book",
+    "display_name": "奇怪的书",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 70,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "engineering",
+      "elemental_damage"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "engineering_plus_1_per_1_permanent_elemental_damage"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "melee_damage",
+        "value": -1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "ranged_damage",
+        "value": -1
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Elemental-scaling engineering is pending runtime migration."
+  },
+  {
+    "id": "torture",
+    "source_name": "Torture",
+    "display_name": "折磨",
+    "is_dlc": false,
+    "tier": 4,
+    "base_price": 100,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "max_hp"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "max_hp",
+        "value": 15
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "restore_5_hp_per_second_cannot_heal_other_way"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Exclusive healing mode is pending runtime migration."
+  },
+  {
+    "id": "tyler",
+    "source_name": "Tyler",
+    "display_name": "泰勒",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 62,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "engineering",
+      "elemental_damage",
+      "structure"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "spawn_tyler",
+        "projectiles": 10,
+        "damage": 12,
+        "engineering_damage_coefficient": 0.9,
+        "elemental_damage_coefficient": 0.9
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Tyler structure behavior is pending runtime migration."
+  },
+  {
+    "id": "will_o_wisp",
+    "source_name": "Will-o'-Wisp",
+    "display_name": "鬼火",
+    "is_dlc": false,
+    "tier": 3,
+    "base_price": 80,
+    "limit": null,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "kill_30_burning_enemies_in_single_wave"
+    },
+    "tags": [
+      "elemental_damage"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "elemental_damage_plus_1_per_30_burning_kills_max_4_per_wave"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "attack_speed_percent",
+        "value": -0.07
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Burning-kill elemental growth is pending runtime migration."
+  },
+  {
+    "id": "ashes",
+    "source_name": "Ashes",
+    "display_name": "灰烬",
+    "is_dlc": true,
+    "tier": 4,
+    "base_price": 100,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "attack_speed",
+      "damage",
+      "range"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": 0.2
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "attack_speed_percent",
+        "value": 0.2
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "range",
+        "value": 100
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "armor_minus_1_end_wave"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. End-wave armor loss is pending runtime migration."
+  },
+  {
+    "id": "axolotl",
+    "source_name": "Axolotl",
+    "display_name": "美西螈",
+    "is_dlc": true,
+    "tier": 4,
+    "base_price": 130,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "swap_highest_and_lowest_positive_primary_stats_on_pickup"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Primary-stat swap behavior is pending runtime migration."
+  },
+  {
+    "id": "baby_squid",
+    "source_name": "Baby Squid",
+    "display_name": "小鱿鱼",
+    "is_dlc": true,
+    "tier": 2,
+    "base_price": 55,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "hp_regeneration"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "hp_regeneration_plus_1_on_level_up"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "attack_speed_percent",
+        "value": -0.03
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Level-up regeneration gain is pending runtime migration."
+  },
+  {
+    "id": "black_flag",
+    "source_name": "Black Flag",
+    "display_name": "黑旗",
+    "is_dlc": true,
+    "tier": 3,
+    "base_price": 60,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "curse",
+      "more_enemies"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "gain_1_material_when_killing_cursed_enemy"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "enemies_percent",
+        "value": 0.1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "enemy_health_percent",
+        "value": 0.1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "enemy_damage_percent",
+        "value": 0.1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "curse",
+        "value": 5
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Cursed-enemy material bonus is pending runtime migration."
+  },
+  {
+    "id": "bone_dice",
+    "source_name": "Bone Dice",
+    "display_name": "骨骰",
+    "is_dlc": true,
+    "tier": 2,
+    "base_price": 30,
+    "limit": 2,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "damage"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "shop_reroll_damage_percent_plus_1_chance",
+        "chance": 0.5
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "shop_reroll_max_hp_minus_1_chance",
+        "chance": 0.1
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Shop-reroll stat mutation is pending runtime migration."
+  },
+  {
+    "id": "coral",
+    "source_name": "Coral",
+    "display_name": "珊瑚",
+    "is_dlc": true,
+    "tier": 2,
+    "base_price": 40,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "hp_regeneration",
+      "stand_still"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "hp_regeneration_plus_10_while_standing_still"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "range",
+        "value": -10
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Stand-still regeneration bonus is pending runtime migration."
+  },
+  {
+    "id": "corrupted_shard",
+    "source_name": "Corrupted Shard",
+    "display_name": "腐化碎片",
+    "is_dlc": true,
+    "tier": 1,
+    "base_price": 12,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "damage",
+      "curse"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": 0.03
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "curse",
+        "value": 1
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "crystal",
+    "source_name": "Crystal",
+    "display_name": "水晶",
+    "is_dlc": true,
+    "tier": 3,
+    "base_price": 65,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "attack_speed"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "attack_speed_percent",
+        "value": 0.05
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "attack_speed_percent_plus_1_every_second_until_wave_end_lost_on_damage"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "engineering",
+        "value": -2
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. In-wave attack-speed ramp is pending runtime migration."
+  },
+  {
+    "id": "feather",
+    "source_name": "Feather",
+    "display_name": "Feather",
+    "is_dlc": true,
+    "tier": 1,
+    "base_price": 18,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "ranged_damage",
+      "dodge"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "ranged_damage",
+        "value": 1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "dodge",
+        "value": 0.03
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "xp_gain_percent",
+        "value": -0.03
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime item effect migration is pending."
+  },
+  {
+    "id": "goblet",
+    "source_name": "Goblet",
+    "display_name": "高脚杯",
+    "is_dlc": true,
+    "tier": 3,
+    "base_price": 70,
+    "limit": 3,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "heal_1_hp_on_enemy_kill_chance",
+        "chance": 0.15
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "hp_regeneration",
+        "value": -3
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Kill-triggered healing is pending runtime migration."
+  },
+  {
+    "id": "goldfish",
+    "source_name": "Goldfish",
+    "display_name": "金鱼",
+    "is_dlc": true,
+    "tier": 3,
+    "base_price": 23,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "items_one_tier_higher_after_next_reroll"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Next-reroll tier bump is pending runtime migration."
+  },
+  {
+    "id": "jerky",
+    "source_name": "Jerky",
+    "display_name": "肉干",
+    "is_dlc": true,
+    "tier": 2,
+    "base_price": 50,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "consumable"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "consumable_heal",
+        "value": 3
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "consumables_heal_over_4_seconds_instead_of_instant"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Delayed consumable healing is pending runtime migration."
+  },
+  {
+    "id": "knot",
+    "source_name": "Knot",
+    "display_name": "结",
+    "is_dlc": true,
+    "tier": 3,
+    "base_price": 80,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "damage",
+      "max_hp"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": 0.15
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "max_hp",
+        "value": 15
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "weapons_can_no_longer_be_upgraded_or_recycled"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Weapon upgrade/recycle lock is pending runtime migration."
+  },
+  {
+    "id": "kraken_s_eye",
+    "source_name": "Kraken's Eye",
+    "display_name": "Kraken's Eye",
+    "is_dlc": true,
+    "tier": 4,
+    "base_price": 110,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "explosive",
+      "max_hp",
+      "curse"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "explode_on_hit_chance",
+        "chance": 0.5,
+        "damage": 10,
+        "curse_damage_coefficient": 5.0
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "max_hp",
+        "value": 15
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "curse",
+        "value": 15
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Hit-triggered curse explosion is pending runtime migration."
+  },
+  {
+    "id": "lantern",
+    "source_name": "Lantern",
+    "display_name": "灯笼",
+    "is_dlc": true,
+    "tier": 4,
+    "base_price": 100,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "damage",
+      "range",
+      "knockback"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": 0.1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "range",
+        "value": 50
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "knockback",
+        "value": 15
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "knock_nearby_enemies_back_every_3_seconds"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "nightmare_fog_visibility_percent_plus_75"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Periodic knockback is pending runtime migration."
+  },
+  {
+    "id": "mirror",
+    "source_name": "Mirror",
+    "display_name": "镜子",
+    "is_dlc": true,
+    "tier": 3,
+    "base_price": 60,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "duplicate_next_shop_item_without_exceeding_limits"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Runtime supports next-shop-item duplication without exceeding limits."
+  },
+  {
+    "id": "penguin",
+    "source_name": "Penguin",
+    "display_name": "企鹅",
+    "is_dlc": true,
+    "tier": 1,
+    "base_price": 25,
+    "limit": 3,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "hp_regeneration"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "hp_regeneration",
+        "value": 1
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "temporary_hp_regeneration_plus_1_on_full_health_consumable_pickup"
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Temporary consumable-triggered regeneration is pending runtime migration."
+  },
+  {
+    "id": "saltwater",
+    "source_name": "Saltwater",
+    "display_name": "盐水",
+    "is_dlc": true,
+    "tier": 2,
+    "base_price": 50,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "melee_damage",
+      "attack_speed",
+      "speed"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "melee_damage",
+        "value": 2
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "attack_speed_percent",
+        "value": 0.03
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "speed_percent_plus_10_for_3_seconds_when_taking_damage"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "elemental_damage",
+        "value": -1
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Damage-triggered speed buff is pending runtime migration."
+  },
+  {
+    "id": "seashell",
+    "source_name": "Seashell",
+    "display_name": "贝壳",
+    "is_dlc": true,
+    "tier": 4,
+    "base_price": 100,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "ranged_damage"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "every_ranged_weapon_fifth_projectile_has_plus_3_projectiles"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": -0.1
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Ranged projectile count modulation is pending runtime migration."
+  },
+  {
+    "id": "small_fish",
+    "source_name": "Small Fish",
+    "display_name": "小鱼",
+    "is_dlc": true,
+    "tier": 1,
+    "base_price": 18,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "damage"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "damage_against_high_health_targets_percent",
+        "value": 0.1
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "attack_speed_percent",
+        "value": -0.03
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. High-health target damage bonus is pending runtime migration."
+  },
+  {
+    "id": "sunken_bell",
+    "source_name": "Sunken Bell",
+    "display_name": "沉没之钟",
+    "is_dlc": true,
+    "tier": 3,
+    "base_price": 65,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "explosive"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "once_per_wave_explode_below_40_percent_health",
+        "damage": 100,
+        "melee_damage_coefficient": 5.0,
+        "ranged_damage_coefficient": 5.0,
+        "elemental_damage_coefficient": 5.0,
+        "engineering_damage_coefficient": 5.0
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Low-health explosion trigger is pending runtime migration."
+  },
+  {
+    "id": "whistle",
+    "source_name": "Whistle",
+    "display_name": "哨子",
+    "is_dlc": true,
+    "tier": 1,
+    "base_price": 25,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "loot_alien_chance_percent",
+        "value": 0.5
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "loot_alien_speed_percent",
+        "value": 0.2
+      }
+    ],
+    "implementation_notes": "Modeled from Brotato Wiki Item Data. Loot alien spawn and speed modifiers are pending runtime migration."
+  },
+  {
+    "id": "alien_tongue",
+    "source_name": "Alien Tongue",
+    "display_name": "Alien Tongue",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 25,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "pickup"
+    ],
+    "effects": [
+      {
+        "effect": "pickup_range_percent",
+        "value": 0.3
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "knockback",
+        "value": 1
+      }
+    ],
+    "implementation_notes": "Modeled for catalog validation. Runtime item effect migration is pending."
+  },
+  {
+    "id": "snake",
+    "source_name": "Snake",
+    "display_name": "蛇",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 20,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "elemental_damage"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "burn_spread"
+      }
+    ],
+    "implementation_notes": "Modeled because Mage starts with this item in the reference design."
+  },
+  {
+    "id": "scared_sausage",
+    "source_name": "Scared Sausage",
+    "display_name": "受惊的香肠",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 25,
+    "limit": 4,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "elemental_damage"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "burn_on_hit",
+        "chance": 0.25
+      }
+    ],
+    "implementation_notes": "Modeled because Mage starts with this item in the reference design."
+  },
+  {
+    "id": "lumberjack_shirt",
+    "source_name": "Lumberjack Shirt",
+    "display_name": "伐木工衬衫",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 15,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "exploration"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "trees_die_in_one_hit"
+      }
+    ],
+    "implementation_notes": "Modeled because Pacifist and Explorer start with this item. Tree one-hit behavior is pending runtime support."
+  },
+  {
+    "id": "piggy_bank",
+    "source_name": "Piggy Bank",
+    "display_name": "储蓄罐",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 40,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "materials_plus_20_percent_start_wave_until_wave_20"
+      }
+    ],
+    "implementation_notes": "Modeled because Saver starts with this item. Start-wave material growth is pending runtime support."
+  },
+  {
+    "id": "dangerous_bunny",
+    "source_name": "Dangerous Bunny",
+    "display_name": "危险兔子",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 30,
+    "limit": 3,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "economy"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "one_free_shop_reroll"
+      }
+    ],
+    "implementation_notes": "Modeled because Arms Dealer starts with this item. Free shop reroll behavior is pending runtime support."
+  },
+  {
+    "id": "bait",
+    "source_name": "Bait",
+    "display_name": "诱饵",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 25,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "damage",
+      "number_of_enemies"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "damage_percent",
+        "value": 0.08
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "spawn_special_enemies_next_wave"
+      }
+    ],
+    "implementation_notes": "Modeled because Fisherman always sees Bait in shops. Special enemy spawning is pending runtime support."
+  },
+  {
+    "id": "spicy_sauce",
+    "source_name": "Spicy Sauce",
+    "display_name": "辣酱",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 40,
+    "limit": 2,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_glutton"
+    },
+    "tags": [
+      "max_hp",
+      "luck",
+      "explosive"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "max_hp",
+        "value": 3
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "consumable_explosion_chance",
+        "chance": 0.5,
+        "damage": 10,
+        "max_hp_damage_coefficient": 1.0,
+        "radius": 200
+      }
+    ],
+    "implementation_notes": "Modeled because Glutton unlocks it. Consumable explosion scaling is pending runtime support."
+  },
+  {
+    "id": "turret",
+    "source_name": "Turret",
+    "display_name": "炮塔",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 15,
+    "limit": null,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "engineering",
+      "structure"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "spawn_turret_each_wave",
+        "structure": "turret",
+        "damage": 10,
+        "engineering_damage_coefficient": 0.8,
+        "range": 300,
+        "cooldown": 0.73
+      }
+    ],
+    "implementation_notes": "Modeled because Technomage starts with two Turrets and Wrench tier 1 spawns the same structure. Item-granted structure placement is pending runtime support."
+  },
+  {
+    "id": "celery_tea",
+    "source_name": "Celery Tea",
+    "display_name": "芹菜茶",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 35,
+    "limit": null,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_baby"
+    },
+    "tags": [
+      "xp_gain"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "xp_gain_percent_plus_5_end_wave"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "next_wave_xp_gain_percent_plus_50"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "next_wave_enemy_health_percent_plus_100"
+      }
+    ],
+    "implementation_notes": "Modeled because Baby unlocks it. End-wave XP gain and next-wave temporary modifiers are pending runtime support."
+  },
+  {
+    "id": "jelly",
+    "source_name": "Jelly",
+    "display_name": "果冻",
+    "is_dlc": false,
+    "tier": 1,
+    "base_price": 15,
+    "limit": null,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_vagabond"
+    },
+    "tags": [
+      "max_hp"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "max_hp_plus_1_per_distinct_weapon"
+      }
+    ],
+    "implementation_notes": "Modeled because Vagabond unlocks it. Distinct-weapon max-HP scaling is pending runtime support."
+  },
+  {
+    "id": "decomposing_flesh",
+    "source_name": "Decomposing Flesh",
+    "display_name": "腐肉",
+    "is_dlc": false,
+    "tier": 2,
+    "base_price": 30,
+    "limit": null,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_vampire"
+    },
+    "tags": [
+      "lifesteal"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "lifesteal_plus_1_percent_and_max_hp_minus_1_on_level_up"
+      }
+    ],
+    "implementation_notes": "Modeled because Vampire unlocks it. Level-up life-steal gain and max-HP loss are pending runtime support."
+  },
+  {
+    "id": "treasure_map",
+    "source_name": "Treasure Map",
+    "display_name": "藏宝图",
+    "is_dlc": true,
+    "tier": 2,
+    "base_price": 35,
+    "limit": 5,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_sailor"
+    },
+    "tags": [
+      "luck"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "extra_item_chance_in_crate",
+        "chance": 0.2
+      }
+    ],
+    "implementation_notes": "Modeled because Sailor unlocks it. Extra crate item chance is pending runtime support."
+  },
+  {
+    "id": "pearl",
+    "source_name": "Pearl",
+    "display_name": "珍珠",
+    "is_dlc": true,
+    "tier": 2,
+    "base_price": 60,
+    "limit": 20,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_curious"
+    },
+    "tags": [
+      "luck"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "damage_percent_plus_1_per_10_permanent_luck"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "extra_pearl_chance_in_crate",
+        "chance": 0.03
+      }
+    ],
+    "implementation_notes": "Modeled because Curious unlocks it. Permanent-luck damage and extra Pearl crate logic are pending runtime support."
+  },
+  {
+    "id": "spyglass",
+    "source_name": "Spyglass",
+    "display_name": "Spyglass",
+    "is_dlc": true,
+    "tier": 2,
+    "base_price": 30,
+    "limit": 2,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "range"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "range",
+        "value": 10
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "reroll_price_percent",
+        "value": -0.25
+      }
+    ],
+    "implementation_notes": "Modeled because Curious starts with it. Reroll-price reduction is pending runtime support."
+  },
+  {
+    "id": "builders_turret",
+    "source_name": "Builder's Turret",
+    "display_name": "建造者炮塔",
+    "is_dlc": true,
+    "tier": 1,
+    "base_price": 0,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "character_start",
+      "character": "builder"
+    },
+    "tags": [
+      "engineering",
+      "structure"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "unique_builders_turret"
+      }
+    ],
+    "implementation_notes": "Modeled because Builder starts with this unique structure. Tiered Builder turret behavior is pending runtime support."
+  },
+  {
+    "id": "lighthouse",
+    "source_name": "Lighthouse",
+    "display_name": "灯塔",
+    "is_dlc": true,
+    "tier": 3,
+    "base_price": 80,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_builder"
+    },
+    "tags": [
+      "engineering"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "engineering",
+        "value": 20
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "engineering_minus_1_per_structure"
+      }
+    ],
+    "implementation_notes": "Modeled because Builder unlocks it. Engineering penalty per owned structure is pending runtime support."
+  },
+  {
+    "id": "fish_hook",
+    "source_name": "Fish Hook",
+    "display_name": "鱼钩",
+    "is_dlc": true,
+    "tier": 2,
+    "base_price": 35,
+    "limit": 3,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tags": [
+      "curse",
+      "lock"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "locked_shop_entries_chance_to_become_cursed",
+        "chance": 0.2
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "curse",
+        "value": 1
+      }
+    ],
+    "implementation_notes": "Modeled because Creature starts with a cursed Fish Hook. Runtime supports lock-to-curse shop state; pity behavior remains pending."
+  },
+  {
+    "id": "barnacle",
+    "source_name": "Barnacle",
+    "display_name": "藤壶",
+    "is_dlc": true,
+    "tier": 3,
+    "base_price": 80,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_creature"
+    },
+    "tags": [
+      "curse",
+      "xp_gain"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "level_upgrade_stats_plus_35_percent"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "curse_plus_1_on_level_up"
+      }
+    ],
+    "implementation_notes": "Modeled because Creature unlocks it. Level-up stat amplification and curse gain are pending runtime support."
+  },
+  {
+    "id": "cauldron",
+    "source_name": "Cauldron",
+    "display_name": "大锅",
+    "is_dlc": true,
+    "tier": 2,
+    "base_price": 35,
+    "limit": 1,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_druid"
+    },
+    "tags": [
+      "pickup"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "pickup_range_percent",
+        "value": 0.5
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "damage_percent_plus_20_for_2_seconds_after_consumable_pickup"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "hp_regeneration",
+        "value": -2
+      }
+    ],
+    "implementation_notes": "Modeled because Druid unlocks it. Timed post-consumable damage bonus is pending runtime support."
+  },
+  {
+    "id": "starfish",
+    "source_name": "Starfish",
+    "display_name": "海星",
+    "is_dlc": true,
+    "tier": 3,
+    "base_price": 75,
+    "limit": 3,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_diver"
+    },
+    "tags": [
+      "harvesting"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "materials_dropped_percent",
+        "value": 0.2
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "harvesting",
+        "value": 10
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "enemy_damage_percent",
+        "value": 0.15
+      }
+    ],
+    "implementation_notes": "Modeled because Diver unlocks it. Enemy material-drop scaling is pending runtime support."
+  },
+  {
+    "id": "scarf",
+    "source_name": "Scarf",
+    "display_name": "围巾",
+    "is_dlc": true,
+    "tier": 3,
+    "base_price": 80,
+    "limit": null,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_hiker"
+    },
+    "tags": [
+      "hp_regeneration",
+      "melee_damage",
+      "speed"
+    ],
+    "effects": [
+      {
+        "effect": "stat_delta",
+        "stat": "hp_regeneration",
+        "value": 4
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "melee_damage",
+        "value": 4
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "speed_percent",
+        "value": 0.04
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "next_wave_enemy_speed_percent_plus_25"
+      }
+    ],
+    "implementation_notes": "Modeled because Hiker unlocks it. Next-wave enemy speed modifier is pending runtime support."
+  },
+  {
+    "id": "eyepatch",
+    "source_name": "Eyepatch",
+    "display_name": "眼罩",
+    "is_dlc": true,
+    "tier": 2,
+    "base_price": 55,
+    "limit": null,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_buccaneer"
+    },
+    "tags": [
+      "crit_chance",
+      "ranged_damage"
+    ],
+    "effects": [
+      {
+        "effect": "weapon_special",
+        "rule": "projectiles_gain_1_piercing_on_critical_hit"
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "crit_chance",
+        "value": 0.03
+      },
+      {
+        "effect": "stat_delta",
+        "stat": "accuracy_percent",
+        "value": -0.1
+      }
+    ],
+    "implementation_notes": "Modeled because Buccaneer unlocks it. Critical-hit piercing is pending runtime support."
+  }
+]

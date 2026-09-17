@@ -1,0 +1,189 @@
+[
+  {
+    "id": "gun",
+    "source_name": "Gun",
+    "thresholds": {
+      "2": [{"effect": "stat_delta", "stat": "range", "value": 10}],
+      "3": [{"effect": "stat_delta", "stat": "range", "value": 20}],
+      "4": [{"effect": "stat_delta", "stat": "range", "value": 30}],
+      "5": [{"effect": "stat_delta", "stat": "range", "value": 40}],
+      "6": [{"effect": "stat_delta", "stat": "range", "value": 50}]
+    }
+  },
+  {
+    "id": "unarmed",
+    "source_name": "Unarmed",
+    "thresholds": {
+      "2": [{"effect": "stat_delta", "stat": "dodge", "value": 0.03}],
+      "3": [{"effect": "stat_delta", "stat": "dodge", "value": 0.06}],
+      "4": [{"effect": "stat_delta", "stat": "dodge", "value": 0.09}],
+      "5": [{"effect": "stat_delta", "stat": "dodge", "value": 0.12}],
+      "6": [{"effect": "stat_delta", "stat": "dodge", "value": 0.15}]
+    }
+  },
+  {
+    "id": "precise",
+    "source_name": "Precise",
+    "thresholds": {
+      "2": [{"effect": "stat_delta", "stat": "crit_chance", "value": 0.03}],
+      "3": [{"effect": "stat_delta", "stat": "crit_chance", "value": 0.06}],
+      "4": [{"effect": "stat_delta", "stat": "crit_chance", "value": 0.09}],
+      "5": [{"effect": "stat_delta", "stat": "crit_chance", "value": 0.12}],
+      "6": [{"effect": "stat_delta", "stat": "crit_chance", "value": 0.15}]
+    }
+  },
+  {
+    "id": "elemental",
+    "source_name": "Elemental",
+    "thresholds": {
+      "2": [{"effect": "stat_delta", "stat": "elemental_damage", "value": 1}],
+      "3": [{"effect": "stat_delta", "stat": "elemental_damage", "value": 2}],
+      "4": [{"effect": "stat_delta", "stat": "elemental_damage", "value": 3}],
+      "5": [{"effect": "stat_delta", "stat": "elemental_damage", "value": 4}],
+      "6": [{"effect": "stat_delta", "stat": "elemental_damage", "value": 5}]
+    }
+  },
+  {
+    "id": "medical",
+    "source_name": "Medical",
+    "thresholds": {
+      "2": [{"effect": "stat_delta", "stat": "hp_regeneration", "value": 1}],
+      "3": [{"effect": "stat_delta", "stat": "hp_regeneration", "value": 2}],
+      "4": [{"effect": "stat_delta", "stat": "hp_regeneration", "value": 3}],
+      "5": [{"effect": "stat_delta", "stat": "hp_regeneration", "value": 4}],
+      "6": [{"effect": "stat_delta", "stat": "hp_regeneration", "value": 5}]
+    }
+  },
+  {
+    "id": "heavy",
+    "source_name": "Heavy",
+    "thresholds": {
+      "2": [{"effect": "stat_delta", "stat": "damage_percent", "value": 0.05}],
+      "3": [{"effect": "stat_delta", "stat": "damage_percent", "value": 0.10}],
+      "4": [{"effect": "stat_delta", "stat": "damage_percent", "value": 0.15}],
+      "5": [{"effect": "stat_delta", "stat": "damage_percent", "value": 0.20}],
+      "6": [{"effect": "stat_delta", "stat": "damage_percent", "value": 0.25}]
+    }
+  },
+  {
+    "id": "explosive",
+    "source_name": "Explosive",
+    "thresholds": {
+      "2": [{"effect": "stat_delta", "stat": "explosion_size_percent", "value": 0.05}],
+      "3": [{"effect": "stat_delta", "stat": "explosion_size_percent", "value": 0.10}],
+      "4": [{"effect": "stat_delta", "stat": "explosion_size_percent", "value": 0.15}],
+      "5": [{"effect": "stat_delta", "stat": "explosion_size_percent", "value": 0.20}],
+      "6": [{"effect": "stat_delta", "stat": "explosion_size_percent", "value": 0.25}]
+    }
+  },
+  {
+    "id": "legendary",
+    "source_name": "Legendary",
+    "thresholds": {
+      "2": [{"effect": "stat_delta", "stat": "max_hp", "value": -20}],
+      "3": [{"effect": "stat_delta", "stat": "max_hp", "value": -40}],
+      "4": [{"effect": "stat_delta", "stat": "max_hp", "value": -60}],
+      "5": [{"effect": "stat_delta", "stat": "max_hp", "value": -80}],
+      "6": [{"effect": "stat_delta", "stat": "max_hp", "value": -100}]
+    }
+  },
+  {
+    "id": "ethereal",
+    "source_name": "Ethereal",
+    "thresholds": {
+      "2": [{"effect": "stat_delta", "stat": "dodge", "value": 0.06}, {"effect": "stat_delta", "stat": "armor", "value": -1}],
+      "3": [{"effect": "stat_delta", "stat": "dodge", "value": 0.12}, {"effect": "stat_delta", "stat": "armor", "value": -2}],
+      "4": [{"effect": "stat_delta", "stat": "dodge", "value": 0.18}, {"effect": "stat_delta", "stat": "armor", "value": -3}],
+      "5": [{"effect": "stat_delta", "stat": "dodge", "value": 0.24}, {"effect": "stat_delta", "stat": "armor", "value": -4}],
+      "6": [{"effect": "stat_delta", "stat": "dodge", "value": 0.30}, {"effect": "stat_delta", "stat": "armor", "value": -5}]
+    }
+  },
+  {
+    "id": "support",
+    "source_name": "Support",
+    "thresholds": {
+      "2": [{"effect": "stat_delta", "stat": "harvesting", "value": 5}],
+      "3": [{"effect": "stat_delta", "stat": "harvesting", "value": 10}],
+      "4": [{"effect": "stat_delta", "stat": "harvesting", "value": 15}],
+      "5": [{"effect": "stat_delta", "stat": "harvesting", "value": 20}],
+      "6": [{"effect": "stat_delta", "stat": "harvesting", "value": 25}]
+    }
+  },
+  {
+    "id": "musical",
+    "source_name": "Musical",
+    "thresholds": {
+      "2": [{"effect": "stat_delta", "stat": "luck", "value": 5}],
+      "3": [{"effect": "stat_delta", "stat": "luck", "value": 10}],
+      "4": [{"effect": "stat_delta", "stat": "luck", "value": 15}],
+      "5": [{"effect": "stat_delta", "stat": "luck", "value": 20}],
+      "6": [{"effect": "stat_delta", "stat": "luck", "value": 25}]
+    }
+  },
+  {
+    "id": "primitive",
+    "source_name": "Primitive",
+    "thresholds": {
+      "2": [{"effect": "stat_delta", "stat": "max_hp", "value": 3}],
+      "3": [{"effect": "stat_delta", "stat": "max_hp", "value": 6}],
+      "4": [{"effect": "stat_delta", "stat": "max_hp", "value": 9}],
+      "5": [{"effect": "stat_delta", "stat": "max_hp", "value": 12}],
+      "6": [{"effect": "stat_delta", "stat": "max_hp", "value": 15}]
+    }
+  },
+  {
+    "id": "engineering",
+    "source_name": "Tool",
+    "thresholds": {
+      "2": [{"effect": "stat_delta", "stat": "engineering", "value": 1}],
+      "3": [{"effect": "stat_delta", "stat": "engineering", "value": 2}],
+      "4": [{"effect": "stat_delta", "stat": "engineering", "value": 3}],
+      "5": [{"effect": "stat_delta", "stat": "engineering", "value": 4}],
+      "6": [{"effect": "stat_delta", "stat": "engineering", "value": 5}]
+    }
+  },
+  {
+    "id": "blunt",
+    "source_name": "Blunt",
+    "thresholds": {
+      "2": [{"effect": "stat_delta", "stat": "armor", "value": 1}, {"effect": "stat_delta", "stat": "speed_percent", "value": -0.02}],
+      "3": [{"effect": "stat_delta", "stat": "armor", "value": 1}, {"effect": "stat_delta", "stat": "max_hp", "value": 3}, {"effect": "stat_delta", "stat": "speed_percent", "value": -0.04}],
+      "4": [{"effect": "stat_delta", "stat": "armor", "value": 2}, {"effect": "stat_delta", "stat": "max_hp", "value": 3}, {"effect": "stat_delta", "stat": "speed_percent", "value": -0.06}],
+      "5": [{"effect": "stat_delta", "stat": "armor", "value": 2}, {"effect": "stat_delta", "stat": "max_hp", "value": 6}, {"effect": "stat_delta", "stat": "speed_percent", "value": -0.08}],
+      "6": [{"effect": "stat_delta", "stat": "armor", "value": 3}, {"effect": "stat_delta", "stat": "max_hp", "value": 6}, {"effect": "stat_delta", "stat": "speed_percent", "value": -0.10}]
+    }
+  },
+  {
+    "id": "blade",
+    "source_name": "Blade",
+    "thresholds": {
+      "2": [{"effect": "stat_delta", "stat": "melee_damage", "value": 1}, {"effect": "stat_delta", "stat": "lifesteal", "value": 0.01}],
+      "3": [{"effect": "stat_delta", "stat": "melee_damage", "value": 2}, {"effect": "stat_delta", "stat": "lifesteal", "value": 0.02}],
+      "4": [{"effect": "stat_delta", "stat": "melee_damage", "value": 3}, {"effect": "stat_delta", "stat": "lifesteal", "value": 0.03}],
+      "5": [{"effect": "stat_delta", "stat": "melee_damage", "value": 4}, {"effect": "stat_delta", "stat": "lifesteal", "value": 0.04}],
+      "6": [{"effect": "stat_delta", "stat": "melee_damage", "value": 5}, {"effect": "stat_delta", "stat": "lifesteal", "value": 0.05}]
+    }
+  },
+  {
+    "id": "medieval",
+    "source_name": "Medieval",
+    "thresholds": {
+      "2": [{"effect": "stat_delta", "stat": "armor", "value": 1}],
+      "3": [{"effect": "stat_delta", "stat": "armor", "value": 1}, {"effect": "stat_delta", "stat": "dodge", "value": 0.03}],
+      "4": [{"effect": "stat_delta", "stat": "armor", "value": 2}, {"effect": "stat_delta", "stat": "dodge", "value": 0.03}],
+      "5": [{"effect": "stat_delta", "stat": "armor", "value": 2}, {"effect": "stat_delta", "stat": "dodge", "value": 0.06}],
+      "6": [{"effect": "stat_delta", "stat": "armor", "value": 3}, {"effect": "stat_delta", "stat": "dodge", "value": 0.06}]
+    }
+  },
+  {
+    "id": "naval",
+    "source_name": "Naval",
+    "thresholds": {
+      "2": [{"effect": "stat_delta", "stat": "curse", "value": 1}],
+      "3": [{"effect": "stat_delta", "stat": "curse", "value": 2}],
+      "4": [{"effect": "stat_delta", "stat": "curse", "value": 3}],
+      "5": [{"effect": "stat_delta", "stat": "curse", "value": 4}],
+      "6": [{"effect": "stat_delta", "stat": "curse", "value": 5}]
+    }
+  }
+]

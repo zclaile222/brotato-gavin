@@ -1,0 +1,7716 @@
+[
+  {
+    "id": "double_barrel_shotgun",
+    "source_name": "Double Barrel Shotgun",
+    "display_name": "双管霰弹枪",
+    "runtime_aliases": [
+      "shotgun"
+    ],
+    "is_dlc": false,
+    "groups": [
+      "gun"
+    ],
+    "attack_kind": "ranged",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 3,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 0.8
+            }
+          ]
+        },
+        "cooldown": 1.37,
+        "range": 350,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 8,
+        "lifesteal": 0,
+        "base_price": 20,
+        "projectiles": 4,
+        "spread": 12,
+        "pierce": {
+          "count": 2,
+          "damage_multiplier": 0.7
+        }
+      },
+      "2": {
+        "damage": {
+          "base": 6,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 0.85
+            }
+          ]
+        },
+        "cooldown": 1.28,
+        "range": 350,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 8,
+        "lifesteal": 0,
+        "base_price": 39,
+        "projectiles": 4,
+        "spread": 12,
+        "pierce": {
+          "count": 2,
+          "damage_multiplier": 0.7
+        }
+      },
+      "3": {
+        "damage": {
+          "base": 9,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 0.9
+            }
+          ]
+        },
+        "cooldown": 1.2,
+        "range": 350,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 8,
+        "lifesteal": 0,
+        "base_price": 74,
+        "projectiles": 4,
+        "spread": 12,
+        "pierce": {
+          "count": 2,
+          "damage_multiplier": 0.7
+        }
+      },
+      "4": {
+        "damage": {
+          "base": 9,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.2,
+        "range": 350,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 8,
+        "lifesteal": 0,
+        "base_price": 149,
+        "projectiles": 6,
+        "spread": 12,
+        "pierce": {
+          "count": 3,
+          "damage_multiplier": 0.7
+        }
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "pierce_falloff"
+      }
+    ],
+    "implementation_notes": "Runtime conversion uses current projectile spread path."
+  },
+  {
+    "id": "laser_gun",
+    "source_name": "Laser Gun",
+    "display_name": "激光枪",
+    "runtime_aliases": [
+      "laser"
+    ],
+    "is_dlc": false,
+    "groups": [
+      "gun"
+    ],
+    "attack_kind": "ranged",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 40,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 4.0
+            }
+          ]
+        },
+        "cooldown": 1.98,
+        "range": 500,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 15,
+        "projectiles": 1,
+        "pierce": {
+          "count": 1,
+          "damage_multiplier": 0.75
+        }
+      },
+      "2": {
+        "damage": {
+          "base": 55,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 4.5
+            }
+          ]
+        },
+        "cooldown": 1.9,
+        "range": 500,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 31,
+        "projectiles": 1,
+        "pierce": {
+          "count": 1,
+          "damage_multiplier": 0.75
+        }
+      },
+      "3": {
+        "damage": {
+          "base": 70,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 5.0
+            }
+          ]
+        },
+        "cooldown": 1.82,
+        "range": 500,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 61,
+        "projectiles": 1,
+        "pierce": {
+          "count": 1,
+          "damage_multiplier": 0.75
+        }
+      },
+      "4": {
+        "damage": {
+          "base": 100,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 6.0
+            }
+          ]
+        },
+        "cooldown": 1.65,
+        "range": 500,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 122,
+        "projectiles": 1,
+        "pierce": {
+          "count": 1,
+          "damage_multiplier": 0.75
+        }
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "pierce_falloff"
+      }
+    ],
+    "implementation_notes": "Pierce falloff is represented structurally."
+  },
+  {
+    "id": "medical_gun",
+    "source_name": "Medical Gun",
+    "display_name": "医疗枪",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "medical",
+      "gun"
+    ],
+    "attack_kind": "ranged",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 10,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.87,
+        "range": 400,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0.4,
+        "base_price": 15,
+        "projectiles": 1
+      },
+      "2": {
+        "damage": {
+          "base": 15,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.77,
+        "range": 400,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0.45,
+        "base_price": 31,
+        "projectiles": 1
+      },
+      "3": {
+        "damage": {
+          "base": 20,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.65,
+        "range": 400,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0.5,
+        "base_price": 61,
+        "projectiles": 1
+      },
+      "4": {
+        "damage": {
+          "base": 30,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.53,
+        "range": 400,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0.6,
+        "base_price": 122,
+        "projectiles": 1
+      }
+    },
+    "special_rules": [],
+    "implementation_notes": "Lifesteal is represented but current projectile conversion does not apply per-weapon lifesteal."
+  },
+  {
+    "id": "pistol",
+    "source_name": "Pistol",
+    "display_name": "手枪",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "gun"
+    ],
+    "attack_kind": "ranged",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 12,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.2,
+        "range": 400,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.05,
+        "knockback": 15,
+        "lifesteal": 0,
+        "base_price": 10,
+        "projectiles": 1,
+        "pierce": {
+          "count": 1,
+          "damage_multiplier": 0.5
+        }
+      },
+      "2": {
+        "damage": {
+          "base": 20,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.12,
+        "range": 400,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.1,
+        "knockback": 15,
+        "lifesteal": 0,
+        "base_price": 22,
+        "projectiles": 1,
+        "pierce": {
+          "count": 1,
+          "damage_multiplier": 0.5
+        }
+      },
+      "3": {
+        "damage": {
+          "base": 30,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.03,
+        "range": 400,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.15,
+        "knockback": 15,
+        "lifesteal": 0,
+        "base_price": 45,
+        "projectiles": 1,
+        "pierce": {
+          "count": 1,
+          "damage_multiplier": 0.5
+        }
+      },
+      "4": {
+        "damage": {
+          "base": 50,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.87,
+        "range": 400,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.2,
+        "knockback": 15,
+        "lifesteal": 0,
+        "base_price": 91,
+        "projectiles": 1,
+        "pierce": {
+          "count": 1,
+          "damage_multiplier": 0.5
+        }
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "pierce_falloff"
+      }
+    ],
+    "implementation_notes": "Default supported weapon."
+  },
+  {
+    "id": "railgun",
+    "source_name": "Railgun",
+    "display_name": "轨道炮",
+    "runtime_aliases": [
+      "rifle"
+    ],
+    "is_dlc": false,
+    "groups": [
+      "gun",
+      "heavy"
+    ],
+    "attack_kind": "ranged",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 10,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 0.8
+            }
+          ]
+        },
+        "cooldown": 1.07,
+        "range": 300,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 15,
+        "lifesteal": 0,
+        "base_price": 20,
+        "projectiles": 1,
+        "pierce": {
+          "count": 1,
+          "damage_multiplier": 0.5
+        }
+      },
+      "2": {
+        "damage": {
+          "base": 15,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 0.8
+            }
+          ]
+        },
+        "cooldown": 1.02,
+        "range": 300,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 15,
+        "lifesteal": 0,
+        "base_price": 40,
+        "projectiles": 1,
+        "pierce": {
+          "count": 1,
+          "damage_multiplier": 0.65
+        }
+      },
+      "3": {
+        "damage": {
+          "base": 20,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 0.8
+            }
+          ]
+        },
+        "cooldown": 0.98,
+        "range": 300,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 15,
+        "lifesteal": 0,
+        "base_price": 80,
+        "projectiles": 1,
+        "pierce": {
+          "count": 2,
+          "damage_multiplier": 0.65
+        }
+      },
+      "4": {
+        "damage": {
+          "base": 35,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.95,
+        "range": 300,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 15,
+        "lifesteal": 0,
+        "base_price": 160,
+        "projectiles": 1,
+        "pierce": {
+          "count": 3,
+          "damage_multiplier": 0.75
+        }
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "damage_charges_until_hit"
+      }
+    ],
+    "implementation_notes": "Special charge rule is modeled but not runtime-implemented."
+  },
+  {
+    "id": "revolver",
+    "source_name": "Revolver",
+    "display_name": "左轮手枪",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "gun"
+    ],
+    "attack_kind": "ranged",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 15,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.43,
+        "range": 450,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 15,
+        "lifesteal": 0,
+        "base_price": 20,
+        "projectiles": 1
+      },
+      "2": {
+        "damage": {
+          "base": 20,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 1.3
+            }
+          ]
+        },
+        "cooldown": 0.42,
+        "range": 450,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 15,
+        "lifesteal": 0,
+        "base_price": 34,
+        "projectiles": 1
+      },
+      "3": {
+        "damage": {
+          "base": 25,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 1.65
+            }
+          ]
+        },
+        "cooldown": 0.4,
+        "range": 450,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 15,
+        "lifesteal": 0,
+        "base_price": 70,
+        "projectiles": 1
+      },
+      "4": {
+        "damage": {
+          "base": 40,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 2.0
+            }
+          ]
+        },
+        "cooldown": 0.38,
+        "range": 450,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 15,
+        "lifesteal": 0,
+        "base_price": 130,
+        "projectiles": 1
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "sixth_shot_longer_cooldown"
+      }
+    ],
+    "implementation_notes": "Sixth-shot cooldown rule is modeled but not runtime-implemented."
+  },
+  {
+    "id": "shredder",
+    "source_name": "Shredder",
+    "display_name": "撕裂者",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "gun",
+      "explosive"
+    ],
+    "attack_kind": "ranged",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 5,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 0.5
+            }
+          ]
+        },
+        "cooldown": 1.3,
+        "range": 450,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 15,
+        "projectiles": 1,
+        "pierce": {
+          "count": 3,
+          "damage_multiplier": 1.0
+        }
+      },
+      "2": {
+        "damage": {
+          "base": 10,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 0.5
+            }
+          ]
+        },
+        "cooldown": 1.22,
+        "range": 450,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 31,
+        "projectiles": 1,
+        "pierce": {
+          "count": 3,
+          "damage_multiplier": 1.0
+        }
+      },
+      "3": {
+        "damage": {
+          "base": 15,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 0.5
+            }
+          ]
+        },
+        "cooldown": 1.13,
+        "range": 450,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 61,
+        "projectiles": 1,
+        "pierce": {
+          "count": 3,
+          "damage_multiplier": 1.0
+        }
+      },
+      "4": {
+        "damage": {
+          "base": 25,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 0.5
+            }
+          ]
+        },
+        "cooldown": 1.05,
+        "range": 450,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 122,
+        "projectiles": 1,
+        "pierce": {
+          "count": 3,
+          "damage_multiplier": 1.0
+        }
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "projectile_explosion_chance"
+      }
+    ],
+    "implementation_notes": "Explosion chance is modeled but not runtime-implemented."
+  },
+  {
+    "id": "smg",
+    "source_name": "SMG",
+    "display_name": "冲锋枪",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "gun"
+    ],
+    "attack_kind": "ranged",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 3,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 0.5
+            }
+          ]
+        },
+        "cooldown": 0.17,
+        "range": 400,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.01,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 20,
+        "projectiles": 1
+      },
+      "2": {
+        "damage": {
+          "base": 4,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 0.6
+            }
+          ]
+        },
+        "cooldown": 0.17,
+        "range": 400,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.01,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 39,
+        "projectiles": 1
+      },
+      "3": {
+        "damage": {
+          "base": 5,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 0.7
+            }
+          ]
+        },
+        "cooldown": 0.17,
+        "range": 400,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.01,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 74,
+        "projectiles": 1
+      },
+      "4": {
+        "damage": {
+          "base": 8,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 0.8
+            }
+          ]
+        },
+        "cooldown": 0.15,
+        "range": 400,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.01,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 149,
+        "projectiles": 1
+      }
+    },
+    "special_rules": [],
+    "implementation_notes": "Supported through current projectile path."
+  },
+  {
+    "id": "anchor",
+    "source_name": "Anchor",
+    "display_name": "锚",
+    "runtime_aliases": [],
+    "is_dlc": true,
+    "groups": [
+      "naval",
+      "heavy"
+    ],
+    "attack_kind": "melee_sweep",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "minimum_tier": 2,
+    "tiers": {
+      "2": {
+        "damage": {
+          "base": 45,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            },
+            {
+              "stat": "curse",
+              "coefficient": 0.65
+            }
+          ]
+        },
+        "cooldown": 1.92,
+        "range": 175,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": 10,
+        "lifesteal": 0,
+        "base_price": 51,
+        "projectiles": 0
+      },
+      "3": {
+        "damage": {
+          "base": 70,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.25
+            },
+            {
+              "stat": "curse",
+              "coefficient": 0.9
+            }
+          ]
+        },
+        "cooldown": 1.86,
+        "range": 200,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": 10,
+        "lifesteal": 0,
+        "base_price": 95,
+        "projectiles": 0
+      },
+      "4": {
+        "damage": {
+          "base": 110,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.5
+            },
+            {
+              "stat": "curse",
+              "coefficient": 1.25
+            }
+          ]
+        },
+        "cooldown": 1.81,
+        "range": 225,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": 10,
+        "lifesteal": 0,
+        "base_price": 190,
+        "projectiles": 0
+      }
+    },
+    "special_rules": [],
+    "implementation_notes": "Abyssal Terrors row modeled from wiki. Melee sweep runtime parity is pending."
+  },
+  {
+    "id": "blunderbuss",
+    "source_name": "Blunderbuss",
+    "display_name": "喇叭枪",
+    "runtime_aliases": [],
+    "is_dlc": true,
+    "groups": [
+      "naval",
+      "gun"
+    ],
+    "attack_kind": "ranged",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "minimum_tier": 2,
+    "tiers": {
+      "2": {
+        "damage": {
+          "base": 25,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 5.2,
+        "range": 325,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 10,
+        "lifesteal": 0,
+        "base_price": 45,
+        "projectiles": 1,
+        "pierce": {
+          "count": 2,
+          "damage_multiplier": 0.75
+        }
+      },
+      "3": {
+        "damage": {
+          "base": 50,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 1.25
+            }
+          ]
+        },
+        "cooldown": 5.2,
+        "range": 350,
+        "crit_multiplier": 2.25,
+        "crit_chance": 0.03,
+        "knockback": 20,
+        "lifesteal": 0,
+        "base_price": 95,
+        "projectiles": 1,
+        "pierce": {
+          "count": 2,
+          "damage_multiplier": 0.75
+        }
+      },
+      "4": {
+        "damage": {
+          "base": 80,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 1.5
+            }
+          ]
+        },
+        "cooldown": 5.2,
+        "range": 375,
+        "crit_multiplier": 2.5,
+        "crit_chance": 0.03,
+        "knockback": 30,
+        "lifesteal": 0,
+        "base_price": 192,
+        "projectiles": 1,
+        "pierce": {
+          "count": 2,
+          "damage_multiplier": 0.75
+        }
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "material_pickup_resets_cooldown"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "pierce_falloff"
+      }
+    ],
+    "implementation_notes": "Abyssal Terrors row modeled from wiki. Material-pickup cooldown reset is not runtime-implemented."
+  },
+  {
+    "id": "harpoon_gun",
+    "source_name": "Harpoon Gun",
+    "display_name": "鱼叉枪",
+    "runtime_aliases": [],
+    "is_dlc": true,
+    "groups": [
+      "naval",
+      "gun"
+    ],
+    "attack_kind": "ranged",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "minimum_tier": 2,
+    "tiers": {
+      "2": {
+        "damage": {
+          "base": 5,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 1.0
+            },
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.82,
+        "range": 800,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": -30,
+        "lifesteal": 0,
+        "base_price": 50,
+        "projectiles": 1,
+        "pierce": {
+          "count": 3,
+          "damage_multiplier": 0.75
+        }
+      },
+      "3": {
+        "damage": {
+          "base": 10,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 1.0
+            },
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.73,
+        "range": 850,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": -30,
+        "lifesteal": 0,
+        "base_price": 105,
+        "projectiles": 1,
+        "pierce": {
+          "count": 4,
+          "damage_multiplier": 0.75
+        }
+      },
+      "4": {
+        "damage": {
+          "base": 20,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 1.0
+            },
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.65,
+        "range": 900,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": -30,
+        "lifesteal": 0,
+        "base_price": 220,
+        "projectiles": 1,
+        "pierce": {
+          "count": 5,
+          "damage_multiplier": 0.75
+        }
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "negative_knockback_pull"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "projectile_slow_aura"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "pierce_falloff"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "pull_distance_damage_reduction"
+      }
+    ],
+    "implementation_notes": "Abyssal Terrors row modeled from wiki. Pull, slow aura, and hidden damage reduction are pending runtime behavior."
+  },
+  {
+    "id": "captains_sword",
+    "source_name": "Captain's Sword",
+    "display_name": "船长之剑",
+    "runtime_aliases": [],
+    "is_dlc": true,
+    "groups": [
+      "naval",
+      "blade"
+    ],
+    "attack_kind": "melee_alternating",
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_captain"
+    },
+    "minimum_tier": 3,
+    "tiers": {
+      "3": {
+        "damage": {
+          "base": 50,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            },
+            {
+              "stat": "curse",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.03,
+        "range": 200,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 5,
+        "lifesteal": 0,
+        "base_price": 110,
+        "projectiles": 0,
+        "damage_per_free_slot": 25
+      },
+      "4": {
+        "damage": {
+          "base": 80,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.25
+            },
+            {
+              "stat": "curse",
+              "coefficient": 1.25
+            }
+          ]
+        },
+        "cooldown": 0.95,
+        "range": 200,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 5,
+        "lifesteal": 0,
+        "base_price": 210,
+        "projectiles": 0,
+        "damage_per_free_slot": 50
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "alternate_thrust_and_sweep"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "bonus_damage_per_free_weapon_slot"
+      }
+    ],
+    "implementation_notes": "Abyssal Terrors row modeled from wiki. Alternating melee pattern and free-slot damage are pending runtime behavior."
+  },
+  {
+    "id": "trident",
+    "source_name": "Trident",
+    "display_name": "三叉戟",
+    "runtime_aliases": [],
+    "is_dlc": true,
+    "groups": [
+      "naval",
+      "medieval"
+    ],
+    "attack_kind": "melee_thrust",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "minimum_tier": 2,
+    "tiers": {
+      "2": {
+        "damage": {
+          "base": 30,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            },
+            {
+              "stat": "curse",
+              "coefficient": 0.15
+            }
+          ]
+        },
+        "cooldown": 1.58,
+        "range": 325,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 45,
+        "projectiles": 0,
+        "bonus_damage_above_health": 0.3,
+        "bonus_damage_health_threshold": 0.8
+      },
+      "3": {
+        "damage": {
+          "base": 50,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            },
+            {
+              "stat": "curse",
+              "coefficient": 0.3
+            }
+          ]
+        },
+        "cooldown": 1.5,
+        "range": 325,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 95,
+        "projectiles": 0,
+        "bonus_damage_above_health": 0.4,
+        "bonus_damage_health_threshold": 0.8
+      },
+      "4": {
+        "damage": {
+          "base": 80,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            },
+            {
+              "stat": "curse",
+              "coefficient": 0.5
+            }
+          ]
+        },
+        "cooldown": 1.41,
+        "range": 325,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 190,
+        "projectiles": 0,
+        "bonus_damage_above_health": 0.5,
+        "bonus_damage_health_threshold": 0.8
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "bonus_damage_above_health_threshold"
+      }
+    ],
+    "implementation_notes": "Abyssal Terrors row modeled from wiki. High-health damage bonus is pending runtime behavior."
+  },
+  {
+    "id": "minigun",
+    "source_name": "Minigun",
+    "display_name": "迷你机枪",
+    "runtime_aliases": [
+      "machinegun"
+    ],
+    "is_dlc": false,
+    "groups": [
+      "heavy",
+      "gun"
+    ],
+    "attack_kind": "ranged",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "minimum_tier": 3,
+    "tiers": {
+      "3": {
+        "damage": {
+          "base": 1,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 0.5
+            }
+          ]
+        },
+        "cooldown": 0.09,
+        "range": 400,
+        "crit_multiplier": 1.75,
+        "crit_chance": 0.01,
+        "knockback": 3,
+        "lifesteal": 0,
+        "base_price": 127,
+        "projectiles": 1,
+        "pierce": {
+          "count": 1,
+          "damage_multiplier": 0.5
+        }
+      },
+      "4": {
+        "damage": {
+          "base": 3,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 0.75
+            }
+          ]
+        },
+        "cooldown": 0.073,
+        "range": 450,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 3,
+        "lifesteal": 0,
+        "base_price": 255,
+        "projectiles": 1,
+        "pierce": {
+          "count": 2,
+          "damage_multiplier": 0.5
+        }
+      }
+    },
+    "special_rules": [],
+    "implementation_notes": "High-tier unlock row modeled for catalog coverage."
+  },
+  {
+    "id": "nuclear_launcher",
+    "source_name": "Nuclear Launcher",
+    "display_name": "核弹发射器",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "heavy",
+      "explosive"
+    ],
+    "attack_kind": "ranged",
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_soldier"
+    },
+    "minimum_tier": 3,
+    "tiers": {
+      "3": {
+        "damage": {
+          "base": 60,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 1.0
+            },
+            {
+              "stat": "elemental_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 2.12,
+        "range": 800,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 15,
+        "lifesteal": 0,
+        "base_price": 144,
+        "projectiles": 1
+      },
+      "4": {
+        "damage": {
+          "base": 120,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 1.0
+            },
+            {
+              "stat": "elemental_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 2.12,
+        "range": 800,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 15,
+        "lifesteal": 0,
+        "base_price": 289,
+        "projectiles": 1
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "projectile_explosion_on_hit"
+      }
+    ],
+    "implementation_notes": "Reference row modeled from wiki. Explosion behavior is pending runtime behavior."
+  },
+  {
+    "id": "obliterator",
+    "source_name": "Obliterator",
+    "display_name": "湮灭者",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "gun",
+      "heavy"
+    ],
+    "attack_kind": "ranged",
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_demon"
+    },
+    "minimum_tier": 3,
+    "tiers": {
+      "3": {
+        "damage": {
+          "base": 250,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 10.0
+            }
+          ]
+        },
+        "cooldown": 3.23,
+        "range": 800,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 127,
+        "projectiles": 1,
+        "pierce": {
+          "count": 99,
+          "damage_multiplier": 1.0
+        }
+      },
+      "4": {
+        "damage": {
+          "base": 350,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 15.0
+            }
+          ]
+        },
+        "cooldown": 3.23,
+        "range": 1000,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 255,
+        "projectiles": 1,
+        "pierce": {
+          "count": 99,
+          "damage_multiplier": 1.0
+        }
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "full_pierce"
+      }
+    ],
+    "implementation_notes": "Unlock row modeled; current projectile path can approximate full pierce only structurally."
+  },
+  {
+    "id": "particle_accelerator",
+    "source_name": "Particle Accelerator",
+    "display_name": "粒子加速器",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "heavy",
+      "elemental"
+    ],
+    "attack_kind": "ranged",
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_technomage"
+    },
+    "minimum_tier": 3,
+    "tiers": {
+      "3": {
+        "damage": {
+          "base": 60,
+          "scaling": [
+            {
+              "stat": "elemental_damage",
+              "coefficient": 1.0
+            },
+            {
+              "stat": "engineering",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.95,
+        "range": 800,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 144,
+        "projectiles": 1,
+        "pierce": {
+          "count": 99,
+          "damage_multiplier": 1.0
+        },
+        "burn_instances": 8,
+        "burn_damage": 8,
+        "engineering_slow_per_point": 0.01
+      },
+      "4": {
+        "damage": {
+          "base": 120,
+          "scaling": [
+            {
+              "stat": "elemental_damage",
+              "coefficient": 1.0
+            },
+            {
+              "stat": "engineering",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.62,
+        "range": 800,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 289,
+        "projectiles": 1,
+        "pierce": {
+          "count": 99,
+          "damage_multiplier": 1.0
+        },
+        "burn_instances": 10,
+        "burn_damage": 10,
+        "engineering_slow_per_point": 0.02
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "full_pierce"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "burn"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "engineering_based_slow"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "cannot_bounce"
+      }
+    ],
+    "implementation_notes": "Reference row modeled from wiki. Beam pierce, burn, no-bounce, and engineering slow are pending runtime behavior."
+  },
+  {
+    "id": "sniper_gun",
+    "source_name": "Sniper Gun",
+    "display_name": "狙击枪",
+    "runtime_aliases": [
+      "sniper"
+    ],
+    "is_dlc": false,
+    "groups": [
+      "gun",
+      "precise"
+    ],
+    "attack_kind": "ranged",
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_hunter"
+    },
+    "minimum_tier": 3,
+    "tiers": {
+      "3": {
+        "damage": {
+          "base": 50,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 1.0
+            },
+            {
+              "stat": "range",
+              "coefficient": 0.2
+            }
+          ]
+        },
+        "cooldown": 2.4,
+        "range": 800,
+        "crit_multiplier": 3.0,
+        "crit_chance": 0.2,
+        "knockback": 30,
+        "lifesteal": 0,
+        "base_price": 115,
+        "projectiles": 1,
+        "spawned_projectiles_on_hit": 5,
+        "spawned_projectile_damage_base": 5,
+        "spawned_projectile_range_scaling": 0.1
+      },
+      "4": {
+        "damage": {
+          "base": 80,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 1.0
+            },
+            {
+              "stat": "range",
+              "coefficient": 0.3
+            }
+          ]
+        },
+        "cooldown": 2.4,
+        "range": 1000,
+        "crit_multiplier": 4.0,
+        "crit_chance": 0.2,
+        "knockback": 30,
+        "lifesteal": 0,
+        "base_price": 245,
+        "projectiles": 1,
+        "spawned_projectiles_on_hit": 8,
+        "spawned_projectile_damage_base": 5,
+        "spawned_projectile_range_scaling": 0.15
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "spawn_projectiles_on_hit"
+      }
+    ],
+    "implementation_notes": "Special spawn rule is modeled but not runtime-implemented."
+  },
+  {
+    "id": "chain_gun",
+    "source_name": "Chain Gun",
+    "display_name": "链式机枪",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "legendary",
+      "gun"
+    ],
+    "attack_kind": "ranged",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "minimum_tier": 4,
+    "tiers": {
+      "4": {
+        "damage": {
+          "base": 2,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 1.0
+            },
+            {
+              "stat": "engineering",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.073,
+        "range": 500,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": 5,
+        "lifesteal": 0,
+        "base_price": 300,
+        "projectiles": 3,
+        "spread": 8,
+        "pierce": {
+          "count": 1,
+          "damage_multiplier": 0.5
+        },
+        "cooldown_every_shots": 100,
+        "reload_cooldown": 2.04
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "cooldown_every_100_shots"
+      }
+    ],
+    "implementation_notes": "Legendary row modeled; 100-shot cooldown rule pending."
+  },
+  {
+    "id": "gatling_laser",
+    "source_name": "Gatling Laser",
+    "display_name": "加特林激光",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "legendary",
+      "heavy"
+    ],
+    "attack_kind": "ranged",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "minimum_tier": 4,
+    "tiers": {
+      "4": {
+        "damage": {
+          "base": 10,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.073,
+        "range": 500,
+        "crit_multiplier": 3.0,
+        "crit_chance": 0.1,
+        "knockback": 5,
+        "lifesteal": 0,
+        "base_price": 290,
+        "projectiles": 1,
+        "pierce": {
+          "count": 3,
+          "damage_multiplier": 0.75
+        }
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "pierce_falloff"
+      }
+    ],
+    "implementation_notes": "Reference row modeled from wiki. High-speed legendary beam is represented structurally."
+  },
+  {
+    "id": "drill",
+    "source_name": "Drill",
+    "display_name": "钻头",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "legendary",
+      "precise"
+    ],
+    "attack_kind": "melee_thrust",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "minimum_tier": 4,
+    "tiers": {
+      "4": {
+        "damage": {
+          "base": 10,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            },
+            {
+              "stat": "engineering",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.45,
+        "range": 100,
+        "crit_multiplier": 2.5,
+        "crit_chance": 0.5,
+        "knockback": 5,
+        "lifesteal": 0,
+        "base_price": 250,
+        "projectiles": 0,
+        "material_on_crit_kill_chance": 1.0,
+        "attack_speed_growth_interval": 5,
+        "attack_speed_growth": 0.1
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "material_on_critical_kill"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "attack_speed_growth_over_wave"
+      }
+    ],
+    "implementation_notes": "Reference row modeled from wiki. Critical-kill material generation and wave attack-speed growth are pending runtime behavior."
+  },
+  {
+    "id": "claw",
+    "source_name": "Claw",
+    "display_name": "爪子",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "unarmed",
+      "precise"
+    ],
+    "attack_kind": "melee_sweep",
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_cryptid"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 5,
+          "scaling": [
+            {
+              "stat": "attack_speed",
+              "coefficient": 0.15
+            },
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            }
+          ]
+        },
+        "cooldown": 0.78,
+        "range": 150,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.1,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 15,
+        "projectiles": 0
+      },
+      "2": {
+        "damage": {
+          "base": 10,
+          "scaling": [
+            {
+              "stat": "attack_speed",
+              "coefficient": 0.2
+            },
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            }
+          ]
+        },
+        "cooldown": 0.74,
+        "range": 150,
+        "crit_multiplier": 2.15,
+        "crit_chance": 0.15,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 28,
+        "projectiles": 0
+      },
+      "3": {
+        "damage": {
+          "base": 15,
+          "scaling": [
+            {
+              "stat": "attack_speed",
+              "coefficient": 0.25
+            },
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            }
+          ]
+        },
+        "cooldown": 0.69,
+        "range": 150,
+        "crit_multiplier": 2.3,
+        "crit_chance": 0.2,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 55,
+        "projectiles": 0
+      },
+      "4": {
+        "damage": {
+          "base": 25,
+          "scaling": [
+            {
+              "stat": "attack_speed",
+              "coefficient": 0.3
+            },
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            }
+          ]
+        },
+        "cooldown": 0.61,
+        "range": 150,
+        "crit_multiplier": 2.5,
+        "crit_chance": 0.25,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 110,
+        "projectiles": 0
+      }
+    },
+    "special_rules": [],
+    "implementation_notes": "Reference row modeled from wiki. Attack-speed damage scaling is represented structurally."
+  },
+  {
+    "id": "fist",
+    "source_name": "Fist",
+    "display_name": "拳头",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "unarmed"
+    ],
+    "attack_kind": "melee_sweep",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 8,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.78,
+        "range": 150,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.01,
+        "knockback": 15,
+        "lifesteal": 0,
+        "base_price": 10,
+        "projectiles": 0
+      },
+      "2": {
+        "damage": {
+          "base": 16,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.73,
+        "range": 150,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.01,
+        "knockback": 15,
+        "lifesteal": 0,
+        "base_price": 22,
+        "projectiles": 0
+      },
+      "3": {
+        "damage": {
+          "base": 32,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.69,
+        "range": 150,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.01,
+        "knockback": 15,
+        "lifesteal": 0,
+        "base_price": 45,
+        "projectiles": 0
+      },
+      "4": {
+        "damage": {
+          "base": 64,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.59,
+        "range": 150,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.01,
+        "knockback": 15,
+        "lifesteal": 0,
+        "base_price": 91,
+        "projectiles": 0
+      }
+    },
+    "special_rules": [],
+    "implementation_notes": "Reference row corrected from wiki."
+  },
+  {
+    "id": "knife",
+    "source_name": "Knife",
+    "display_name": "匕首",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "precise"
+    ],
+    "attack_kind": "melee_thrust",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 6,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.8
+            }
+          ]
+        },
+        "cooldown": 1.01,
+        "range": 150,
+        "crit_multiplier": 2.5,
+        "crit_chance": 0.2,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 15,
+        "projectiles": 0
+      },
+      "2": {
+        "damage": {
+          "base": 9,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.8
+            }
+          ]
+        },
+        "cooldown": 0.93,
+        "range": 150,
+        "crit_multiplier": 3.0,
+        "crit_chance": 0.3,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 31,
+        "projectiles": 0
+      },
+      "3": {
+        "damage": {
+          "base": 12,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.8
+            }
+          ]
+        },
+        "cooldown": 0.86,
+        "range": 150,
+        "crit_multiplier": 3.5,
+        "crit_chance": 0.4,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 61,
+        "projectiles": 0
+      },
+      "4": {
+        "damage": {
+          "base": 20,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.8
+            }
+          ]
+        },
+        "cooldown": 0.78,
+        "range": 150,
+        "crit_multiplier": 4.0,
+        "crit_chance": 0.5,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 122,
+        "projectiles": 0
+      }
+    },
+    "special_rules": [],
+    "implementation_notes": "Reference row corrected from wiki. Melee thrust runtime fidelity is pending."
+  },
+  {
+    "id": "scissors",
+    "source_name": "Scissors",
+    "display_name": "剪刀",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "medical",
+      "precise"
+    ],
+    "attack_kind": "melee_thrust",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 5,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.8
+            }
+          ]
+        },
+        "cooldown": 1.01,
+        "range": 150,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.1,
+        "knockback": 2,
+        "lifesteal": 0.4,
+        "base_price": 15,
+        "projectiles": 0
+      },
+      "2": {
+        "damage": {
+          "base": 10,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.8
+            }
+          ]
+        },
+        "cooldown": 0.98,
+        "range": 150,
+        "crit_multiplier": 2.15,
+        "crit_chance": 0.12,
+        "knockback": 2,
+        "lifesteal": 0.45,
+        "base_price": 31,
+        "projectiles": 0
+      },
+      "3": {
+        "damage": {
+          "base": 15,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.8
+            }
+          ]
+        },
+        "cooldown": 0.94,
+        "range": 150,
+        "crit_multiplier": 2.3,
+        "crit_chance": 0.15,
+        "knockback": 2,
+        "lifesteal": 0.5,
+        "base_price": 61,
+        "projectiles": 0
+      },
+      "4": {
+        "damage": {
+          "base": 20,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.8
+            }
+          ]
+        },
+        "cooldown": 0.86,
+        "range": 150,
+        "crit_multiplier": 2.5,
+        "crit_chance": 0.2,
+        "knockback": 2,
+        "lifesteal": 0.6,
+        "base_price": 122,
+        "projectiles": 0
+      }
+    },
+    "special_rules": [],
+    "implementation_notes": "Reference row modeled from wiki. Melee thrust runtime fidelity is pending."
+  },
+  {
+    "id": "thief_dagger",
+    "source_name": "Thief Dagger",
+    "display_name": "盗贼匕首",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "precise"
+    ],
+    "attack_kind": "melee_thrust",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 6,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            }
+          ]
+        },
+        "cooldown": 1.01,
+        "range": 150,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.2,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 12,
+        "projectiles": 0,
+        "material_on_crit_kill_chance": 0.5
+      },
+      "2": {
+        "damage": {
+          "base": 12,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            }
+          ]
+        },
+        "cooldown": 0.93,
+        "range": 150,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.25,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 26,
+        "projectiles": 0,
+        "material_on_crit_kill_chance": 0.56
+      },
+      "3": {
+        "damage": {
+          "base": 18,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            }
+          ]
+        },
+        "cooldown": 0.86,
+        "range": 150,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.3,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 52,
+        "projectiles": 0,
+        "material_on_crit_kill_chance": 0.62
+      },
+      "4": {
+        "damage": {
+          "base": 30,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            }
+          ]
+        },
+        "cooldown": 0.73,
+        "range": 150,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.4,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 105,
+        "projectiles": 0,
+        "material_on_crit_kill_chance": 0.8
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "material_on_critical_kill"
+      }
+    ],
+    "implementation_notes": "Reference row modeled from wiki. Critical-kill material generation is pending runtime behavior."
+  },
+  {
+    "id": "shuriken",
+    "source_name": "Shuriken",
+    "display_name": "手里剑",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "precise"
+    ],
+    "attack_kind": "ranged",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 6,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.25
+            }
+          ]
+        },
+        "cooldown": 0.87,
+        "range": 350,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.35,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 12,
+        "projectiles": 1,
+        "crit_bounces": 1
+      },
+      "2": {
+        "damage": {
+          "base": 8,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.34
+            }
+          ]
+        },
+        "cooldown": 0.83,
+        "range": 350,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.38,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 26,
+        "projectiles": 1,
+        "crit_bounces": 2
+      },
+      "3": {
+        "damage": {
+          "base": 10,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.42
+            }
+          ]
+        },
+        "cooldown": 0.8,
+        "range": 350,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.41,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 52,
+        "projectiles": 1,
+        "crit_bounces": 3
+      },
+      "4": {
+        "damage": {
+          "base": 15,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            }
+          ]
+        },
+        "cooldown": 0.7,
+        "range": 350,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.45,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 105,
+        "projectiles": 1,
+        "crit_bounces": 4
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "critical_hit_bounce"
+      }
+    ],
+    "implementation_notes": "Reference row modeled from wiki. Critical-hit bounce behavior is pending runtime behavior."
+  },
+  {
+    "id": "icicle",
+    "source_name": "Icicle",
+    "display_name": "冰锥",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "precise",
+      "elemental"
+    ],
+    "attack_kind": "ranged",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 10,
+          "scaling": [
+            {
+              "stat": "elemental_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.03,
+        "range": 400,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.05,
+        "knockback": 5,
+        "lifesteal": 0,
+        "base_price": 18,
+        "projectiles": 1,
+        "pierce": {
+          "count": 1,
+          "damage_multiplier": 0.5
+        }
+      },
+      "2": {
+        "damage": {
+          "base": 20,
+          "scaling": [
+            {
+              "stat": "elemental_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.95,
+        "range": 400,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.1,
+        "knockback": 5,
+        "lifesteal": 0,
+        "base_price": 36,
+        "projectiles": 1,
+        "pierce": {
+          "count": 1,
+          "damage_multiplier": 0.5
+        }
+      },
+      "3": {
+        "damage": {
+          "base": 30,
+          "scaling": [
+            {
+              "stat": "elemental_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.87,
+        "range": 400,
+        "crit_multiplier": 2.5,
+        "crit_chance": 0.15,
+        "knockback": 5,
+        "lifesteal": 0,
+        "base_price": 66,
+        "projectiles": 1,
+        "pierce": {
+          "count": 1,
+          "damage_multiplier": 0.5
+        }
+      },
+      "4": {
+        "damage": {
+          "base": 40,
+          "scaling": [
+            {
+              "stat": "elemental_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.7,
+        "range": 400,
+        "crit_multiplier": 3.0,
+        "crit_chance": 0.2,
+        "knockback": 5,
+        "lifesteal": 0,
+        "base_price": 140,
+        "projectiles": 1,
+        "pierce": {
+          "count": 1,
+          "damage_multiplier": 0.5
+        }
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "pierce_falloff"
+      }
+    ],
+    "implementation_notes": "Reference row modeled from wiki. Pierce falloff is represented structurally."
+  },
+  {
+    "id": "lightning_shiv",
+    "source_name": "Lightning Shiv",
+    "display_name": "雷电匕首",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "precise",
+      "elemental"
+    ],
+    "attack_kind": "melee_thrust",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 3,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.8
+            }
+          ]
+        },
+        "cooldown": 1.01,
+        "range": 150,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.04,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 18,
+        "projectiles": 0,
+        "lightning_bounces": 0,
+        "lightning_damage": 5,
+        "lightning_scaling": 0.8
+      },
+      "2": {
+        "damage": {
+          "base": 6,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.8
+            }
+          ]
+        },
+        "cooldown": 0.93,
+        "range": 150,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.06,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 36,
+        "projectiles": 0,
+        "lightning_bounces": 1,
+        "lightning_damage": 6,
+        "lightning_scaling": 0.8
+      },
+      "3": {
+        "damage": {
+          "base": 9,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.8
+            }
+          ]
+        },
+        "cooldown": 0.86,
+        "range": 150,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.08,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 66,
+        "projectiles": 0,
+        "lightning_bounces": 2,
+        "lightning_damage": 8,
+        "lightning_scaling": 0.8
+      },
+      "4": {
+        "damage": {
+          "base": 15,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.8
+            }
+          ]
+        },
+        "cooldown": 0.78,
+        "range": 150,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.1,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 142,
+        "projectiles": 0,
+        "lightning_bounces": 3,
+        "lightning_damage": 11,
+        "lightning_scaling": 0.8
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "spawn_lightning_projectile_on_hit"
+      }
+    ],
+    "implementation_notes": "Reference row modeled from wiki. Lightning projectile chain is pending runtime behavior."
+  },
+  {
+    "id": "plank",
+    "source_name": "Plank",
+    "display_name": "木板",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "explosive",
+      "elemental"
+    ],
+    "attack_kind": "melee_sweep",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 10,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            },
+            {
+              "stat": "elemental_damage",
+              "coefficient": 0.5
+            },
+            {
+              "stat": "engineering",
+              "coefficient": 0.5
+            }
+          ]
+        },
+        "cooldown": 1.23,
+        "range": 150,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 5,
+        "lifesteal": 0,
+        "base_price": 15,
+        "projectiles": 0,
+        "explosion_chance": 0.25
+      },
+      "2": {
+        "damage": {
+          "base": 15,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.6
+            },
+            {
+              "stat": "elemental_damage",
+              "coefficient": 0.6
+            },
+            {
+              "stat": "engineering",
+              "coefficient": 0.6
+            }
+          ]
+        },
+        "cooldown": 1.14,
+        "range": 150,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 5,
+        "lifesteal": 0,
+        "base_price": 31,
+        "projectiles": 0,
+        "explosion_chance": 0.3
+      },
+      "3": {
+        "damage": {
+          "base": 20,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.7
+            },
+            {
+              "stat": "elemental_damage",
+              "coefficient": 0.7
+            },
+            {
+              "stat": "engineering",
+              "coefficient": 0.7
+            }
+          ]
+        },
+        "cooldown": 1.06,
+        "range": 150,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 5,
+        "lifesteal": 0,
+        "base_price": 61,
+        "projectiles": 0,
+        "explosion_chance": 0.35
+      },
+      "4": {
+        "damage": {
+          "base": 25,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.8
+            },
+            {
+              "stat": "elemental_damage",
+              "coefficient": 0.8
+            },
+            {
+              "stat": "engineering",
+              "coefficient": 0.8
+            }
+          ]
+        },
+        "cooldown": 0.98,
+        "range": 150,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 5,
+        "lifesteal": 0,
+        "base_price": 122,
+        "projectiles": 0,
+        "explosion_chance": 0.4
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "melee_hit_explosion_chance"
+      }
+    ],
+    "implementation_notes": "Reference row modeled from wiki. Hit explosion chance is pending runtime behavior."
+  },
+  {
+    "id": "torch",
+    "source_name": "Torch",
+    "display_name": "火把",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "primitive",
+      "elemental"
+    ],
+    "attack_kind": "melee_sweep",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 1,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            },
+            {
+              "stat": "elemental_damage",
+              "coefficient": 0.5
+            }
+          ]
+        },
+        "cooldown": 1.1,
+        "range": 175,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.0,
+        "knockback": 20,
+        "lifesteal": 0,
+        "base_price": 10,
+        "projectiles": 0,
+        "burn_damage": 3,
+        "burn_instances": 3,
+        "burn_spread": 0
+      },
+      "2": {
+        "damage": {
+          "base": 1,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.65
+            },
+            {
+              "stat": "elemental_damage",
+              "coefficient": 0.65
+            }
+          ]
+        },
+        "cooldown": 1.04,
+        "range": 175,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.0,
+        "knockback": 20,
+        "lifesteal": 0,
+        "base_price": 22,
+        "projectiles": 0,
+        "burn_damage": 5,
+        "burn_instances": 5,
+        "burn_spread": 0
+      },
+      "3": {
+        "damage": {
+          "base": 1,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.8
+            },
+            {
+              "stat": "elemental_damage",
+              "coefficient": 0.8
+            }
+          ]
+        },
+        "cooldown": 0.95,
+        "range": 175,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.0,
+        "knockback": 20,
+        "lifesteal": 0,
+        "base_price": 45,
+        "projectiles": 0,
+        "burn_damage": 8,
+        "burn_instances": 6,
+        "burn_spread": 1
+      },
+      "4": {
+        "damage": {
+          "base": 1,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            },
+            {
+              "stat": "elemental_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.8,
+        "range": 175,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.0,
+        "knockback": 20,
+        "lifesteal": 0,
+        "base_price": 91,
+        "projectiles": 0,
+        "burn_damage": 12,
+        "burn_instances": 9,
+        "burn_spread": 1
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "burn"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "burn_spread_by_tier"
+      }
+    ],
+    "implementation_notes": "Reference row modeled from wiki. Burn and spread behavior are pending runtime behavior."
+  },
+  {
+    "id": "wand",
+    "source_name": "Wand",
+    "display_name": "法杖",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "elemental"
+    ],
+    "attack_kind": "ranged",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 1,
+          "scaling": [
+            {
+              "stat": "elemental_damage",
+              "coefficient": 0.5
+            }
+          ]
+        },
+        "cooldown": 0.87,
+        "range": 350,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.0,
+        "knockback": 10,
+        "lifesteal": 0,
+        "base_price": 12,
+        "projectiles": 1,
+        "burn_damage": 3,
+        "burn_instances": 3
+      },
+      "2": {
+        "damage": {
+          "base": 1,
+          "scaling": [
+            {
+              "stat": "elemental_damage",
+              "coefficient": 0.65
+            }
+          ]
+        },
+        "cooldown": 0.78,
+        "range": 375,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.0,
+        "knockback": 10,
+        "lifesteal": 0,
+        "base_price": 26,
+        "projectiles": 1,
+        "burn_damage": 5,
+        "burn_instances": 5
+      },
+      "3": {
+        "damage": {
+          "base": 1,
+          "scaling": [
+            {
+              "stat": "elemental_damage",
+              "coefficient": 0.8
+            }
+          ]
+        },
+        "cooldown": 0.7,
+        "range": 400,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.0,
+        "knockback": 10,
+        "lifesteal": 0,
+        "base_price": 52,
+        "projectiles": 1,
+        "burn_damage": 8,
+        "burn_instances": 6
+      },
+      "4": {
+        "damage": {
+          "base": 1,
+          "scaling": [
+            {
+              "stat": "elemental_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.53,
+        "range": 425,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.0,
+        "knockback": 10,
+        "lifesteal": 0,
+        "base_price": 105,
+        "projectiles": 1,
+        "burn_damage": 12,
+        "burn_instances": 9
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "burn"
+      }
+    ],
+    "implementation_notes": "Reference row corrected from wiki. Burn behavior is pending runtime behavior."
+  },
+  {
+    "id": "taser",
+    "source_name": "Taser",
+    "display_name": "电击枪",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "elemental",
+      "support"
+    ],
+    "attack_kind": "ranged",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 6,
+          "scaling": [
+            {
+              "stat": "elemental_damage",
+              "coefficient": 0.8
+            }
+          ]
+        },
+        "cooldown": 0.95,
+        "range": 200,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 15,
+        "projectiles": 1
+      },
+      "2": {
+        "damage": {
+          "base": 6,
+          "scaling": [
+            {
+              "stat": "elemental_damage",
+              "coefficient": 0.7
+            }
+          ]
+        },
+        "cooldown": 0.95,
+        "range": 200,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 31,
+        "projectiles": 2
+      },
+      "3": {
+        "damage": {
+          "base": 6,
+          "scaling": [
+            {
+              "stat": "elemental_damage",
+              "coefficient": 0.6
+            }
+          ]
+        },
+        "cooldown": 0.95,
+        "range": 200,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 61,
+        "projectiles": 3
+      },
+      "4": {
+        "damage": {
+          "base": 12,
+          "scaling": [
+            {
+              "stat": "elemental_damage",
+              "coefficient": 0.5
+            }
+          ]
+        },
+        "cooldown": 0.95,
+        "range": 200,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 122,
+        "projectiles": 4
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "slow"
+      }
+    ],
+    "implementation_notes": "Reference row corrected from wiki. Projectile slow aura is pending runtime behavior."
+  },
+  {
+    "id": "fireball",
+    "source_name": "Fireball",
+    "display_name": "火球",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "explosive",
+      "elemental"
+    ],
+    "attack_kind": "ranged",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "minimum_tier": 2,
+    "tiers": {
+      "2": {
+        "damage": {
+          "base": 5,
+          "scaling": [
+            {
+              "stat": "elemental_damage",
+              "coefficient": 0.25
+            }
+          ]
+        },
+        "cooldown": 1.12,
+        "range": 400,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 36,
+        "projectiles": 1,
+        "burn_damage": 5,
+        "burn_instances": 3
+      },
+      "3": {
+        "damage": {
+          "base": 10,
+          "scaling": [
+            {
+              "stat": "elemental_damage",
+              "coefficient": 0.5
+            }
+          ]
+        },
+        "cooldown": 1.03,
+        "range": 450,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 66,
+        "projectiles": 1,
+        "burn_damage": 6,
+        "burn_instances": 4
+      },
+      "4": {
+        "damage": {
+          "base": 20,
+          "scaling": [
+            {
+              "stat": "elemental_damage",
+              "coefficient": 0.75
+            }
+          ]
+        },
+        "cooldown": 0.87,
+        "range": 500,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 140,
+        "projectiles": 1,
+        "burn_damage": 8,
+        "burn_instances": 5
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "projectile_explosion_on_hit"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "burn"
+      }
+    ],
+    "implementation_notes": "Reference row modeled from wiki. Explosion and burn are pending runtime behavior."
+  },
+  {
+    "id": "flaming_brass_knuckles",
+    "source_name": "Flaming Brass Knuckles",
+    "display_name": "火焰指虎",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "unarmed",
+      "elemental"
+    ],
+    "attack_kind": "melee_sweep",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "minimum_tier": 2,
+    "tiers": {
+      "2": {
+        "damage": {
+          "base": 16,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.73,
+        "range": 150,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.01,
+        "knockback": 15,
+        "lifesteal": 0,
+        "base_price": 46,
+        "projectiles": 0,
+        "burn_damage": 8,
+        "burn_instances": 5
+      },
+      "3": {
+        "damage": {
+          "base": 32,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.69,
+        "range": 150,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.01,
+        "knockback": 15,
+        "lifesteal": 0,
+        "base_price": 86,
+        "projectiles": 0,
+        "burn_damage": 12,
+        "burn_instances": 6
+      },
+      "4": {
+        "damage": {
+          "base": 64,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.59,
+        "range": 150,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.01,
+        "knockback": 15,
+        "lifesteal": 0,
+        "base_price": 173,
+        "projectiles": 0,
+        "burn_damage": 15,
+        "burn_instances": 7
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "burn"
+      }
+    ],
+    "implementation_notes": "Reference row modeled from wiki. Burn behavior is pending runtime behavior."
+  },
+  {
+    "id": "hand",
+    "source_name": "Hand",
+    "display_name": "手",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "unarmed",
+      "support"
+    ],
+    "attack_kind": "melee_sweep",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 1,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            }
+          ]
+        },
+        "cooldown": 1.01,
+        "range": 150,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.01,
+        "knockback": 30,
+        "lifesteal": 0,
+        "base_price": 10,
+        "projectiles": 0,
+        "harvesting_bonus": 3
+      },
+      "2": {
+        "damage": {
+          "base": 1,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            }
+          ]
+        },
+        "cooldown": 0.93,
+        "range": 150,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.01,
+        "knockback": 30,
+        "lifesteal": 0,
+        "base_price": 22,
+        "projectiles": 0,
+        "harvesting_bonus": 6
+      },
+      "3": {
+        "damage": {
+          "base": 1,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            }
+          ]
+        },
+        "cooldown": 0.86,
+        "range": 150,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.01,
+        "knockback": 30,
+        "lifesteal": 0,
+        "base_price": 45,
+        "projectiles": 0,
+        "harvesting_bonus": 9
+      },
+      "4": {
+        "damage": {
+          "base": 1,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            }
+          ]
+        },
+        "cooldown": 0.71,
+        "range": 150,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.01,
+        "knockback": 30,
+        "lifesteal": 0,
+        "base_price": 91,
+        "projectiles": 0,
+        "harvesting_bonus": 18
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "harvesting_by_tier"
+      }
+    ],
+    "implementation_notes": "Reference row corrected from wiki. Harvesting bonus is modeled but not runtime-applied."
+  },
+  {
+    "id": "power_fist",
+    "source_name": "Power Fist",
+    "display_name": "动力拳套",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "unarmed",
+      "explosive"
+    ],
+    "attack_kind": "melee_sweep",
+    "minimum_tier": 3,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_brawler"
+    },
+    "tiers": {
+      "3": {
+        "damage": {
+          "base": 40,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.69,
+        "range": 150,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.01,
+        "knockback": 15,
+        "lifesteal": 0,
+        "base_price": 110,
+        "projectiles": 0,
+        "explosion_chance": 0.25
+      },
+      "4": {
+        "damage": {
+          "base": 60,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.59,
+        "range": 150,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.01,
+        "knockback": 15,
+        "lifesteal": 0,
+        "base_price": 221,
+        "projectiles": 0,
+        "explosion_chance": 0.5
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "melee_hit_explosion_chance"
+      }
+    ],
+    "implementation_notes": "Reference row modeled from wiki. Hit explosion chance is pending runtime behavior."
+  },
+  {
+    "id": "hiking_pole",
+    "source_name": "Hiking Pole",
+    "display_name": "登山杖",
+    "runtime_aliases": [],
+    "is_dlc": true,
+    "groups": [
+      "support"
+    ],
+    "attack_kind": "melee_thrust",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 12,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            },
+            {
+              "stat": "range",
+              "coefficient": 0.1
+            }
+          ]
+        },
+        "cooldown": 1.42,
+        "range": 175,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 17,
+        "projectiles": 0,
+        "range_gain_steps": 70
+      },
+      "2": {
+        "damage": {
+          "base": 18,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            },
+            {
+              "stat": "range",
+              "coefficient": 0.12
+            }
+          ]
+        },
+        "cooldown": 1.34,
+        "range": 175,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 34,
+        "projectiles": 0,
+        "range_gain_steps": 60
+      },
+      "3": {
+        "damage": {
+          "base": 24,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            },
+            {
+              "stat": "range",
+              "coefficient": 0.15
+            }
+          ]
+        },
+        "cooldown": 1.25,
+        "range": 175,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 66,
+        "projectiles": 0,
+        "range_gain_steps": 50
+      },
+      "4": {
+        "damage": {
+          "base": 30,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            },
+            {
+              "stat": "range",
+              "coefficient": 0.2
+            }
+          ]
+        },
+        "cooldown": 1.17,
+        "range": 175,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 130,
+        "projectiles": 0,
+        "range_gain_steps": 40
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "range_gain_per_steps_during_wave"
+      }
+    ],
+    "implementation_notes": "Abyssal Terrors row modeled from wiki. Per-step range gain is pending runtime behavior."
+  },
+  {
+    "id": "flute",
+    "source_name": "Flute",
+    "display_name": "Flute",
+    "runtime_aliases": [],
+    "is_dlc": true,
+    "groups": [
+      "musical"
+    ],
+    "attack_kind": "ranged",
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_romantic"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 5,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 0.5
+            },
+            {
+              "stat": "luck",
+              "coefficient": 0.1
+            }
+          ]
+        },
+        "cooldown": 1.2,
+        "range": 300,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 15,
+        "projectiles": 1,
+        "charm_health_threshold": 0.6,
+        "charm_chance": 0.1,
+        "charm_duration": 8
+      },
+      "2": {
+        "damage": {
+          "base": 8,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 0.5
+            },
+            {
+              "stat": "luck",
+              "coefficient": 0.15
+            }
+          ]
+        },
+        "cooldown": 1.12,
+        "range": 325,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 31,
+        "projectiles": 1,
+        "charm_health_threshold": 0.65,
+        "charm_chance": 0.15,
+        "charm_duration": 8
+      },
+      "3": {
+        "damage": {
+          "base": 11,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 0.5
+            },
+            {
+              "stat": "luck",
+              "coefficient": 0.2
+            }
+          ]
+        },
+        "cooldown": 1.03,
+        "range": 350,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 61,
+        "projectiles": 1,
+        "charm_health_threshold": 0.7,
+        "charm_chance": 0.2,
+        "charm_duration": 8
+      },
+      "4": {
+        "damage": {
+          "base": 15,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 0.5
+            },
+            {
+              "stat": "luck",
+              "coefficient": 0.25
+            }
+          ]
+        },
+        "cooldown": 0.95,
+        "range": 375,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 122,
+        "projectiles": 1,
+        "charm_health_threshold": 0.75,
+        "charm_chance": 0.25,
+        "charm_duration": 8
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "charm_low_health_enemy_on_hit"
+      }
+    ],
+    "implementation_notes": "Abyssal Terrors row modeled from wiki because Lucky can start with Flute. Charm behavior is pending runtime support."
+  },
+  {
+    "id": "lute",
+    "source_name": "Lute",
+    "display_name": "鲁特琴",
+    "runtime_aliases": [],
+    "is_dlc": true,
+    "groups": [
+      "musical",
+      "support"
+    ],
+    "attack_kind": "melee_sweep",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 4,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            },
+            {
+              "stat": "luck",
+              "coefficient": 0.1
+            }
+          ]
+        },
+        "cooldown": 1.31,
+        "range": 150,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 15,
+        "projectiles": 0,
+        "damage_taken_bonus": 0.1,
+        "damage_taken_cap": 0.3,
+        "damage_taken_duration": 3
+      },
+      "2": {
+        "damage": {
+          "base": 8,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            },
+            {
+              "stat": "luck",
+              "coefficient": 0.15
+            }
+          ]
+        },
+        "cooldown": 1.25,
+        "range": 175,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 31,
+        "projectiles": 0,
+        "damage_taken_bonus": 0.1,
+        "damage_taken_cap": 0.5,
+        "damage_taken_duration": 3
+      },
+      "3": {
+        "damage": {
+          "base": 12,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            },
+            {
+              "stat": "luck",
+              "coefficient": 0.2
+            }
+          ]
+        },
+        "cooldown": 1.2,
+        "range": 200,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 61,
+        "projectiles": 0,
+        "damage_taken_bonus": 0.1,
+        "damage_taken_cap": 0.7,
+        "damage_taken_duration": 3
+      },
+      "4": {
+        "damage": {
+          "base": 16,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            },
+            {
+              "stat": "luck",
+              "coefficient": 0.25
+            }
+          ]
+        },
+        "cooldown": 1.14,
+        "range": 225,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 122,
+        "projectiles": 0,
+        "damage_taken_bonus": 0.1,
+        "damage_taken_cap": 1.0,
+        "damage_taken_duration": 3
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "damage_taken_debuff_on_hit"
+      }
+    ],
+    "implementation_notes": "Abyssal Terrors row modeled from wiki. Damage-taken debuff is pending runtime behavior."
+  },
+  {
+    "id": "pruner",
+    "source_name": "Pruner",
+    "display_name": "修枝剪",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "support"
+    ],
+    "attack_kind": "melee_thrust",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 10,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            }
+          ]
+        },
+        "cooldown": 1.14,
+        "range": 150,
+        "crit_multiplier": 1.25,
+        "crit_chance": 0.03,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 15,
+        "projectiles": 0,
+        "garden_fruit_interval": 15
+      },
+      "2": {
+        "damage": {
+          "base": 15,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.65
+            }
+          ]
+        },
+        "cooldown": 1.06,
+        "range": 150,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.06,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 28,
+        "projectiles": 0,
+        "garden_fruit_interval": 14
+      },
+      "3": {
+        "damage": {
+          "base": 20,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.8
+            }
+          ]
+        },
+        "cooldown": 0.98,
+        "range": 150,
+        "crit_multiplier": 1.75,
+        "crit_chance": 0.09,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 52,
+        "projectiles": 0,
+        "garden_fruit_interval": 12
+      },
+      "4": {
+        "damage": {
+          "base": 25,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.89,
+        "range": 150,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.12,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 95,
+        "projectiles": 0,
+        "garden_fruit_interval": 10
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "spawn_fruit_garden"
+      }
+    ],
+    "implementation_notes": "Reference row modeled from wiki. Fruit garden spawn is pending runtime behavior."
+  },
+  {
+    "id": "sickle",
+    "source_name": "Sickle",
+    "display_name": "镰刀",
+    "runtime_aliases": [],
+    "is_dlc": true,
+    "groups": [
+      "support"
+    ],
+    "attack_kind": "melee_thrust",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 5,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.8
+            },
+            {
+              "stat": "harvesting",
+              "coefficient": 0.1
+            }
+          ]
+        },
+        "cooldown": 0.87,
+        "range": 125,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 15,
+        "projectiles": 0,
+        "low_health_damage_bonus": 0.2,
+        "low_health_threshold": 0.3
+      },
+      "2": {
+        "damage": {
+          "base": 8,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.8
+            },
+            {
+              "stat": "harvesting",
+              "coefficient": 0.15
+            }
+          ]
+        },
+        "cooldown": 0.82,
+        "range": 125,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 31,
+        "projectiles": 0,
+        "low_health_damage_bonus": 0.3,
+        "low_health_threshold": 0.3
+      },
+      "3": {
+        "damage": {
+          "base": 12,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.8
+            },
+            {
+              "stat": "harvesting",
+              "coefficient": 0.2
+            }
+          ]
+        },
+        "cooldown": 0.77,
+        "range": 125,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 61,
+        "projectiles": 0,
+        "low_health_damage_bonus": 0.4,
+        "low_health_threshold": 0.3
+      },
+      "4": {
+        "damage": {
+          "base": 15,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.8
+            },
+            {
+              "stat": "harvesting",
+              "coefficient": 0.25
+            }
+          ]
+        },
+        "cooldown": 0.7,
+        "range": 125,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 122,
+        "projectiles": 0,
+        "low_health_damage_bonus": 0.5,
+        "low_health_threshold": 0.3
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "bonus_damage_against_low_health"
+      }
+    ],
+    "implementation_notes": "Abyssal Terrors row modeled from wiki. Low-health damage bonus is pending runtime behavior."
+  },
+  {
+    "id": "potato_thrower",
+    "source_name": "Potato Thrower",
+    "display_name": "土豆投掷器",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "support"
+    ],
+    "attack_kind": "ranged",
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_chunky"
+    },
+    "minimum_tier": 2,
+    "tiers": {
+      "2": {
+        "damage": {
+          "base": 1,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 0.25
+            },
+            {
+              "stat": "max_hp",
+              "coefficient": 0.2
+            }
+          ]
+        },
+        "cooldown": 0.45,
+        "range": 500,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": 20,
+        "lifesteal": 0,
+        "base_price": 36,
+        "projectiles": 1
+      },
+      "3": {
+        "damage": {
+          "base": 1,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 0.25
+            },
+            {
+              "stat": "max_hp",
+              "coefficient": 0.2
+            }
+          ]
+        },
+        "cooldown": 0.37,
+        "range": 500,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": 25,
+        "lifesteal": 0,
+        "base_price": 69,
+        "projectiles": 1
+      },
+      "4": {
+        "damage": {
+          "base": 1,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 0.25
+            },
+            {
+              "stat": "max_hp",
+              "coefficient": 0.2
+            }
+          ]
+        },
+        "cooldown": 0.25,
+        "range": 500,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": 30,
+        "lifesteal": 0,
+        "base_price": 139,
+        "projectiles": 1
+      }
+    },
+    "special_rules": [],
+    "implementation_notes": "Reference row modeled from wiki. High knockback projectile is represented structurally."
+  },
+  {
+    "id": "stick",
+    "source_name": "Stick",
+    "display_name": "木棍",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "primitive"
+    ],
+    "attack_kind": "melee_sweep",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 8,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.29,
+        "range": 175,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 10,
+        "projectiles": 0,
+        "bonus_damage_per_additional_copy": 4
+      },
+      "2": {
+        "damage": {
+          "base": 9,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.22,
+        "range": 175,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 22,
+        "projectiles": 0,
+        "bonus_damage_per_additional_copy": 6
+      },
+      "3": {
+        "damage": {
+          "base": 10,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.15,
+        "range": 175,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 45,
+        "projectiles": 0,
+        "bonus_damage_per_additional_copy": 8
+      },
+      "4": {
+        "damage": {
+          "base": 12,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.09,
+        "range": 175,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 91,
+        "projectiles": 0,
+        "bonus_damage_per_additional_copy": 10
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "bonus_damage_for_duplicate_sticks"
+      }
+    ],
+    "implementation_notes": "Reference row corrected from wiki. Duplicate-stick damage bonus is pending runtime behavior."
+  },
+  {
+    "id": "hatchet",
+    "source_name": "Hatchet",
+    "display_name": "短柄斧",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "primitive"
+    ],
+    "attack_kind": "melee_sweep",
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_wildling"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 5,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            },
+            {
+              "stat": "attack_speed",
+              "coefficient": 0.15
+            }
+          ]
+        },
+        "cooldown": 0.68,
+        "range": 125,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 15,
+        "projectiles": 0
+      },
+      "2": {
+        "damage": {
+          "base": 10,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            },
+            {
+              "stat": "attack_speed",
+              "coefficient": 0.15
+            }
+          ]
+        },
+        "cooldown": 0.65,
+        "range": 125,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 31,
+        "projectiles": 0
+      },
+      "3": {
+        "damage": {
+          "base": 20,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            },
+            {
+              "stat": "attack_speed",
+              "coefficient": 0.15
+            }
+          ]
+        },
+        "cooldown": 0.62,
+        "range": 125,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 61,
+        "projectiles": 0
+      },
+      "4": {
+        "damage": {
+          "base": 40,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            },
+            {
+              "stat": "attack_speed",
+              "coefficient": 0.15
+            }
+          ]
+        },
+        "cooldown": 0.58,
+        "range": 125,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 122,
+        "projectiles": 0
+      }
+    },
+    "special_rules": [],
+    "implementation_notes": "Reference row modeled from wiki. Attack-speed scaling is represented structurally."
+  },
+  {
+    "id": "javelin",
+    "source_name": "Javelin",
+    "display_name": "标枪",
+    "runtime_aliases": [],
+    "is_dlc": true,
+    "groups": [
+      "primitive"
+    ],
+    "attack_kind": "ranged",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 8,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.2,
+        "range": 350,
+        "crit_multiplier": 2.5,
+        "crit_chance": 0.0,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 18,
+        "projectiles": 1,
+        "pierce": {
+          "count": 2,
+          "damage_multiplier": 0.75
+        },
+        "critical_projectile_interval": 5
+      },
+      "2": {
+        "damage": {
+          "base": 12,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.12,
+        "range": 375,
+        "crit_multiplier": 2.75,
+        "crit_chance": 0.0,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 36,
+        "projectiles": 1,
+        "pierce": {
+          "count": 3,
+          "damage_multiplier": 0.75
+        },
+        "critical_projectile_interval": 4
+      },
+      "3": {
+        "damage": {
+          "base": 16,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.03,
+        "range": 400,
+        "crit_multiplier": 3.0,
+        "crit_chance": 0.0,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 66,
+        "projectiles": 1,
+        "pierce": {
+          "count": 4,
+          "damage_multiplier": 0.75
+        },
+        "critical_projectile_interval": 3
+      },
+      "4": {
+        "damage": {
+          "base": 20,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.95,
+        "range": 425,
+        "crit_multiplier": 3.25,
+        "crit_chance": 0.0,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 140,
+        "projectiles": 1,
+        "pierce": {
+          "count": 5,
+          "damage_multiplier": 0.75
+        },
+        "critical_projectile_interval": 2
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "every_nth_projectile_guaranteed_crit"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "pierce_falloff"
+      }
+    ],
+    "implementation_notes": "Abyssal Terrors row modeled from wiki. Guaranteed critical projectile cadence is pending runtime behavior."
+  },
+  {
+    "id": "quarterstaff",
+    "source_name": "Quarterstaff",
+    "display_name": "六尺棍",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "primitive",
+      "medieval"
+    ],
+    "attack_kind": "melee_alternating",
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_apprentice"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 10,
+          "scaling": [
+            {
+              "stat": "level",
+              "coefficient": 0.75
+            },
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            }
+          ]
+        },
+        "cooldown": 1.42,
+        "range": 175,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 17,
+        "projectiles": 0,
+        "xp_gain": 0.02
+      },
+      "2": {
+        "damage": {
+          "base": 15,
+          "scaling": [
+            {
+              "stat": "level",
+              "coefficient": 0.85
+            },
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.65
+            }
+          ]
+        },
+        "cooldown": 1.25,
+        "range": 175,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 34,
+        "projectiles": 0,
+        "xp_gain": 0.05
+      },
+      "3": {
+        "damage": {
+          "base": 20,
+          "scaling": [
+            {
+              "stat": "level",
+              "coefficient": 1.0
+            },
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.85
+            }
+          ]
+        },
+        "cooldown": 1.09,
+        "range": 175,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 66,
+        "projectiles": 0,
+        "xp_gain": 0.09
+      },
+      "4": {
+        "damage": {
+          "base": 30,
+          "scaling": [
+            {
+              "stat": "level",
+              "coefficient": 1.25
+            },
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.92,
+        "range": 175,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 130,
+        "projectiles": 0,
+        "xp_gain": 0.15
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "alternate_thrust_and_sweep"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "xp_gain_by_tier"
+      }
+    ],
+    "implementation_notes": "Reference row modeled from wiki. Alternating melee and XP gain are pending runtime behavior."
+  },
+  {
+    "id": "brick",
+    "source_name": "Brick",
+    "display_name": "砖块",
+    "runtime_aliases": [],
+    "is_dlc": true,
+    "groups": [
+      "blunt"
+    ],
+    "attack_kind": "melee_sweep",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 30,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            },
+            {
+              "stat": "engineering",
+              "coefficient": 0.5
+            }
+          ]
+        },
+        "cooldown": 1.39,
+        "range": 150,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": 5,
+        "lifesteal": 0,
+        "base_price": 6,
+        "projectiles": 0,
+        "break_chance": 0.01,
+        "break_materials": 10
+      },
+      "2": {
+        "damage": {
+          "base": 60,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.65
+            },
+            {
+              "stat": "engineering",
+              "coefficient": 0.65
+            }
+          ]
+        },
+        "cooldown": 1.39,
+        "range": 150,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": 5,
+        "lifesteal": 0,
+        "base_price": 14,
+        "projectiles": 0,
+        "break_chance": 0.01,
+        "break_materials": 30
+      },
+      "3": {
+        "damage": {
+          "base": 90,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.8
+            },
+            {
+              "stat": "engineering",
+              "coefficient": 0.8
+            }
+          ]
+        },
+        "cooldown": 1.39,
+        "range": 150,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": 5,
+        "lifesteal": 0,
+        "base_price": 22,
+        "projectiles": 0,
+        "break_chance": 0.01,
+        "break_materials": 60
+      },
+      "4": {
+        "damage": {
+          "base": 120,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            },
+            {
+              "stat": "engineering",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.39,
+        "range": 150,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": 5,
+        "lifesteal": 0,
+        "base_price": 40,
+        "projectiles": 0,
+        "break_chance": 0.01,
+        "break_materials": 120
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "break_and_drop_materials_on_hit"
+      }
+    ],
+    "implementation_notes": "Abyssal Terrors Blunt row modeled from wiki. Break-and-drop-materials behavior is pending runtime behavior."
+  },
+  {
+    "id": "rock",
+    "source_name": "Rock",
+    "display_name": "石头",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "primitive",
+      "blunt"
+    ],
+    "attack_kind": "melee_sweep",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 20,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.68,
+        "range": 150,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.1,
+        "knockback": 5,
+        "lifesteal": 0,
+        "base_price": 10,
+        "projectiles": 0,
+        "armor_bonus": 0,
+        "max_hp_bonus": 0
+      },
+      "2": {
+        "damage": {
+          "base": 35,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.61,
+        "range": 150,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.15,
+        "knockback": 5,
+        "lifesteal": 0,
+        "base_price": 22,
+        "projectiles": 0,
+        "armor_bonus": 1,
+        "max_hp_bonus": 0
+      },
+      "3": {
+        "damage": {
+          "base": 50,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.53,
+        "range": 150,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.2,
+        "knockback": 5,
+        "lifesteal": 0,
+        "base_price": 45,
+        "projectiles": 0,
+        "armor_bonus": 1,
+        "max_hp_bonus": 2
+      },
+      "4": {
+        "damage": {
+          "base": 70,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.46,
+        "range": 150,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.25,
+        "knockback": 5,
+        "lifesteal": 0,
+        "base_price": 91,
+        "projectiles": 0,
+        "armor_bonus": 2,
+        "max_hp_bonus": 2
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "armor_and_hp_bonus_by_tier"
+      }
+    ],
+    "implementation_notes": "Reference row modeled from wiki. Armor and max HP bonuses are pending runtime behavior."
+  },
+  {
+    "id": "sharp_tooth",
+    "source_name": "Sharp Tooth",
+    "display_name": "尖牙",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "primitive",
+      "precise"
+    ],
+    "attack_kind": "melee_thrust",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 5,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            },
+            {
+              "stat": "lifesteal",
+              "coefficient": 0.5
+            }
+          ]
+        },
+        "cooldown": 1.14,
+        "range": 150,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 12,
+        "projectiles": 0,
+        "missing_health_lifesteal_step": 25
+      },
+      "2": {
+        "damage": {
+          "base": 8,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            },
+            {
+              "stat": "lifesteal",
+              "coefficient": 0.65
+            }
+          ]
+        },
+        "cooldown": 1.07,
+        "range": 160,
+        "crit_multiplier": 2.15,
+        "crit_chance": 0.06,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 26,
+        "projectiles": 0,
+        "missing_health_lifesteal_step": 20
+      },
+      "3": {
+        "damage": {
+          "base": 11,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            },
+            {
+              "stat": "lifesteal",
+              "coefficient": 0.8
+            }
+          ]
+        },
+        "cooldown": 1.0,
+        "range": 170,
+        "crit_multiplier": 2.3,
+        "crit_chance": 0.09,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 52,
+        "projectiles": 0,
+        "missing_health_lifesteal_step": 15
+      },
+      "4": {
+        "damage": {
+          "base": 15,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            },
+            {
+              "stat": "lifesteal",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.93,
+        "range": 180,
+        "crit_multiplier": 2.5,
+        "crit_chance": 0.12,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 105,
+        "projectiles": 0,
+        "missing_health_lifesteal_step": 10
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "lifesteal_per_missing_health"
+      }
+    ],
+    "implementation_notes": "Reference row modeled from wiki. Missing-health lifesteal bonus is pending runtime behavior."
+  },
+  {
+    "id": "slingshot",
+    "source_name": "Slingshot",
+    "display_name": "弹弓",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "primitive"
+    ],
+    "attack_kind": "ranged",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 10,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 0.8
+            }
+          ]
+        },
+        "cooldown": 1.22,
+        "range": 300,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 5,
+        "lifesteal": 0,
+        "base_price": 15,
+        "projectiles": 1,
+        "bounces": 1
+      },
+      "2": {
+        "damage": {
+          "base": 13,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 0.8
+            }
+          ]
+        },
+        "cooldown": 1.17,
+        "range": 300,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 5,
+        "lifesteal": 0,
+        "base_price": 31,
+        "projectiles": 1,
+        "bounces": 2
+      },
+      "3": {
+        "damage": {
+          "base": 16,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 0.8
+            }
+          ]
+        },
+        "cooldown": 1.13,
+        "range": 300,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 5,
+        "lifesteal": 0,
+        "base_price": 61,
+        "projectiles": 1,
+        "bounces": 3
+      },
+      "4": {
+        "damage": {
+          "base": 20,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 0.8
+            }
+          ]
+        },
+        "cooldown": 1.1,
+        "range": 300,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 5,
+        "lifesteal": 0,
+        "base_price": 122,
+        "projectiles": 1,
+        "bounces": 4
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "bounce_by_tier"
+      }
+    ],
+    "implementation_notes": "Reference row modeled from wiki. Bounce behavior is pending runtime behavior."
+  },
+  {
+    "id": "cacti_club",
+    "source_name": "Cacti Club",
+    "display_name": "仙人掌棒",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "primitive",
+      "heavy"
+    ],
+    "attack_kind": "melee_sweep",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 10,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.8
+            }
+          ]
+        },
+        "cooldown": 1.66,
+        "range": 200,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 8,
+        "lifesteal": 0,
+        "base_price": 20,
+        "projectiles": 0,
+        "thorn_projectiles": 3,
+        "thorn_damage_scaling": 0.5
+      },
+      "2": {
+        "damage": {
+          "base": 20,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.85
+            }
+          ]
+        },
+        "cooldown": 1.58,
+        "range": 200,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 8,
+        "lifesteal": 0,
+        "base_price": 39,
+        "projectiles": 0,
+        "thorn_projectiles": 4,
+        "thorn_damage_scaling": 0.6
+      },
+      "3": {
+        "damage": {
+          "base": 30,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.9
+            }
+          ]
+        },
+        "cooldown": 1.51,
+        "range": 200,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 8,
+        "lifesteal": 0,
+        "base_price": 74,
+        "projectiles": 0,
+        "thorn_projectiles": 5,
+        "thorn_damage_scaling": 0.7
+      },
+      "4": {
+        "damage": {
+          "base": 50,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.36,
+        "range": 200,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 8,
+        "lifesteal": 0,
+        "base_price": 149,
+        "projectiles": 0,
+        "thorn_projectiles": 6,
+        "thorn_damage_scaling": 0.8
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "shoot_thorns"
+      }
+    ],
+    "implementation_notes": "Reference row corrected from wiki. Thorn projectile spawn is modeled but not runtime-implemented."
+  },
+  {
+    "id": "hammer",
+    "source_name": "Hammer",
+    "display_name": "锤子",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "blunt",
+      "heavy"
+    ],
+    "attack_kind": "melee_sweep",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "minimum_tier": 2,
+    "tiers": {
+      "2": {
+        "damage": {
+          "base": 35,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.5
+            }
+          ]
+        },
+        "cooldown": 1.67,
+        "range": 175,
+        "crit_multiplier": 1.75,
+        "crit_chance": 0.03,
+        "knockback": 30,
+        "lifesteal": 0,
+        "base_price": 51,
+        "projectiles": 0,
+        "knockback_bonus": 2
+      },
+      "3": {
+        "damage": {
+          "base": 70,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.75
+            }
+          ]
+        },
+        "cooldown": 1.59,
+        "range": 175,
+        "crit_multiplier": 1.75,
+        "crit_chance": 0.03,
+        "knockback": 40,
+        "lifesteal": 0,
+        "base_price": 95,
+        "projectiles": 0,
+        "knockback_bonus": 4
+      },
+      "4": {
+        "damage": {
+          "base": 110,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 2.0
+            }
+          ]
+        },
+        "cooldown": 1.5,
+        "range": 175,
+        "crit_multiplier": 1.75,
+        "crit_chance": 0.03,
+        "knockback": 50,
+        "lifesteal": 0,
+        "base_price": 190,
+        "projectiles": 0,
+        "knockback_bonus": 6
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "flat_knockback_bonus"
+      }
+    ],
+    "implementation_notes": "Reference row modeled from wiki. Extra knockback stat bonus is pending runtime behavior."
+  },
+  {
+    "id": "mace",
+    "source_name": "Mace",
+    "display_name": "钉锤",
+    "runtime_aliases": [],
+    "is_dlc": true,
+    "groups": [
+      "heavy",
+      "medieval"
+    ],
+    "attack_kind": "melee_sweep",
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_ogre"
+    },
+    "minimum_tier": 2,
+    "tiers": {
+      "2": {
+        "damage": {
+          "base": 40,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            },
+            {
+              "stat": "attack_speed",
+              "coefficient": -0.5
+            }
+          ]
+        },
+        "cooldown": 1.39,
+        "range": 150,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": 5,
+        "lifesteal": 0,
+        "base_price": 46,
+        "projectiles": 0,
+        "attack_speed_delta": -0.03
+      },
+      "3": {
+        "damage": {
+          "base": 60,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            },
+            {
+              "stat": "attack_speed",
+              "coefficient": -0.75
+            }
+          ]
+        },
+        "cooldown": 1.31,
+        "range": 150,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": 5,
+        "lifesteal": 0,
+        "base_price": 92,
+        "projectiles": 0,
+        "attack_speed_delta": -0.06
+      },
+      "4": {
+        "damage": {
+          "base": 100,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            },
+            {
+              "stat": "attack_speed",
+              "coefficient": -1.0
+            }
+          ]
+        },
+        "cooldown": 1.23,
+        "range": 150,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": 5,
+        "lifesteal": 0,
+        "base_price": 185,
+        "projectiles": 0,
+        "attack_speed_delta": -0.1
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "attack_speed_penalty"
+      }
+    ],
+    "implementation_notes": "Abyssal Terrors row modeled from wiki. Attack speed penalty is pending runtime behavior."
+  },
+  {
+    "id": "war_hammer",
+    "source_name": "War Hammer",
+    "display_name": "War Hammer",
+    "runtime_aliases": [],
+    "is_dlc": true,
+    "groups": [
+      "blunt",
+      "heavy"
+    ],
+    "attack_kind": "melee_sweep",
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_dwarf"
+    },
+    "minimum_tier": 3,
+    "tiers": {
+      "3": {
+        "damage": {
+          "base": 100,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.5
+            },
+            {
+              "stat": "engineering",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 2.11,
+        "range": 200,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": 20,
+        "lifesteal": 0,
+        "base_price": 130,
+        "projectiles": 0
+      },
+      "4": {
+        "damage": {
+          "base": 180,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 2.0
+            },
+            {
+              "stat": "engineering",
+              "coefficient": 1.5
+            }
+          ]
+        },
+        "cooldown": 1.95,
+        "range": 200,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": 25,
+        "lifesteal": 0,
+        "base_price": 255,
+        "projectiles": 0
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "reset_offensive_turret_cooldowns_on_attack"
+      }
+    ],
+    "implementation_notes": "Abyssal Terrors row modeled from wiki. Offensive turret cooldown reset is pending runtime behavior."
+  },
+  {
+    "id": "screwdriver",
+    "source_name": "Screwdriver",
+    "display_name": "螺丝刀",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "engineering"
+    ],
+    "attack_kind": "melee_thrust",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 8,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            },
+            {
+              "stat": "engineering",
+              "coefficient": 0.5
+            }
+          ]
+        },
+        "cooldown": 1.05,
+        "range": 125,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.1,
+        "knockback": 3,
+        "lifesteal": 0,
+        "base_price": 10,
+        "projectiles": 0,
+        "mine_spawn_interval": 12,
+        "mine_damage": {
+          "base": 10,
+          "scaling": [
+            {
+              "stat": "engineering",
+              "coefficient": 1.0
+            }
+          ]
+        }
+      },
+      "2": {
+        "damage": {
+          "base": 12,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            },
+            {
+              "stat": "engineering",
+              "coefficient": 0.5
+            }
+          ]
+        },
+        "cooldown": 1.0,
+        "range": 125,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.15,
+        "knockback": 3,
+        "lifesteal": 0,
+        "base_price": 22,
+        "projectiles": 0,
+        "mine_spawn_interval": 9,
+        "mine_damage": {
+          "base": 10,
+          "scaling": [
+            {
+              "stat": "engineering",
+              "coefficient": 1.0
+            }
+          ]
+        }
+      },
+      "3": {
+        "damage": {
+          "base": 16,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            },
+            {
+              "stat": "engineering",
+              "coefficient": 0.5
+            }
+          ]
+        },
+        "cooldown": 0.97,
+        "range": 125,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.2,
+        "knockback": 3,
+        "lifesteal": 0,
+        "base_price": 45,
+        "projectiles": 0,
+        "mine_spawn_interval": 6,
+        "mine_damage": {
+          "base": 10,
+          "scaling": [
+            {
+              "stat": "engineering",
+              "coefficient": 1.0
+            }
+          ]
+        }
+      },
+      "4": {
+        "damage": {
+          "base": 20,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            },
+            {
+              "stat": "engineering",
+              "coefficient": 0.5
+            }
+          ]
+        },
+        "cooldown": 0.87,
+        "range": 125,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.3,
+        "knockback": 3,
+        "lifesteal": 0,
+        "base_price": 91,
+        "projectiles": 0,
+        "mine_spawn_interval": 3,
+        "mine_damage": {
+          "base": 10,
+          "scaling": [
+            {
+              "stat": "engineering",
+              "coefficient": 1.0
+            }
+          ]
+        }
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "spawn_landmine_by_tier"
+      }
+    ],
+    "implementation_notes": "Reference Tool row modeled from wiki. Landmine spawning is pending runtime behavior."
+  },
+  {
+    "id": "wrench",
+    "source_name": "Wrench",
+    "display_name": "扳手",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "engineering"
+    ],
+    "attack_kind": "melee_sweep",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 12,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.7,
+        "range": 175,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 20,
+        "lifesteal": 0,
+        "base_price": 20,
+        "projectiles": 0,
+        "spawn_structure": "turret"
+      },
+      "2": {
+        "damage": {
+          "base": 16,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.64,
+        "range": 175,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 20,
+        "lifesteal": 0,
+        "base_price": 39,
+        "projectiles": 0,
+        "spawn_structure": "incendiary_turret"
+      },
+      "3": {
+        "damage": {
+          "base": 20,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.55,
+        "range": 175,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 20,
+        "lifesteal": 0,
+        "base_price": 74,
+        "projectiles": 0,
+        "spawn_structure": "laser_turret"
+      },
+      "4": {
+        "damage": {
+          "base": 24,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.49,
+        "range": 175,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 20,
+        "lifesteal": 0,
+        "base_price": 149,
+        "projectiles": 0,
+        "spawn_structure": "explosive_turret"
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "spawn_structure_by_tier"
+      }
+    ],
+    "implementation_notes": "Reference Tool row corrected from wiki. Structure spawning is pending runtime behavior."
+  },
+  {
+    "id": "chainsaw",
+    "source_name": "Chainsaw",
+    "display_name": "链锯",
+    "runtime_aliases": [],
+    "is_dlc": true,
+    "groups": [
+      "blade",
+      "engineering"
+    ],
+    "attack_kind": "melee_sweep",
+    "minimum_tier": 3,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "3": {
+        "damage": {
+          "base": 10,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.75
+            },
+            {
+              "stat": "engineering",
+              "coefficient": 0.75
+            },
+            {
+              "stat": "lifesteal",
+              "coefficient": 0.75
+            }
+          ]
+        },
+        "cooldown": 0.53,
+        "range": 175,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0.15,
+        "base_price": 112,
+        "projectiles": 0,
+        "reload_interval": 30,
+        "reload_cooldown": 1.83,
+        "current_health_bonus_damage": 0.1,
+        "elite_boss_current_health_bonus_damage": 0.01
+      },
+      "4": {
+        "damage": {
+          "base": 20,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            },
+            {
+              "stat": "engineering",
+              "coefficient": 1.0
+            },
+            {
+              "stat": "lifesteal",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.56,
+        "range": 200,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0.3,
+        "base_price": 242,
+        "projectiles": 0,
+        "reload_interval": 40,
+        "reload_cooldown": 1.52,
+        "current_health_bonus_damage": 0.2,
+        "elite_boss_current_health_bonus_damage": 0.02
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "reload_every_n_attacks_by_tier"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "current_health_bonus_damage"
+      }
+    ],
+    "implementation_notes": "Abyssal Terrors Tool row modeled from wiki. Attack reload and current-health bonus damage are pending runtime behavior."
+  },
+  {
+    "id": "ghost_axe",
+    "source_name": "Ghost Axe",
+    "display_name": "幽灵斧",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "ethereal"
+    ],
+    "attack_kind": "melee_sweep",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 12,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.73,
+        "range": 200,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 20,
+        "projectiles": 0,
+        "damage_growth_kill_interval": 20,
+        "damage_growth": 0.01
+      },
+      "2": {
+        "damage": {
+          "base": 18,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.66,
+        "range": 200,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 39,
+        "projectiles": 0,
+        "damage_growth_kill_interval": 18,
+        "damage_growth": 0.01
+      },
+      "3": {
+        "damage": {
+          "base": 24,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.58,
+        "range": 200,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 74,
+        "projectiles": 0,
+        "damage_growth_kill_interval": 16,
+        "damage_growth": 0.01
+      },
+      "4": {
+        "damage": {
+          "base": 40,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.51,
+        "range": 200,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 149,
+        "projectiles": 0,
+        "damage_growth_kill_interval": 12,
+        "damage_growth": 0.01
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "damage_growth_per_kills_this_wave"
+      }
+    ],
+    "implementation_notes": "Reference Ethereal row modeled from wiki. Per-wave damage growth is pending runtime behavior."
+  },
+  {
+    "id": "ghost_flint",
+    "source_name": "Ghost Flint",
+    "display_name": "幽灵燧石",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "ethereal"
+    ],
+    "attack_kind": "melee_sweep",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 6,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.23,
+        "range": 150,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 12,
+        "projectiles": 0,
+        "attack_speed_growth_kill_interval": 20,
+        "attack_speed_growth": 0.01
+      },
+      "2": {
+        "damage": {
+          "base": 9,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.17,
+        "range": 160,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 26,
+        "projectiles": 0,
+        "attack_speed_growth_kill_interval": 18,
+        "attack_speed_growth": 0.01
+      },
+      "3": {
+        "damage": {
+          "base": 12,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.1,
+        "range": 170,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 52,
+        "projectiles": 0,
+        "attack_speed_growth_kill_interval": 16,
+        "attack_speed_growth": 0.01
+      },
+      "4": {
+        "damage": {
+          "base": 18,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.04,
+        "range": 180,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 105,
+        "projectiles": 0,
+        "attack_speed_growth_kill_interval": 12,
+        "attack_speed_growth": 0.01
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "attack_speed_growth_per_kills_this_wave"
+      }
+    ],
+    "implementation_notes": "Reference Ethereal row modeled from wiki. Per-wave attack-speed growth is pending runtime behavior."
+  },
+  {
+    "id": "ghost_scepter",
+    "source_name": "Ghost Scepter",
+    "display_name": "幽灵权杖",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "ethereal"
+    ],
+    "attack_kind": "ranged",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 10,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.98,
+        "range": 300,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 15,
+        "projectiles": 1,
+        "max_hp_growth_kill_interval": 20,
+        "max_hp_growth": 1
+      },
+      "2": {
+        "damage": {
+          "base": 15,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.93,
+        "range": 350,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 31,
+        "projectiles": 1,
+        "max_hp_growth_kill_interval": 18,
+        "max_hp_growth": 1
+      },
+      "3": {
+        "damage": {
+          "base": 20,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.88,
+        "range": 400,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 61,
+        "projectiles": 1,
+        "max_hp_growth_kill_interval": 16,
+        "max_hp_growth": 1
+      },
+      "4": {
+        "damage": {
+          "base": 30,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.83,
+        "range": 450,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 122,
+        "projectiles": 1,
+        "max_hp_growth_kill_interval": 12,
+        "max_hp_growth": 1
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "max_hp_growth_per_kills_this_wave"
+      }
+    ],
+    "implementation_notes": "Reference Ethereal row modeled from wiki. Per-wave max HP growth is pending runtime behavior."
+  },
+  {
+    "id": "scythe",
+    "source_name": "Scythe",
+    "display_name": "大镰刀",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "legendary",
+      "ethereal"
+    ],
+    "attack_kind": "melee_sweep",
+    "minimum_tier": 4,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "4": {
+        "damage": {
+          "base": 150,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.5
+            },
+            {
+              "stat": "lifesteal",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.72,
+        "range": 250,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 5,
+        "lifesteal": 1.0,
+        "base_price": 285,
+        "projectiles": 0,
+        "self_damage_per_second": 3,
+        "damage_growth_on_self_damage": 0.03
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "self_damage_over_time"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "damage_growth_when_damaged_this_wave"
+      }
+    ],
+    "implementation_notes": "Reference Legendary/Ethereal row modeled from wiki. Self-damage and temporary damage growth are pending runtime behavior."
+  },
+  {
+    "id": "spear",
+    "source_name": "Spear",
+    "display_name": "长矛",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "primitive"
+    ],
+    "attack_kind": "melee_thrust",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 15,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.52,
+        "range": 350,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 15,
+        "projectiles": 0
+      },
+      "2": {
+        "damage": {
+          "base": 25,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.4,
+        "range": 375,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 31,
+        "projectiles": 0
+      },
+      "3": {
+        "damage": {
+          "base": 40,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.28,
+        "range": 400,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 61,
+        "projectiles": 0
+      },
+      "4": {
+        "damage": {
+          "base": 60,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.24,
+        "range": 500,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 122,
+        "projectiles": 0
+      }
+    },
+    "special_rules": [],
+    "implementation_notes": "Reference row modeled from wiki. Runtime thrust fidelity is pending."
+  },
+  {
+    "id": "crossbow",
+    "source_name": "Crossbow",
+    "display_name": "弩",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "precise",
+      "medieval"
+    ],
+    "attack_kind": "ranged",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 10,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 0.5
+            },
+            {
+              "stat": "range",
+              "coefficient": 0.1
+            }
+          ]
+        },
+        "cooldown": 1.13,
+        "range": 350,
+        "crit_multiplier": 1.5,
+        "crit_chance": 0.3,
+        "knockback": 8,
+        "lifesteal": 0,
+        "base_price": 16,
+        "projectiles": 1
+      },
+      "2": {
+        "damage": {
+          "base": 12,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 0.5
+            },
+            {
+              "stat": "range",
+              "coefficient": 0.1
+            }
+          ]
+        },
+        "cooldown": 1.13,
+        "range": 350,
+        "crit_multiplier": 1.75,
+        "crit_chance": 0.35,
+        "knockback": 8,
+        "lifesteal": 0,
+        "base_price": 34,
+        "projectiles": 1
+      },
+      "3": {
+        "damage": {
+          "base": 15,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 0.5
+            },
+            {
+              "stat": "range",
+              "coefficient": 0.1
+            }
+          ]
+        },
+        "cooldown": 1.13,
+        "range": 350,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.4,
+        "knockback": 8,
+        "lifesteal": 0,
+        "base_price": 62,
+        "projectiles": 1
+      },
+      "4": {
+        "damage": {
+          "base": 18,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 0.5
+            },
+            {
+              "stat": "range",
+              "coefficient": 0.1
+            }
+          ]
+        },
+        "cooldown": 1.13,
+        "range": 350,
+        "crit_multiplier": 2.25,
+        "crit_chance": 0.45,
+        "knockback": 8,
+        "lifesteal": 0,
+        "base_price": 132,
+        "projectiles": 1
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "crit_pierce_by_tier"
+      }
+    ],
+    "implementation_notes": "Reference row modeled from wiki. Critical-hit pierce behavior is pending."
+  },
+  {
+    "id": "sword",
+    "source_name": "Sword",
+    "display_name": "剑",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "blade",
+      "medieval"
+    ],
+    "attack_kind": "melee_thrust",
+    "minimum_tier": 2,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "2": {
+        "damage": {
+          "base": 25,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.28,
+        "range": 200,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 5,
+        "lifesteal": 0,
+        "base_price": 34,
+        "projectiles": 0
+      },
+      "3": {
+        "damage": {
+          "base": 40,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.13,
+        "range": 200,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 5,
+        "lifesteal": 0,
+        "base_price": 62,
+        "projectiles": 0
+      },
+      "4": {
+        "damage": {
+          "base": 60,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.98,
+        "range": 200,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 5,
+        "lifesteal": 0,
+        "base_price": 132,
+        "projectiles": 0
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "alternate_thrust_and_sweep"
+      }
+    ],
+    "implementation_notes": "Reference row modeled from wiki. Alternating thrust/sweep behavior is pending."
+  },
+  {
+    "id": "chopper",
+    "source_name": "Chopper",
+    "display_name": "砍刀",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "blade"
+    ],
+    "attack_kind": "melee_sweep",
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_multitasker"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 6,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            },
+            {
+              "stat": "max_hp",
+              "coefficient": 0.15
+            }
+          ]
+        },
+        "cooldown": 0.99,
+        "range": 135,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.1,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 15,
+        "projectiles": 0,
+        "consumable_heal_bonus": 1
+      },
+      "2": {
+        "damage": {
+          "base": 12,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            },
+            {
+              "stat": "max_hp",
+              "coefficient": 0.2
+            }
+          ]
+        },
+        "cooldown": 0.99,
+        "range": 150,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.15,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 31,
+        "projectiles": 0,
+        "consumable_heal_bonus": 1
+      },
+      "3": {
+        "damage": {
+          "base": 18,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            },
+            {
+              "stat": "max_hp",
+              "coefficient": 0.25
+            }
+          ]
+        },
+        "cooldown": 0.96,
+        "range": 165,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.2,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 61,
+        "projectiles": 0,
+        "consumable_heal_bonus": 1
+      },
+      "4": {
+        "damage": {
+          "base": 30,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            },
+            {
+              "stat": "max_hp",
+              "coefficient": 0.3
+            }
+          ]
+        },
+        "cooldown": 0.89,
+        "range": 180,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.25,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 122,
+        "projectiles": 0,
+        "consumable_heal_bonus": 2
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "consumable_heal_bonus_by_tier"
+      }
+    ],
+    "implementation_notes": "Reference Blade row modeled from wiki. Consumable healing bonus is pending runtime behavior."
+  },
+  {
+    "id": "vorpal_sword",
+    "source_name": "Vorpal Sword",
+    "display_name": "斩首剑",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "blade",
+      "medieval"
+    ],
+    "attack_kind": "melee_thrust",
+    "minimum_tier": 2,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "reach_100_crit_chance"
+    },
+    "tiers": {
+      "2": {
+        "damage": {
+          "base": 20,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.11,
+        "range": 200,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 5,
+        "lifesteal": 0,
+        "base_price": 55,
+        "projectiles": 0,
+        "instant_kill_chance": 0.01
+      },
+      "3": {
+        "damage": {
+          "base": 35,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.03,
+        "range": 200,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 5,
+        "lifesteal": 0,
+        "base_price": 100,
+        "projectiles": 0,
+        "instant_kill_chance": 0.02
+      },
+      "4": {
+        "damage": {
+          "base": 55,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.95,
+        "range": 200,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 5,
+        "lifesteal": 0,
+        "base_price": 200,
+        "projectiles": 0,
+        "instant_kill_chance": 0.03
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "alternate_thrust_and_sweep"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "instant_kill_chance_by_tier"
+      }
+    ],
+    "implementation_notes": "Reference Blade/Medieval row modeled from wiki. Instant-kill chance is pending runtime behavior."
+  },
+  {
+    "id": "excalibur",
+    "source_name": "Excalibur",
+    "display_name": "誓约胜利之剑",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "legendary",
+      "blade"
+    ],
+    "attack_kind": "melee_thrust",
+    "minimum_tier": 4,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_king"
+    },
+    "tiers": {
+      "4": {
+        "damage": {
+          "base": 200,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 2.0
+            },
+            {
+              "stat": "max_hp",
+              "coefficient": 2.0
+            }
+          ]
+        },
+        "cooldown": 0.66,
+        "range": 200,
+        "crit_multiplier": 2.5,
+        "crit_chance": 0.1,
+        "knockback": 5,
+        "lifesteal": 0,
+        "base_price": 230,
+        "projectiles": 0,
+        "armor_penalty_per_weapon": -3
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "alternate_thrust_and_sweep"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "armor_penalty_per_weapon"
+      }
+    ],
+    "implementation_notes": "Reference Legendary/Blade row modeled from wiki. Armor penalty per carried weapon is pending runtime behavior."
+  },
+  {
+    "id": "jousting_lance",
+    "source_name": "Jousting Lance",
+    "display_name": "骑枪",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "medieval"
+    ],
+    "attack_kind": "melee_thrust",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 20,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            },
+            {
+              "stat": "speed_percent",
+              "coefficient": 0.3
+            }
+          ]
+        },
+        "cooldown": 1.58,
+        "range": 250,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 20,
+        "projectiles": 0,
+        "speed_bonus": 0.02,
+        "standing_still_damage_penalty": -0.1
+      },
+      "2": {
+        "damage": {
+          "base": 25,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            },
+            {
+              "stat": "speed_percent",
+              "coefficient": 0.35
+            }
+          ]
+        },
+        "cooldown": 1.5,
+        "range": 250,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 36,
+        "projectiles": 0,
+        "speed_bonus": 0.03,
+        "standing_still_damage_penalty": -0.15
+      },
+      "3": {
+        "damage": {
+          "base": 30,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            },
+            {
+              "stat": "speed_percent",
+              "coefficient": 0.4
+            }
+          ]
+        },
+        "cooldown": 1.42,
+        "range": 250,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 72,
+        "projectiles": 0,
+        "speed_bonus": 0.04,
+        "standing_still_damage_penalty": -0.2
+      },
+      "4": {
+        "damage": {
+          "base": 50,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            },
+            {
+              "stat": "speed_percent",
+              "coefficient": 0.5
+            }
+          ]
+        },
+        "cooldown": 1.33,
+        "range": 250,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 132,
+        "projectiles": 0,
+        "speed_bonus": 0.05,
+        "standing_still_damage_penalty": -0.25
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "speed_bonus_by_tier"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "damage_penalty_while_standing_still"
+      }
+    ],
+    "implementation_notes": "Reference Medieval row modeled from wiki. Speed bonus and standing-still damage penalty are pending runtime behavior."
+  },
+  {
+    "id": "spiky_shield",
+    "source_name": "Spiky Shield",
+    "display_name": "尖刺盾",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "medieval",
+      "blunt"
+    ],
+    "attack_kind": "melee_sweep",
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_masochist"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 10,
+          "scaling": [
+            {
+              "stat": "armor",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.16,
+        "range": 150,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 20,
+        "lifesteal": 0,
+        "base_price": 15,
+        "projectiles": 0
+      },
+      "2": {
+        "damage": {
+          "base": 15,
+          "scaling": [
+            {
+              "stat": "armor",
+              "coefficient": 1.25
+            }
+          ]
+        },
+        "cooldown": 1.16,
+        "range": 150,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 20,
+        "lifesteal": 0,
+        "base_price": 31,
+        "projectiles": 0
+      },
+      "3": {
+        "damage": {
+          "base": 20,
+          "scaling": [
+            {
+              "stat": "armor",
+              "coefficient": 1.5
+            }
+          ]
+        },
+        "cooldown": 1.16,
+        "range": 150,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 20,
+        "lifesteal": 0,
+        "base_price": 61,
+        "projectiles": 0
+      },
+      "4": {
+        "damage": {
+          "base": 30,
+          "scaling": [
+            {
+              "stat": "armor",
+              "coefficient": 2.0
+            }
+          ]
+        },
+        "cooldown": 1.01,
+        "range": 150,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 20,
+        "lifesteal": 0,
+        "base_price": 122,
+        "projectiles": 0
+      }
+    },
+    "special_rules": [],
+    "implementation_notes": "Reference Medieval/Blunt row modeled from wiki. Armor damage scaling is represented structurally."
+  },
+  {
+    "id": "spoon",
+    "source_name": "Spoon",
+    "display_name": "勺子",
+    "runtime_aliases": [],
+    "is_dlc": true,
+    "groups": [
+      "blunt"
+    ],
+    "attack_kind": "melee_sweep",
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_chef"
+    },
+    "tiers": {
+      "1": {
+        "damage": {
+          "base": 10,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            },
+            {
+              "stat": "max_hp",
+              "coefficient": 0.15
+            }
+          ]
+        },
+        "cooldown": 1.06,
+        "range": 150,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.0,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 15,
+        "projectiles": 0,
+        "always_crits_burning_targets": true
+      },
+      "2": {
+        "damage": {
+          "base": 15,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            },
+            {
+              "stat": "max_hp",
+              "coefficient": 0.2
+            }
+          ]
+        },
+        "cooldown": 0.99,
+        "range": 165,
+        "crit_multiplier": 2.25,
+        "crit_chance": 0.0,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 31,
+        "projectiles": 0,
+        "always_crits_burning_targets": true
+      },
+      "3": {
+        "damage": {
+          "base": 20,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            },
+            {
+              "stat": "max_hp",
+              "coefficient": 0.25
+            }
+          ]
+        },
+        "cooldown": 0.93,
+        "range": 180,
+        "crit_multiplier": 2.5,
+        "crit_chance": 0.0,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 61,
+        "projectiles": 0,
+        "always_crits_burning_targets": true
+      },
+      "4": {
+        "damage": {
+          "base": 25,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 0.5
+            },
+            {
+              "stat": "max_hp",
+              "coefficient": 0.25
+            }
+          ]
+        },
+        "cooldown": 0.86,
+        "range": 200,
+        "crit_multiplier": 3.0,
+        "crit_chance": 0.0,
+        "knockback": 2,
+        "lifesteal": 0,
+        "base_price": 122,
+        "projectiles": 0,
+        "always_crits_burning_targets": true
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "always_crit_burning_targets"
+      }
+    ],
+    "implementation_notes": "Abyssal Terrors Blunt row modeled from wiki. Burning-target auto-crit behavior is pending runtime behavior."
+  },
+  {
+    "id": "circular_saw",
+    "source_name": "Circular Saw",
+    "display_name": "圆锯",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "blade",
+      "medical"
+    ],
+    "attack_kind": "melee_sweep",
+    "unlocked_by": {
+      "type": "default"
+    },
+    "minimum_tier": 2,
+    "tiers": {
+      "2": {
+        "damage": {
+          "base": 10,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.72,
+        "range": 175,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.05,
+        "knockback": 0,
+        "lifesteal": 0.45,
+        "base_price": 46,
+        "projectiles": 0
+      },
+      "3": {
+        "damage": {
+          "base": 15,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.67,
+        "range": 175,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.1,
+        "knockback": 0,
+        "lifesteal": 0.5,
+        "base_price": 86,
+        "projectiles": 0
+      },
+      "4": {
+        "damage": {
+          "base": 25,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.62,
+        "range": 175,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.2,
+        "knockback": 0,
+        "lifesteal": 0.6,
+        "base_price": 173,
+        "projectiles": 0
+      }
+    },
+    "special_rules": [],
+    "implementation_notes": "Reference row modeled from wiki. Melee sweep runtime fidelity is pending."
+  },
+  {
+    "id": "thunder_sword",
+    "source_name": "Thunder Sword",
+    "display_name": "雷霆之剑",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "blade",
+      "elemental"
+    ],
+    "attack_kind": "melee_thrust",
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_mage"
+    },
+    "minimum_tier": 3,
+    "tiers": {
+      "3": {
+        "damage": {
+          "base": 30,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.25
+            },
+            {
+              "stat": "elemental_damage",
+              "coefficient": 1.25
+            }
+          ]
+        },
+        "cooldown": 1.21,
+        "range": 200,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 5,
+        "lifesteal": 0,
+        "base_price": 119,
+        "projectiles": 0,
+        "lightning_bounces": 2,
+        "lightning_scaling": 1.0
+      },
+      "4": {
+        "damage": {
+          "base": 60,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.5
+            },
+            {
+              "stat": "elemental_damage",
+              "coefficient": 1.5
+            }
+          ]
+        },
+        "cooldown": 1.06,
+        "range": 200,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 5,
+        "lifesteal": 0,
+        "base_price": 238,
+        "projectiles": 0,
+        "lightning_bounces": 4,
+        "lightning_scaling": 1.0
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "spawn_lightning_projectiles_on_hit"
+      }
+    ],
+    "implementation_notes": "Reference row modeled from wiki. Lightning projectile spawn is pending runtime behavior."
+  },
+  {
+    "id": "flamethrower",
+    "source_name": "Flamethrower",
+    "display_name": "火焰喷射器",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "elemental",
+      "heavy"
+    ],
+    "attack_kind": "ranged",
+    "minimum_tier": 2,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "2": {
+        "damage": {
+          "base": 1,
+          "scaling": [
+            {
+              "stat": "elemental_damage",
+              "coefficient": 0.01
+            }
+          ]
+        },
+        "cooldown": 0.12,
+        "range": 250,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.0,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 34,
+        "projectiles": 1,
+        "pierce": {
+          "count": 99,
+          "damage_multiplier": 0.0
+        }
+      },
+      "3": {
+        "damage": {
+          "base": 1,
+          "scaling": [
+            {
+              "stat": "elemental_damage",
+              "coefficient": 0.01
+            }
+          ]
+        },
+        "cooldown": 0.12,
+        "range": 300,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.0,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 62,
+        "projectiles": 1,
+        "pierce": {
+          "count": 99,
+          "damage_multiplier": 0.0
+        }
+      },
+      "4": {
+        "damage": {
+          "base": 1,
+          "scaling": [
+            {
+              "stat": "elemental_damage",
+              "coefficient": 0.01
+            }
+          ]
+        },
+        "cooldown": 0.09,
+        "range": 400,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.0,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 132,
+        "projectiles": 1,
+        "pierce": {
+          "count": 99,
+          "damage_multiplier": 0.0
+        }
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "burning_damage_by_tier"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "pierce_99_for_one_damage"
+      }
+    ],
+    "implementation_notes": "Reference row modeled from wiki. Burning and special pierce damage are pending."
+  },
+  {
+    "id": "rocket_launcher",
+    "source_name": "Rocket Launcher",
+    "display_name": "火箭发射器",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "heavy",
+      "explosive"
+    ],
+    "attack_kind": "ranged",
+    "minimum_tier": 2,
+    "unlocked_by": {
+      "type": "default"
+    },
+    "tiers": {
+      "2": {
+        "damage": {
+          "base": 30,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.78,
+        "range": 500,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 15,
+        "lifesteal": 0,
+        "base_price": 34,
+        "projectiles": 1
+      },
+      "3": {
+        "damage": {
+          "base": 50,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.37,
+        "range": 550,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 15,
+        "lifesteal": 0,
+        "base_price": 62,
+        "projectiles": 1
+      },
+      "4": {
+        "damage": {
+          "base": 80,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.03,
+        "range": 600,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 15,
+        "lifesteal": 0,
+        "base_price": 132,
+        "projectiles": 1
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "projectile_explosion_on_hit"
+      }
+    ],
+    "implementation_notes": "Reference row modeled from wiki. Explosion runtime support is pending."
+  },
+  {
+    "id": "plasma_sledge",
+    "source_name": "Plasma Sledge",
+    "display_name": "等离子重锤",
+    "runtime_aliases": [
+      "plasma"
+    ],
+    "is_dlc": false,
+    "groups": [
+      "elemental",
+      "explosive"
+    ],
+    "attack_kind": "melee_sweep",
+    "minimum_tier": 3,
+    "unlocked_by": {
+      "type": "unlock",
+      "character": "knight"
+    },
+    "tiers": {
+      "3": {
+        "damage": {
+          "base": 80,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.5
+            },
+            {
+              "stat": "elemental_damage",
+              "coefficient": 1.5
+            }
+          ]
+        },
+        "cooldown": 1.55,
+        "range": 175,
+        "crit_multiplier": 1.75,
+        "crit_chance": 0.03,
+        "knockback": 30,
+        "lifesteal": 0,
+        "base_price": 62,
+        "projectiles": 0
+      },
+      "4": {
+        "damage": {
+          "base": 120,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 2.0
+            },
+            {
+              "stat": "elemental_damage",
+              "coefficient": 2.0
+            }
+          ]
+        },
+        "cooldown": 1.49,
+        "range": 175,
+        "crit_multiplier": 1.75,
+        "crit_chance": 0.03,
+        "knockback": 30,
+        "lifesteal": 0,
+        "base_price": 132,
+        "projectiles": 0
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "hit_explosion_chance_by_tier"
+      }
+    ],
+    "implementation_notes": "Reference row modeled from wiki. Chance-to-explode melee hits are pending."
+  },
+  {
+    "id": "dex_troyer",
+    "source_name": "DEX-troyer",
+    "display_name": "毁灭者",
+    "runtime_aliases": [],
+    "is_dlc": false,
+    "groups": [
+      "legendary",
+      "explosive"
+    ],
+    "attack_kind": "ranged",
+    "minimum_tier": 4,
+    "unlocked_by": {
+      "type": "achievement",
+      "condition": "win_with_renegade"
+    },
+    "tiers": {
+      "4": {
+        "damage": {
+          "base": 100,
+          "scaling": [
+            {
+              "stat": "melee_damage",
+              "coefficient": 1.0
+            },
+            {
+              "stat": "ranged_damage",
+              "coefficient": 1.0
+            },
+            {
+              "stat": "elemental_damage",
+              "coefficient": 1.0
+            },
+            {
+              "stat": "engineering",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.18,
+        "range": 400,
+        "crit_multiplier": 2.0,
+        "crit_chance": 0.03,
+        "knockback": 60,
+        "lifesteal": 0,
+        "base_price": 350,
+        "projectiles": 1,
+        "explosion_damage_growth_per_explosion": 0.03
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "projectile_explosion_on_hit"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "explosion_damage_growth_per_explosion_this_wave"
+      }
+    ],
+    "implementation_notes": "Reference Legendary/Explosive row modeled from wiki. Wave-end explosion damage growth is pending runtime behavior."
+  },
+  {
+    "id": "grenade_launcher",
+    "source_name": "Grenade Launcher",
+    "display_name": "榴弹发射器",
+    "runtime_aliases": [
+      "grenade"
+    ],
+    "is_dlc": true,
+    "groups": [
+      "heavy",
+      "explosive"
+    ],
+    "attack_kind": "ranged",
+    "minimum_tier": 2,
+    "unlocked_by": {
+      "type": "unlock",
+      "character": "gangster"
+    },
+    "tiers": {
+      "2": {
+        "damage": {
+          "base": 12,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 2.035,
+        "range": 350,
+        "crit_multiplier": 2.5,
+        "crit_chance": 0.05,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 34,
+        "projectiles": 1
+      },
+      "3": {
+        "damage": {
+          "base": 18,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 1.313,
+        "range": 400,
+        "crit_multiplier": 3.0,
+        "crit_chance": 0.1,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 62,
+        "projectiles": 1
+      },
+      "4": {
+        "damage": {
+          "base": 30,
+          "scaling": [
+            {
+              "stat": "ranged_damage",
+              "coefficient": 1.0
+            }
+          ]
+        },
+        "cooldown": 0.953,
+        "range": 450,
+        "crit_multiplier": 3.5,
+        "crit_chance": 0.2,
+        "knockback": 0,
+        "lifesteal": 0,
+        "base_price": 132,
+        "projectiles": 1
+      }
+    },
+    "special_rules": [
+      {
+        "effect": "weapon_special",
+        "rule": "reload_every_n_shots_by_tier"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "projectile_explosion_on_hit"
+      },
+      {
+        "effect": "weapon_special",
+        "rule": "bounce_once"
+      }
+    ],
+    "implementation_notes": "Abyssal Terrors reference row modeled from wiki. Reload, explosion, and bounce behavior are pending."
+  }
+]
